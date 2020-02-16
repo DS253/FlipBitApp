@@ -15,13 +15,13 @@ protocol ATCLandingScreenManagerDelegate: class {
 
 class ATCLandingScreenManager: ATCLandingScreenDelegate {
     let landingScreen: ATCLandingScreenProtocol
-    let viewModel: ATCLandingScreenViewModel
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let viewModel: LandingScreenViewModel
+    let uiConfig: OnboardingConfigurationProtocol
     weak var delegate: ATCLandingScreenManagerDelegate?
 
     init(landingScreen: ATCLandingScreenProtocol,
-         viewModel: ATCLandingScreenViewModel,
-         uiConfig: ATCOnboardingConfigurationProtocol) {
+         viewModel: LandingScreenViewModel,
+         uiConfig: OnboardingConfigurationProtocol) {
         self.landingScreen = landingScreen
         self.viewModel = viewModel
         self.uiConfig = uiConfig

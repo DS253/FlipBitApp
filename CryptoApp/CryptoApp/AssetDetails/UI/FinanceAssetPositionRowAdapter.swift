@@ -15,7 +15,7 @@ class FinanceAssetPositionRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let position = object as? ATCFinanceAssetPosition, let cell = cell as? FinanceAssetPositionCollectionViewCell {
+        if let position = object as? FinanceAssetPosition, let cell = cell as? FinanceAssetPositionCollectionViewCell {
 
             cell.positionTitleLabel.text = position.title
             cell.positionTitleLabel.textColor = uiConfig.mainTextColor
@@ -81,7 +81,7 @@ class FinanceAssetPositionRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCFinanceAssetPosition else { return .zero }
+        guard let viewModel = object as? FinanceAssetPosition else { return .zero }
         return CGSize(width: containerBounds.width, height: 250)
     }
 }

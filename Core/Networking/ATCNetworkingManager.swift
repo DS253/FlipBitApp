@@ -8,7 +8,7 @@
 
 import Alamofire
 
-public enum ATCNetworkResponseStatus {
+public enum NetworkResponseStatus {
     case success
     case error(string: String?)
 }
@@ -17,7 +17,7 @@ public class ATCNetworkingManager {
 
     let queue = DispatchQueue(label: "networking-manager-requests", qos: .userInitiated, attributes: .concurrent)
 
-    func getJSONResponse(path: String, parameters: [String:String]?, completionHandler: @escaping (_ response: Any?,_ status: ATCNetworkResponseStatus) -> Void) {
+    func getJSONResponse(path: String, parameters: [String:String]?, completionHandler: @escaping (_ response: Any?,_ status: NetworkResponseStatus) -> Void) {
         Alamofire
             .request(path, method: .get, parameters: parameters)
             .responseJSON(queue: queue, options: []) { (response) in
@@ -31,7 +31,7 @@ public class ATCNetworkingManager {
         }
     }
 
-    func get(path: String, params: [String:String]?, completion: @escaping ((_ jsonResponse: Any?, _ responseStatus: ATCNetworkResponseStatus) -> Void)) {
+    func get(path: String, params: [String:String]?, completion: @escaping ((_ jsonResponse: Any?, _ responseStatus: NetworkResponseStatus) -> Void)) {
         Alamofire.request(path, parameters: params).responseJSON { response in
             DispatchQueue.main.async {
                 if let json = response.result.value {

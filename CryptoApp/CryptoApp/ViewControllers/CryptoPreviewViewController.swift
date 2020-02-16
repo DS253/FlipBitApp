@@ -33,14 +33,14 @@ class CryptoPreviewViewController: ATCGenericCollectionViewController {
         self.genericDataSource = dsProvider.cryptoHomeDataSource
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
-        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAsset")
+        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")
         
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if object is CardFooterModel {
                 let vc = CryptoHomeViewController(uiConfig: strongSelf.uiConfig, dsProvider: strongSelf.dsProvider)
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
-            } else if let stock = object as? ATCFinanceAsset {
+            } else if let stock = object as? FinanceAsset {
                 let vc = AssetDetailsViewController(asset: stock,
                                                     user: strongSelf.dsProvider.user,
                                                     uiConfig: strongSelf.uiConfig,

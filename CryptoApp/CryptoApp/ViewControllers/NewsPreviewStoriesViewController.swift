@@ -32,14 +32,14 @@ class NewsPreviewStoriesViewController: ATCGenericCollectionViewController {
         self.genericDataSource = dsProvider.newsHomeDataSource
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
-        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "ATCFinanceNewsModel")
+        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "FinanceNewsModel")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if object is CardFooterModel {
                 let vc = NewsViewController(dsProvider: strongSelf.dsProvider, uiConfig: strongSelf.uiConfig)
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
-            } else if let news = object as? ATCFinanceNewsModel {
+            } else if let news = object as? FinanceNewsModel {
                 if let url = URL(string: news.url) {
                     let vc = WebViewController(url: url, title: news.publication)
                     strongSelf.navigationController?.pushViewController(vc, animated: true)

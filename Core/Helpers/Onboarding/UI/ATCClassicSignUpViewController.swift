@@ -22,9 +22,9 @@ class ATCClassicSignUpViewController: UIViewController, ATCSignUpScreenProtocol 
 
     weak var delegate: ATCSignUpScreenDelegate?
 
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let uiConfig: OnboardingConfigurationProtocol
 
-    init(uiConfig: ATCOnboardingConfigurationProtocol) {
+    init(uiConfig: OnboardingConfigurationProtocol) {
         self.uiConfig = uiConfig
         super.init(nibName: "ATCClassicSignUpViewController", bundle: nil)
     }

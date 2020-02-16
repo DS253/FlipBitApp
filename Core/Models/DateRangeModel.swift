@@ -8,16 +8,16 @@
 
 import UIKit
 
-struct ATCDateRange {
+struct DateRange {
     var title: String
     var startDate: Date
     var endDate: Date
     var isCustomRange: Bool
 }
 
-class ATCDateRangeModel: GenericBaseModel {
+class DateRangeModel: GenericBaseModel {
     var title: String
-    var currentDateRange: ATCDateRange
+    var currentDateRange: DateRange
 
     required init(jsonDict: [String: Any]) {
         title = ""
@@ -47,14 +47,14 @@ class ATCDateRangeModel: GenericBaseModel {
         return title
     }
 
-    var ranges: [ATCDateRange] = [
-        ATCDateRange(title: "Custom Range", startDate: Date(), endDate: Date(), isCustomRange: true),
-        ATCDateRange(title: "Today", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "Yesterday", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "Last Week", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "This Month", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "Last Month", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "Year to Date", startDate: Date(), endDate: Date(), isCustomRange: false),
-        ATCDateRange(title: "Lifetime", startDate: Date(), endDate: Date(), isCustomRange: false),
+    var ranges: [DateRange] = [
+        DateRange(title: "Custom Range", startDate: Date(), endDate: Date(), isCustomRange: true),
+        DateRange(title: "Today", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "Yesterday", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "Last Week", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "This Month", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "Last Month", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "Year to Date", startDate: Date(), endDate: Date(), isCustomRange: false),
+        DateRange(title: "Lifetime", startDate: Date(), endDate: Date(), isCustomRange: false),
     ]
 }

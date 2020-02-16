@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseStorage
 import UIKit
 
-class ATCProfileFirebaseUpdater: ATCProfileUpdaterProtocol {
+class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
     var updateInProgress: Bool = false
 
     var usersTable: String

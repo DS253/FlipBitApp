@@ -17,7 +17,7 @@ class FinanceInstitutionRowAdapter: GenericCollectionRowAdapter {
     }
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let institution = object as? ATCFinanceInstitution, let cell = cell as? FinanceInstitutionCollectionViewCell {
+        if let institution = object as? FinanceInstitution, let cell = cell as? FinanceInstitutionCollectionViewCell {
             cell.imageView.kf.setImage(with: URL(string: institution.imageUrl))
             cell.imageView.contentMode = .scaleToFill
             cell.imageView.layer.cornerRadius = 60 / 2
@@ -37,7 +37,7 @@ class FinanceInstitutionRowAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard object is ATCFinanceInstitution else { return .zero }
+        guard object is FinanceInstitution else { return .zero }
         return CGSize(width: containerBounds.width / 3, height: 120)
     }
 }

@@ -8,17 +8,17 @@
 
 import UIKit
 
-class AssetSearchViewController: ATCGenericSearchViewController<ATCFinanceAsset> {
+class AssetSearchViewController: ATCGenericSearchViewController<FinanceAsset> {
     init(uiConfig: UIGenericConfigurationProtocol,
          searchDataSource: ATCGenericSearchViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider,
          title: String) {
         super.init(configuration: ATCGenericSearchViewControllerConfiguration(searchBarPlaceholderText: title, uiConfig: uiConfig, cellPadding: 0))
         self.searchDataSource = searchDataSource
-        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAsset")
+        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")
         self.searchResultsController.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let `self` = self else { return }
-            if let asset = object as? ATCFinanceAsset {
+            if let asset = object as? FinanceAsset {
                 let vc = AssetDetailsViewController(asset: asset,
                                                     user: dsProvider.user,
                                                     uiConfig: uiConfig,

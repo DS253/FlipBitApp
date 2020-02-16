@@ -15,16 +15,16 @@ protocol ATCSignUpScreenManagerDelegate: class {
 
 class ATCSignUpScreenManager: ATCSignUpScreenDelegate {
     let signUpScreen: ATCSignUpScreenProtocol
-    let viewModel: ATCSignUpScreenViewModel
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let viewModel: SignUpScreenViewModel
+    let uiConfig: OnboardingConfigurationProtocol
     let serverConfig: ATCOnboardingServerConfigurationProtocol
     let firebaseLoginManager: ATCFirebaseLoginManager?
 
     weak var delegate: ATCSignUpScreenManagerDelegate?
 
     init(signUpScreen: ATCSignUpScreenProtocol,
-         viewModel: ATCSignUpScreenViewModel,
-         uiConfig: ATCOnboardingConfigurationProtocol,
+         viewModel: SignUpScreenViewModel,
+         uiConfig: OnboardingConfigurationProtocol,
          serverConfig: ATCOnboardingServerConfigurationProtocol) {
         self.signUpScreen = signUpScreen
         self.viewModel = viewModel

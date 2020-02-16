@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import UIKit
 
-class ATCSocialFirebaseUserManager: ATCSocialUserManagerProtocol {
+class ATCSocialFirebaseUserManager: SocialUserManagerProtocol {
     func fetchUser(userID: String, completion: @escaping (_ user: ATCUser?) -> Void) {
         let usersRef = Firestore.firestore().collection("users").whereField("userID", isEqualTo: userID)
         usersRef.getDocuments { (querySnapshot, error) in

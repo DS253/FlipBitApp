@@ -33,7 +33,7 @@ class TransactionsViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
         self.genericDataSource = transactionDataSource
-        self.use(adapter: TransactionsRowAdapter(uiConfig: uiConfig), for: "ATCFinanceTransaction")
+        self.use(adapter: TransactionsRowAdapter(uiConfig: uiConfig), for: "FinanceTransaction")
         self.title = "Transactions"
     }
 

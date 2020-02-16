@@ -36,7 +36,7 @@ class ATCGenericSearchViewController<T: GenericBaseModel>: UIViewController, UIS
     let searchController: UISearchController
     let configuration: ATCGenericSearchViewControllerConfiguration
     let searchResultsController: ATCGenericCollectionViewController
-    let localDataSource: ATCGenericLocalDataSource<T>
+    let localDataSource: GenericLocalDataSource<T>
     var cancelBlock: ATCGenericSearchViewControllerCancelBlock?
 
     var searchDataSource: ATCGenericSearchViewControllerDataSource? {
@@ -57,7 +57,7 @@ class ATCGenericSearchViewController<T: GenericBaseModel>: UIViewController, UIS
                                                                      scrollEnabled: true,
                                                                      uiConfig: configuration.uiConfig,
                                                                      emptyViewModel: nil)
-        localDataSource = ATCGenericLocalDataSource<T>(items: [])
+        localDataSource = GenericLocalDataSource<T>(items: [])
         searchResultsController = ATCGenericCollectionViewController(configuration: config)
         searchResultsController.genericDataSource = localDataSource
         

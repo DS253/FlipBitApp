@@ -1,26 +1,26 @@
 //
-//  ATCSelectFilter.swift
-//  ListingApp
+//  SelectFilter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/16/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-struct ATCFilterOption {
+struct FilterOption {
     var id: String
     var name: String
 }
 
-class ATCSelectFilter: GenericBaseModel {
+class SelectFilter: GenericBaseModel {
     var id: String
-    var options: [ATCFilterOption]
+    var options: [FilterOption]
     var title: String
     var categoryId: String?
-    var selectedOption: ATCFilterOption?
-
-    init(id: String, title: String, options: [ATCFilterOption], categoryId: String? = nil) {
+    var selectedOption: FilterOption?
+    
+    init(id: String, title: String, options: [FilterOption], categoryId: String? = nil) {
         self.id = id
         self.options = options
         self.title = title
@@ -29,22 +29,22 @@ class ATCSelectFilter: GenericBaseModel {
             self.selectedOption = first
         }
     }
-
+    
     required init(jsonDict: [String: Any]) {
         self.id = jsonDict["id"] as? String ?? ""
         self.title = jsonDict["name"] as? String ?? ""
         self.categoryId = jsonDict["category"] as? String
-
-        var options: [ATCFilterOption] = [ATCFilterOption(id: "all_id", name: "All")]
+        
+        var options: [FilterOption] = [FilterOption(id: "all_id", name: "All")]
         for optionStr in (jsonDict["options"] as? [String] ?? []) {
-            options.append(ATCFilterOption(id: "firebase_option_id", name: optionStr))
+            options.append(FilterOption(id: "firebase_option_id", name: optionStr))
         }
         self.options = options
         if let first = options.first {
             self.selectedOption = first
         }
     }
-
+    
     var description: String {
         return self.id
     }

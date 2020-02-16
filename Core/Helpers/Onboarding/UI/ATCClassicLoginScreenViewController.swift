@@ -21,9 +21,9 @@ class ATCClassicLoginScreenViewController: UIViewController, ATCLoginScreenProto
     @IBOutlet weak var appleSignInStackView: UIStackView!
 
     weak var delegate: ATCLoginScreenDelegate?
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let uiConfig: OnboardingConfigurationProtocol
 
-    init(uiConfig: ATCOnboardingConfigurationProtocol) {
+    init(uiConfig: OnboardingConfigurationProtocol) {
         self.uiConfig = uiConfig
         super.init(nibName: "ATCClassicLoginScreenViewController", bundle: nil)
     }

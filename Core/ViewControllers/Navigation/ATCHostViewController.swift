@@ -83,7 +83,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
 
     var items: [ATCNavigationItem] {
         didSet {
-            menuViewController?.genericDataSource = ATCGenericLocalDataSource(items: items)
+            menuViewController?.genericDataSource = GenericLocalDataSource(items: items)
             menuViewController?.collectionView?.reloadData()
         }
     }
@@ -96,20 +96,20 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
     var drawerController: ATCDrawerController?
     var onboardingCoordinator: ATCOnboardingCoordinatorProtocol?
     var walkthroughVC: ATCWalkthroughViewController?
-    var profilePresenter: ATCProfileScreenPresenterProtocol?
+    var profilePresenter: ProfileScreenPresenterProtocol?
     var pushNotificationsEnabled: Bool
     var locationUpdatesEnabled: Bool
     var pushManager: ATCPushNotificationManager?
     var locationManager: LocationManager?
-    var profileUpdater: ATCProfileUpdaterProtocol?
+    var profileUpdater: ProfileUpdaterProtocol?
 
     weak var delegate: ATCHostViewControllerDelegate?
 
     init(configuration: ATCHostConfiguration,
          onboardingCoordinator: ATCOnboardingCoordinatorProtocol?,
          walkthroughVC: ATCWalkthroughViewController?,
-         profilePresenter: ATCProfileScreenPresenterProtocol? = nil,
-         profileUpdater: ATCProfileUpdaterProtocol? = nil) {
+         profilePresenter: ProfileScreenPresenterProtocol? = nil,
+         profileUpdater: ProfileUpdaterProtocol? = nil) {
         self.style = configuration.style
         self.onboardingCoordinator = onboardingCoordinator
         self.walkthroughVC = walkthroughVC
@@ -339,7 +339,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
             )
             let menuConfiguration = configuration.menuConfiguration
             menuViewController = ATCMenuCollectionViewController(menuConfiguration: menuConfiguration, collectionVCConfiguration: collectionVCConfiguration)
-            menuViewController?.genericDataSource = ATCGenericLocalDataSource<ATCNavigationItem>(items: menuConfiguration.items)
+            menuViewController?.genericDataSource = GenericLocalDataSource<ATCNavigationItem>(items: menuConfiguration.items)
             drawerController = ATCDrawerController(rootViewController: navigationRootController!, menuController: menuViewController!)
             navigationRootController?.drawerDelegate = drawerController
             if let drawerController = drawerController {

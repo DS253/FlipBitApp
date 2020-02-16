@@ -1,14 +1,14 @@
 //
-//  ATCFinanceAssetPosition.swift
-//  FinanceApp
+//  FinanceAssetPosition.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/23/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCFinanceAssetPosition: GenericBaseModel {
+class FinanceAssetPosition: GenericBaseModel {
     var title: String
     var shares: Double
     var equity: String
@@ -16,11 +16,11 @@ class ATCFinanceAssetPosition: GenericBaseModel {
     var avgCost: String
     var totalReturn: String
     var todayReturn: String
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(title: String,
          shares: Double,
          equity: String,
@@ -36,7 +36,7 @@ class ATCFinanceAssetPosition: GenericBaseModel {
         self.totalReturn = totalReturn
         self.todayReturn = todayReturn
     }
-
+    
     var description: String {
         return totalReturn
     }

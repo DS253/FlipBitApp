@@ -19,7 +19,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
     let newsVC: NewsViewController
     let notificationsVC: FinanceNotificationsViewController
     var profileVC: ATCProfileViewController?
-    let dsProvider: ATCFinanceDataSourceProviderProtocol
+    let dsProvider: FinanceDataSourceProviderProtocol
 
     init(uiConfig: FinanceUIConfiguration,
          serverConfig: ATCOnboardingServerConfigurationProtocol,
@@ -112,25 +112,25 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
     }
 
     fileprivate func onboardingCoordinator(uiConfig: FinanceUIConfiguration, serverConfig: ATCOnboardingServerConfigurationProtocol) -> ATCOnboardingCoordinatorProtocol {
-        let landingViewModel = ATCLandingScreenViewModel(imageIcon: "finance-app-icon-1",
+        let landingViewModel = LandingScreenViewModel(imageIcon: "finance-app-icon-1",
                                                          title: "Welcome to Instacoin",
                                                          subtitle: "Exchange, trade and monitor cryptocurrencies.",
                                                          loginString: "Log In",
                                                          signUpString: "Sign Up")
-        let loginViewModel = ATCLoginScreenViewModel(contactPointField: "E-mail or phone number",
+        let loginViewModel = LoginScreenViewModel(contactPointField: "E-mail or phone number",
                                                      passwordField: "Password",
                                                      title: "Sign In",
                                                      loginString: "Log In",
                                                      facebookString: "Facebook Login",
                                                      separatorString: "OR")
 
-        let signUpViewModel = ATCSignUpScreenViewModel(nameField: "Full Name",
+        let signUpViewModel = SignUpScreenViewModel(nameField: "Full Name",
                                                        phoneField: "Phone Number",
                                                        emailField: "E-mail Address",
                                                        passwordField: "Password",
                                                        title: "Create new account",
                                                        signUpString: "Sign Up")
-        let userManager: ATCSocialUserManagerProtocol? = serverConfig.isFirebaseAuthEnabled ? ATCSocialFirebaseUserManager() : nil
+        let userManager: SocialUserManagerProtocol? = serverConfig.isFirebaseAuthEnabled ? ATCSocialFirebaseUserManager() : nil
         return ATCClassicOnboardingCoordinator(landingViewModel: landingViewModel,
                                                loginViewModel: loginViewModel,
                                                signUpViewModel: signUpViewModel,

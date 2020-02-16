@@ -31,12 +31,12 @@ class FinanceAddInstitutionViewController: ATCGenericCollectionViewController {
         super.init(configuration: config)
 
         self.genericDataSource = dsProvider.institutionsDataSource
-        self.use(adapter: FinanceInstitutionRowAdapter(uiConfig: uiConfig), for: "ATCFinanceInstitution")
+        self.use(adapter: FinanceInstitutionRowAdapter(uiConfig: uiConfig), for: "FinanceInstitution")
 //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 12)), for: "ATCDivider")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let institution = object as? ATCFinanceInstitution {
+            if let institution = object as? FinanceInstitution {
                 // code to handle linking a new institution institution
                 // we are just dismissing the screen for now
                 strongSelf.didTapDone()

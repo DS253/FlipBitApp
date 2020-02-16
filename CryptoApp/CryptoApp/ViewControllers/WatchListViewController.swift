@@ -33,16 +33,16 @@ class WatchlistViewController: ATCGenericCollectionViewController {
         
         // Fetching the watchlist from disk and setting it up as data source for the view contorller
         let store = ATCDiskPersistenceStore(key: "asset_watchlist")
-        if let assets = store.retrieve() as? [ATCFinanceAsset] {
-            self.genericDataSource = ATCGenericLocalDataSource(items: assets)
+        if let assets = store.retrieve() as? [FinanceAsset] {
+            self.genericDataSource = GenericLocalDataSource(items: assets)
         } else {
             self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [])
         }
         
-        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAsset")
+        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let stock = object as? ATCFinanceAsset {
+            if let stock = object as? FinanceAsset {
                 let vc = AssetDetailsViewController(asset: stock,
                                                     user: strongSelf.dsProvider.user,
                                                     uiConfig: strongSelf.uiConfig,

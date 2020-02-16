@@ -12,7 +12,7 @@ import Photos
 
 class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImageTapCollectionViewDelegate {
     let db = Firestore.firestore()
-    var profileImageUpdater: ATCProfileUpdaterProtocol? = nil
+    var profileImageUpdater: ProfileUpdaterProtocol? = nil
     
     var user: ATCUser? {
         didSet {
@@ -41,7 +41,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
         self.items = items
         self.uiConfig = uiConfig
         super.init(configuration: profileVCConfig, selectionBlock: selectionBlock)
-        self.use(adapter: ATCProfileItemRowAdapter(uiConfig: uiConfig), for: "ProfileItem")
+        self.use(adapter: ProfileItemRowAdapter(uiConfig: uiConfig), for: "ProfileItem")
         self.use(adapter: ATCTextRowAdapter(font: uiConfig.boldFont(size: 18),
                                             textColor: uiConfig.mainTextColor,
                                             alignment: .center),
@@ -50,7 +50,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
         roundImageAdapter.delegate = self
         self.use(adapter: roundImageAdapter, for: "ATCImage")
         self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 10), for: "ATCDivider")
-        self.use(adapter: ATCProfileButtonItemRowAdapter(uiConfig: uiConfig), for: "ProfileButtonItem")
+        self.use(adapter: ProfileButtonItemRowAdapter(uiConfig: uiConfig), for: "ProfileButtonItem")
         self.use(adapter: InstaMultiRowPageCarouselRowAdapter(uiConfig: uiConfig), for: "InstaMultiRowPageCarouselViewModel")
         self.update()
     }

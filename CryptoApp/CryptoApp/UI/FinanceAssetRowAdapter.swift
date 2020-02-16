@@ -15,7 +15,7 @@ class FinanceAssetRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let asset = object as? ATCFinanceAsset, let cell = cell as? FinanceAssetCollectionViewCell {
+        if let asset = object as? FinanceAsset, let cell = cell as? FinanceAssetCollectionViewCell {
             cell.assetImageView.kf.setImage(with: URL(string: asset.logoURL))
             cell.assetImageView.contentMode = .scaleAspectFill
             cell.assetImageView.tintColor = .white
@@ -49,7 +49,7 @@ class FinanceAssetRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCFinanceAsset else { return .zero }
+        guard let viewModel = object as? FinanceAsset else { return .zero }
         return CGSize(width: containerBounds.width, height: 80)
     }
 }

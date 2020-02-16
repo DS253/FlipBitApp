@@ -1,14 +1,14 @@
 //
-//  ATCFinanceAssetStats.swift
-//  FinanceApp
+//  FinanceAssetStats.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/23/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCFinanceAssetStats: GenericBaseModel {
+class FinanceAssetStats: GenericBaseModel {
     var open: String
     var high: String
     var low: String
@@ -19,21 +19,21 @@ class ATCFinanceAssetStats: GenericBaseModel {
     var mktCap: String
     var peRatio: String
     var divYield: String
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(open: String,
          high: String,
          low: String,
          wk52High: String,
-        wk52Low: String,
-        volume: String,
-        avgVol: String,
-        mktCap: String,
-        peRatio: String,
-        divYield: String) {
+         wk52Low: String,
+         volume: String,
+         avgVol: String,
+         mktCap: String,
+         peRatio: String,
+         divYield: String) {
         self.open = open
         self.high = high
         self.low = low
@@ -45,7 +45,7 @@ class ATCFinanceAssetStats: GenericBaseModel {
         self.peRatio = peRatio
         self.divYield = divYield
     }
-
+    
     var description: String {
         return avgVol
     }

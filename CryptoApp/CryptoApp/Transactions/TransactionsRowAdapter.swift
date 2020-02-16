@@ -15,7 +15,7 @@ class TransactionsRowAdapter: GenericCollectionRowAdapter {
     }
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let transaction = object as? ATCFinanceTransaction, let cell = cell as? TransactionCollectionViewCell {
+        if let transaction = object as? FinanceTransaction, let cell = cell as? TransactionCollectionViewCell {
             if transaction.imageURL.count == 0 {
                 let placeholder = UIImage.localImage("storefront-icon", template: true)
                 cell.imageView.image = placeholder
@@ -59,7 +59,7 @@ class TransactionsRowAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard object is ATCFinanceTransaction else { return .zero }
+        guard object is FinanceTransaction else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)
     }
 }

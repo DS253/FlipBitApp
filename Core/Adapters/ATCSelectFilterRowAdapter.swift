@@ -28,7 +28,7 @@ class ATCSelectFilterRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let filter = object as? ATCSelectFilter, let cell = cell as? ATCSelectFilterCollectionViewCell {
+        if let filter = object as? SelectFilter, let cell = cell as? ATCSelectFilterCollectionViewCell {
             cell.filterNameLabel.text = filter.title
             cell.selectedOptionLabel.text = filter.selectedOption?.name
             cell.cellContainerView.addBorder(side: .bottom, thickness: 0.5, color: UIColor(hexString: "#e6e6e6"))

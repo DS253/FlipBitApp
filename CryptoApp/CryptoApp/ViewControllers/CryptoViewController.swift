@@ -33,11 +33,11 @@ class CryptoViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
         self.genericDataSource = dataSource
-        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAsset")
+        self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let stock = object as? ATCFinanceAsset {
+            if let stock = object as? FinanceAsset {
                 let vc = AssetDetailsViewController(asset: stock,
                                                     user: strongSelf.dsProvider.user,
                                                     uiConfig: strongSelf.uiConfig,

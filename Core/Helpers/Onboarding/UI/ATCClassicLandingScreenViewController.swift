@@ -17,9 +17,9 @@ class ATCClassicLandingScreenViewController: UIViewController, ATCLandingScreenP
 
     weak var delegate: ATCLandingScreenDelegate?
 
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let uiConfig: OnboardingConfigurationProtocol
 
-    init(uiConfig: ATCOnboardingConfigurationProtocol) {
+    init(uiConfig: OnboardingConfigurationProtocol) {
         self.uiConfig = uiConfig
         super.init(nibName: "ATCClassicLandingScreenViewController", bundle: nil)
     }

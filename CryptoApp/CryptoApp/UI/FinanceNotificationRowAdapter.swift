@@ -16,7 +16,7 @@ class FinanceNotificationRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ATCNotification, let cell = cell as? ATCNotificationCollectionViewCell else { return }
+        guard let viewModel = object as? NotificationModel, let cell = cell as? ATCNotificationCollectionViewCell else { return }
         cell.hairlineView.backgroundColor = uiConfig.hairlineColor
 
         cell.categoryLabel.text = viewModel.category
@@ -47,7 +47,7 @@ class FinanceNotificationRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCNotification else { return .zero }
+        guard let viewModel = object as? NotificationModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 120)
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceDataSourceProvider: ATCFinanceDataSourceProviderProtocol {
+class FinanceDataSourceProvider: FinanceDataSourceProviderProtocol {
     let uiConfig: UIGenericConfigurationProtocol
     var user: ATCUser?
 
@@ -32,16 +32,16 @@ class FinanceDataSourceProvider: ATCFinanceDataSourceProviderProtocol {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchAssetChart(for asset: ATCFinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
+    func fetchAssetChart(for asset: FinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchAssetDetails(for user: ATCUser?, asset: ATCFinanceAsset, completion: (_ position: ATCFinanceAssetPosition?, _ stats: ATCFinanceAssetStats, _ news: [ATCFinanceNewsModel]) -> Void) -> Void {
+    func fetchAssetDetails(for user: ATCUser?, asset: FinanceAsset, completion: (_ position: FinanceAssetPosition?, _ stats: FinanceAssetStats, _ news: [FinanceNewsModel]) -> Void) -> Void {
         completion(FinanceStaticDataProvider.assetPosition, FinanceStaticDataProvider.assetStats, FinanceStaticDataProvider.news)
     }
 
-    var chartConfig: ATCLineChartConfiguration {
-        return ATCLineChartConfiguration(circleHoleColor: uiConfig.mainThemeForegroundColor,
+    var chartConfig: LineChartConfiguration {
+        return LineChartConfiguration(circleHoleColor: uiConfig.mainThemeForegroundColor,
                                          gradientStartColor: UIColor(hexString: "#e9973d", alpha: 0.6),
                                          gradientEndColor: UIColor(hexString: "#e9973d", alpha: 0.6),
                                          lineColor: UIColor(hexString: "#e9973d"),
@@ -95,7 +95,7 @@ class FinanceDataSourceProvider: ATCFinanceDataSourceProviderProtocol {
         return ATCGenericLocalHeteroDataSource(items: FinanceStaticDataProvider.notifications)
     }
 
-    var profileUpdater: ATCProfileUpdaterProtocol {
+    var profileUpdater: ProfileUpdaterProtocol {
         return ATCProfileFirebaseUpdater(usersTable: "users")
     }
 

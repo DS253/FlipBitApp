@@ -1,24 +1,24 @@
 //
-//  ATCFinanceTransaction.swift
-//  FinanceApp
+//  FinanceTransaction.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCFinanceTransaction: GenericBaseModel {
+class FinanceTransaction: GenericBaseModel {
     var title: String
     var isPositive: Bool
     var price: String
     var imageURL: String
     var date: Date
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(title: String,
          isPositive: Bool,
          price: String,
@@ -30,7 +30,7 @@ class ATCFinanceTransaction: GenericBaseModel {
         self.imageURL = imageURL
         self.date = date
     }
-
+    
     var description: String {
         return title
     }

@@ -37,7 +37,7 @@ class ATCKeyboardViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
 
-        self.genericDataSource = ATCGenericLocalDataSource(items: keys)
+        self.genericDataSource = GenericLocalDataSource(items: keys)
         self.use(adapter: ATCKeyboardKeyRowAdapter(uiConfig: uiConfig), for: "ATCKeyboardKey")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in

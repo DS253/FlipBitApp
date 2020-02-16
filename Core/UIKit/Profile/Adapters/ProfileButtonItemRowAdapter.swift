@@ -1,20 +1,20 @@
 //
-//  ATCProfileButtonItemRowAdapter.swift
-//  DatingApp
+//  ProfileButtonItemRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
+class ProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
     var uiConfig: UIGenericConfigurationProtocol
-
+    
     init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ProfileButtonItem, let cell = cell as? ATCProfileButtonCollectionViewCell else { return }
         cell.button.setTitle(viewModel.title, for: .normal)
@@ -29,11 +29,11 @@ class ATCProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCProfileButtonCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ProfileButtonItem else { return .zero }
         return CGSize(width: containerBounds.width, height: 65.0)

@@ -30,11 +30,11 @@ class NewsViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
         self.genericDataSource = dsProvider.allNewsDataSource
-        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "ATCFinanceNewsModel")
+        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "FinanceNewsModel")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let news = object as? ATCFinanceNewsModel {
+            if let news = object as? FinanceNewsModel {
                 if let url = URL(string: news.url) {
                     let vc = WebViewController(url: url, title: news.publication)
                     strongSelf.navigationController?.pushViewController(vc, animated: true)

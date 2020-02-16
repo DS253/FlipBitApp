@@ -1,14 +1,14 @@
 //
-//  ATCFinanceAsset.swift
-//  FinanceApp
+//  FinanceAsset.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/16/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
+class FinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
     var title: String
     var ticker: String
     var priceChange: String
@@ -16,11 +16,11 @@ class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
     var price: String
     var color: String
     var logoURL: String
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(title: String,
          ticker: String,
          priceChange: String,
@@ -36,7 +36,7 @@ class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
         self.color = color
         self.logoURL = logoURL
     }
-
+    
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(title, forKey: "title")
         aCoder.encode(ticker, forKey: "ticker")
@@ -46,7 +46,7 @@ class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
         aCoder.encode(color, forKey: "color")
         aCoder.encode(logoURL, forKey: "logoURL")
     }
-
+    
     public convenience required init?(coder aDecoder: NSCoder) {
         let title = aDecoder.decodeObject(forKey: "title") as! String
         let ticker = aDecoder.decodeObject(forKey: "ticker") as! String
@@ -63,7 +63,7 @@ class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
                   color: color,
                   logoURL: logoURL)
     }
-
+    
     var diffIdentifier: String {
         return ticker
     }

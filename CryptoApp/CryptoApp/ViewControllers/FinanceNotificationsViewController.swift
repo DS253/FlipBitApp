@@ -30,11 +30,11 @@ class FinanceNotificationsViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
         self.genericDataSource = dsProvider.notificationsDataSource()
-        self.use(adapter: FinanceNotificationRowAdapter(uiConfig: uiConfig), for: "ATCNotification")
+        self.use(adapter: FinanceNotificationRowAdapter(uiConfig: uiConfig), for: "Notification")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard self != nil else { return }
-            if object is ATCNotification {
+            if object is NotificationModel {
             }
         }
         self.title = "Notifications"

@@ -11,10 +11,10 @@ import UIKit
 
 class FinanceAccountDetailsViewController: FormViewController {
     var user: ATCUser
-    var updater: ATCProfileUpdaterProtocol
+    var updater: ProfileUpdaterProtocol
 
     init(user: ATCUser,
-         updater: ATCProfileUpdaterProtocol) {
+         updater: ProfileUpdaterProtocol) {
         self.user = user
         self.updater = updater
         super.init(nibName: nil, bundle: nil)

@@ -36,12 +36,12 @@ class ATCClassicOnboardingCoordinator: ATCOnboardingCoordinatorProtocol, ATCLogi
     let serverConfig: ATCOnboardingServerConfigurationProtocol
     let firebaseLoginManager: ATCFirebaseLoginManager?
 
-    init(landingViewModel: ATCLandingScreenViewModel,
-         loginViewModel: ATCLoginScreenViewModel,
-         signUpViewModel: ATCSignUpScreenViewModel,
-         uiConfig: ATCOnboardingConfigurationProtocol,
+    init(landingViewModel: LandingScreenViewModel,
+         loginViewModel: LoginScreenViewModel,
+         signUpViewModel: SignUpScreenViewModel,
+         uiConfig: OnboardingConfigurationProtocol,
          serverConfig: ATCOnboardingServerConfigurationProtocol,
-         userManager: ATCSocialUserManagerProtocol?) {
+         userManager: SocialUserManagerProtocol?) {
         self.serverConfig = serverConfig
         self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? ATCFirebaseLoginManager() : nil
         self.landingScreen = ATCClassicLandingScreenViewController(uiConfig: uiConfig)

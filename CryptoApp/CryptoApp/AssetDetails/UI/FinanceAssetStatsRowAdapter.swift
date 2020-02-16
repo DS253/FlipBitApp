@@ -15,7 +15,7 @@ class FinanceAssetStatsRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let stats = object as? ATCFinanceAssetStats, let cell = cell as? FinanceAssetStatsCollectionViewCell {
+        if let stats = object as? FinanceAssetStats, let cell = cell as? FinanceAssetStatsCollectionViewCell {
 
             cell.titleView.text = "Stats"
             cell.titleView.textColor = uiConfig.mainTextColor
@@ -111,7 +111,7 @@ class FinanceAssetStatsRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCFinanceAssetStats else { return .zero }
+        guard let viewModel = object as? FinanceAssetStats else { return .zero }
         return CGSize(width: containerBounds.width, height: 250)
     }
 }

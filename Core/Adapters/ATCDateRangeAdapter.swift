@@ -17,7 +17,7 @@ class ATCDateRangeAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let dateRangeModel = object as? ATCDateRangeModel,
+        if let dateRangeModel = object as? DateRangeModel,
             let cell = cell as? ATCDateRangeCollectionViewCell {
             let caretImage = UIImage.localImage("caret-icon", template: true)
             cell.calendarImageView.image = caretImage
@@ -43,7 +43,7 @@ class ATCDateRangeAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let _ = object as? ATCDateRangeModel else { return .zero }
+        guard let _ = object as? DateRangeModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 50)
     }
 }

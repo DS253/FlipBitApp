@@ -78,7 +78,7 @@ class BankAccountViewController: ATCGenericCollectionViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
     }
 
-    fileprivate func lineChartData(chart: LineChart, config: ATCLineChartConfiguration) -> LineChartData {
+    fileprivate func lineChartData(chart: LineChart, config: LineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)
@@ -125,7 +125,7 @@ extension BankAccountViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.rightAxis.drawGridLinesEnabled = false
                 chartView.rightAxis.drawZeroLineEnabled = false
                 chartView.rightAxis.drawAxisLineEnabled = false
-                chartView.rightAxis.valueFormatter = ATCAbbreviatedAxisValueFormatter()
+                chartView.rightAxis.valueFormatter = AbbreviatedAxisValueFormatter()
                 chartView.rightAxis.labelTextColor = config.leftAxisColor
                 chartView.leftAxis.enabled = false
 

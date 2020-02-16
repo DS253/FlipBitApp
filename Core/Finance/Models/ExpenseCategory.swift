@@ -1,23 +1,23 @@
 //
-//  ATCExpenseCategory.swift
-//  FinanceApp
+//  ExpenseCategory.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/18/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCExpenseCategory: GenericBaseModel {
+class ExpenseCategory: GenericBaseModel {
     var title: String
     var color: String
     var logoURL: String
     var spending: String
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(title: String,
          color: String,
          logoURL: String,
@@ -27,7 +27,7 @@ class ATCExpenseCategory: GenericBaseModel {
         self.logoURL = logoURL
         self.spending = spending
     }
-
+    
     var description: String {
         return title
     }

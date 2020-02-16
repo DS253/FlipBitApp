@@ -12,11 +12,11 @@ import UIKit
 class AssetDetailsViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
-    let asset: ATCFinanceAsset
+    let asset: FinanceAsset
     let user: ATCUser?
     private let watchlistButton: UIButton
     
-    init(asset: ATCFinanceAsset,
+    init(asset: FinanceAsset,
          user: ATCUser?,
          uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
@@ -41,16 +41,16 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
-        self.use(adapter: FinanceAssetPositionRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAssetPosition")
-        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "ATCFinanceNewsModel")
+        self.use(adapter: FinanceAssetPositionRowAdapter(uiConfig: uiConfig), for: "FinanceAssetPosition")
+        self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "FinanceNewsModel")
         let tradingAdapter = AssetTradingUnitRowAdapter(uiConfig: uiConfig)
         tradingAdapter.delegate = self
         self.use(adapter: tradingAdapter, for: "FinanceTradingModel")
-        self.use(adapter: FinanceAssetStatsRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAssetStats")
+        self.use(adapter: FinanceAssetStatsRowAdapter(uiConfig: uiConfig), for: "FinanceAssetStats")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let news = object as? ATCFinanceNewsModel {
+            if let news = object as? FinanceNewsModel {
                 if let url = URL(string: news.url) {
                     let vc = WebViewController(url: url, title: news.publication)
                     strongSelf.navigationController?.pushViewController(vc, animated: true)
@@ -109,7 +109,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "ATCDivider")
     }
     
-    fileprivate func lineChartData(chart: LineChart, config: ATCLineChartConfiguration) -> LineChartData {
+    fileprivate func lineChartData(chart: LineChart, config: LineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)
@@ -180,7 +180,7 @@ extension AssetDetailsViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.rightAxis.drawGridLinesEnabled = false
                 chartView.rightAxis.drawZeroLineEnabled = false
                 chartView.rightAxis.drawAxisLineEnabled = false
-                chartView.rightAxis.valueFormatter = ATCAbbreviatedAxisValueFormatter()
+                chartView.rightAxis.valueFormatter = AbbreviatedAxisValueFormatter()
                 chartView.rightAxis.labelTextColor = config.leftAxisColor
                 chartView.leftAxis.enabled = false
                 
@@ -189,7 +189,7 @@ extension AssetDetailsViewController: ATCDatedLineChartViewControllerDelegate {
                 titleLabel.textColor = uiConfig.mainTextColor
                 //                chartView.leftAxis.labelTextColor = config.leftAxisColor
                 //                chartView.leftAxis.axisLineColor = config.leftAxisColor
-                //                chartView.leftAxis.valueFormatter = ATCAbbreviatedAxisValueFormatter()
+                //                chartView.leftAxis.valueFormatter = AbbreviatedAxisValueFormatter()
                 
                 //                chartView.chartDescription?.text = lineChart.name
                 //                chartView.chartDescription?.font = config.descriptionFont

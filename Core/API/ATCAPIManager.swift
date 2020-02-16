@@ -10,8 +10,8 @@ public class ATCAPIManager {
 
     fileprivate let networkingManager = ATCNetworkingManager()
 
-    func retrieveObjectFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ object: T?, _ status: ATCNetworkResponseStatus) -> Void) {
-        networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: ATCNetworkResponseStatus) in
+    func retrieveObjectFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ object: T?, _ status: NetworkResponseStatus) -> Void) {
+        networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: NetworkResponseStatus) in
             if let jsonDict = jsonData as? [String: Any] {
                 completion(T(jsonDict: jsonDict), status)
             } else {
@@ -20,8 +20,8 @@ public class ATCAPIManager {
         }
     }
 
-    func retrieveListFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ objects: [T]?, _ status: ATCNetworkResponseStatus) -> Void) {
-        networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: ATCNetworkResponseStatus) in
+    func retrieveListFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ objects: [T]?, _ status: NetworkResponseStatus) -> Void) {
+        networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: NetworkResponseStatus) in
             if let jsonArray = jsonData as? [[String: Any]] {
                 completion(jsonArray.compactMap{T(jsonDict: $0)}, status)
             } else {

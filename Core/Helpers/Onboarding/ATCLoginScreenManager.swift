@@ -17,10 +17,10 @@ protocol ATCLoginScreenManagerDelegate: class {
 
 class ATCLoginScreenManager: ATCLoginScreenDelegate {
     let loginScreen: ATCLoginScreenProtocol
-    let viewModel: ATCLoginScreenViewModel
-    let uiConfig: ATCOnboardingConfigurationProtocol
+    let viewModel: LoginScreenViewModel
+    let uiConfig: OnboardingConfigurationProtocol
     let serverConfig: ATCOnboardingServerConfigurationProtocol
-    let userManager: ATCSocialUserManagerProtocol?
+    let userManager: SocialUserManagerProtocol?
     let loginManager: ATCFirebaseLoginManager
 
     weak var delegate: ATCLoginScreenManagerDelegate?
@@ -31,10 +31,10 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
                                              "user_posts"]
 
     init(loginScreen: ATCLoginScreenProtocol,
-         viewModel: ATCLoginScreenViewModel,
-         uiConfig: ATCOnboardingConfigurationProtocol,
+         viewModel: LoginScreenViewModel,
+         uiConfig: OnboardingConfigurationProtocol,
          serverConfig: ATCOnboardingServerConfigurationProtocol,
-         userManager: ATCSocialUserManagerProtocol?) {
+         userManager: SocialUserManagerProtocol?) {
         self.loginScreen = loginScreen
         self.viewModel = viewModel
         self.uiConfig = uiConfig

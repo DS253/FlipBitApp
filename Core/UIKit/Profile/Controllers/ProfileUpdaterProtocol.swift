@@ -1,14 +1,14 @@
 //
-//  ATCProfileUpdaterProtocol.swift
-//  DatingApp
+//  ProfileUpdaterProtocol.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-protocol ATCProfileUpdaterProtocol: class {
+protocol ProfileUpdaterProtocol: class {
     func removePhoto(url: String, user: ATCUser, completion: @escaping () -> Void)
     func uploadPhoto(image: UIImage, user: ATCUser, isProfilePhoto: Bool, completion: @escaping () -> Void)
     func update(user: ATCUser,

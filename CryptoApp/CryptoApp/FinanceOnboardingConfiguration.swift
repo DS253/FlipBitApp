@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceOnboardingConfiguration: ATCOnboardingConfigurationProtocol {
+class FinanceOnboardingConfiguration: OnboardingConfigurationProtocol {
     var backgroundColor: UIColor
     var titleColor: UIColor
     var titleFont: UIFont

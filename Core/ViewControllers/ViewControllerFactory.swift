@@ -1,15 +1,15 @@
 //
-//  ATCViewControllerFactory.swift
-//  RestaurantApp
+//  ViewControllerFactory.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 5/15/18.
-//  Copyright © 2018 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCViewControllerFactory {
-
+class ViewControllerFactory {
+    
     static func storiesViewController(dataSource: ATCGenericCollectionViewControllerDataSource,
                                       uiConfig: UIGenericConfigurationProtocol,
                                       minimumInteritemSpacing: CGFloat = 0,
@@ -32,11 +32,11 @@ class ATCViewControllerFactory {
         let vc = ATCGenericCollectionViewController(configuration: configuration, selectionBlock: selectionBlock)
         // vc.genericDataSource = ATCGenericLocalDataSource<ATCStoryViewModel>(items: stories)
         vc.genericDataSource = dataSource
-
+        
         return vc
     }
-
-//    static func createContactUsViewController(viewModel: ATCContactUsViewModel, uiTheme: ATCContactUsUITheme) -> UIViewController {
-//        return ATCContactUsViewController(viewModel: viewModel, uiTheme: uiTheme, nibName: "ATCContactUsView", bundle: nil)
-//    }
+    
+    //    static func createContactUsViewController(viewModel: ATCContactUsViewModel, uiTheme: ATCContactUsUITheme) -> UIViewController {
+    //        return ATCContactUsViewController(viewModel: viewModel, uiTheme: uiTheme, nibName: "ATCContactUsView", bundle: nil)
+    //    }
 }

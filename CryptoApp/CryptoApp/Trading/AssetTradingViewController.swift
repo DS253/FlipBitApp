@@ -24,11 +24,11 @@ class AssetTradingViewController: UIViewController {
     @IBOutlet var keyboardContainerView: UIView!
     @IBOutlet var tradeButton: UIButton!
 
-    let asset: ATCFinanceAsset
+    let asset: FinanceAsset
     let keyboardViewController: ATCKeyboardViewController
     let uiConfig: UIGenericConfigurationProtocol
 
-    init(asset: ATCFinanceAsset,
+    init(asset: FinanceAsset,
          title: String,
          keys: [ATCKeyboardKey],
          uiConfig: UIGenericConfigurationProtocol) {

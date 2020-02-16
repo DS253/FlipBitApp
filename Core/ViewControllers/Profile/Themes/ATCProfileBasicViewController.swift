@@ -14,7 +14,7 @@ class ATCProfileBasicViewController: UIViewController {
     @IBOutlet var logoutButton: UIButton!
     @IBOutlet var fullNameLabel: UILabel!
 
-    var configuration: ATCProfileScreenConfiguration
+    var configuration: ProfileScreenConfiguration
     var isOwnProfile: Bool {
         return configuration.viewee.uid == configuration.viewer.uid
     }
@@ -22,7 +22,7 @@ class ATCProfileBasicViewController: UIViewController {
 
     init(nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?,
-         configuration: ATCProfileScreenConfiguration,
+         configuration: ProfileScreenConfiguration,
          uiConfig: UIGenericConfigurationProtocol) {
         self.configuration = configuration
         self.uiConfig = uiConfig
