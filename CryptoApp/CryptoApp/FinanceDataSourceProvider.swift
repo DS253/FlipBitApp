@@ -9,10 +9,10 @@
 import UIKit
 
 class FinanceDataSourceProvider: ATCFinanceDataSourceProviderProtocol {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     var user: ATCUser?
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 

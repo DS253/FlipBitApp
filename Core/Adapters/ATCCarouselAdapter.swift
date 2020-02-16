@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ATCCarouselAdapter : ATCGenericCollectionRowAdapter {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+class ATCCarouselAdapter : GenericCollectionRowAdapter {
+    let uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCCarouselViewModel, let cell = cell as? ATCCarouselCollectionViewCell else { return }
         cell.configure(viewModel: viewModel, uiConfig: self.uiConfig)
     }
@@ -24,7 +24,7 @@ class ATCCarouselAdapter : ATCGenericCollectionRowAdapter {
         return ATCCarouselCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCCarouselViewModel else { return .zero }
         return CGSize(width: containerBounds.width, height: viewModel.cellHeight)
     }

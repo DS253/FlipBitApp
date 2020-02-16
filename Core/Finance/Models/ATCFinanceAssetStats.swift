@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceAssetStats: ATCGenericBaseModel {
+class ATCFinanceAssetStats: GenericBaseModel {
     var open: String
     var high: String
     var low: String

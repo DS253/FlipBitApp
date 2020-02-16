@@ -1,14 +1,14 @@
 //
-//  ATCDismissButton.swift
-//  ChatApp
+//  DismissButton.swift
+//  CryptoApp
 //
-//  Created by Osama Naeem on 29/05/2019.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCDismissButton : UIButton {
+class DismissButton : UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

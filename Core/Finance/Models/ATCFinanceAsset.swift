@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceAsset: NSObject, NSCoding, ATCGenericBaseModel, ATCPersistable {
+class ATCFinanceAsset: NSObject, NSCoding, GenericBaseModel, ATCPersistable {
     var title: String
     var ticker: String
     var priceChange: String

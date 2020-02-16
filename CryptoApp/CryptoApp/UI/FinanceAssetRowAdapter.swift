@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FinanceAssetRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class FinanceAssetRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let asset = object as? ATCFinanceAsset, let cell = cell as? FinanceAssetCollectionViewCell {
             cell.assetImageView.kf.setImage(with: URL(string: asset.logoURL))
             cell.assetImageView.contentMode = .scaleAspectFill
@@ -48,7 +48,7 @@ class FinanceAssetRowAdapter: ATCGenericCollectionRowAdapter {
         return FinanceAssetCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCFinanceAsset else { return .zero }
         return CGSize(width: containerBounds.width, height: 80)
     }

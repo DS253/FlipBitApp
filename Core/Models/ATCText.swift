@@ -13,7 +13,7 @@ protocol ATCTextProtocol {
     var accessoryText: String? {get}
 }
 
-class ATCText: ATCGenericBaseModel, ATCTextProtocol {
+class ATCText: GenericBaseModel, ATCTextProtocol {
 
     var text: String
     var accessoryText: String?

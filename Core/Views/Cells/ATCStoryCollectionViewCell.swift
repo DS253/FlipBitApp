@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCStoryViewModel: NSObject, ATCGenericBaseModel {
+class ATCStoryViewModel: NSObject, GenericBaseModel {
     var imageURLString: String
     var title: String
     var atcDescription: String
@@ -28,7 +28,7 @@ class ATCStoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet var storyImageView: UIImageView!
     @IBOutlet var storyLabel: UILabel!
 
-    func configure(viewModel: ATCStoryViewModel, uiConfig: ATCUIGenericConfigurationProtocol) {
+    func configure(viewModel: ATCStoryViewModel, uiConfig: UIGenericConfigurationProtocol) {
         storyImageView.contentMode = .scaleAspectFill
         storyImageView.layer.masksToBounds = true
         storyImageView.clipsToBounds = true

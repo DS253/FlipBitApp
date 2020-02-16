@@ -1,9 +1,9 @@
 //
 //  UIScrollView.swift
-//  ChatApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/26/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -21,5 +21,4 @@ extension UIScrollView {
         let scrollViewBottomOffset = scrollContentSizeHeight + bottomInset - scrollViewHeight
         return scrollViewBottomOffset
     }
-
 }

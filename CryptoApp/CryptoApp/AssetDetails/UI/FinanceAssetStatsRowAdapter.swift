@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FinanceAssetStatsRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class FinanceAssetStatsRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let stats = object as? ATCFinanceAssetStats, let cell = cell as? FinanceAssetStatsCollectionViewCell {
 
             cell.titleView.text = "Stats"
@@ -110,7 +110,7 @@ class FinanceAssetStatsRowAdapter: ATCGenericCollectionRowAdapter {
         return FinanceAssetStatsCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCFinanceAssetStats else { return .zero }
         return CGSize(width: containerBounds.width, height: 250)
     }

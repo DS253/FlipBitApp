@@ -9,7 +9,7 @@
 import Charts
 import UIKit
 
-class ATCBarChartGroup: ATCGenericBaseModel {
+class ATCBarChartGroup: GenericBaseModel {
     let numbers: [Double]
     let name: String
     init(numbers: [Double], name: String) {
@@ -26,7 +26,7 @@ class ATCBarChartGroup: ATCGenericBaseModel {
     }
 }
 
-class ATCBarChart: ATCGenericBaseModel {
+class ATCBarChart: GenericBaseModel {
     let groups: [ATCBarChartGroup]
     let labels: [String]
     let name: String

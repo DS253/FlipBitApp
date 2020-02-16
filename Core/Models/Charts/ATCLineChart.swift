@@ -9,7 +9,7 @@
 import Charts
 import UIKit
 
-class ATCLineChart: ATCGenericBaseModel {
+class ATCLineChart: GenericBaseModel {
     let numbers: [Double]
     let name: String
 

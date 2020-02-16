@@ -10,7 +10,7 @@ import Charts
 import UIKit
 
 class AssetDetailsViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let asset: ATCFinanceAsset
     let user: ATCUser?
@@ -18,7 +18,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
     
     init(asset: ATCFinanceAsset,
          user: ATCUser?,
-         uiConfig: ATCUIGenericConfigurationProtocol,
+         uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
@@ -92,7 +92,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
                                                                      subcellHeight: nil)
             chartViewModel.parentViewController = self
 
-            var items: [ATCGenericBaseModel] = [chartViewModel]
+            var items: [GenericBaseModel] = [chartViewModel]
             if let position = position {
                 items.append(position)
             }

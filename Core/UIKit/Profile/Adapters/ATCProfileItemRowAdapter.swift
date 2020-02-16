@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ATCProfileItemRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+class ATCProfileItemRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCProfileItem, let cell = cell as? ATCProfileItemCollectionViewCell else { return }
         cell.iconImageView.image = viewModel.icon
         cell.iconImageView.tintColor = viewModel.color
@@ -39,7 +39,7 @@ class ATCProfileItemRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCProfileItemCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCProfileItem else { return .zero }
         return CGSize(width: containerBounds.width, height: 50.0)
     }

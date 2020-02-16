@@ -20,7 +20,7 @@ public enum ATCNavigationMenuItemType {
     case logout
 }
 
-public final class ATCNavigationItem: ATCGenericBaseModel {
+public final class ATCNavigationItem: GenericBaseModel {
     let viewController: UIViewController
     let title: String?
     let image: UIImage?
@@ -62,7 +62,7 @@ public struct ATCHostConfiguration {
     let topNavigationLeftImage: UIImage?
     let topNavigationTintColor: UIColor?
     let statusBarStyle: UIStatusBarStyle
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let pushNotificationsEnabled: Bool
     let locationUpdatesEnabled: Bool
 }
@@ -100,7 +100,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
     var pushNotificationsEnabled: Bool
     var locationUpdatesEnabled: Bool
     var pushManager: ATCPushNotificationManager?
-    var locationManager: ATCLocationManager?
+    var locationManager: LocationManager?
     var profileUpdater: ATCProfileUpdaterProtocol?
 
     weak var delegate: ATCHostViewControllerDelegate?
@@ -382,15 +382,15 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
             self.delegate?.hostViewController(self, didSync: user)
         }
         if locationUpdatesEnabled {
-            locationManager = ATCLocationManager()
+            locationManager = LocationManager()
             locationManager?.delegate = self
             locationManager?.requestWhenInUsePermission()
         }
     }
 }
 
-extension ATCHostViewController: ATCLocationManagerDelegate {
-    func locationManager(_ locationManager: ATCLocationManager, didReceive location: ATCLocation) {
+extension ATCHostViewController: LocationManagerDelegate {
+    func locationManager(_ locationManager: LocationManager, didReceive location: Location) {
         if !locationUpdatesEnabled {
             return
         }

@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseSearchDataSource<T: ATCGenericSearchable & ATCGenericBaseModel>: ATCGenericSearchViewControllerDataSource {
+class ATCFirebaseSearchDataSource<T: ATCGenericSearchable & GenericBaseModel>: ATCGenericSearchViewControllerDataSource {
 
     var viewer: ATCUser?
     weak var delegate: ATCGenericSearchViewControllerDataSourceDelegate?

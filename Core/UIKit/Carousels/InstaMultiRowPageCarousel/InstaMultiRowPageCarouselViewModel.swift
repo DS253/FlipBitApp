@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstaMultiRowPageCarouselViewModel: ATCGenericBaseModel {
+class InstaMultiRowPageCarouselViewModel: GenericBaseModel {
     var description: String = "InstaMultiRowPageCarouselViewModel"
 
     let cellHeight: CGFloat

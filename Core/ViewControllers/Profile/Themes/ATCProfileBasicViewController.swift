@@ -18,12 +18,12 @@ class ATCProfileBasicViewController: UIViewController {
     var isOwnProfile: Bool {
         return configuration.viewee.uid == configuration.viewer.uid
     }
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
 
     init(nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?,
          configuration: ATCProfileScreenConfiguration,
-         uiConfig: ATCUIGenericConfigurationProtocol) {
+         uiConfig: UIGenericConfigurationProtocol) {
         self.configuration = configuration
         self.uiConfig = uiConfig
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

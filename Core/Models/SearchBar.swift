@@ -1,16 +1,16 @@
 //
-//  ATCSearchBar.swift
-//  ChatApp
+//  SearchBar.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/21/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCSearchBar: ATCGenericBaseModel {
+class SearchBar: GenericBaseModel {
     var placeholder: String
-
+    
     init(placeholder: String) {
         self.placeholder = placeholder
     }

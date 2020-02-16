@@ -11,13 +11,13 @@ import UIKit
 class ATCGenericLocalHeteroDataSource: ATCGenericCollectionViewControllerDataSource {
     weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
 
-    let items: [ATCGenericBaseModel]
+    let items: [GenericBaseModel]
 
-    init(items: [ATCGenericBaseModel]) {
+    init(items: [GenericBaseModel]) {
         self.items = items
     }
 
-    func object(at index: Int) -> ATCGenericBaseModel? {
+    func object(at index: Int) -> GenericBaseModel? {
         if index < items.count {
             return items[index]
         }

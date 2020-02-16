@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCImage: ATCGenericBaseModel {
+class ATCImage: GenericBaseModel {
 
     var urlString: String?
     var localImage: UIImage? = nil

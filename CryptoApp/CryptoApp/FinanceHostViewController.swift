@@ -173,8 +173,8 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
         return vc
     }
 
-    fileprivate func selfProfileItems() -> [ATCGenericBaseModel] {
-        var items: [ATCGenericBaseModel] = []
+    fileprivate func selfProfileItems() -> [GenericBaseModel] {
+        var items: [GenericBaseModel] = []
         items.append(contentsOf: [ATCProfileItem(icon: UIImage.localImage("account-male-icon", template: true),
                                                  title: "Account Details",
                                                  type: .arrow,

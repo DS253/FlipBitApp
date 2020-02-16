@@ -13,13 +13,13 @@ protocol ATCKeyboardViewControllerDelegate: class {
 }
 
 class ATCKeyboardViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let keys: [ATCKeyboardKey]
 
     weak var delegate: ATCKeyboardViewControllerDelegate?
     
     init(keys: [ATCKeyboardKey],
-         uiConfig: ATCUIGenericConfigurationProtocol) {
+         uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.keys = keys
 

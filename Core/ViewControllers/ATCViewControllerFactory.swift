@@ -11,7 +11,7 @@ import UIKit
 class ATCViewControllerFactory {
 
     static func storiesViewController(dataSource: ATCGenericCollectionViewControllerDataSource,
-                                      uiConfig: ATCUIGenericConfigurationProtocol,
+                                      uiConfig: UIGenericConfigurationProtocol,
                                       minimumInteritemSpacing: CGFloat = 0,
                                       selectionBlock: ATCollectionViewSelectionBlock?) -> ATCGenericCollectionViewController {
         let layout = ATCCollectionViewFlowLayout()

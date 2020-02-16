@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ATCCardViewControllerContainerRowAdapter: ATCGenericCollectionRowAdapter {
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+class ATCCardViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCViewControllerContainerViewModel, let cell = cell as? ATCCardViewControllerContainerCollectionViewCell else { return }
         cell.configure(viewModel: viewModel)
     }
@@ -18,7 +18,7 @@ class ATCCardViewControllerContainerRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCCardViewControllerContainerCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCViewControllerContainerViewModel else { return .zero }
         var height: CGFloat
         if let cellHeight = viewModel.cellHeight {

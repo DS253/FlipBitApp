@@ -12,15 +12,15 @@ protocol AddBankAccountButtonRowAdapterDelegate: class {
     func rowAdapterDidTapButton(_ rowAdapter: AddBankAccountButtonRowAdapter)
 }
 
-class AddBankAccountButtonRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+class AddBankAccountButtonRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
     weak var delegate: AddBankAccountButtonRowAdapterDelegate?
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let _ = object as? AddBankAccountModel, let cell = cell as? AddBankAccountCollectionViewCell {
             cell.button.setTitle("Link Another Institution", for: .normal)
             cell.button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
@@ -39,7 +39,7 @@ class AddBankAccountButtonRowAdapter: ATCGenericCollectionRowAdapter {
         return AddBankAccountCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is AddBankAccountModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 80)
     }

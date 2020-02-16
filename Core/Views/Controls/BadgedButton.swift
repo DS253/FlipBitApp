@@ -1,9 +1,9 @@
 //
 //  BadgedButton.swift
-//  ShoppingApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/31/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -15,10 +15,10 @@ fileprivate struct Constants {
     static let badgedCountLabelFontSize: CGFloat = 12
 }
 
-class ATCBadgedButton: UIButton {
-
-    private let badgedCountLabel = ATCBadgedCountLabel()
-
+class BadgedButton: UIButton {
+    
+    private let badgedCountLabel = BadgedCountLabel()
+    
     var count: Int = 0 {
         didSet {
             badgedCountLabel.isHidden = (count == 0)
@@ -26,26 +26,26 @@ class ATCBadgedButton: UIButton {
             self.setNeedsLayout()
         }
     }
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         let size = badgedCountLabel.sizeThatFits(bounds.size)
         let badgedCountLabelSize = CGSize(width: size.width + 2 * Constants.badgedCountLabelHPadding, height: size.height + 2 * Constants.badgedCountLabelVPadding)
         let badgedCountLabelOrigin = CGPoint(x: bounds.maxX - badgedCountLabelSize.width / 2, y: -Constants.badgedCountLabelYOffset)
         badgedCountLabel.frame = CGRect(origin: badgedCountLabelOrigin, size: badgedCountLabelSize)
     }
-
+    
     private func commonInit() {
         addSubview(badgedCountLabel)
         badgedCountLabel.isHidden = true

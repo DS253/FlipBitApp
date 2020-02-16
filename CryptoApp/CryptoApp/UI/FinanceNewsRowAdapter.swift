@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FinanceNewsRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class FinanceNewsRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let news = object as? ATCFinanceNewsModel, let cell = cell as? FinanceNewsCollectionViewCell {
             cell.newsTitleLabel.text = news.title
             cell.newsTitleLabel.textColor = uiConfig.mainTextColor
@@ -34,7 +34,7 @@ class FinanceNewsRowAdapter: ATCGenericCollectionRowAdapter {
         return FinanceNewsCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCFinanceNewsModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 100)
     }

@@ -12,7 +12,7 @@ protocol ATCImageRowAdapterDelegate: class {
     func imageRowAdapter(_ adapter: ATCImageRowAdapter, didLoad image: UIImage)
 }
 
-class ATCImageRowAdapter: ATCGenericCollectionRowAdapter {
+class ATCImageRowAdapter: GenericCollectionRowAdapter {
 
     let cellHeight: CGFloat?
     let cellWidth: CGFloat?
@@ -40,7 +40,7 @@ class ATCImageRowAdapter: ATCGenericCollectionRowAdapter {
         self.bgColor = bgColor
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCImage, let cell = cell as? ATCImageCollectionViewCell else { return }
         cell.atcImageView.contentMode = contentMode
         cell.atcImageView.clipsToBounds = true
@@ -76,7 +76,7 @@ class ATCImageRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCImageCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCImage else { return .zero }
         if let size = size {
             return size(containerBounds)

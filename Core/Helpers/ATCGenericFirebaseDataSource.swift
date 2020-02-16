@@ -10,7 +10,7 @@ import FirebaseDatabase
 
 let kItemsPerPage: UInt = 10
 
-class ATCGenericFirebaseDataSource<T: ATCGenericBaseModel & ATCGenericFirebaseParsable>: ATCGenericCollectionViewControllerDataSource {
+class ATCGenericFirebaseDataSource<T: GenericBaseModel & ATCGenericFirebaseParsable>: ATCGenericCollectionViewControllerDataSource {
     weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
 
     private let dbRef = Database.database().reference()
@@ -23,7 +23,7 @@ class ATCGenericFirebaseDataSource<T: ATCGenericBaseModel & ATCGenericFirebasePa
         dbChild = dbRef.child(tableName)
     }
 
-    func object(at index: Int) -> ATCGenericBaseModel? {
+    func object(at index: Int) -> GenericBaseModel? {
         return store[index]
     }
 

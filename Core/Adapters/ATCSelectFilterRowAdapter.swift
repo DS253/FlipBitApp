@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCSelectFilterRowAdapter: ATCGenericCollectionRowAdapter {
+class ATCSelectFilterRowAdapter: GenericCollectionRowAdapter {
     let titleFont: UIFont?
     let optionFont: UIFont?
     let titleColor: UIColor
@@ -27,7 +27,7 @@ class ATCSelectFilterRowAdapter: ATCGenericCollectionRowAdapter {
         self.titleColor = titleColor
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let filter = object as? ATCSelectFilter, let cell = cell as? ATCSelectFilterCollectionViewCell {
             cell.filterNameLabel.text = filter.title
             cell.selectedOptionLabel.text = filter.selectedOption?.name
@@ -51,7 +51,7 @@ class ATCSelectFilterRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCSelectFilterCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         return CGSize(width: containerBounds.width, height: height)
     }
 }

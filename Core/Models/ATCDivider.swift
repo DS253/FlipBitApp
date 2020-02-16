@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCDivider: ATCGenericBaseModel {
+class ATCDivider: GenericBaseModel {
 
     var title: String?
 

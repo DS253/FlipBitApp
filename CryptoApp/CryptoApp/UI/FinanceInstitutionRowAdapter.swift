@@ -1,43 +1,44 @@
 //
 //  FinanceInstitutionRowAdapter.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/25/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class FinanceInstitutionRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+class FinanceInstitutionRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
     weak var delegate: AddBankAccountButtonRowAdapterDelegate?
-
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
-
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let institution = object as? ATCFinanceInstitution, let cell = cell as? FinanceInstitutionCollectionViewCell {
             cell.imageView.kf.setImage(with: URL(string: institution.imageUrl))
             cell.imageView.contentMode = .scaleToFill
             cell.imageView.layer.cornerRadius = 60 / 2
             cell.imageView.clipsToBounds = true
-
+            
             cell.titleLabel.text = institution.title
             cell.titleLabel.textColor = uiConfig.mainSubtextColor
             cell.titleLabel.font = uiConfig.regularFont(size: 14)
-
+            
             cell.backgroundColor = uiConfig.mainThemeBackgroundColor
             cell.containerView.backgroundColor = .clear
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return FinanceInstitutionCollectionViewCell.self
     }
-
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is ATCFinanceInstitution else { return .zero }
         return CGSize(width: containerBounds.width / 3, height: 120)
     }
 }
+

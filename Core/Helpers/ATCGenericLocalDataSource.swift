@@ -6,7 +6,7 @@
 //  Copyright © 2018 iOS App Templates. All rights reserved.
 //
 
-class ATCGenericLocalDataSource<T: ATCGenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
+class ATCGenericLocalDataSource<T: GenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
     weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
 
     var items: [T]
@@ -15,7 +15,7 @@ class ATCGenericLocalDataSource<T: ATCGenericBaseModel>: ATCGenericCollectionVie
         self.items = items
     }
 
-    func object(at index: Int) -> ATCGenericBaseModel? {
+    func object(at index: Int) -> GenericBaseModel? {
         if index < items.count {
             return items[index]
         }

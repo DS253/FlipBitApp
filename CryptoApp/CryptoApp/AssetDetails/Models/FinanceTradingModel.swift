@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceTradingModel: ATCGenericBaseModel {
+class FinanceTradingModel: GenericBaseModel {
 
     required init(jsonDict: [String: Any]) {
         fatalError()

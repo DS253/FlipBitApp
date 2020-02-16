@@ -27,14 +27,14 @@ class ATCAbbreviatedAxisValueFormatter: IAxisValueFormatter {
     }
 }
 
-class ATCLineChartAdapter: ATCGenericCollectionRowAdapter, ChartViewDelegate {
+class ATCLineChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     let config: ATCLineChartConfiguration
 
     init(config: ATCLineChartConfiguration) {
         self.config = config
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let lineChart = object as? ATCLineChart,
             let cell = cell as? ATCLineChartCollectionViewCell,
             let chartView = cell.lineChartView {
@@ -72,7 +72,7 @@ class ATCLineChartAdapter: ATCGenericCollectionRowAdapter, ChartViewDelegate {
         return ATCLineChartCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let lineChart = object as? ATCLineChart else { return .zero }
         return CGSize(width: containerBounds.width, height: 150)
     }

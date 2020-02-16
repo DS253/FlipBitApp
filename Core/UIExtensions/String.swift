@@ -1,9 +1,9 @@
 //
 //  String.swift
-//  ListingApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/10/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         return ceil(boundingBox.height)
     }
-
+    
     func atcTrimmed() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBankAccountModel: ATCGenericBaseModel {
+class AddBankAccountModel: GenericBaseModel {
     required init(jsonDict: [String: Any]) {
         fatalError()
     }

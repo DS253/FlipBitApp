@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCViewControllerContainerViewModel: ATCGenericBaseModel {
+class ATCViewControllerContainerViewModel: GenericBaseModel {
 
     var description: String = "Carousel"
 

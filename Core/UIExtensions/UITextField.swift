@@ -1,9 +1,9 @@
 //
 //  UITextField.swift
-//  DashboardApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/9/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -15,12 +15,11 @@ extension UITextField {
                    borderColor: UIColor? = nil,
                    backgroundColor: UIColor,
                    borderWidth: CGFloat? = nil) {
-        if let borderWidth = borderWidth {
-            self.layer.borderWidth = borderWidth
-        }
-        if let borderColor = borderColor {
-            self.layer.borderColor = borderColor.cgColor
-        }
+        
+        if let borderWidth = borderWidth { self.layer.borderWidth = borderWidth }
+        
+        if let borderColor = borderColor { self.layer.borderColor = borderColor.cgColor }
+        
         self.layer.cornerRadius = cornerRadius
         self.font = font
         self.textColor = color

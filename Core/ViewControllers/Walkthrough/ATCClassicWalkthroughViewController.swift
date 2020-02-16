@@ -16,10 +16,10 @@ class ATCClassicWalkthroughViewController: UIViewController {
     @IBOutlet var subtitleLabel: UILabel!
 
     let model: ATCWalkthroughModel
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
 
     init(model: ATCWalkthroughModel,
-         uiConfig: ATCUIGenericConfigurationProtocol,
+         uiConfig: UIGenericConfigurationProtocol,
          nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?) {
         self.model = model

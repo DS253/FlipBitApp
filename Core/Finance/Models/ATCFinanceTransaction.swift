@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceTransaction: ATCGenericBaseModel {
+class ATCFinanceTransaction: GenericBaseModel {
     var title: String
     var isPositive: Bool
     var price: String

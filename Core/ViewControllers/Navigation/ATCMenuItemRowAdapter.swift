@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCMenuItemRowAdapter: ATCGenericCollectionRowAdapter {
+class ATCMenuItemRowAdapter: GenericCollectionRowAdapter {
 
     let cellClassType: UICollectionViewCell.Type
     let uiConfig: ATCMenuUIConfiguration
@@ -18,7 +18,7 @@ class ATCMenuItemRowAdapter: ATCGenericCollectionRowAdapter {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let item = object as? ATCNavigationItem, let cell = cell as? ATCMenuItemCollectionViewCellProtocol else {
             fatalError()
         }
@@ -32,7 +32,7 @@ class ATCMenuItemRowAdapter: ATCGenericCollectionRowAdapter {
         return cellClassType
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         return CGSize(width: containerBounds.width, height: uiConfig.itemHeight)
     }
 }

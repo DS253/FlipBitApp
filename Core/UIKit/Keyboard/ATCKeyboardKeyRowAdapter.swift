@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ATCKeyboardKeyRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class ATCKeyboardKeyRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let key = object as? ATCKeyboardKey, let cell = cell as? ATCKeyboardKeyCollectionViewCell {
             cell.keyLabel.text = key.displayValue
             cell.keyLabel.textColor = uiConfig.mainTextColor
@@ -29,7 +29,7 @@ class ATCKeyboardKeyRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCKeyboardKeyCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is ATCKeyboardKey else { return .zero }
         return CGSize(width: containerBounds.width / 3, height: 70)
     }

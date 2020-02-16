@@ -1,9 +1,9 @@
 //
 //  TimeFormatHelper.swift
-//  NewsReader
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/28/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Foundation
@@ -39,13 +39,13 @@ class TimeFormatHelper {
         let years = (months / 12).rounded()
         return String(Int(years)) + " years ago"
     }
-
+    
     static func string(for date: Date, format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: date)
     }
-
+    
     static func chatString(for date: Date) -> String {
         let calendar = NSCalendar.current
         if calendar.isDateInToday(date) {

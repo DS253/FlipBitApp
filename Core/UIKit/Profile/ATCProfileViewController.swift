@@ -19,11 +19,11 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
             update()
         }
     }
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    var items: [ATCGenericBaseModel]
+    var uiConfig: UIGenericConfigurationProtocol
+    var items: [GenericBaseModel]
 
-    init(items: [ATCGenericBaseModel],
-         uiConfig: ATCUIGenericConfigurationProtocol,
+    init(items: [GenericBaseModel],
+         uiConfig: UIGenericConfigurationProtocol,
          selectionBlock: ATCollectionViewSelectionBlock? = nil) {
         let profileVCConfig = ATCGenericCollectionViewControllerConfiguration(
             pullToRefreshEnabled: false,
@@ -56,7 +56,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
     }
     
     fileprivate func update() {
-        var allItems: [ATCGenericBaseModel] = []
+        var allItems: [GenericBaseModel] = []
         if let user = user {
             allItems.append(ATCImage(user.profilePictureURL, placeholderImage: UIImage.localImage("empty-avatar")))
             allItems.append(ATCText(text: user.fullName()))

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CardFooterRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class CardFooterRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let footer = object as? CardFooterModel, let cell = cell as? CardFooterCollectionViewCell {
             cell.footerTitleLabel.text = footer.title
             cell.footerTitleLabel.textColor = uiConfig.mainSubtextColor
@@ -33,7 +33,7 @@ class CardFooterRowAdapter: ATCGenericCollectionRowAdapter {
         return CardFooterCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? CardFooterModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)
     }

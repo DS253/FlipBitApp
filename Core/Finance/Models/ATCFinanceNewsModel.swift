@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceNewsModel: ATCGenericBaseModel {
+class ATCFinanceNewsModel: GenericBaseModel {
     var title: String
     var publication: String
     var createdAt: Date

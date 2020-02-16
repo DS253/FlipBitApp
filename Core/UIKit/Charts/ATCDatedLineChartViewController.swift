@@ -44,11 +44,11 @@ class ATCDatedLineChartViewController: UIViewController, UICollectionViewDataSou
     @IBOutlet var titleLabel: UILabel!
 
     weak var delegate: ATCDatedLineChartViewControllerDelegate?
-    private let uiConfig: ATCUIGenericConfigurationProtocol
+    private let uiConfig: UIGenericConfigurationProtocol
     private let dateList: ATCDateList
     private var selectedDate: ATCChartDate
 
-    init(dateList: ATCDateList, uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(dateList: ATCDateList, uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dateList = dateList
         self.selectedDate = dateList.dates[0]

@@ -15,7 +15,7 @@ struct ATCDateRange {
     var isCustomRange: Bool
 }
 
-class ATCDateRangeModel: ATCGenericBaseModel {
+class ATCDateRangeModel: GenericBaseModel {
     var title: String
     var currentDateRange: ATCDateRange
 

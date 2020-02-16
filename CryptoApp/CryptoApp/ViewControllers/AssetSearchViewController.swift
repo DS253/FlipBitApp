@@ -9,7 +9,7 @@
 import UIKit
 
 class AssetSearchViewController: ATCGenericSearchViewController<ATCFinanceAsset> {
-    init(uiConfig: ATCUIGenericConfigurationProtocol,
+    init(uiConfig: UIGenericConfigurationProtocol,
          searchDataSource: ATCGenericSearchViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider,
          title: String) {

@@ -6,7 +6,7 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
-class ATCFacebookPost: ATCGenericBaseModel {
+class ATCFacebookPost: GenericBaseModel {
     var description: String {
         return ""
     }

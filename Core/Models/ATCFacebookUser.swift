@@ -6,7 +6,7 @@
 //  Copyright © 2017 iOS App Templates. All rights reserved.
 //
 
-class ATCFacebookUser: ATCGenericBaseModel {
+class ATCFacebookUser: GenericBaseModel {
 
     var firstName: String?
     var lastName: String?

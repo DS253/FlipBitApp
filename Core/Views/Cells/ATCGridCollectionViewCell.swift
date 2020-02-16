@@ -16,7 +16,7 @@ class ATCGridCollectionViewCell: UICollectionViewCell {
 
     private var viewModel: ATCGridViewModel?
 
-    func configure(viewModel: ATCGridViewModel, uiConfig: ATCUIGenericConfigurationProtocol) {
+    func configure(viewModel: ATCGridViewModel, uiConfig: UIGenericConfigurationProtocol) {
         self.viewModel = viewModel
 
         gridTitleLabel.isHidden = (viewModel.title == nil)

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ATCRoundImageRowAdapter: ATCGenericCollectionRowAdapter, ProfileImageTapDelegate {
+class ATCRoundImageRowAdapter: GenericCollectionRowAdapter, ProfileImageTapDelegate {
     weak var delegate: ProfileImageTapCollectionViewDelegate?
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCImage, let cell = cell as? ATCRoundImageCollectionViewCell else { return }
         cell.imageView.contentMode = .scaleAspectFill
         cell.imageView.clipsToBounds = true
@@ -29,7 +29,7 @@ class ATCRoundImageRowAdapter: ATCGenericCollectionRowAdapter, ProfileImageTapDe
         return ATCRoundImageCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCImage else { return .zero }
         return CGSize(width: containerBounds.width, height: 170)
     }

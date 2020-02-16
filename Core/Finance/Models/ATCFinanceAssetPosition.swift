@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceAssetPosition: ATCGenericBaseModel {
+class ATCFinanceAssetPosition: GenericBaseModel {
     var title: String
     var shares: Double
     var equity: String

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCTextRowAdapter: ATCGenericCollectionRowAdapter {
+class ATCTextRowAdapter: GenericCollectionRowAdapter {
     var font: UIFont
     var textColor: UIColor
     var staticHeight: CGFloat?
@@ -27,7 +27,7 @@ class ATCTextRowAdapter: ATCGenericCollectionRowAdapter {
         self.alignment = alignment
     }
     
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCTextProtocol, let cell = cell as? ATCTextCollectionViewCell else { return }
         cell.label.font = font
         cell.label.textColor = textColor
@@ -54,7 +54,7 @@ class ATCTextRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCTextCollectionViewCell.self
     }
     
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCTextProtocol else { return .zero }
         let width = containerBounds.width
         if let staticHeight = staticHeight {

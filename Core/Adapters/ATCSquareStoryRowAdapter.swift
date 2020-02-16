@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ATCSquareStoryRowAdapter: ATCGenericCollectionRowAdapter {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+class ATCSquareStoryRowAdapter: GenericCollectionRowAdapter {
+    let uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCStoryViewModel, let cell = cell as? ATCSquareStoryCollectionViewCell else { return }
         cell.configure(uiConfig: uiConfig, viewModel: viewModel)
     }
@@ -24,7 +24,7 @@ class ATCSquareStoryRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCSquareStoryCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         return CGSize(width: 120, height: 125)
     }
 }

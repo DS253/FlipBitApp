@@ -13,7 +13,7 @@ struct ATCFilterOption {
     var name: String
 }
 
-class ATCSelectFilter: ATCGenericBaseModel {
+class ATCSelectFilter: GenericBaseModel {
     var id: String
     var options: [ATCFilterOption]
     var title: String

@@ -10,11 +10,11 @@ import Charts
 import UIKit
 
 class BankAccountViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let financeAccount: ATCFinanceAccount
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol,
+    init(uiConfig: UIGenericConfigurationProtocol,
          financeAccount: ATCFinanceAccount,
          transactionDataSource: ATCGenericCollectionViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider) {

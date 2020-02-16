@@ -1,22 +1,22 @@
 //
-//  HomeCryptoViewController.swift
-//  FinanceApp
+//  CryptoPreviewViewController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/16/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
 class CryptoPreviewViewController: ATCGenericCollectionViewController {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+    var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
-
+    
     init(dsProvider: FinanceDataSourceProvider,
-         uiConfig: ATCUIGenericConfigurationProtocol) {
+         uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
-
+        
         let layout = ATCCollectionViewFlowLayout()
         let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: .white,
@@ -34,10 +34,10 @@ class CryptoPreviewViewController: ATCGenericCollectionViewController {
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
         self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAsset")
-
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let footer = object as? CardFooterModel {
+            if object is CardFooterModel {
                 let vc = CryptoHomeViewController(uiConfig: strongSelf.uiConfig, dsProvider: strongSelf.dsProvider)
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             } else if let stock = object as? ATCFinanceAsset {
@@ -49,7 +49,7 @@ class CryptoPreviewViewController: ATCGenericCollectionViewController {
             }
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

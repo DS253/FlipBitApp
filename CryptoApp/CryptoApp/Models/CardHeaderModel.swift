@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardHeaderModel: ATCGenericBaseModel {
+class CardHeaderModel: GenericBaseModel {
     var title: String
     
     required init(jsonDict: [String: Any]) {

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class TransactionsRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class TransactionsRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let transaction = object as? ATCFinanceTransaction, let cell = cell as? TransactionCollectionViewCell {
             if transaction.imageURL.count == 0 {
                 let placeholder = UIImage.localImage("storefront-icon", template: true)
@@ -58,7 +58,7 @@ class TransactionsRowAdapter: ATCGenericCollectionRowAdapter {
         return TransactionCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is ATCFinanceTransaction else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCExpenseCategory: ATCGenericBaseModel {
+class ATCExpenseCategory: GenericBaseModel {
     var title: String
     var color: String
     var logoURL: String

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstaLinedPageCarouselViewModel: ATCGenericBaseModel {
+class InstaLinedPageCarouselViewModel: GenericBaseModel {
     var description: String = "InstaLinedPageCarouselViewModel"
 
     let cellHeight: CGFloat

@@ -1,12 +1,12 @@
 //
-//  WordpressPost.swift
-//  AppTemplatesFoundation
+//  WordPressPost.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/4/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
-public class ATCWordpressPost: ATCGenericBaseModel {
+public class WordPressPost: GenericBaseModel {
     var link: String?
     var title: String?
     var text: String?

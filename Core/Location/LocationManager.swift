@@ -1,22 +1,22 @@
 //
-//  ATCLocationManager.swift
-//  CupertinoKit
+//  LocationManager.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/16/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import CoreLocation
 import UIKit
 
-protocol ATCLocationManagerDelegate: class {
-    func locationManager(_ locationManager: ATCLocationManager, didReceive location: ATCLocation)
+protocol LocationManagerDelegate: class {
+    func locationManager(_ locationManager: LocationManager, didReceive location: Location)
 }
 
-class ATCLocationManager: NSObject, CLLocationManagerDelegate {
+class LocationManager: NSObject, CLLocationManagerDelegate {
     let manager: CLLocationManager
-    weak var delegate: ATCLocationManagerDelegate?
-
+    weak var delegate: LocationManagerDelegate?
+    
     override init() {
         manager = CLLocationManager()
         super.init()
@@ -25,15 +25,15 @@ class ATCLocationManager: NSObject, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
     }
-
+    
     func requestWhenInUsePermission() {
         manager.requestWhenInUseAuthorization()
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let clLocation = locations.first {
-            let location = ATCLocation(longitude: clLocation.coordinate.longitude,
-                                       latitude: clLocation.coordinate.latitude)
+            let location = Location(longitude: clLocation.coordinate.longitude,
+                                    latitude: clLocation.coordinate.latitude)
             delegate?.locationManager(self, didReceive: location)
         }
     }

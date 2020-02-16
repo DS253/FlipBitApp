@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCWalkthroughModel: ATCGenericBaseModel {
+class ATCWalkthroughModel: GenericBaseModel {
     var title: String
     var subtitle: String
     var icon: String

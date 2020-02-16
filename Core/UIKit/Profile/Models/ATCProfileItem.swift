@@ -13,7 +13,7 @@ public enum ATCProfileItemType {
     case arrow
 }
 
-public class ATCProfileItem: ATCGenericBaseModel {
+public class ATCProfileItem: GenericBaseModel {
     var icon: UIImage?
     var title: String
     var type: ATCProfileItemType

@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class ATCUser: NSObject, ATCGenericBaseModel, NSCoding {
+open class ATCUser: NSObject, GenericBaseModel, NSCoding {
 
     static let defaultAvatarURL = "https://www.iosapptemplates.com/wp-content/uploads/2019/06/empty-avatar.jpg"
 
@@ -27,7 +27,7 @@ open class ATCUser: NSObject, ATCGenericBaseModel, NSCoding {
     var pushToken: String?
     var isOnline: Bool
     var photos: [String]? = nil
-    var location: ATCLocation? = nil
+    var location: Location? = nil
     var hasDefaultAvatar: Bool
 
     init(uid: String = "",
@@ -38,7 +38,7 @@ open class ATCUser: NSObject, ATCGenericBaseModel, NSCoding {
          pushToken: String? = nil,
          photos: [String]? = [],
          isOnline: Bool = false,
-         location: ATCLocation? = nil) {
+         location: Location? = nil) {
         self.firstName = firstName
         self.lastName = lastName
         self.uid = uid
@@ -63,9 +63,9 @@ open class ATCUser: NSObject, ATCGenericBaseModel, NSCoding {
         self.pushToken = representation["fcmToken"] as? String
         self.photos = representation["photos"] as? [String]
 
-        var location: ATCLocation? = nil
+        var location: Location? = nil
         if let locationDict = representation["location"] as? [String: Any] {
-            location = ATCLocation(representation: locationDict)
+            location = Location(representation: locationDict)
         }
         self.location = location
 
@@ -98,7 +98,7 @@ open class ATCUser: NSObject, ATCGenericBaseModel, NSCoding {
                   pushToken: aDecoder.decodeObject(forKey: "pushToken") as? String ?? "",
                   photos: aDecoder.decodeObject(forKey: "photos") as? [String] ?? [],
                   isOnline: aDecoder.decodeBool(forKey: "isOnline"),
-                  location: aDecoder.decodeObject(forKey: "location") as? ATCLocation)
+                  location: aDecoder.decodeObject(forKey: "location") as? Location)
     }
 
 //    public func mapping(map: Map) {

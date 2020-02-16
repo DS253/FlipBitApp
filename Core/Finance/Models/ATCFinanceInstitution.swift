@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCFinanceInstitution: ATCGenericBaseModel {
+class ATCFinanceInstitution: GenericBaseModel {
     var title: String
     var imageUrl: String
 

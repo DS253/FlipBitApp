@@ -1,20 +1,20 @@
 //
 //  CryptoHomeViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Charts
 import UIKit
 
 class CryptoHomeViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let allCryptosDataSource: ATCGenericCollectionViewControllerDataSource
-
-    init(uiConfig: ATCUIGenericConfigurationProtocol,
+    
+    init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
@@ -32,7 +32,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
                                                                          uiConfig: uiConfig,
                                                                          emptyViewModel: nil)
         super.init(configuration: homeConfig)
-
+        
         // Configuring the Stock Chart
         let dateList: ATCDateList = ATCDateList(dates: [
             ATCChartDate(title: "1D", startDate: Date().yesterday),
@@ -41,17 +41,17 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
             ATCChartDate(title: "3M", startDate: Date().threeMonthsAgo),
             ATCChartDate(title: "1Y", startDate: Date().oneYearAgo),
             ATCChartDate(title: "All", startDate: Date().infiniteAgo)
-            ])
-
+        ])
+        
         let lineChartViewController = ATCDatedLineChartViewController(dateList: dateList,
                                                                       uiConfig: uiConfig)
         lineChartViewController.delegate = self
-
+        
         let chartViewModel = ATCViewControllerContainerViewModel(viewController: lineChartViewController,
                                                                  cellHeight: 300,
                                                                  subcellHeight: nil)
         chartViewModel.parentViewController = self
-
+        
         // Configuring crypto list
         let cryptoListVC = CryptoViewController(uiConfig: uiConfig, dsProvider: dsProvider, dataSource: allCryptosDataSource)
         let cryptoListModel = ATCViewControllerContainerViewModel(viewController: cryptoListVC,
@@ -59,16 +59,16 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         cryptoListModel.parentViewController = self
         // Watchlist button
         let watchlistModel = CardFooterModel(title: "View Your Watchlist")
-
+        
         // Setting up the datasource
         self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [chartViewModel,
                                                                          cryptoListModel,
                                                                          watchlistModel])
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
-
+        
         self.title = "Instacoin"
-
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if let _ = object as? CardFooterModel {
@@ -77,11 +77,11 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
             }
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let searchBtn = UIButton(type: .system)
@@ -94,8 +94,8 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         searchBtn.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBtn)
     }
-
-
+    
+    
     @objc fileprivate func didTapSearch() {
         let searchVC = AssetSearchViewController(uiConfig: uiConfig,
                                                  searchDataSource: dsProvider.cryptoSearchDataSource,
@@ -103,7 +103,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
                                                  title: "Search Crypto...")
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
-
+    
     fileprivate func lineChartData(chart: ATCLineChart, config: ATCLineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
@@ -121,7 +121,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         let colors: CFArray = [config.gradientStartColor.cgColor, config.gradientEndColor.cgColor] as CFArray
         let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors, locations: [1.0, 0.0])
         let fill = Fill(linearGradient: gradient!, angle: 90.0)
-
+        
         line1.fill = fill
         let data = LineChartData()
         data.addDataSet(line1)
@@ -143,7 +143,7 @@ extension CryptoHomeViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.data = self.lineChartData(chart: lineChart, config: config)
                 chartView.backgroundColor = config.backgroundColor
                 chartView.chartDescription?.enabled = true
-
+                
                 chartView.pinchZoomEnabled = false
                 chartView.dragEnabled = false
                 chartView.setScaleEnabled(false)
@@ -156,7 +156,7 @@ extension CryptoHomeViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.rightAxis.valueFormatter = ATCAbbreviatedAxisValueFormatter()
                 chartView.rightAxis.labelTextColor = config.leftAxisColor
                 chartView.leftAxis.enabled = false
-
+                
                 titleLabel.text = FinanceStaticDataProvider.currencyString + String(Int(lineChart.numbers.last ?? 0.0))
                 titleLabel.font = uiConfig.regularFont(size: 30)
                 titleLabel.textColor = uiConfig.mainTextColor
@@ -166,4 +166,3 @@ extension CryptoHomeViewController: ATCDatedLineChartViewControllerDelegate {
         }
     }
 }
-

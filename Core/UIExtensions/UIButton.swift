@@ -1,9 +1,9 @@
 //
 //  UIButton.swift
-//  ListingApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/9/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -16,14 +16,14 @@ extension UIButton {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }
-
+    
     func configure(icon: UIImage, color: UIColor? = nil) {
         self.setImage(icon, for: .normal)
         if let color = color {
             tintColor = color
         }
     }
-
+    
     func configure(color: UIColor = .blue,
                    font: UIFont = UIFont.boldSystemFont(ofSize: 12),
                    cornerRadius: CGFloat,

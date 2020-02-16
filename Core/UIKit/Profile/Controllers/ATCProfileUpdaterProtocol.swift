@@ -17,5 +17,5 @@ protocol ATCProfileUpdaterProtocol: class {
                 lastName: String,
                 username: String,
                 completion: @escaping (_ success: Bool) -> Void)
-    func updateLocation(for user: ATCUser, to location: ATCLocation, completion: @escaping (_ success: Bool) -> Void)
+    func updateLocation(for user: ATCUser, to location: Location, completion: @escaping (_ success: Bool) -> Void)
 }

@@ -32,7 +32,7 @@ struct ATCCarouselViewModelConfiguration {
     var titleAlignment: NSTextAlignment?
 }
 
-class ATCCarouselViewModel: ATCGenericBaseModel {
+class ATCCarouselViewModel: GenericBaseModel {
     var description: String = "Carousel"
 
     let cellHeight: CGFloat
@@ -67,7 +67,7 @@ class ATCCarouselCollectionViewCell: UICollectionViewCell, ATCGenericCollectionV
 
     var oldTitleConstraints: [NSLayoutConstraint]? = nil
 
-    func configure(viewModel: ATCCarouselViewModel, uiConfig: ATCUIGenericConfigurationProtocol) {
+    func configure(viewModel: ATCCarouselViewModel, uiConfig: UIGenericConfigurationProtocol) {
         if (viewModel.title == nil) {
             oldTitleConstraints = []
             if let parentConstraints = carouselTitleLabel.superview?.constraints {

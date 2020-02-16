@@ -13,15 +13,15 @@ protocol AssetTradingUnitRowAdapterDelegate: class {
     func rowAdapterDidTapSellButton(_ rowAdapter: AssetTradingUnitRowAdapter)
 }
 
-class AssetTradingUnitRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+class AssetTradingUnitRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
     weak var delegate: AssetTradingUnitRowAdapterDelegate?
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if object is FinanceTradingModel, let cell = cell as? AssetTradingCollectionViewCell {
 
             cell.buyButton.configure(color: uiConfig.mainThemeBackgroundColor,
@@ -51,7 +51,7 @@ class AssetTradingUnitRowAdapter: ATCGenericCollectionRowAdapter {
         return AssetTradingCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is FinanceTradingModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)
     }

@@ -9,7 +9,7 @@
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseFirestoreDataSource<T: ATCGenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
+class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
     var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
     var items: [T] = []
     let tableName: String
@@ -27,7 +27,7 @@ class ATCFirebaseFirestoreDataSource<T: ATCGenericBaseModel>: ATCGenericCollecti
         self.limit = limit
     }
 
-    func object(at index: Int) -> ATCGenericBaseModel? {
+    func object(at index: Int) -> GenericBaseModel? {
         if index < items.count {
             return items[index]
         }

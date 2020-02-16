@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ATCProfileButtonItemRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+class ATCProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCProfileButtonItem, let cell = cell as? ATCProfileButtonCollectionViewCell else { return }
         cell.button.setTitle(viewModel.title, for: .normal)
         cell.button.configure(tintColor: viewModel.textColor ?? uiConfig.mainThemeBackgroundColor,
@@ -34,7 +34,7 @@ class ATCProfileButtonItemRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCProfileButtonCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCProfileButtonItem else { return .zero }
         return CGSize(width: containerBounds.width, height: 65.0)
     }

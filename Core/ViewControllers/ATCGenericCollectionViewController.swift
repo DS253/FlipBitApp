@@ -13,17 +13,17 @@ protocol ATCGenericFirebaseParsable {
     init(key: String, jsonDict: [String: Any])
 }
 
-protocol ATCGenericJSONParsable {
+protocol GenericJSONParsable {
     init(jsonDict: [String: Any])
 }
 
-protocol ATCGenericBaseModel: ATCGenericJSONParsable, CustomStringConvertible {
+protocol GenericBaseModel: GenericJSONParsable, CustomStringConvertible {
 }
 
 protocol ATCGenericCollectionViewControllerDataSourceDelegate: class {
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [ATCGenericBaseModel])
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [ATCGenericBaseModel])
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [ATCGenericBaseModel])
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel])
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel])
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel])
 }
 
 protocol ATCGenericCollectionViewScrollDelegate: class {
@@ -33,7 +33,7 @@ protocol ATCGenericCollectionViewScrollDelegate: class {
 protocol ATCGenericCollectionViewControllerDataSource: class {
     var delegate: ATCGenericCollectionViewControllerDataSourceDelegate? {get set}
 
-    func object(at index: Int) -> ATCGenericBaseModel?
+    func object(at index: Int) -> GenericBaseModel?
     func numberOfObjects() -> Int
 
     func loadFirst()
@@ -41,20 +41,20 @@ protocol ATCGenericCollectionViewControllerDataSource: class {
     func loadTop()
 }
 
-protocol ATCGenericCollectionRowAdapter: class {
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel)
+protocol GenericCollectionRowAdapter: class {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel)
     func cellClass() -> UICollectionViewCell.Type
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize
 }
 
 class ATCAdapterStore {
-    fileprivate var store = [String: ATCGenericCollectionRowAdapter]()
+    fileprivate var store = [String: GenericCollectionRowAdapter]()
 
-    func add(adapter: ATCGenericCollectionRowAdapter, for classString: String) {
+    func add(adapter: GenericCollectionRowAdapter, for classString: String) {
         store[classString] = adapter
     }
 
-    func adapter(for classString: String) -> ATCGenericCollectionRowAdapter? {
+    func adapter(for classString: String) -> GenericCollectionRowAdapter? {
         return store[classString]
     }
 }
@@ -69,11 +69,11 @@ struct ATCGenericCollectionViewControllerConfiguration {
     let hidesNavigationBar: Bool
     let headerNibName: String?
     let scrollEnabled: Bool
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let emptyViewModel: CPKEmptyViewModel?
 }
 
-typealias ATCollectionViewSelectionBlock = (UINavigationController?, ATCGenericBaseModel, IndexPath) -> Void
+typealias ATCollectionViewSelectionBlock = (UINavigationController?, GenericBaseModel, IndexPath) -> Void
 
 /* A generic view controller, that encapsulates:
  * - fetching data from a data store (over the network, firebase, local cache, etc)
@@ -151,7 +151,7 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
         }
     }
 
-    func use(adapter: ATCGenericCollectionRowAdapter, for classString: String) {
+    func use(adapter: GenericCollectionRowAdapter, for classString: String) {
         adapterStore.add(adapter: adapter, for: classString)
     }
 
@@ -169,11 +169,11 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
     }
 
     // MARK: - ATCGenericCollectionViewControllerDataSourceDelegate
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [ATCGenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel]) {
         self.reloadCollectionView()
     }
 
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [ATCGenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel]) {
         let offset = dataSource.numberOfObjects() - objects.count
         self.collectionView?.performBatchUpdates({
             let indexPaths = (0 ..< objects.count).map({ IndexPath(row: offset + $0, section: 0)})
@@ -182,7 +182,7 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
         self.updateAfterLoad()
     }
 
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [ATCGenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel]) {
         if (configuration.pullToRefreshEnabled) {
             refreshControl.endRefreshing()
         }
@@ -230,7 +230,7 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
         return .zero
     }
 
-    private func adapter(at indexPath: IndexPath) -> ATCGenericCollectionRowAdapter? {
+    private func adapter(at indexPath: IndexPath) -> GenericCollectionRowAdapter? {
         if let object = genericDataSource?.object(at: indexPath.row) {
             let stringClass = String(describing: type(of: object))
             if let adapter = adapterStore.adapter(for: stringClass) {

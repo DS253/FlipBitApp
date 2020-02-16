@@ -9,10 +9,10 @@
 import UIKit
 
 class FinanceAddInstitutionViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol,
+    init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider

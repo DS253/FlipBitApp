@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCKeyboardKey: ATCGenericBaseModel {
+class ATCKeyboardKey: GenericBaseModel {
     var value: String
     var displayValue: String
 

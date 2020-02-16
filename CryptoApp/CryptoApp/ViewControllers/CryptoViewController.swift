@@ -9,10 +9,10 @@
 import UIKit
 
 class CryptoViewController: ATCGenericCollectionViewController {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+    var uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol,
+    init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider,
          dataSource: ATCGenericCollectionViewControllerDataSource) {
         self.uiConfig = uiConfig

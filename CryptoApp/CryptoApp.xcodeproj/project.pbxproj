@@ -7,10 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060A9ACB23F9D196003F1B7F /* GenericUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */; };
+		060A9ACD23F9D224003F1B7F /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */; };
+		060A9ACF23F9D25F003F1B7F /* UITabBarItem+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ACE23F9D25F003F1B7F /* UITabBarItem+Additions.swift */; };
+		060A9AD123F9D2CA003F1B7F /* BadgedCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AD023F9D2CA003F1B7F /* BadgedCountLabel.swift */; };
+		060A9AD323F9D2F9003F1B7F /* BadgedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AD223F9D2F9003F1B7F /* BadgedButton.swift */; };
+		060A9AD523F9D361003F1B7F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AD423F9D361003F1B7F /* Location.swift */; };
+		060A9AD723F9D3A7003F1B7F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AD623F9D3A7003F1B7F /* LocationManager.swift */; };
+		060A9AD923F9D3E0003F1B7F /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AD823F9D3E0003F1B7F /* DismissButton.swift */; };
+		060A9ADB23F9D42E003F1B7F /* WordPressPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ADA23F9D42E003F1B7F /* WordPressPost.swift */; };
+		060A9ADD23F9D483003F1B7F /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ADC23F9D483003F1B7F /* UIViewController+Additions.swift */; };
+		060A9ADF23F9D4AD003F1B7F /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */; };
+		060A9AE123F9E14E003F1B7F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AE023F9E14E003F1B7F /* SearchBar.swift */; };
+		060A9AE323F9E219003F1B7F /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AE223F9E219003F1B7F /* WatchListViewController.swift */; };
 		066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */; };
 		066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */; };
 		066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250123F9C88700F4F88A /* CardHeaderModel.swift */; };
 		066A250423F9C8AC00F4F88A /* AddBankAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250323F9C8AC00F4F88A /* AddBankAccountModel.swift */; };
+		066A250623F9CAC600F4F88A /* CryptoHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250523F9CAC600F4F88A /* CryptoHomeViewController.swift */; };
+		066A250823F9CB8400F4F88A /* CryptoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250723F9CB8400F4F88A /* CryptoPreviewViewController.swift */; };
+		066A250A23F9CC1B00F4F88A /* FinanceInstitutionRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250923F9CC1B00F4F88A /* FinanceInstitutionRowAdapter.swift */; };
+		066A250C23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */; };
+		066A250E23F9CD4200F4F88A /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250D23F9CD4200F4F88A /* UIScrollView.swift */; };
+		066A251023F9CD5E00F4F88A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250F23F9CD5E00F4F88A /* UITextField.swift */; };
+		066A251223F9CEC400F4F88A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251123F9CEC400F4F88A /* UIView.swift */; };
+		066A251423F9CEF000F4F88A /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251323F9CEF000F4F88A /* Double.swift */; };
+		066A251623F9CF1B00F4F88A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251523F9CF1B00F4F88A /* Date.swift */; };
+		066A251823F9CF4100F4F88A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251723F9CF4100F4F88A /* UIButton.swift */; };
+		066A251A23F9CF6300F4F88A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251923F9CF6300F4F88A /* UIImage.swift */; };
+		066A251C23F9CF9D00F4F88A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251B23F9CF9D00F4F88A /* String.swift */; };
+		066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251D23F9CFBC00F4F88A /* UIColor.swift */; };
 		1797E65822C7E65100E27A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E65722C7E65100E27A8F /* AppDelegate.swift */; };
 		1797E65F22C7E65300E27A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797E65E22C7E65300E27A8F /* Assets.xcassets */; };
 		1797E66222C7E65300E27A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */; };
@@ -35,7 +61,6 @@
 		1797E7F222C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7DC22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift */; };
 		1797E7F322C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7DD22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib */; };
 		1797E7F422C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7DE22C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib */; };
-		1797E7F522C7E7ED00E27A8F /* FinanceInstitutionRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7DF22C7E7ED00E27A8F /* FinanceInstitutionRowAdapter.swift */; };
 		1797E83922C7E80C00E27A8F /* FinanceUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7F622C7E80A00E27A8F /* FinanceUIConfiguration.swift */; };
 		1797E83A22C7E80C00E27A8F /* FinanceHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7F722C7E80A00E27A8F /* FinanceHostViewController.swift */; };
 		1797E83B22C7E80C00E27A8F /* FinanceDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7F822C7E80A00E27A8F /* FinanceDataSourceProvider.swift */; };
@@ -60,13 +85,10 @@
 		1797E85422C7E80C00E27A8F /* TransactionsRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E81922C7E80B00E27A8F /* TransactionsRowAdapter.swift */; };
 		1797E85622C7E80C00E27A8F /* FinanceOnboardingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E81B22C7E80B00E27A8F /* FinanceOnboardingConfiguration.swift */; };
 		1797E85722C7E80C00E27A8F /* FinanceAccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E81D22C7E80C00E27A8F /* FinanceAccountDetailsViewController.swift */; };
-		1797E85822C7E80C00E27A8F /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E81E22C7E80C00E27A8F /* WatchlistViewController.swift */; };
 		1797E85922C7E80C00E27A8F /* AssetSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E81F22C7E80C00E27A8F /* AssetSearchViewController.swift */; };
 		1797E85B22C7E80C00E27A8F /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82122C7E80C00E27A8F /* BankAccountViewController.swift */; };
 		1797E85C22C7E80C00E27A8F /* FinanceNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82222C7E80C00E27A8F /* FinanceNotificationsViewController.swift */; };
-		1797E85E22C7E80C00E27A8F /* CyptoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82422C7E80C00E27A8F /* CyptoPreviewViewController.swift */; };
 		1797E85F22C7E80C00E27A8F /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82522C7E80C00E27A8F /* BankAccountsViewController.swift */; };
-		1797E86122C7E80C00E27A8F /* CryptoHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82722C7E80C00E27A8F /* CryptoHomeViewController.swift */; };
 		1797E86222C7E80C00E27A8F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82822C7E80C00E27A8F /* NewsViewController.swift */; };
 		1797E86522C7E80C00E27A8F /* NewsPreviewStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82B22C7E80C00E27A8F /* NewsPreviewStoriesViewController.swift */; };
 		1797E86722C7E80C00E27A8F /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E82D22C7E80C00E27A8F /* CryptoViewController.swift */; };
@@ -84,7 +106,6 @@
 		1797EBB322C7EB0F00E27A8F /* InstaTopLinedPageCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E8F922C7EB0E00E27A8F /* InstaTopLinedPageCarouselCollectionViewCell.swift */; };
 		1797EBB422C7EB0F00E27A8F /* CPKCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E8FB22C7EB0E00E27A8F /* CPKCarouselFlowLayout.swift */; };
 		1797EBB522C7EB0F00E27A8F /* InstaRoundImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E8FD22C7EB0E00E27A8F /* InstaRoundImageButton.swift */; };
-		1797EBB622C7EB0F00E27A8F /* ATCDismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E8FE22C7EB0E00E27A8F /* ATCDismissButton.swift */; };
 		1797EBB722C7EB0F00E27A8F /* InstaBorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E8FF22C7EB0E00E27A8F /* InstaBorderedButton.swift */; };
 		1797EBB822C7EB0F00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E90722C7EB0E00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.xib */; };
 		1797EBB922C7EB0F00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E90822C7EB0E00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift */; };
@@ -108,7 +129,6 @@
 		1797EBCB22C7EB0F00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E92122C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib */; };
 		1797EBCC22C7EB0F00E27A8F /* ATCKeyboardKeyRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92222C7EB0E00E27A8F /* ATCKeyboardKeyRowAdapter.swift */; };
 		1797EBCF22C7EB0F00E27A8F /* ATCNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92722C7EB0E00E27A8F /* ATCNetworkingManager.swift */; };
-		1797EBD122C7EB0F00E27A8F /* ATCWordpressPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92B22C7EB0E00E27A8F /* ATCWordpressPost.swift */; };
 		1797EBD222C7EB0F00E27A8F /* ATCSelectFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92D22C7EB0E00E27A8F /* ATCSelectFilter.swift */; };
 		1797EBD322C7EB0F00E27A8F /* ATCFacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92E22C7EB0E00E27A8F /* ATCFacebookUser.swift */; };
 		1797EBD422C7EB0F00E27A8F /* ATCNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92F22C7EB0E00E27A8F /* ATCNotification.swift */; };
@@ -121,18 +141,8 @@
 		1797EBDC22C7EB0F00E27A8F /* ATCViewControllerContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93822C7EB0E00E27A8F /* ATCViewControllerContainerViewModel.swift */; };
 		1797EBDD22C7EB0F00E27A8F /* ATCWalkthroughModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93922C7EB0E00E27A8F /* ATCWalkthroughModel.swift */; };
 		1797EBDE22C7EB0F00E27A8F /* ATCDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93A22C7EB0E00E27A8F /* ATCDivider.swift */; };
-		1797EBDF22C7EB0F00E27A8F /* ATCSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93B22C7EB0E00E27A8F /* ATCSearchBar.swift */; };
 		1797EBE022C7EB0F00E27A8F /* ATCFacebookPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93C22C7EB0E00E27A8F /* ATCFacebookPost.swift */; };
 		1797EBE122C7EB0F00E27A8F /* ATCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93D22C7EB0E00E27A8F /* ATCUser.swift */; };
-		1797EBE222C7EB0F00E27A8F /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93F22C7EB0E00E27A8F /* UIScrollView.swift */; };
-		1797EBE322C7EB0F00E27A8F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94022C7EB0E00E27A8F /* Date.swift */; };
-		1797EBE422C7EB0F00E27A8F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94122C7EB0E00E27A8F /* UIView.swift */; };
-		1797EBE522C7EB0F00E27A8F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94222C7EB0E00E27A8F /* UIColor.swift */; };
-		1797EBE622C7EB0F00E27A8F /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94322C7EB0E00E27A8F /* UITextField.swift */; };
-		1797EBE722C7EB0F00E27A8F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94422C7EB0E00E27A8F /* String.swift */; };
-		1797EBE822C7EB0F00E27A8F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94522C7EB0E00E27A8F /* UIButton.swift */; };
-		1797EBE922C7EB0F00E27A8F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94622C7EB0E00E27A8F /* UIImage.swift */; };
-		1797EBEA22C7EB0F00E27A8F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E94722C7EB0E00E27A8F /* Double.swift */; };
 		1797EC1222C7EB0F00E27A8F /* ATCLineChartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E97922C7EB0E00E27A8F /* ATCLineChartAdapter.swift */; };
 		1797EC1322C7EB0F00E27A8F /* ATCPieChartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E97A22C7EB0E00E27A8F /* ATCPieChartAdapter.swift */; };
 		1797EC1422C7EB0F00E27A8F /* ATCTextRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E97B22C7EB0E00E27A8F /* ATCTextRowAdapter.swift */; };
@@ -149,7 +159,6 @@
 		1797EC1F22C7EB0F00E27A8F /* ATCBarChartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E98622C7EB0E00E27A8F /* ATCBarChartAdapter.swift */; };
 		1797EC2022C7EB0F00E27A8F /* ATCImageRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E98722C7EB0E00E27A8F /* ATCImageRowAdapter.swift */; };
 		1797EC2122C7EB0F00E27A8F /* ATCNotificationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E98822C7EB0E00E27A8F /* ATCNotificationAdapter.swift */; };
-		1797EC2422C7EB0F00E27A8F /* UIViewController+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E98E22C7EB0E00E27A8F /* UIViewController+ATCAdditions.swift */; };
 		1797EC2522C7EB0F00E27A8F /* ATCHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99022C7EB0E00E27A8F /* ATCHostViewController.swift */; };
 		1797EC2622C7EB0F00E27A8F /* ATCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99122C7EB0E00E27A8F /* ATCNavigationController.swift */; };
 		1797EC2722C7EB0F00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99222C7EB0E00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift */; };
@@ -226,8 +235,6 @@
 		1797ECEE22C7EB1000E27A8F /* ATCCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA8A22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.swift */; };
 		1797ECEF22C7EB1000E27A8F /* ATCDateRangeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA8B22C7EB0E00E27A8F /* ATCDateRangeCollectionViewCell.xib */; };
 		1797ECF022C7EB1000E27A8F /* ATCCarouselCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA8C22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.xib */; };
-		1797ECF522C7EB1000E27A8F /* ATCBadgedCountLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA9222C7EB0E00E27A8F /* ATCBadgedCountLabel.swift */; };
-		1797ECF622C7EB1000E27A8F /* ATCBadgedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA9322C7EB0E00E27A8F /* ATCBadgedButton.swift */; };
 		1797ECF822C7EB1000E27A8F /* Misc.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA9622C7EB0E00E27A8F /* Misc.xcassets */; };
 		1797ECF922C7EB1000E27A8F /* CoreImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA9722C7EB0E00E27A8F /* CoreImages.xcassets */; };
 		1797ECFA22C7EB1000E27A8F /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA9A22C7EB0E00E27A8F /* SF-Pro-Display-Thin.otf */; };
@@ -292,12 +299,9 @@
 		1797ED3922C7EB1000E27A8F /* ATCPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */; };
 		1797ED3B22C7EB1000E27A8F /* ATCGenericLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAE122C7EB0F00E27A8F /* ATCGenericLocalDataSource.swift */; };
 		1797ED3D22C7EB1000E27A8F /* ATCFirebaseLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAE322C7EB0F00E27A8F /* ATCFirebaseLoginManager.swift */; };
-		1797ED3E22C7EB1000E27A8F /* ATCUIGenericConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAE422C7EB0F00E27A8F /* ATCUIGenericConfigurationProtocol.swift */; };
 		1797ED4222C7EB1000E27A8F /* ATCFirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAE922C7EB0F00E27A8F /* ATCFirebaseFirestoreDataSource.swift */; };
 		1797ED4322C7EB1000E27A8F /* ATCFirebaseSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEA22C7EB0F00E27A8F /* ATCFirebaseSearchDataSource.swift */; };
 		1797ED4422C7EB1000E27A8F /* ATCFirebaseFirestoreWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEB22C7EB0F00E27A8F /* ATCFirebaseFirestoreWriter.swift */; };
-		1797ED4522C7EB1000E27A8F /* UITabBarItem+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEC22C7EB0F00E27A8F /* UITabBarItem+ATCAdditions.swift */; };
-		1797ED4622C7EB1000E27A8F /* TimeFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAED22C7EB0F00E27A8F /* TimeFormatHelper.swift */; };
 		1797ED4722C7EB1000E27A8F /* ATCSocialMediaSharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */; };
 		1797ED4822C7EB1000E27A8F /* ATCGenericFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */; };
 		1797ED4922C7EB1000E27A8F /* ATCDiskPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */; };
@@ -315,8 +319,6 @@
 		1797ED5522C7EB1000E27A8F /* ATCLandingScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAFE22C7EB0F00E27A8F /* ATCLandingScreenManager.swift */; };
 		1797ED5622C7EB1000E27A8F /* ATCLandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAFF22C7EB0F00E27A8F /* ATCLandingScreenViewModel.swift */; };
 		1797ED5722C7EB1000E27A8F /* ATCOnboardingConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0022C7EB0F00E27A8F /* ATCOnboardingConfigurationProtocol.swift */; };
-		1797ED5822C7EB1000E27A8F /* UIImage+ATCAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0122C7EB0F00E27A8F /* UIImage+ATCAdditions.swift */; };
-		1797ED5922C7EB1000E27A8F /* ATCGenericUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0222C7EB0F00E27A8F /* ATCGenericUIConfiguration.swift */; };
 		1797ED6022C7EB1000E27A8F /* CalendarDateRangePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0C22C7EB0F00E27A8F /* CalendarDateRangePickerCell.swift */; };
 		1797ED6122C7EB1000E27A8F /* CalendarDateRangePickerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0D22C7EB0F00E27A8F /* CalendarDateRangePickerHeaderView.swift */; };
 		1797ED6222C7EB1000E27A8F /* CalendarDateRangePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB0E22C7EB0F00E27A8F /* CalendarDateRangePickerViewController.swift */; };
@@ -358,8 +360,6 @@
 		1797ED9422C7EB1000E27A8F /* ATCPushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EB4622C7EB0F00E27A8F /* ATCPushNotificationManager.swift */; };
 		1797ED9F22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797ED9D22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.swift */; };
 		1797EDA022C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797ED9E22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.xib */; };
-		1797EDA422C7ECEA00E27A8F /* ATCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EDA222C7ECE900E27A8F /* ATCLocation.swift */; };
-		1797EDA522C7ECEA00E27A8F /* ATCLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EDA322C7ECE900E27A8F /* ATCLocationManager.swift */; };
 		1797EDB622C7F3B000E27A8F /* ATCSocialUserManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EDB322C7F3B000E27A8F /* ATCSocialUserManagerProtocol.swift */; };
 		1797EDB722C7F3B000E27A8F /* ATCSocialFirebaseUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EDB522C7F3B000E27A8F /* ATCSocialFirebaseUserManager.swift */; };
 		1797EDC022C801A800E27A8F /* ATCFinanceContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EDBF22C801A800E27A8F /* ATCFinanceContactUsViewController.swift */; };
@@ -390,10 +390,36 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericUIConfiguration.swift; sourceTree = "<group>"; };
+		060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
+		060A9ACE23F9D25F003F1B7F /* UITabBarItem+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Additions.swift"; sourceTree = "<group>"; };
+		060A9AD023F9D2CA003F1B7F /* BadgedCountLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgedCountLabel.swift; sourceTree = "<group>"; };
+		060A9AD223F9D2F9003F1B7F /* BadgedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgedButton.swift; sourceTree = "<group>"; };
+		060A9AD423F9D361003F1B7F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		060A9AD623F9D3A7003F1B7F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		060A9AD823F9D3E0003F1B7F /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
+		060A9ADA23F9D42E003F1B7F /* WordPressPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPressPost.swift; sourceTree = "<group>"; };
+		060A9ADC23F9D483003F1B7F /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
+		060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
+		060A9AE023F9E14E003F1B7F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		060A9AE223F9E219003F1B7F /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBitTextField.swift; sourceTree = "<group>"; };
 		066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterModel.swift; sourceTree = "<group>"; };
 		066A250123F9C88700F4F88A /* CardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderModel.swift; sourceTree = "<group>"; };
 		066A250323F9C8AC00F4F88A /* AddBankAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBankAccountModel.swift; sourceTree = "<group>"; };
+		066A250523F9CAC600F4F88A /* CryptoHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoHomeViewController.swift; sourceTree = "<group>"; };
+		066A250723F9CB8400F4F88A /* CryptoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPreviewViewController.swift; sourceTree = "<group>"; };
+		066A250923F9CC1B00F4F88A /* FinanceInstitutionRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceInstitutionRowAdapter.swift; sourceTree = "<group>"; };
+		066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGenericConfigurationProtocol.swift; sourceTree = "<group>"; };
+		066A250D23F9CD4200F4F88A /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		066A250F23F9CD5E00F4F88A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		066A251123F9CEC400F4F88A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		066A251323F9CEF000F4F88A /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		066A251523F9CF1B00F4F88A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		066A251723F9CF4100F4F88A /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		066A251923F9CF6300F4F88A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		066A251B23F9CF9D00F4F88A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		066A251D23F9CFBC00F4F88A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1797E65422C7E65100E27A8F /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797E65722C7E65100E27A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1797E65E22C7E65300E27A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -420,7 +446,6 @@
 		1797E7DC22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797E7DD22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797E7DE22C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceAccountCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797E7DF22C7E7ED00E27A8F /* FinanceInstitutionRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceInstitutionRowAdapter.swift; sourceTree = "<group>"; };
 		1797E7F622C7E80A00E27A8F /* FinanceUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceUIConfiguration.swift; sourceTree = "<group>"; };
 		1797E7F722C7E80A00E27A8F /* FinanceHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceHostViewController.swift; sourceTree = "<group>"; };
 		1797E7F822C7E80A00E27A8F /* FinanceDataSourceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceDataSourceProvider.swift; sourceTree = "<group>"; };
@@ -445,13 +470,10 @@
 		1797E81922C7E80B00E27A8F /* TransactionsRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsRowAdapter.swift; sourceTree = "<group>"; };
 		1797E81B22C7E80B00E27A8F /* FinanceOnboardingConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceOnboardingConfiguration.swift; sourceTree = "<group>"; };
 		1797E81D22C7E80C00E27A8F /* FinanceAccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceAccountDetailsViewController.swift; sourceTree = "<group>"; };
-		1797E81E22C7E80C00E27A8F /* WatchlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
 		1797E81F22C7E80C00E27A8F /* AssetSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetSearchViewController.swift; sourceTree = "<group>"; };
 		1797E82122C7E80C00E27A8F /* BankAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
 		1797E82222C7E80C00E27A8F /* FinanceNotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceNotificationsViewController.swift; sourceTree = "<group>"; };
-		1797E82422C7E80C00E27A8F /* CyptoPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyptoPreviewViewController.swift; sourceTree = "<group>"; };
 		1797E82522C7E80C00E27A8F /* BankAccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
-		1797E82722C7E80C00E27A8F /* CryptoHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoHomeViewController.swift; sourceTree = "<group>"; };
 		1797E82822C7E80C00E27A8F /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		1797E82B22C7E80C00E27A8F /* NewsPreviewStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPreviewStoriesViewController.swift; sourceTree = "<group>"; };
 		1797E82D22C7E80C00E27A8F /* CryptoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
@@ -469,7 +491,6 @@
 		1797E8F922C7EB0E00E27A8F /* InstaTopLinedPageCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaTopLinedPageCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797E8FB22C7EB0E00E27A8F /* CPKCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPKCarouselFlowLayout.swift; sourceTree = "<group>"; };
 		1797E8FD22C7EB0E00E27A8F /* InstaRoundImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaRoundImageButton.swift; sourceTree = "<group>"; };
-		1797E8FE22C7EB0E00E27A8F /* ATCDismissButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDismissButton.swift; sourceTree = "<group>"; };
 		1797E8FF22C7EB0E00E27A8F /* InstaBorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaBorderedButton.swift; sourceTree = "<group>"; };
 		1797E90722C7EB0E00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCDatedChartDateRangeCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797E90822C7EB0E00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDatedChartDateRangeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -493,7 +514,6 @@
 		1797E92122C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCKeyboardKeyCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797E92222C7EB0E00E27A8F /* ATCKeyboardKeyRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCKeyboardKeyRowAdapter.swift; sourceTree = "<group>"; };
 		1797E92722C7EB0E00E27A8F /* ATCNetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNetworkingManager.swift; sourceTree = "<group>"; };
-		1797E92B22C7EB0E00E27A8F /* ATCWordpressPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWordpressPost.swift; sourceTree = "<group>"; };
 		1797E92D22C7EB0E00E27A8F /* ATCSelectFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSelectFilter.swift; sourceTree = "<group>"; };
 		1797E92E22C7EB0E00E27A8F /* ATCFacebookUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookUser.swift; sourceTree = "<group>"; };
 		1797E92F22C7EB0E00E27A8F /* ATCNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNotification.swift; sourceTree = "<group>"; };
@@ -506,18 +526,8 @@
 		1797E93822C7EB0E00E27A8F /* ATCViewControllerContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCViewControllerContainerViewModel.swift; sourceTree = "<group>"; };
 		1797E93922C7EB0E00E27A8F /* ATCWalkthroughModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughModel.swift; sourceTree = "<group>"; };
 		1797E93A22C7EB0E00E27A8F /* ATCDivider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDivider.swift; sourceTree = "<group>"; };
-		1797E93B22C7EB0E00E27A8F /* ATCSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSearchBar.swift; sourceTree = "<group>"; };
 		1797E93C22C7EB0E00E27A8F /* ATCFacebookPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFacebookPost.swift; sourceTree = "<group>"; };
 		1797E93D22C7EB0E00E27A8F /* ATCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUser.swift; sourceTree = "<group>"; };
-		1797E93F22C7EB0E00E27A8F /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
-		1797E94022C7EB0E00E27A8F /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		1797E94122C7EB0E00E27A8F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		1797E94222C7EB0E00E27A8F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		1797E94322C7EB0E00E27A8F /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		1797E94422C7EB0E00E27A8F /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		1797E94522C7EB0E00E27A8F /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		1797E94622C7EB0E00E27A8F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		1797E94722C7EB0E00E27A8F /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		1797E97922C7EB0E00E27A8F /* ATCLineChartAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLineChartAdapter.swift; sourceTree = "<group>"; };
 		1797E97A22C7EB0E00E27A8F /* ATCPieChartAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCPieChartAdapter.swift; sourceTree = "<group>"; };
 		1797E97B22C7EB0E00E27A8F /* ATCTextRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCTextRowAdapter.swift; sourceTree = "<group>"; };
@@ -534,7 +544,6 @@
 		1797E98622C7EB0E00E27A8F /* ATCBarChartAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCBarChartAdapter.swift; sourceTree = "<group>"; };
 		1797E98722C7EB0E00E27A8F /* ATCImageRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCImageRowAdapter.swift; sourceTree = "<group>"; };
 		1797E98822C7EB0E00E27A8F /* ATCNotificationAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNotificationAdapter.swift; sourceTree = "<group>"; };
-		1797E98E22C7EB0E00E27A8F /* UIViewController+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ATCAdditions.swift"; sourceTree = "<group>"; };
 		1797E99022C7EB0E00E27A8F /* ATCHostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCHostViewController.swift; sourceTree = "<group>"; };
 		1797E99122C7EB0E00E27A8F /* ATCNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCNavigationController.swift; sourceTree = "<group>"; };
 		1797E99222C7EB0E00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuItemCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
@@ -611,8 +620,6 @@
 		1797EA8A22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA8B22C7EB0E00E27A8F /* ATCDateRangeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCDateRangeCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797EA8C22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCCarouselCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797EA9222C7EB0E00E27A8F /* ATCBadgedCountLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCBadgedCountLabel.swift; sourceTree = "<group>"; };
-		1797EA9322C7EB0E00E27A8F /* ATCBadgedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCBadgedButton.swift; sourceTree = "<group>"; };
 		1797EA9622C7EB0E00E27A8F /* Misc.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Misc.xcassets; sourceTree = "<group>"; };
 		1797EA9722C7EB0E00E27A8F /* CoreImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CoreImages.xcassets; sourceTree = "<group>"; };
 		1797EA9A22C7EB0E00E27A8F /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
@@ -677,12 +684,9 @@
 		1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCPersistentStore.swift; sourceTree = "<group>"; };
 		1797EAE122C7EB0F00E27A8F /* ATCGenericLocalDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericLocalDataSource.swift; sourceTree = "<group>"; };
 		1797EAE322C7EB0F00E27A8F /* ATCFirebaseLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseLoginManager.swift; sourceTree = "<group>"; };
-		1797EAE422C7EB0F00E27A8F /* ATCUIGenericConfigurationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUIGenericConfigurationProtocol.swift; sourceTree = "<group>"; };
 		1797EAE922C7EB0F00E27A8F /* ATCFirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
 		1797EAEA22C7EB0F00E27A8F /* ATCFirebaseSearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseSearchDataSource.swift; sourceTree = "<group>"; };
 		1797EAEB22C7EB0F00E27A8F /* ATCFirebaseFirestoreWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseFirestoreWriter.swift; sourceTree = "<group>"; };
-		1797EAEC22C7EB0F00E27A8F /* UITabBarItem+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+ATCAdditions.swift"; sourceTree = "<group>"; };
-		1797EAED22C7EB0F00E27A8F /* TimeFormatHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatHelper.swift; sourceTree = "<group>"; };
 		1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSocialMediaSharingManager.swift; sourceTree = "<group>"; };
 		1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericFirebaseDataSource.swift; sourceTree = "<group>"; };
 		1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDiskPersistenceStore.swift; sourceTree = "<group>"; };
@@ -700,8 +704,6 @@
 		1797EAFE22C7EB0F00E27A8F /* ATCLandingScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLandingScreenManager.swift; sourceTree = "<group>"; };
 		1797EAFF22C7EB0F00E27A8F /* ATCLandingScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLandingScreenViewModel.swift; sourceTree = "<group>"; };
 		1797EB0022C7EB0F00E27A8F /* ATCOnboardingConfigurationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCOnboardingConfigurationProtocol.swift; sourceTree = "<group>"; };
-		1797EB0122C7EB0F00E27A8F /* UIImage+ATCAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ATCAdditions.swift"; sourceTree = "<group>"; };
-		1797EB0222C7EB0F00E27A8F /* ATCGenericUIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericUIConfiguration.swift; sourceTree = "<group>"; };
 		1797EB0C22C7EB0F00E27A8F /* CalendarDateRangePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateRangePickerCell.swift; sourceTree = "<group>"; };
 		1797EB0D22C7EB0F00E27A8F /* CalendarDateRangePickerHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateRangePickerHeaderView.swift; sourceTree = "<group>"; };
 		1797EB0E22C7EB0F00E27A8F /* CalendarDateRangePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateRangePickerViewController.swift; sourceTree = "<group>"; };
@@ -744,8 +746,6 @@
 		1797EB4622C7EB0F00E27A8F /* ATCPushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCPushNotificationManager.swift; sourceTree = "<group>"; };
 		1797ED9D22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCBarChartCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797ED9E22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCBarChartCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797EDA222C7ECE900E27A8F /* ATCLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLocation.swift; sourceTree = "<group>"; };
-		1797EDA322C7ECE900E27A8F /* ATCLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCLocationManager.swift; sourceTree = "<group>"; };
 		1797EDB322C7F3B000E27A8F /* ATCSocialUserManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSocialUserManagerProtocol.swift; sourceTree = "<group>"; };
 		1797EDB522C7F3B000E27A8F /* ATCSocialFirebaseUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSocialFirebaseUserManager.swift; sourceTree = "<group>"; };
 		1797EDBF22C801A800E27A8F /* ATCFinanceContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATCFinanceContactUsViewController.swift; sourceTree = "<group>"; };
@@ -865,7 +865,7 @@
 				1797E7DC22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift */,
 				1797E7DD22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib */,
 				1797E7DE22C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib */,
-				1797E7DF22C7E7ED00E27A8F /* FinanceInstitutionRowAdapter.swift */,
+				066A250923F9CC1B00F4F88A /* FinanceInstitutionRowAdapter.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -927,18 +927,18 @@
 		1797E81C22C7E80C00E27A8F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				066A250523F9CAC600F4F88A /* CryptoHomeViewController.swift */,
+				066A250723F9CB8400F4F88A /* CryptoPreviewViewController.swift */,
 				1797E81D22C7E80C00E27A8F /* FinanceAccountDetailsViewController.swift */,
-				1797E81E22C7E80C00E27A8F /* WatchlistViewController.swift */,
 				1797E81F22C7E80C00E27A8F /* AssetSearchViewController.swift */,
 				1797E82122C7E80C00E27A8F /* BankAccountViewController.swift */,
 				1797E82222C7E80C00E27A8F /* FinanceNotificationsViewController.swift */,
-				1797E82422C7E80C00E27A8F /* CyptoPreviewViewController.swift */,
 				1797E82522C7E80C00E27A8F /* BankAccountsViewController.swift */,
-				1797E82722C7E80C00E27A8F /* CryptoHomeViewController.swift */,
 				1797E82822C7E80C00E27A8F /* NewsViewController.swift */,
 				1797E82B22C7E80C00E27A8F /* NewsPreviewStoriesViewController.swift */,
 				1797E82D22C7E80C00E27A8F /* CryptoViewController.swift */,
 				1797E82E22C7E80C00E27A8F /* FinanceAddInstitutionViewController.swift */,
+				060A9AE223F9E219003F1B7F /* WatchListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1078,8 +1078,8 @@
 			isa = PBXGroup;
 			children = (
 				1797E8FD22C7EB0E00E27A8F /* InstaRoundImageButton.swift */,
-				1797E8FE22C7EB0E00E27A8F /* ATCDismissButton.swift */,
 				1797E8FF22C7EB0E00E27A8F /* InstaBorderedButton.swift */,
+				060A9AD823F9D3E0003F1B7F /* DismissButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -1230,7 +1230,7 @@
 		1797E92922C7EB0E00E27A8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1797E92B22C7EB0E00E27A8F /* ATCWordpressPost.swift */,
+				060A9ADA23F9D42E003F1B7F /* WordPressPost.swift */,
 				1797E92C22C7EB0E00E27A8F /* Filters */,
 				1797E92E22C7EB0E00E27A8F /* ATCFacebookUser.swift */,
 				1797E92F22C7EB0E00E27A8F /* ATCNotification.swift */,
@@ -1241,9 +1241,9 @@
 				1797E93822C7EB0E00E27A8F /* ATCViewControllerContainerViewModel.swift */,
 				1797E93922C7EB0E00E27A8F /* ATCWalkthroughModel.swift */,
 				1797E93A22C7EB0E00E27A8F /* ATCDivider.swift */,
-				1797E93B22C7EB0E00E27A8F /* ATCSearchBar.swift */,
 				1797E93C22C7EB0E00E27A8F /* ATCFacebookPost.swift */,
 				1797E93D22C7EB0E00E27A8F /* ATCUser.swift */,
+				060A9AE023F9E14E003F1B7F /* SearchBar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1269,15 +1269,15 @@
 		1797E93E22C7EB0E00E27A8F /* UIExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				1797E93F22C7EB0E00E27A8F /* UIScrollView.swift */,
-				1797E94022C7EB0E00E27A8F /* Date.swift */,
-				1797E94122C7EB0E00E27A8F /* UIView.swift */,
-				1797E94222C7EB0E00E27A8F /* UIColor.swift */,
-				1797E94322C7EB0E00E27A8F /* UITextField.swift */,
-				1797E94422C7EB0E00E27A8F /* String.swift */,
-				1797E94522C7EB0E00E27A8F /* UIButton.swift */,
-				1797E94622C7EB0E00E27A8F /* UIImage.swift */,
-				1797E94722C7EB0E00E27A8F /* Double.swift */,
+				066A251523F9CF1B00F4F88A /* Date.swift */,
+				066A251323F9CEF000F4F88A /* Double.swift */,
+				066A251B23F9CF9D00F4F88A /* String.swift */,
+				066A251723F9CF4100F4F88A /* UIButton.swift */,
+				066A251D23F9CFBC00F4F88A /* UIColor.swift */,
+				066A251923F9CF6300F4F88A /* UIImage.swift */,
+				066A250D23F9CD4200F4F88A /* UIScrollView.swift */,
+				066A250F23F9CD5E00F4F88A /* UITextField.swift */,
+				066A251123F9CEC400F4F88A /* UIView.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -1308,7 +1308,6 @@
 		1797E98B22C7EB0E00E27A8F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1797E98E22C7EB0E00E27A8F /* UIViewController+ATCAdditions.swift */,
 				1797E98F22C7EB0E00E27A8F /* Navigation */,
 				1797E99A22C7EB0E00E27A8F /* Walkthrough */,
 				1797E99F22C7EB0E00E27A8F /* ATCGenericCollectionViewController.swift */,
@@ -1319,6 +1318,7 @@
 				1797E9AA22C7EB0E00E27A8F /* ATCContactUsViewController.swift */,
 				1797E9AB22C7EB0E00E27A8F /* ATCGenericSearchViewController.swift */,
 				1797E9AC22C7EB0E00E27A8F /* ATCViewControllerFactory.swift */,
+				060A9ADC23F9D483003F1B7F /* UIViewController+Additions.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1503,8 +1503,8 @@
 		1797EA9022C7EB0E00E27A8F /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				1797EA9222C7EB0E00E27A8F /* ATCBadgedCountLabel.swift */,
-				1797EA9322C7EB0E00E27A8F /* ATCBadgedButton.swift */,
+				060A9AD223F9D2F9003F1B7F /* BadgedButton.swift */,
+				060A9AD023F9D2CA003F1B7F /* BadgedCountLabel.swift */,
 				066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */,
 			);
 			path = Controls;
@@ -1624,16 +1624,16 @@
 				1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */,
 				1797EAE122C7EB0F00E27A8F /* ATCGenericLocalDataSource.swift */,
 				1797EAE322C7EB0F00E27A8F /* ATCFirebaseLoginManager.swift */,
-				1797EAE422C7EB0F00E27A8F /* ATCUIGenericConfigurationProtocol.swift */,
+				066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */,
 				1797EAE622C7EB0F00E27A8F /* Firebase */,
-				1797EAEC22C7EB0F00E27A8F /* UITabBarItem+ATCAdditions.swift */,
-				1797EAED22C7EB0F00E27A8F /* TimeFormatHelper.swift */,
 				1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */,
 				1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */,
 				1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */,
 				1797EAF122C7EB0F00E27A8F /* Onboarding */,
-				1797EB0122C7EB0F00E27A8F /* UIImage+ATCAdditions.swift */,
-				1797EB0222C7EB0F00E27A8F /* ATCGenericUIConfiguration.swift */,
+				060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */,
+				060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */,
+				060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */,
+				060A9ACE23F9D25F003F1B7F /* UITabBarItem+Additions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1760,8 +1760,8 @@
 		1797EDA122C7ECE900E27A8F /* Location */ = {
 			isa = PBXGroup;
 			children = (
-				1797EDA222C7ECE900E27A8F /* ATCLocation.swift */,
-				1797EDA322C7ECE900E27A8F /* ATCLocationManager.swift */,
+				060A9AD423F9D361003F1B7F /* Location.swift */,
+				060A9AD623F9D3A7003F1B7F /* LocationManager.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -2132,6 +2132,7 @@
 				1797EC7522C7EB0F00E27A8F /* ATCAPIManager.swift in Sources */,
 				1797EC2722C7EB0F00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */,
 				1797EDC022C801A800E27A8F /* ATCFinanceContactUsViewController.swift in Sources */,
+				060A9AE323F9E219003F1B7F /* WatchListViewController.swift in Sources */,
 				1797EC1422C7EB0F00E27A8F /* ATCTextRowAdapter.swift in Sources */,
 				1797ECCD22C7EB1000E27A8F /* ATCDividerCollectionViewCell.swift in Sources */,
 				1797EBDA22C7EB0F00E27A8F /* ATCDateRangeModel.swift in Sources */,
@@ -2139,24 +2140,21 @@
 				1797ECEA22C7EB1000E27A8F /* ATCNotificationCollectionViewCell.swift in Sources */,
 				066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */,
 				1797EC3C22C7EB0F00E27A8F /* ATCGenericSearchViewController.swift in Sources */,
+				066A251023F9CD5E00F4F88A /* UITextField.swift in Sources */,
 				1797EC7922C7EB0F00E27A8F /* ATCFinanceInstitution.swift in Sources */,
-				1797EBE222C7EB0F00E27A8F /* UIScrollView.swift in Sources */,
-				1797EBE722C7EB0F00E27A8F /* String.swift in Sources */,
 				1797ECE722C7EB1000E27A8F /* ATCDateRangeCollectionViewCell.swift in Sources */,
 				1797ECD122C7EB1000E27A8F /* ATCPieChartCollectionViewCell.swift in Sources */,
 				1797E85422C7E80C00E27A8F /* TransactionsRowAdapter.swift in Sources */,
 				1797E84122C7E80C00E27A8F /* FinanceAssetPositionRowAdapter.swift in Sources */,
-				1797E85E22C7E80C00E27A8F /* CyptoPreviewViewController.swift in Sources */,
 				1797EC1D22C7EB0F00E27A8F /* ATCCarouselAdapter.swift in Sources */,
 				1797ECDB22C7EB1000E27A8F /* MenuItemCollectionViewCell.swift in Sources */,
 				1797E85622C7E80C00E27A8F /* FinanceOnboardingConfiguration.swift in Sources */,
+				060A9ACB23F9D196003F1B7F /* GenericUIConfiguration.swift in Sources */,
 				1797ED7F22C7EB1000E27A8F /* Debugging.swift in Sources */,
 				1797EBB122C7EB0F00E27A8F /* InstaTopLinedPageCarouselRowAdapter.swift in Sources */,
 				1797ED7322C7EB1000E27A8F /* ConstraintLayoutGuide.swift in Sources */,
-				1797EBDF22C7EB0F00E27A8F /* ATCSearchBar.swift in Sources */,
 				17FE615C2367BDE800CBE046 /* CPKEmptyViewModel.swift in Sources */,
 				1797ECE822C7EB1000E27A8F /* ATCSelectFilterCollectionViewCell.swift in Sources */,
-				1797EBD122C7EB0F00E27A8F /* ATCWordpressPost.swift in Sources */,
 				1797EC7D22C7EB0F00E27A8F /* ATCFinanceAssetPosition.swift in Sources */,
 				066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */,
 				1797EBAD22C7EB0F00E27A8F /* InstaMultiRowPageCarouselCollectionViewCell.swift in Sources */,
@@ -2166,6 +2164,7 @@
 				1797ED4E22C7EB1000E27A8F /* ATCClassicLoginScreenViewController.swift in Sources */,
 				1797EC7622C7EB0F00E27A8F /* ATCFinanceAccount.swift in Sources */,
 				1797ED6922C7EB1000E27A8F /* ConstraintPriorityTarget.swift in Sources */,
+				060A9AD123F9D2CA003F1B7F /* BadgedCountLabel.swift in Sources */,
 				17FE614E2367BB4000CBE046 /* SwitchCell.swift in Sources */,
 				1797ED3D22C7EB1000E27A8F /* ATCFirebaseLoginManager.swift in Sources */,
 				1797ED8022C7EB1000E27A8F /* ConstraintRelatableTarget.swift in Sources */,
@@ -2177,6 +2176,7 @@
 				17FE614A2367BB4000CBE046 /* Deprecated.swift in Sources */,
 				1797E83C22C7E80C00E27A8F /* SettingsViewController.swift in Sources */,
 				1797EC1222C7EB0F00E27A8F /* ATCLineChartAdapter.swift in Sources */,
+				060A9AE123F9E14E003F1B7F /* SearchBar.swift in Sources */,
 				1797EBC422C7EB0F00E27A8F /* ATCProfileItemRowAdapter.swift in Sources */,
 				1797EBD222C7EB0F00E27A8F /* ATCSelectFilter.swift in Sources */,
 				1797ED6C22C7EB1000E27A8F /* ConstraintDSL.swift in Sources */,
@@ -2187,19 +2187,17 @@
 				1797EBCA22C7EB0F00E27A8F /* ATCKeyboardViewController.swift in Sources */,
 				1797EBCC22C7EB0F00E27A8F /* ATCKeyboardKeyRowAdapter.swift in Sources */,
 				1797EC1522C7EB0F00E27A8F /* ATCGridViewRowAdapter.swift in Sources */,
-				1797E86122C7E80C00E27A8F /* CryptoHomeViewController.swift in Sources */,
 				1797EC2D22C7EB0F00E27A8F /* ATCMenuHeaderTableViewCell.swift in Sources */,
 				17FE61462367BB4000CBE046 /* NavigationRow.swift in Sources */,
+				066A250823F9CB8400F4F88A /* CryptoPreviewViewController.swift in Sources */,
 				1797ECDE22C7EB1000E27A8F /* ATCCircledIconMenuCollectionViewCell.swift in Sources */,
-				1797ECF522C7EB1000E27A8F /* ATCBadgedCountLabel.swift in Sources */,
 				1797EC1622C7EB0F00E27A8F /* ATCStoryAdapter.swift in Sources */,
-				1797EBE822C7EB0F00E27A8F /* UIButton.swift in Sources */,
 				1797E86822C7E80C00E27A8F /* FinanceAddInstitutionViewController.swift in Sources */,
+				066A251A23F9CF6300F4F88A /* UIImage.swift in Sources */,
 				1797EBC922C7EB0F00E27A8F /* ATCKeyboardKeyCollectionViewCell.swift in Sources */,
 				1797EC3522C7EB0F00E27A8F /* ATCProfileBasicViewController.swift in Sources */,
 				1797EBC822C7EB0F00E27A8F /* ATCKeyboardKey.swift in Sources */,
 				1797E7F222C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift in Sources */,
-				1797EBE922C7EB0F00E27A8F /* UIImage.swift in Sources */,
 				1797E84522C7E80C00E27A8F /* FinanceAssetStatsRowAdapter.swift in Sources */,
 				1797ED6822C7EB1000E27A8F /* ConstraintViewDSL.swift in Sources */,
 				1797ED5522C7EB1000E27A8F /* ATCLandingScreenManager.swift in Sources */,
@@ -2208,6 +2206,8 @@
 				1797EC1822C7EB0F00E27A8F /* ATCDividerRowAdapter.swift in Sources */,
 				1797EC7C22C7EB0F00E27A8F /* ATCFinanceAssetStats.swift in Sources */,
 				1797EC1A22C7EB0F00E27A8F /* ATCSelectFilterRowAdapter.swift in Sources */,
+				066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */,
+				066A251823F9CF4100F4F88A /* UIButton.swift in Sources */,
 				17FE613D2367BB4000CBE046 /* QuickTableViewController.swift in Sources */,
 				1797ED6D22C7EB1000E27A8F /* ConstraintMakerExtendable.swift in Sources */,
 				1797EC2E22C7EB0F00E27A8F /* ATCMenuItemRowAdapter.swift in Sources */,
@@ -2215,7 +2215,6 @@
 				1797EC1E22C7EB0F00E27A8F /* ATCSearchBarAdapter.swift in Sources */,
 				1797EBC122C7EB0F00E27A8F /* ATCProfileButtonItem.swift in Sources */,
 				1797EBD822C7EB0F00E27A8F /* ATCText.swift in Sources */,
-				1797ECF622C7EB1000E27A8F /* ATCBadgedButton.swift in Sources */,
 				1797EBB722C7EB0F00E27A8F /* InstaBorderedButton.swift in Sources */,
 				1797EC3A22C7EB0F00E27A8F /* ATCWebViewController.swift in Sources */,
 				1797E86B22C7E80C00E27A8F /* FinanceStaticDataProvider.swift in Sources */,
@@ -2260,21 +2259,24 @@
 				1797ECD522C7EB1000E27A8F /* ATCRoundImageCollectionViewCell.swift in Sources */,
 				1797ED4422C7EB1000E27A8F /* ATCFirebaseFirestoreWriter.swift in Sources */,
 				1797EBD622C7EB0F00E27A8F /* ATCBarChart.swift in Sources */,
+				060A9ADB23F9D42E003F1B7F /* WordPressPost.swift in Sources */,
+				066A251623F9CF1B00F4F88A /* Date.swift in Sources */,
 				1797ECC622C7EB0F00E27A8F /* ATCImageCollectionViewCell.swift in Sources */,
 				1797ECC922C7EB0F00E27A8F /* ATCGridCollectionViewCell.swift in Sources */,
 				1797EBD722C7EB0F00E27A8F /* ATCPieChart.swift in Sources */,
 				1797E86722C7E80C00E27A8F /* CryptoViewController.swift in Sources */,
-				1797EBE322C7EB0F00E27A8F /* Date.swift in Sources */,
 				1797E84F22C7E80C00E27A8F /* AssetTradingViewController.swift in Sources */,
 				17FE613E2367BB4000CBE046 /* Configurable.swift in Sources */,
+				066A251C23F9CF9D00F4F88A /* String.swift in Sources */,
 				1797EC1922C7EB0F00E27A8F /* ATCSquareStoryRowAdapter.swift in Sources */,
 				1797ED5622C7EB1000E27A8F /* ATCLandingScreenViewModel.swift in Sources */,
+				060A9ACF23F9D25F003F1B7F /* UITabBarItem+Additions.swift in Sources */,
 				1797E7E522C7E7ED00E27A8F /* FinanceNewsCollectionViewCell.swift in Sources */,
+				066A251423F9CEF000F4F88A /* Double.swift in Sources */,
 				1797EC2822C7EB0F00E27A8F /* ATCDrawerController.swift in Sources */,
 				1797ED5122C7EB1000E27A8F /* ATCOnboardingCoordinator.swift in Sources */,
 				1797E85B22C7E80C00E27A8F /* BankAccountViewController.swift in Sources */,
 				1797EC2522C7EB0F00E27A8F /* ATCHostViewController.swift in Sources */,
-				1797EBE522C7EB0F00E27A8F /* UIColor.swift in Sources */,
 				1797ED7822C7EB1000E27A8F /* ConstraintMakerEditable.swift in Sources */,
 				1797EBAF22C7EB0F00E27A8F /* InstaMultiRowPageCarouselRowAdapter.swift in Sources */,
 				1797EC7722C7EB0F00E27A8F /* ATCFinanceAsset.swift in Sources */,
@@ -2282,10 +2284,14 @@
 				1797ED7222C7EB1000E27A8F /* ConstraintView.swift in Sources */,
 				17FE61422367BB4000CBE046 /* RowCompatible.swift in Sources */,
 				1797ED7622C7EB1000E27A8F /* ConstraintConstantTarget.swift in Sources */,
+				066A250A23F9CC1B00F4F88A /* FinanceInstitutionRowAdapter.swift in Sources */,
+				066A251223F9CEC400F4F88A /* UIView.swift in Sources */,
 				1797EBDD22C7EB0F00E27A8F /* ATCWalkthroughModel.swift in Sources */,
 				1797EBC322C7EB0F00E27A8F /* ATCProfileButtonItemRowAdapter.swift in Sources */,
+				060A9AD523F9D361003F1B7F /* Location.swift in Sources */,
 				1797ED4922C7EB1000E27A8F /* ATCDiskPersistenceStore.swift in Sources */,
 				17FE614C2367BB4000CBE046 /* DetailText.swift in Sources */,
+				066A250623F9CAC600F4F88A /* CryptoHomeViewController.swift in Sources */,
 				17FE61492367BB4000CBE046 /* RadioSection.swift in Sources */,
 				1797EC4022C7EB0F00E27A8F /* ATCProfileManager.swift in Sources */,
 				1797ECEE22C7EB1000E27A8F /* ATCCarouselCollectionViewCell.swift in Sources */,
@@ -2297,25 +2303,23 @@
 				1797EC3322C7EB0F00E27A8F /* ATCGenericCollectionViewController.swift in Sources */,
 				1797EC2A22C7EB0F00E27A8F /* ATCMenuCollectionViewController.swift in Sources */,
 				1797EC3722C7EB0F00E27A8F /* ATCLiquidCollectionViewLayout.swift in Sources */,
-				1797E85822C7E80C00E27A8F /* WatchlistViewController.swift in Sources */,
 				1797E84222C7E80C00E27A8F /* AssetTradingCollectionViewCell.swift in Sources */,
 				1797EC7A22C7EB0F00E27A8F /* ATCFinanceNewsModel.swift in Sources */,
 				1797ED7122C7EB1000E27A8F /* UILayoutSupport+Extensions.swift in Sources */,
 				1797E7E722C7E7ED00E27A8F /* AddBankAccountCollectionViewCell.swift in Sources */,
 				1797EDB622C7F3B000E27A8F /* ATCSocialUserManagerProtocol.swift in Sources */,
+				060A9ACD23F9D224003F1B7F /* UIImage+Additions.swift in Sources */,
 				1797E85F22C7E80C00E27A8F /* BankAccountsViewController.swift in Sources */,
 				1797EC1322C7EB0F00E27A8F /* ATCPieChartAdapter.swift in Sources */,
 				066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */,
+				060A9AD723F9D3A7003F1B7F /* LocationManager.swift in Sources */,
 				1797E85922C7E80C00E27A8F /* AssetSearchViewController.swift in Sources */,
 				17FE614D2367BB4000CBE046 /* TapActionCell.swift in Sources */,
-				1797EBB622C7EB0F00E27A8F /* ATCDismissButton.swift in Sources */,
-				1797EC2422C7EB0F00E27A8F /* UIViewController+ATCAdditions.swift in Sources */,
 				1797E7EE22C7E7ED00E27A8F /* FinanceNotificationRowAdapter.swift in Sources */,
-				1797ED5822C7EB1000E27A8F /* UIImage+ATCAdditions.swift in Sources */,
+				060A9AD923F9D3E0003F1B7F /* DismissButton.swift in Sources */,
 				1797E85722C7E80C00E27A8F /* FinanceAccountDetailsViewController.swift in Sources */,
 				1797EBBF22C7EB0F00E27A8F /* ATCProfileButtonCollectionViewCell.swift in Sources */,
 				1797EBD522C7EB0F00E27A8F /* ATCLineChart.swift in Sources */,
-				1797EBE422C7EB0F00E27A8F /* UIView.swift in Sources */,
 				1797EBB922C7EB0F00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift in Sources */,
 				1797EBAC22C7EB0F00E27A8F /* InstaMultiRowPageCarouselViewModel.swift in Sources */,
 				1797ED4D22C7EB1000E27A8F /* ATCClassicLandingScreenViewController.swift in Sources */,
@@ -2326,17 +2330,16 @@
 				1797ED6E22C7EB1000E27A8F /* ConstraintPriority.swift in Sources */,
 				1797ED7A22C7EB1000E27A8F /* ConstraintRelation.swift in Sources */,
 				1797ED6F22C7EB1000E27A8F /* ConstraintInsetTarget.swift in Sources */,
-				1797ED3E22C7EB1000E27A8F /* ATCUIGenericConfigurationProtocol.swift in Sources */,
 				1797E84722C7E80C00E27A8F /* AssetDetailsViewController.swift in Sources */,
 				1797ED8222C7EB1000E27A8F /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				1797EBB422C7EB0F00E27A8F /* CPKCarouselFlowLayout.swift in Sources */,
 				1797EC3222C7EB0F00E27A8F /* ATCClassicWalkthroughViewController.swift in Sources */,
 				1797ED6322C7EB1000E27A8F /* ConstraintMultiplierTarget.swift in Sources */,
-				1797EBE622C7EB0F00E27A8F /* UITextField.swift in Sources */,
 				1797ED7722C7EB1000E27A8F /* ConstraintOffsetTarget.swift in Sources */,
 				17FE61582367BDE800CBE046 /* CPKProgressHUD.swift in Sources */,
 				1797EC1C22C7EB0F00E27A8F /* ATCViewControllerContainerRowAdapter.swift in Sources */,
 				1797EBE122C7EB0F00E27A8F /* ATCUser.swift in Sources */,
+				060A9ADF23F9D4AD003F1B7F /* TimeFormatHelper.swift in Sources */,
 				1797ECDF22C7EB1000E27A8F /* ATCSearchBarCollectionViewCell.swift in Sources */,
 				1797EC3D22C7EB0F00E27A8F /* ATCViewControllerFactory.swift in Sources */,
 				1797EC7E22C7EB0F00E27A8F /* ATCFinanceDataSourceProviderProtocol.swift in Sources */,
@@ -2350,22 +2353,19 @@
 				17FE61592367BDE800CBE046 /* CPKDrawerMenuView.swift in Sources */,
 				1797ED6222C7EB1000E27A8F /* CalendarDateRangePickerViewController.swift in Sources */,
 				1797ED3822C7EB1000E27A8F /* ATCGenericLocalHeteroDataSource.swift in Sources */,
+				060A9ADD23F9D483003F1B7F /* UIViewController+Additions.swift in Sources */,
 				1797ED4322C7EB1000E27A8F /* ATCFirebaseSearchDataSource.swift in Sources */,
 				1797E85C22C7E80C00E27A8F /* FinanceNotificationsViewController.swift in Sources */,
 				1797ECD622C7EB1000E27A8F /* ATCLineChartCollectionViewCell.swift in Sources */,
 				1797ED9F22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.swift in Sources */,
-				1797ED5922C7EB1000E27A8F /* ATCGenericUIConfiguration.swift in Sources */,
-				1797EDA422C7ECEA00E27A8F /* ATCLocation.swift in Sources */,
 				1797E7E622C7E7ED00E27A8F /* CardHeaderRowAdapter.swift in Sources */,
-				1797E7F522C7E7ED00E27A8F /* FinanceInstitutionRowAdapter.swift in Sources */,
 				1797E83E22C7E80C00E27A8F /* FinanceAssetPositionCollectionViewCell.swift in Sources */,
+				066A250E23F9CD4200F4F88A /* UIScrollView.swift in Sources */,
 				1797EC3022C7EB0F00E27A8F /* ATCWalkthroughViewController.swift in Sources */,
-				1797EDA522C7ECEA00E27A8F /* ATCLocationManager.swift in Sources */,
 				1797E7EA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.swift in Sources */,
 				1797EC2622C7EB0F00E27A8F /* ATCNavigationController.swift in Sources */,
 				1797EBBC22C7EB0F00E27A8F /* InstaLinePageControl.swift in Sources */,
 				1797ED6622C7EB1000E27A8F /* ConstraintMakerPriortizable.swift in Sources */,
-				1797ED4522C7EB1000E27A8F /* UITabBarItem+ATCAdditions.swift in Sources */,
 				1797EC1F22C7EB0F00E27A8F /* ATCBarChartAdapter.swift in Sources */,
 				1797ED7C22C7EB1000E27A8F /* ConstraintView+Extensions.swift in Sources */,
 				1797EC1B22C7EB0F00E27A8F /* ATCDateRangeAdapter.swift in Sources */,
@@ -2373,11 +2373,11 @@
 				17FE614B2367BB4000CBE046 /* Section.swift in Sources */,
 				1797ED5422C7EB1000E27A8F /* ATCSignUpScreenManager.swift in Sources */,
 				1797ED5222C7EB1000E27A8F /* ATCLoginScreenManager.swift in Sources */,
-				1797ED4622C7EB1000E27A8F /* TimeFormatHelper.swift in Sources */,
 				17FE61482367BB4000CBE046 /* Icon.swift in Sources */,
-				1797EBEA22C7EB0F00E27A8F /* Double.swift in Sources */,
 				1797ED8322C7EB1000E27A8F /* ConstraintLayoutSupportDSL.swift in Sources */,
 				1797E7ED22C7E7ED00E27A8F /* FinanceAccountRowAdapter.swift in Sources */,
+				066A250C23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift in Sources */,
+				060A9AD323F9D2F9003F1B7F /* BadgedButton.swift in Sources */,
 				1797ECE222C7EB1000E27A8F /* ATCContactsTableViewCell.swift in Sources */,
 				1797EC2022C7EB0F00E27A8F /* ATCImageRowAdapter.swift in Sources */,
 			);
@@ -2519,7 +2519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSQ6T9Y6J4;
+				DEVELOPMENT_TEAM = JQDKUJH9S8;
 				INFOPLIST_FILE = CryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2538,7 +2538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSQ6T9Y6J4;
+				DEVELOPMENT_TEAM = JQDKUJH9S8;
 				INFOPLIST_FILE = CryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

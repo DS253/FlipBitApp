@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ATCDateRangeAdapter: ATCGenericCollectionRowAdapter {
+class ATCDateRangeAdapter: GenericCollectionRowAdapter {
 
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let dateRangeModel = object as? ATCDateRangeModel,
             let cell = cell as? ATCDateRangeCollectionViewCell {
             let caretImage = UIImage.localImage("caret-icon", template: true)
@@ -42,7 +42,7 @@ class ATCDateRangeAdapter: ATCGenericCollectionRowAdapter {
         return ATCDateRangeCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCDateRangeModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 50)
     }

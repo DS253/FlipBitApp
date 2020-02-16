@@ -9,7 +9,7 @@
 import Charts
 import UIKit
 
-class ATCPieChart: ATCGenericBaseModel {
+class ATCPieChart: GenericBaseModel {
     let entries: [PieChartDataEntry]
     let name: String
     let descriptionText: String?

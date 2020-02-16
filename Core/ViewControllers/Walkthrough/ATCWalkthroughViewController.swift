@@ -18,7 +18,7 @@ class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSo
     weak var delegate: ATCWalkthroughViewControllerDelegate?
 
     let viewControllers: [UIViewController]
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     var pageIndex = 0
     let pageController: UIPageViewController
     let fakeVC: UIViewController
@@ -26,7 +26,7 @@ class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSo
     init(nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?,
          viewControllers: [UIViewController],
-         uiConfig: ATCUIGenericConfigurationProtocol) {
+         uiConfig: UIGenericConfigurationProtocol) {
         self.viewControllers = viewControllers
         self.uiConfig = uiConfig
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

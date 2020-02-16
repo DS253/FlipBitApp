@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FinanceNotificationRowAdapter: ATCGenericCollectionRowAdapter {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+class FinanceNotificationRowAdapter: GenericCollectionRowAdapter {
+    let uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCNotification, let cell = cell as? ATCNotificationCollectionViewCell else { return }
         cell.hairlineView.backgroundColor = uiConfig.hairlineColor
 
@@ -46,7 +46,7 @@ class FinanceNotificationRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCNotificationCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCNotification else { return .zero }
         return CGSize(width: containerBounds.width, height: 120)
     }

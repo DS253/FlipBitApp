@@ -9,10 +9,10 @@
 import UIKit
 
 class NewsPreviewStoriesViewController: ATCGenericCollectionViewController {
-    var uiConfig: ATCUIGenericConfigurationProtocol
+    var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
 
-    init(dsProvider: FinanceDataSourceProvider, uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(dsProvider: FinanceDataSourceProvider, uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
 

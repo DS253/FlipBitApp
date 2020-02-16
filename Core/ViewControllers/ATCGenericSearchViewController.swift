@@ -16,7 +16,7 @@ protocol ATCGenericSearchable: class {
 
 struct ATCGenericSearchViewControllerConfiguration {
     let searchBarPlaceholderText: String?
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let cellPadding: CGFloat
 }
 
@@ -28,10 +28,10 @@ protocol ATCGenericSearchViewControllerDataSource: class {
 }
 
 protocol ATCGenericSearchViewControllerDataSourceDelegate: class {
-    func dataSource(_ dataSource: ATCGenericSearchViewControllerDataSource, didFetchResults results: [ATCGenericBaseModel])
+    func dataSource(_ dataSource: ATCGenericSearchViewControllerDataSource, didFetchResults results: [GenericBaseModel])
 }
 
-class ATCGenericSearchViewController<T: ATCGenericBaseModel>: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate, ATCGenericSearchViewControllerDataSourceDelegate{
+class ATCGenericSearchViewController<T: GenericBaseModel>: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate, ATCGenericSearchViewControllerDataSourceDelegate{
  
     let searchController: UISearchController
     let configuration: ATCGenericSearchViewControllerConfiguration
@@ -92,7 +92,7 @@ class ATCGenericSearchViewController<T: ATCGenericBaseModel>: UIViewController, 
         self.searchController.isActive = true
     }
 
-    func use(adapter: ATCGenericCollectionRowAdapter, for classString: String) {
+    func use(adapter: GenericCollectionRowAdapter, for classString: String) {
         searchResultsController.use(adapter: adapter, for: classString)
     }
 
@@ -100,7 +100,7 @@ class ATCGenericSearchViewController<T: ATCGenericBaseModel>: UIViewController, 
         searchDataSource?.search(text: searchController.searchBar.text)
     }
 
-    func dataSource(_ dataSource: ATCGenericSearchViewControllerDataSource, didFetchResults results: [ATCGenericBaseModel]) {
+    func dataSource(_ dataSource: ATCGenericSearchViewControllerDataSource, didFetchResults results: [GenericBaseModel]) {
         if let res = results as? [T] {
             localDataSource.update(items: res)
         }
@@ -117,10 +117,10 @@ class ATCGenericSearchViewController<T: ATCGenericBaseModel>: UIViewController, 
 class ATCGenericLocalSearchDataSource: ATCGenericSearchViewControllerDataSource {
 
     var viewer: ATCUser? = nil
-    let items: [ATCGenericBaseModel]
+    let items: [GenericBaseModel]
     weak var delegate: ATCGenericSearchViewControllerDataSourceDelegate?
 
-    init(items: [ATCGenericBaseModel]) {
+    init(items: [GenericBaseModel]) {
         self.items = items
     }
 

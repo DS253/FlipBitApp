@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCProfileButtonItem: ATCGenericBaseModel {
+class ATCProfileButtonItem: GenericBaseModel {
     var title: String
     var color: UIColor?
     var textColor: UIColor?

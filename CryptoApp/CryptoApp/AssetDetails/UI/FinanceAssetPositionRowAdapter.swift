@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FinanceAssetPositionRowAdapter: ATCGenericCollectionRowAdapter {
-    var uiConfig: ATCUIGenericConfigurationProtocol
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+class FinanceAssetPositionRowAdapter: GenericCollectionRowAdapter {
+    var uiConfig: UIGenericConfigurationProtocol
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let position = object as? ATCFinanceAssetPosition, let cell = cell as? FinanceAssetPositionCollectionViewCell {
 
             cell.positionTitleLabel.text = position.title
@@ -80,7 +80,7 @@ class FinanceAssetPositionRowAdapter: ATCGenericCollectionRowAdapter {
         return FinanceAssetPositionCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCFinanceAssetPosition else { return .zero }
         return CGSize(width: containerBounds.width, height: 250)
     }

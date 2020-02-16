@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCDividerRowAdapter: ATCGenericCollectionRowAdapter {
+class ATCDividerRowAdapter: GenericCollectionRowAdapter {
     let titleFont: UIFont
     let minHeight: CGFloat
     let titleColor: UIColor
@@ -21,7 +21,7 @@ class ATCDividerRowAdapter: ATCGenericCollectionRowAdapter {
         self.titleColor = titleColor
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let divider = object as? ATCDivider, let cell = cell as? ATCDividerCollectionViewCell {
             cell.dividerLabel.text = divider.title
             cell.dividerLabel.font = titleFont
@@ -35,7 +35,7 @@ class ATCDividerRowAdapter: ATCGenericCollectionRowAdapter {
         return ATCDividerCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let viewModel = object as? ATCDivider else { return .zero }
         let width = containerBounds.width
         var height = minHeight

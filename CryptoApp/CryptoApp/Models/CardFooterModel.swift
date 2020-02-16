@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardFooterModel: ATCGenericBaseModel {
+class CardFooterModel: GenericBaseModel {
     var title: String
     
     required init(jsonDict: [String: Any]) {

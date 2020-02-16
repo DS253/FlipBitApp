@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCNotification: ATCGenericBaseModel {
+class ATCNotification: GenericBaseModel {
     var category: String
     var content: String
     var icon: String

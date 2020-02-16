@@ -9,13 +9,13 @@
 import UIKit
 
 class TransactionsViewController: ATCGenericCollectionViewController {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+    let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
 
     init(transactionDataSource: ATCGenericCollectionViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider,
          scrollingEnabled: Bool,
-         uiConfig: ATCUIGenericConfigurationProtocol) {
+         uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
 

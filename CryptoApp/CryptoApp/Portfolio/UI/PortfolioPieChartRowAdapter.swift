@@ -9,14 +9,14 @@
 import Charts
 import UIKit
 
-class PortfolioPieChartRowAdapter: ATCGenericCollectionRowAdapter, ChartViewDelegate {
-    let uiConfig: ATCUIGenericConfigurationProtocol
+class PortfolioPieChartRowAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
+    let uiConfig: UIGenericConfigurationProtocol
 
-    init(uiConfig: ATCUIGenericConfigurationProtocol) {
+    init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
 
-    func configure(cell: UICollectionViewCell, with object: ATCGenericBaseModel) {
+    func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let pieChart = object as? ATCPieChart,
             let cell = cell as? ATCPieChartCollectionViewCell,
             let chartView = cell.pieChartView {
@@ -54,7 +54,7 @@ class PortfolioPieChartRowAdapter: ATCGenericCollectionRowAdapter, ChartViewDele
         return ATCPieChartCollectionViewCell.self
     }
 
-    func size(containerBounds: CGRect, object: ATCGenericBaseModel) -> CGSize {
+    func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is ATCPieChart else { return .zero }
         return CGSize(width: containerBounds.width, height: 350)
     }

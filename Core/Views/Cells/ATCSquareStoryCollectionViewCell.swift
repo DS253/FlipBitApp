@@ -13,7 +13,7 @@ class ATCSquareStoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet var storyImageView: UIImageView!
     @IBOutlet var storyLabel: UILabel!
 
-    func configure(uiConfig: ATCUIGenericConfigurationProtocol, viewModel: ATCStoryViewModel) {
+    func configure(uiConfig: UIGenericConfigurationProtocol, viewModel: ATCStoryViewModel) {
         storyContainerView.layer.borderWidth = 1
         storyContainerView.layer.borderColor = uiConfig.hairlineColor.cgColor
         storyContainerView.layer.cornerRadius = 5
