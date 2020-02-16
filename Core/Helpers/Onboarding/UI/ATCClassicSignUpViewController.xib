@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,7 +49,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47e-GP-Bg2" userLabel="Name Text Field" customClass="ATCTextField" customModule="ClassifiedsApp" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47e-GP-Bg2" userLabel="Name Text Field" customClass="FlipBitTextField" customModule="ClassifiedsApp" customModuleProvider="target">
                                             <rect key="frame" x="40" y="134" width="295" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="Q62-fu-BRG"/>
@@ -59,7 +57,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCl-l1-vQW" userLabel="Phone Number Text Field" customClass="ATCTextField" customModule="ClassifiedsApp" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCl-l1-vQW" userLabel="Phone Number Text Field" customClass="FlipBitTextField" customModule="ClassifiedsApp" customModuleProvider="target">
                                             <rect key="frame" x="40" y="194" width="295" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="xy5-sb-POC"/>
@@ -67,7 +65,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-ah-ypV" userLabel="E-mail Adress Text Field" customClass="ATCTextField" customModule="ClassifiedsApp" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-ah-ypV" userLabel="E-mail Adress Text Field" customClass="FlipBitTextField" customModule="ClassifiedsApp" customModuleProvider="target">
                                             <rect key="frame" x="40" y="254" width="295" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="kBZ-Iz-ijf"/>
@@ -75,7 +73,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-bV-kUc" userLabel="Password Text Field" customClass="ATCTextField" customModule="ClassifiedsApp" customModuleProvider="target">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-bV-kUc" userLabel="Password Text Field" customClass="FlipBitTextField" customModule="ClassifiedsApp" customModuleProvider="target">
                                             <rect key="frame" x="40" y="314" width="295" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="srW-KN-cZ9"/>

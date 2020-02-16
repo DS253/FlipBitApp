@@ -12,8 +12,8 @@ import UIKit
 class ATCClassicLoginScreenViewController: UIViewController, ATCLoginScreenProtocol {
 
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var passwordTextField: ATCTextField!
-    @IBOutlet var contactPointTextField: ATCTextField!
+    @IBOutlet var passwordTextField: FlipBitTextField!
+    @IBOutlet var contactPointTextField: FlipBitTextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var separatorLabel: UILabel!
     @IBOutlet var facebookButton: UIButton!

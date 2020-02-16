@@ -36,8 +36,8 @@ protocol ATCLandingScreenProtocol {
 
 protocol ATCLoginScreenProtocol {
     var titleLabel: UILabel! {get}
-    var contactPointTextField: ATCTextField! {get}
-    var passwordTextField: ATCTextField! {get}
+    var contactPointTextField: FlipBitTextField! {get}
+    var passwordTextField: FlipBitTextField! {get}
     var separatorLabel: UILabel! {get}
     var loginButton: UIButton! {get}
     var facebookButton: UIButton! {get}
@@ -48,10 +48,10 @@ protocol ATCLoginScreenProtocol {
 protocol ATCSignUpScreenProtocol {
     var titleLabel: UILabel! {get}
     var backButton: UIButton! {get}
-    var nameTextField: ATCTextField! {get}
-    var phoneNumberTextField: ATCTextField! {get}
-    var emailTextField: ATCTextField! {get}
-    var passwordTextField: ATCTextField! {get}
+    var nameTextField: FlipBitTextField! {get}
+    var phoneNumberTextField: FlipBitTextField! {get}
+    var emailTextField: FlipBitTextField! {get}
+    var passwordTextField: FlipBitTextField! {get}
     var errorLabel: UILabel! {get}
     var signUpButton: UIButton! {get}
     var view: UIView! {get}

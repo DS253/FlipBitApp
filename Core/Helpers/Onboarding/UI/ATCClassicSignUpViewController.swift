@@ -12,10 +12,10 @@ class ATCClassicSignUpViewController: UIViewController, ATCSignUpScreenProtocol 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var containerView: UIView!
     @IBOutlet var backButton: UIButton!
-    @IBOutlet var nameTextField: ATCTextField!
-    @IBOutlet var phoneNumberTextField: ATCTextField!
-    @IBOutlet var passwordTextField: ATCTextField!
-    @IBOutlet var emailTextField: ATCTextField!
+    @IBOutlet var nameTextField: FlipBitTextField!
+    @IBOutlet var phoneNumberTextField: FlipBitTextField!
+    @IBOutlet var passwordTextField: FlipBitTextField!
+    @IBOutlet var emailTextField: FlipBitTextField!
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var textView: UITextView!
