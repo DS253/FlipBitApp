@@ -11,11 +11,11 @@ import UIKit
 protocol ATCFinanceDataSourceProviderProtocol: class {
     var user: ATCUser? { get set }
 
-    func fetchLineChart(for selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void
-    func fetchCryptosChart(for selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void
-    func fetchAssetChart(for asset: ATCFinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void
+    func fetchLineChart(for selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void
+    func fetchCryptosChart(for selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void
+    func fetchAssetChart(for asset: ATCFinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void
     func fetchAssetDetails(for user: ATCUser?, asset: ATCFinanceAsset, completion: (_ position: ATCFinanceAssetPosition?, _ stats: ATCFinanceAssetStats, _ news: [ATCFinanceNewsModel]) -> Void) -> Void
-    func fetchBankAccountChart(for account: ATCFinanceAccount, selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void
+    func fetchBankAccountChart(for account: FinanceAccount, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void
 
     var chartConfig: ATCLineChartConfiguration { get }
     var profileUpdater: ATCProfileUpdaterProtocol {get}

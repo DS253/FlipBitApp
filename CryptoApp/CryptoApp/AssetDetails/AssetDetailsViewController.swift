@@ -52,7 +52,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
             guard let strongSelf = self else { return }
             if let news = object as? ATCFinanceNewsModel {
                 if let url = URL(string: news.url) {
-                    let vc = ATCWebViewController(url: url, title: news.publication)
+                    let vc = WebViewController(url: url, title: news.publication)
                     strongSelf.navigationController?.pushViewController(vc, animated: true)
                 }
             }
@@ -109,7 +109,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "ATCDivider")
     }
     
-    fileprivate func lineChartData(chart: ATCLineChart, config: ATCLineChartConfiguration) -> LineChartData {
+    fileprivate func lineChartData(chart: LineChart, config: ATCLineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)

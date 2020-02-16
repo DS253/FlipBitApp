@@ -37,7 +37,7 @@ class ATCBarChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let chart = object as? ATCBarChart,
+        if let chart = object as? BarChart,
             let cell = cell as? ATCBarChartCollectionViewCell,
             let chartView = cell.barChartView {
 
@@ -114,7 +114,7 @@ class ATCBarChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let _ = object as? ATCBarChart else { return .zero }
+        guard let _ = object as? BarChart else { return .zero }
         return CGSize(width: containerBounds.width / 2, height: 300)
     }
 

@@ -16,7 +16,7 @@ class ATCProfileItemRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ATCProfileItem, let cell = cell as? ATCProfileItemCollectionViewCell else { return }
+        guard let viewModel = object as? ProfileItem, let cell = cell as? ATCProfileItemCollectionViewCell else { return }
         cell.iconImageView.image = viewModel.icon
         cell.iconImageView.tintColor = viewModel.color
         cell.iconImageView.contentMode = .scaleAspectFill
@@ -40,7 +40,7 @@ class ATCProfileItemRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let _ = object as? ATCProfileItem else { return .zero }
+        guard let _ = object as? ProfileItem else { return .zero }
         return CGSize(width: containerBounds.width, height: 50.0)
     }
 }

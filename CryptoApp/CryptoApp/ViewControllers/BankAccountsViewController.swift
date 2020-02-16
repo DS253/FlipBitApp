@@ -32,7 +32,7 @@ class BankAccountsViewController: ATCGenericCollectionViewController {
 
         self.genericDataSource = dsProvider.bankAccountsDataSource
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
-        self.use(adapter: FinanceAccountRowAdapter(uiConfig: uiConfig), for: "ATCFinanceAccount")
+        self.use(adapter: FinanceAccountRowAdapter(uiConfig: uiConfig), for: "FinanceAccount")
 
         let adapter = AddBankAccountButtonRowAdapter(uiConfig: uiConfig)
         adapter.delegate = self
@@ -40,7 +40,7 @@ class BankAccountsViewController: ATCGenericCollectionViewController {
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let account = object as? ATCFinanceAccount {
+            if let account = object as? FinanceAccount {
                 // nothing to do here
             }
         }

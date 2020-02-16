@@ -16,23 +16,23 @@ class FinanceDataSourceProvider: ATCFinanceDataSourceProviderProtocol {
         self.uiConfig = uiConfig
     }
 
-    func fetchLineChart(for selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void {
+    func fetchLineChart(for selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchStockChart(for selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void {
+    func fetchStockChart(for selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchBankAccountChart(for account: ATCFinanceAccount, selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void {
+    func fetchBankAccountChart(for account: FinanceAccount, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchCryptosChart(for selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void {
+    func fetchCryptosChart(for selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 
-    func fetchAssetChart(for asset: ATCFinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: ATCLineChart?) -> Void) -> Void {
+    func fetchAssetChart(for asset: ATCFinanceAsset, selectedDate: ATCChartDate, completion: (_ chart: LineChart?) -> Void) -> Void {
         completion(FinanceStaticDataProvider.lineChart)
     }
 

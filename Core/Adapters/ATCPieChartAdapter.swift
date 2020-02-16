@@ -29,7 +29,7 @@ class ATCPieChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let pieChart = object as? ATCPieChart,
+        if let pieChart = object as? PieChart,
             let cell = cell as? ATCPieChartCollectionViewCell,
             let chartView = cell.pieChartView {
 
@@ -67,7 +67,7 @@ class ATCPieChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let pieChart = object as? ATCPieChart else { return .zero }
+        guard let pieChart = object as? PieChart else { return .zero }
         return CGSize(width: containerBounds.width / 2, height: 180)
     }
 

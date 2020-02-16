@@ -1,9 +1,9 @@
 //
 //  TransactionsRowAdapter.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class TransactionsRowAdapter: GenericCollectionRowAdapter {
     init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let transaction = object as? ATCFinanceTransaction, let cell = cell as? TransactionCollectionViewCell {
             if transaction.imageURL.count == 0 {
@@ -28,11 +28,11 @@ class TransactionsRowAdapter: GenericCollectionRowAdapter {
             cell.imageView.tintColor = .white
             cell.imageView.layer.cornerRadius = 50 / 2
             cell.imageView.clipsToBounds = true
-
+            
             cell.titleLabel.text = transaction.title
             cell.titleLabel.textColor = uiConfig.mainTextColor
             cell.titleLabel.font = uiConfig.regularFont(size: 16)
-
+            
             cell.priceLabel.text = transaction.price
             if (transaction.isPositive) {
                 cell.priceLabel.textColor = UIColor(hexString: "#5ccb96")
@@ -40,24 +40,24 @@ class TransactionsRowAdapter: GenericCollectionRowAdapter {
                 cell.priceLabel.textColor = uiConfig.mainTextColor
             }
             cell.priceLabel.font = uiConfig.boldFont(size: 16)
-
+            
             let dateFormatterPrint = DateFormatter()
             dateFormatterPrint.dateFormat = "MMM dd"
             cell.dateLabel.text = dateFormatterPrint.string(from: transaction.date)
             cell.dateLabel.textColor = uiConfig.mainSubtextColor
             cell.dateLabel.font = uiConfig.regularFont(size: 14)
-
+            
             cell.bottomBorderView.backgroundColor = uiConfig.hairlineColor
-
+            
             cell.backgroundColor = uiConfig.mainThemeBackgroundColor
             cell.containerView.backgroundColor = .clear
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return TransactionCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is ATCFinanceTransaction else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)

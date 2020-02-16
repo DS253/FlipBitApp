@@ -50,7 +50,7 @@ class PortfolioViewController: ATCGenericCollectionViewController {
                                                                          newsVCModel
                                                                          ])
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
-        self.use(adapter: PortfolioPieChartRowAdapter(uiConfig: uiConfig), for: "ATCPieChart")
+        self.use(adapter: PortfolioPieChartRowAdapter(uiConfig: uiConfig), for: "PieChart")
         //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "ATCDivider")
 
         self.title = "Portfolio"

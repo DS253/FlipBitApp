@@ -12,10 +12,10 @@ import UIKit
 class BankAccountViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
-    let financeAccount: ATCFinanceAccount
+    let financeAccount: FinanceAccount
 
     init(uiConfig: UIGenericConfigurationProtocol,
-         financeAccount: ATCFinanceAccount,
+         financeAccount: FinanceAccount,
          transactionDataSource: ATCGenericCollectionViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
@@ -78,7 +78,7 @@ class BankAccountViewController: ATCGenericCollectionViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
     }
 
-    fileprivate func lineChartData(chart: ATCLineChart, config: ATCLineChartConfiguration) -> LineChartData {
+    fileprivate func lineChartData(chart: LineChart, config: ATCLineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)

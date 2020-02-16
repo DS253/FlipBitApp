@@ -1,35 +1,35 @@
 //
-//  ATCProfileItem.swift
-//  DatingApp
+//  ProfileItem.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-public enum ATCProfileItemType {
+public enum ProfileItemType {
     case none
     case arrow
 }
 
-public class ATCProfileItem: GenericBaseModel {
+public class ProfileItem: GenericBaseModel {
     var icon: UIImage?
     var title: String
-    var type: ATCProfileItemType
+    var type: ProfileItemType
     var color: UIColor
-
-    init(icon: UIImage? = nil, title: String, type: ATCProfileItemType, color: UIColor) {
+    
+    init(icon: UIImage? = nil, title: String, type: ProfileItemType, color: UIColor) {
         self.icon = icon
         self.title = title
         self.type = type
         self.color = color
     }
-
+    
     required public init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     public var description: String {
         return title
     }

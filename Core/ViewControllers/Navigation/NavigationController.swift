@@ -1,25 +1,25 @@
 //
-//  ATCNavigationController.swift
-//  AppTemplatesFoundation
+//  NavigationController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/11/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-public protocol ATCNavigationControllerDelegate: class {
-    func navigationControllerDidTapMenuButton(_ navigationController: ATCNavigationController)
+public protocol NavigationControllerDelegate: class {
+    func navigationControllerDidTapMenuButton(_ navigationController: NavigationController)
 }
 
-public class ATCNavigationController: UINavigationController, UINavigationControllerDelegate {
+public class NavigationController: UINavigationController, UINavigationControllerDelegate {
     fileprivate var menuButton: UIBarButtonItem?
     fileprivate var topNavigationRightViews: [UIView]?
     fileprivate var titleView: UIView?
     var topNavigationLeftViews: [UIView]?
     fileprivate var topNavigationLeftImage: UIImage?
-    weak var drawerDelegate: ATCNavigationControllerDelegate?
-
+    weak var drawerDelegate: NavigationControllerDelegate?
+    
     public init(rootViewController: UIViewController,
                 topNavigationLeftViews: [UIView]? = nil,
                 topNavigationRightViews: [UIView]?,
@@ -45,27 +45,27 @@ public class ATCNavigationController: UINavigationController, UINavigationContro
             })
         }
     }
-
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         self.view.backgroundColor = .white
     }
-
+    
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         prepareNavigationBar()
     }
 }
 
-extension ATCNavigationController {
+extension NavigationController {
     func prepareNavigationBar() {
         topViewController?.navigationItem.title = topViewController?.title
         if self.viewControllers.count <= 1 {
@@ -86,7 +86,7 @@ extension ATCNavigationController {
     }
 }
 
-extension ATCNavigationController {
+extension NavigationController {
     @objc
     fileprivate func handleMenuButton() {
         drawerDelegate?.navigationControllerDidTapMenuButton(self)

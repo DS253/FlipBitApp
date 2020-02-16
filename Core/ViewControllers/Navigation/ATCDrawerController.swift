@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ATCDrawerController: UIViewController, ATCNavigationControllerDelegate {
-    var rootViewController: ATCNavigationController
+class ATCDrawerController: UIViewController, NavigationControllerDelegate {
+    var rootViewController: NavigationController
     var menuController: ATCMenuCollectionViewController
     var isMenuExpanded: Bool = false
     let overlayView = UIView()
 
-    init(rootViewController: ATCNavigationController, menuController: ATCMenuCollectionViewController) {
+    init(rootViewController: NavigationController, menuController: ATCMenuCollectionViewController) {
         self.rootViewController = rootViewController
         self.menuController = menuController
         super.init(nibName: nil, bundle: nil)
@@ -86,7 +86,7 @@ class ATCDrawerController: UIViewController, ATCNavigationControllerDelegate {
 }
 
 extension ATCDrawerController {
-    func navigationControllerDidTapMenuButton(_ navigationController: ATCNavigationController) {
+    func navigationControllerDidTapMenuButton(_ navigationController: NavigationController) {
         toggleMenu()
     }
 }

@@ -104,7 +104,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
-    fileprivate func lineChartData(chart: ATCLineChart, config: ATCLineChartConfiguration) -> LineChartData {
+    fileprivate func lineChartData(chart: LineChart, config: ATCLineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)

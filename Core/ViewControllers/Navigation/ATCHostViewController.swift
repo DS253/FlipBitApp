@@ -91,7 +91,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
     let statusBarStyle: UIStatusBarStyle
 
     var tabController: UITabBarController?
-    var navigationRootController: ATCNavigationController?
+    var navigationRootController: NavigationController?
     var menuViewController: ATCMenuCollectionViewController?
     var drawerController: ATCDrawerController?
     var onboardingCoordinator: ATCOnboardingCoordinatorProtocol?
@@ -261,7 +261,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
 
     fileprivate func updateNavigationProfilePhotoIfNeeded() {
         if (self.style == .tabBar && profilePresenter != nil) {
-            if let firstNavigationVC = self.tabController?.children.first as? ATCNavigationController {
+            if let firstNavigationVC = self.tabController?.children.first as? NavigationController {
                 let uiControl = UIControl(frame: .zero)
                 uiControl.snp.makeConstraints { (maker) in
                     maker.height.equalTo(30)
@@ -300,7 +300,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
     fileprivate func configureChildrenViewControllers(configuration: ATCHostConfiguration) {
         if (style == .tabBar) {
             let navigationControllers = items.filter{$0.type == .viewController}.map {
-                ATCNavigationController(rootViewController: $0.viewController,
+                NavigationController(rootViewController: $0.viewController,
                                         topNavigationLeftViews: $0.leftTopViews,
                                         topNavigationRightViews: (($0.rightTopViews == nil) ? configuration.topNavigationRightViews : $0.rightTopViews),
                                         topNavigationLeftImage: nil)
@@ -319,7 +319,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
             }
         } else {
             guard let firstVC = items.first?.viewController else { return }
-            navigationRootController = ATCNavigationController(rootViewController: firstVC,
+            navigationRootController = NavigationController(rootViewController: firstVC,
                                                                topNavigationRightViews: configuration.topNavigationRightViews,
                                                                titleView: configuration.titleView,
                                                                topNavigationLeftImage: configuration.topNavigationLeftImage,

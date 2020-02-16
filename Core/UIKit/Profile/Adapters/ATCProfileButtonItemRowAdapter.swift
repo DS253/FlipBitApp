@@ -16,7 +16,7 @@ class ATCProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ATCProfileButtonItem, let cell = cell as? ATCProfileButtonCollectionViewCell else { return }
+        guard let viewModel = object as? ProfileButtonItem, let cell = cell as? ATCProfileButtonCollectionViewCell else { return }
         cell.button.setTitle(viewModel.title, for: .normal)
         cell.button.configure(tintColor: viewModel.textColor ?? uiConfig.mainThemeBackgroundColor,
                               font: uiConfig.boldFont(size: 18.0),
@@ -35,7 +35,7 @@ class ATCProfileButtonItemRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let _ = object as? ATCProfileButtonItem else { return .zero }
+        guard let _ = object as? ProfileButtonItem else { return .zero }
         return CGSize(width: containerBounds.width, height: 65.0)
     }
 }

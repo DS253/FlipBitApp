@@ -77,7 +77,7 @@ extension ATCClassicSignUpViewController: UITextViewDelegate
 {
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         //UIApplication.shared.open(URL, options: [:])
-        let webView = ATCWebViewController(url: URL, title: "Terms of Use")
+        let webView = WebViewController(url: URL, title: "Terms of Use")
         self.navigationController?.pushViewController(webView, animated: true)
         return false
     }

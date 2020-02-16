@@ -1,25 +1,25 @@
 //
-//  ATCFinanceAccount.swift
-//  FinanceApp
+//  FinanceAccount.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCFinanceAccount: GenericBaseModel {
+class FinanceAccount: GenericBaseModel {
     var title: String
     var color: String
     var logoURL: String
     var institution: String
     var amount: String
     var isPositive: Bool
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(title: String,
          color: String,
          logoURL: String,
@@ -33,7 +33,7 @@ class ATCFinanceAccount: GenericBaseModel {
         self.institution = institution
         self.isPositive = isPositive
     }
-
+    
     var description: String {
         return title
     }

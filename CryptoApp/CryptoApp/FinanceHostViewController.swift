@@ -152,10 +152,10 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
                                           uiConfig: uiConfig,
                                           selectionBlock: {[weak self] (nav, model, index) in
                                             guard let `self` = self else { return }
-                                            if let _ = model as? ATCProfileButtonItem {
+                                            if let _ = model as? ProfileButtonItem {
                                                 // Logout
                                                 NotificationCenter.default.post(name: kLogoutNotificationName, object: nil)
-                                            } else if let item = model as? ATCProfileItem {
+                                            } else if let item = model as? ProfileItem {
                                                 if item.title == "Settings", let user = self.dsProvider.user {
                                                     let settingsVC = SettingsViewController(user: user)
                                                     self.profileVC?.navigationController?.pushViewController(settingsVC, animated: true)
@@ -175,15 +175,15 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
 
     fileprivate func selfProfileItems() -> [GenericBaseModel] {
         var items: [GenericBaseModel] = []
-        items.append(contentsOf: [ATCProfileItem(icon: UIImage.localImage("account-male-icon", template: true),
+        items.append(contentsOf: [ProfileItem(icon: UIImage.localImage("account-male-icon", template: true),
                                                  title: "Account Details",
                                                  type: .arrow,
                                                  color: UIColor(hexString: "#6979F8")),
-                                  ATCProfileItem(icon: UIImage.localImage("settings-menu-item", template: true),
+                                  ProfileItem(icon: UIImage.localImage("settings-menu-item", template: true),
                                                  title: "Settings",
                                                  type: .arrow,
                                                  color: UIColor(hexString: "#3F3356")),
-                                  ATCProfileItem(icon: UIImage.localImage("contact-call-icon", template: true),
+                                  ProfileItem(icon: UIImage.localImage("contact-call-icon", template: true),
                                                  title: "Contact Us",
                                                  type: .arrow,
                                                  color: UIColor(hexString: "#64E790"))

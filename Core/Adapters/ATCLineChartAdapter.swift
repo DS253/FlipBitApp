@@ -35,7 +35,7 @@ class ATCLineChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let lineChart = object as? ATCLineChart,
+        if let lineChart = object as? LineChart,
             let cell = cell as? ATCLineChartCollectionViewCell,
             let chartView = cell.lineChartView {
 //            cell.containerView.clipsToBounds = true
@@ -73,7 +73,7 @@ class ATCLineChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let lineChart = object as? ATCLineChart else { return .zero }
+        guard let lineChart = object as? LineChart else { return .zero }
         return CGSize(width: containerBounds.width, height: 150)
     }
 
@@ -81,7 +81,7 @@ class ATCLineChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
         print("Asda")
     }
 
-    func lineChartData(chart: ATCLineChart) -> LineChartData {
+    func lineChartData(chart: LineChart) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
             let value = ChartDataEntry(x: Double(index), y: number)

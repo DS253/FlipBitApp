@@ -41,7 +41,7 @@ class NewsPreviewStoriesViewController: ATCGenericCollectionViewController {
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             } else if let news = object as? ATCFinanceNewsModel {
                 if let url = URL(string: news.url) {
-                    let vc = ATCWebViewController(url: url, title: news.publication)
+                    let vc = WebViewController(url: url, title: news.publication)
                     strongSelf.navigationController?.pushViewController(vc, animated: true)
                 }
             }

@@ -20,14 +20,14 @@ class ATCFacebookAPIManager {
         self.accessToken = accessToken
     }
 
-    func requestFacebookUser(completion: @escaping (_ facebookUser: ATCFacebookUser?) -> Void) {
+    func requestFacebookUser(completion: @escaping (_ facebookUser: FacebookUser?) -> Void) {
         let graphRequest = GraphRequest(graphPath: kGraphPathMe, parameters: ["fields":"id,email,last_name,first_name,picture"], tokenString: accessToken.tokenString, version: nil, httpMethod: .get)
 
         graphRequest.start { (connection, result, error) in
 //            switch result {
 //            case .success(let graphResponse):
 //                if let dictionary = graphResponse.dictionaryValue {
-//                    completion(ATCFacebookUser(jsonDict: dictionary))
+//                    completion(FacebookUser(jsonDict: dictionary))
 //                }
 //                break
 //            default:
