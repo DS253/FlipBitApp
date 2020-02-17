@@ -163,6 +163,8 @@
 		066A251A23F9CF6300F4F88A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251923F9CF6300F4F88A /* UIImage.swift */; };
 		066A251C23F9CF9D00F4F88A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251B23F9CF9D00F4F88A /* String.swift */; };
 		066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251D23F9CFBC00F4F88A /* UIColor.swift */; };
+		06E91ECA23FB2CD40050DC7E /* DiskPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E91EC923FB2CD40050DC7E /* DiskPersistenceStore.swift */; };
+		06E91ECC23FB2D120050DC7E /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E91ECB23FB2D120050DC7E /* PersistentStore.swift */; };
 		1797E65F22C7E65300E27A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797E65E22C7E65300E27A8F /* Assets.xcassets */; };
 		1797E66222C7E65300E27A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */; };
 		1797E7E022C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7CA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib */; };
@@ -316,8 +318,6 @@
 		1797ED3122C7EB1000E27A8F /* FallingSkyCondObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAD422C7EB0F00E27A8F /* FallingSkyCondObl.otf */; };
 		1797ED3222C7EB1000E27A8F /* FallingSkyBlkObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAD522C7EB0F00E27A8F /* FallingSkyBlkObl.otf */; };
 		1797ED3322C7EB1000E27A8F /* FallingSkyExtOuObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAD622C7EB0F00E27A8F /* FallingSkyExtOuObl.otf */; };
-		1797ED3922C7EB1000E27A8F /* ATCPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */; };
-		1797ED4922C7EB1000E27A8F /* ATCDiskPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */; };
 		1797ED4A22C7EB1000E27A8F /* ATCClassicSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAF322C7EB0F00E27A8F /* ATCClassicSignUpViewController.xib */; };
 		1797ED4B22C7EB1000E27A8F /* ATCClassicSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAF422C7EB0F00E27A8F /* ATCClassicSignUpViewController.swift */; };
 		1797ED4C22C7EB1000E27A8F /* ATCClassicLandingScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAF522C7EB0F00E27A8F /* ATCClassicLandingScreenViewController.xib */; };
@@ -546,6 +546,8 @@
 		066A251923F9CF6300F4F88A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		066A251B23F9CF9D00F4F88A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		066A251D23F9CFBC00F4F88A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		06E91EC923FB2CD40050DC7E /* DiskPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistenceStore.swift; sourceTree = "<group>"; };
+		06E91ECB23FB2D120050DC7E /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		1797E65422C7E65100E27A8F /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797E65E22C7E65300E27A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1797E66122C7E65300E27A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -701,8 +703,6 @@
 		1797EAD422C7EB0F00E27A8F /* FallingSkyCondObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FallingSkyCondObl.otf; sourceTree = "<group>"; };
 		1797EAD522C7EB0F00E27A8F /* FallingSkyBlkObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FallingSkyBlkObl.otf; sourceTree = "<group>"; };
 		1797EAD622C7EB0F00E27A8F /* FallingSkyExtOuObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FallingSkyExtOuObl.otf; sourceTree = "<group>"; };
-		1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCPersistentStore.swift; sourceTree = "<group>"; };
-		1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDiskPersistenceStore.swift; sourceTree = "<group>"; };
 		1797EAF322C7EB0F00E27A8F /* ATCClassicSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicSignUpViewController.xib; sourceTree = "<group>"; };
 		1797EAF422C7EB0F00E27A8F /* ATCClassicSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicSignUpViewController.swift; sourceTree = "<group>"; };
 		1797EAF522C7EB0F00E27A8F /* ATCClassicLandingScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicLandingScreenViewController.xib; sourceTree = "<group>"; };
@@ -1620,15 +1620,15 @@
 		1797EADB22C7EB0F00E27A8F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */,
 				1797EAE622C7EB0F00E27A8F /* Firebase */,
-				1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */,
 				1797EAF122C7EB0F00E27A8F /* Onboarding */,
+				06E91EC923FB2CD40050DC7E /* DiskPersistenceStore.swift */,
 				060A9BBA23FA645C003F1B7F /* FirebaseLoginManager.swift */,
 				060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */,
 				060A9B1A23F9FFFA003F1B7F /* GenericLocalDataSource.swift */,
 				060A9B4C23FA14BD003F1B7F /* GenericLocalHeteroDataSource.swift */,
 				060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */,
+				06E91ECB23FB2D120050DC7E /* PersistentStore.swift */,
 				060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */,
 				060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */,
 				066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */,
@@ -2124,7 +2124,6 @@
 				1797EBBB22C7EB0F00E27A8F /* ATCDatedLineChartViewController.swift in Sources */,
 				1797ECD222C7EB1000E27A8F /* ATCSquareStoryCollectionViewCell.swift in Sources */,
 				1797ED7922C7EB1000E27A8F /* ConstraintMaker.swift in Sources */,
-				1797ED3922C7EB1000E27A8F /* ATCPersistentStore.swift in Sources */,
 				060A9AE323F9E219003F1B7F /* WatchListViewController.swift in Sources */,
 				1797ECCD22C7EB1000E27A8F /* ATCDividerCollectionViewCell.swift in Sources */,
 				060A9B0F23F9F978003F1B7F /* ExpenseCategory.swift in Sources */,
@@ -2165,6 +2164,7 @@
 				060A9BB523FA6299003F1B7F /* FinanceUIConfiguration.swift in Sources */,
 				1797ED8022C7EB1000E27A8F /* ConstraintRelatableTarget.swift in Sources */,
 				1797EBDB22C7EB0F00E27A8F /* ATCImage.swift in Sources */,
+				06E91ECC23FB2D120050DC7E /* PersistentStore.swift in Sources */,
 				060A9BB923FA634D003F1B7F /* PortfolioPieChartRow.swift in Sources */,
 				060A9BDC23FA6E99003F1B7F /* GenericFirebaseDataSource.swift in Sources */,
 				060A9B5D23FA1A67003F1B7F /* Divider.swift in Sources */,
@@ -2302,7 +2302,6 @@
 				066A251223F9CEC400F4F88A /* UIView.swift in Sources */,
 				060A9B7323FA30DF003F1B7F /* TransactionsViewController.swift in Sources */,
 				060A9AD523F9D361003F1B7F /* Location.swift in Sources */,
-				1797ED4922C7EB1000E27A8F /* ATCDiskPersistenceStore.swift in Sources */,
 				060A9B2F23FA04BD003F1B7F /* SelectFilter.swift in Sources */,
 				17FE614C2367BB4000CBE046 /* DetailText.swift in Sources */,
 				066A250623F9CAC600F4F88A /* CryptoHomeViewController.swift in Sources */,
@@ -2366,6 +2365,7 @@
 				1797E83E22C7E80C00E27A8F /* FinanceAssetPositionCollectionViewCell.swift in Sources */,
 				066A250E23F9CD4200F4F88A /* UIScrollView.swift in Sources */,
 				1797EC3022C7EB0F00E27A8F /* ATCWalkthroughViewController.swift in Sources */,
+				06E91ECA23FB2CD40050DC7E /* DiskPersistenceStore.swift in Sources */,
 				060A9B9323FA5BA0003F1B7F /* LiquidCollectionViewLayout.swift in Sources */,
 				1797E7EA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.swift in Sources */,
 				060A9B1F23FA00E5003F1B7F /* FinanceTransaction.swift in Sources */,

@@ -1,9 +1,9 @@
 //
-//  ATCPersistentStore.swift
-//  DashboardApp
+//  PersistentStore.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/16/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/17/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit

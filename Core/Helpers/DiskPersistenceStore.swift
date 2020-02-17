@@ -1,9 +1,9 @@
 //
-//  ATCDiskPersistenceStore.swift
-//  ListingApp
+//  DiskPersistenceStore.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/19/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/17/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Foundation

@@ -140,7 +140,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(didRequestLogout), name: kLogoutNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateProfileInfo),name: kATCLoggedInUserDataDidChangeNotification, object: nil)
         
-        let store = ATCPersistentStore()
+        let store = PersistentStore()
         var userStatus: Bool = false
         let faceIDKey = "face_id_enabled"
         
@@ -228,7 +228,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
     }
     
     @objc fileprivate func didRequestLogout() {
-        let store = ATCPersistentStore()
+        let store = PersistentStore()
         store.logout()
         if let onboardingCoordinator = onboardingCoordinator {
             let childVC: UIViewController = (style == .tabBar) ? tabController! : drawerController!
@@ -360,7 +360,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
     }
     
     func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController) {
-        let store = ATCPersistentStore()
+        let store = PersistentStore()
         store.markWalkthroughCompleted()
         
         if let onboardingCoordinator = self.onboardingCoordinator {
@@ -378,7 +378,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
         self.user = user
         presentLoggedInViewControllers()
         if let user = user {
-            let store = ATCPersistentStore()
+            let store = PersistentStore()
             store.markUserAsLoggedIn(user: user)
             self.delegate?.hostViewController(self, didSync: user)
         }
@@ -405,7 +405,7 @@ extension HostViewController: LocationManagerDelegate {
                 self.onboardingCoordinator?.delegate = self
                 // the location has been updated for the user, so we are updating it in the local persistent store as well
                 user.location = location
-                let store = ATCPersistentStore()
+                let store = PersistentStore()
                 store.markUserAsLoggedIn(user: user)
                 self.delegate?.hostViewController(self, didSync: user)
             }

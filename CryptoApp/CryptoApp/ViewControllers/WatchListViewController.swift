@@ -32,7 +32,7 @@ class WatchlistViewController: GenericCollectionViewController {
         super.init(configuration: config)
         
         // Fetching the watchlist from disk and setting it up as data source for the view contorller
-        let store = ATCDiskPersistenceStore(key: "asset_watchlist")
+        let store = DiskPersistenceStore(key: "asset_watchlist")
         if let assets = store.retrieve() as? [FinanceAsset] {
             self.genericDataSource = GenericLocalDataSource(items: assets)
         } else {

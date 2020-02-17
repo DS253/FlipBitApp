@@ -134,7 +134,7 @@ class AssetDetailsViewController: GenericCollectionViewController {
     }
     
     fileprivate func configureWatchlistButton() {
-        let store = ATCDiskPersistenceStore(key: "asset_watchlist")
+        let store = DiskPersistenceStore(key: "asset_watchlist")
         let iconString = store.contains(object: asset) ? "add-filled-icon" : "add-empty-icon"
         watchlistButton.configure(icon: UIImage.localImage(iconString, template: true), color: uiConfig.mainThemeBackgroundColor)
         watchlistButton.snp.makeConstraints({ (maker) in
@@ -145,7 +145,7 @@ class AssetDetailsViewController: GenericCollectionViewController {
     }
     
     @objc fileprivate func didTapWatchlistButton() {
-        let store = ATCDiskPersistenceStore(key: "asset_watchlist")
+        let store = DiskPersistenceStore(key: "asset_watchlist")
         if store.contains(object: asset) {
             store.remove(object: asset)
         } else {
