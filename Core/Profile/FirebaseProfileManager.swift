@@ -1,18 +1,18 @@
 //
-//  ATCChatProfileManager.swift
-//  ChatApp
+//  FirebaseProfileManager.swift
+//  CryptoApp
 //
-//  Created by Osama Naeem on 28/05/2019.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 import FirebaseFirestore
 
-class ATCFirebaseProfileManager : ProfileManager {
+class FirebaseProfileManager : ProfileManager {
     let db = Firestore.firestore()
     var usersListener: ListenerRegistration? = nil
-
+    
     var delegate: ProfileManagerDelegate?
     
     func fetchProfile(for user: ATCUser) {

@@ -11,15 +11,15 @@ import UIKit
 class MenuItemRowAdapter: GenericCollectionRowAdapter {
     
     let cellClassType: UICollectionViewCell.Type
-    let uiConfig: ATCMenuUIConfiguration
+    let uiConfig: MenuUIConfiguration
     
-    init(cellClassType: UICollectionViewCell.Type, uiConfig: ATCMenuUIConfiguration) {
+    init(cellClassType: UICollectionViewCell.Type, uiConfig: MenuUIConfiguration) {
         self.cellClassType = cellClassType
         self.uiConfig = uiConfig
     }
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let item = object as? NavigationItem, let cell = cell as? ATCMenuItemCollectionViewCellProtocol else {
+        guard let item = object as? NavigationItem, let cell = cell as? MenuItemCollectionViewCellProtocol else {
             fatalError()
         }
         cell.configure(item: item)

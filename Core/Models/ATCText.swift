@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol ATCTextProtocol {
+protocol TextProtocol {
     var text: String {get}
     var accessoryText: String? {get}
 }
 
-class ATCText: GenericBaseModel, ATCTextProtocol {
+class ATCText: GenericBaseModel, TextProtocol {
 
     var text: String
     var accessoryText: String?

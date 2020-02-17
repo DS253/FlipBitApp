@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WatchlistViewController: ATCGenericCollectionViewController {
+class WatchlistViewController: GenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
     
@@ -18,7 +18,7 @@ class WatchlistViewController: ATCGenericCollectionViewController {
         self.dsProvider = dsProvider
         
         let layout = ATCCollectionViewFlowLayout()
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: layout,

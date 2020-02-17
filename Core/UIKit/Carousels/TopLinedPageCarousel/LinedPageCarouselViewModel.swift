@@ -12,10 +12,10 @@ class LinedPageCarouselViewModel: GenericBaseModel {
     var description: String = "LinedPageCarouselViewModel"
     
     let cellHeight: CGFloat
-    var viewController: ATCGenericCollectionViewController
+    var viewController: GenericCollectionViewController
     weak var parentViewController: UIViewController?
     
-    init(viewController: ATCGenericCollectionViewController, cellHeight: CGFloat) {
+    init(viewController: GenericCollectionViewController, cellHeight: CGFloat) {
         self.cellHeight = cellHeight
         self.viewController = viewController
     }

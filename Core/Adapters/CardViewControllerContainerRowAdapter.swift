@@ -23,7 +23,7 @@ class CardViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
         var height: CGFloat
         if let cellHeight = viewModel.cellHeight {
             height = cellHeight
-        } else if let collectionVC = viewModel.viewController as? ATCGenericCollectionViewController,
+        } else if let collectionVC = viewModel.viewController as? GenericCollectionViewController,
             let dataSource = collectionVC.genericDataSource,
             let subcellHeight = viewModel.subcellHeight {
             height = CGFloat(dataSource.numberOfObjects()) * subcellHeight

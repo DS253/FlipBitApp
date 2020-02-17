@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCCircledIconMenuCollectionViewCell: UICollectionViewCell, ATCMenuItemCollectionViewCellProtocol {
+class ATCCircledIconMenuCollectionViewCell: UICollectionViewCell, MenuItemCollectionViewCellProtocol {
     @IBOutlet var menuImageView: UIImageView!
     @IBOutlet var menuLabel: UILabel!
     @IBOutlet var imageContainerView: UIView!

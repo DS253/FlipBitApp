@@ -46,7 +46,7 @@ class FinanceAccountRowAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? FinanceAccount else { return .zero }
+        guard object is FinanceAccount else { return .zero }
         return CGSize(width: containerBounds.width, height: 70)
     }
 }

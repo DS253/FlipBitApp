@@ -1,16 +1,16 @@
 //
-//  ATCFirebaseSearchDataSource.swift
-//  ListingApp
+//  FirebaseSearchDataSource.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 10/2/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseSearchDataSource<T: GenericSearchable & GenericBaseModel>: GenericSearchViewControllerDataSource {
-
+class FirebaseSearchDataSource<T: GenericSearchable & GenericBaseModel>: GenericSearchViewControllerDataSource {
+    
     var viewer: ATCUser?
     weak var delegate: GenericSearchViewControllerDataSourceDelegate?
     let tableName: String
@@ -19,7 +19,7 @@ class ATCFirebaseSearchDataSource<T: GenericSearchable & GenericBaseModel>: Gene
         self.tableName = tableName
         self.limit = limit
     }
-
+    
     func search(text: String?) {
         let ref: Query = Firestore.firestore().collection(tableName)
         ref.getDocuments {[weak self] (querySnapshot, error) in
@@ -42,7 +42,7 @@ class ATCFirebaseSearchDataSource<T: GenericSearchable & GenericBaseModel>: Gene
             if text != nil {
                 //items = items.filter({$0.matches(keyword: text)})
             }
-            self.delegate?.dataSource(self as! GenericSearchViewControllerDataSource, didFetchResults: items)
+            self.delegate?.dataSource(self as GenericSearchViewControllerDataSource, didFetchResults: items)
         }
     }
     

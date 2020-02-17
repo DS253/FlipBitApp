@@ -1,14 +1,14 @@
 //
-//  ATCContactsTableViewCell.swift
-//  ChatApp
+//  ContactsTableViewCell.swift
+//  CryptoApp
 //
-//  Created by Osama Naeem on 21/05/2019.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCContactsTableViewCell: UITableViewCell {
+class ContactsTableViewCell: UITableViewCell {
     
     var imageViewSize: CGFloat = 30
     let friendImageView: UIImageView = {

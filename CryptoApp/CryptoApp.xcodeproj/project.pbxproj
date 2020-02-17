@@ -22,7 +22,6 @@
 		060A9AE323F9E219003F1B7F /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AE223F9E219003F1B7F /* WatchListViewController.swift */; };
 		060A9AEB23F9ED91003F1B7F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AEA23F9ED91003F1B7F /* WebViewController.swift */; };
 		060A9AED23F9EE36003F1B7F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AEC23F9EE36003F1B7F /* NavigationController.swift */; };
-		060A9AEF23F9EE8C003F1B7F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AEE23F9EE8C003F1B7F /* LineChart.swift */; };
 		060A9AF123F9EECD003F1B7F /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AF023F9EECD003F1B7F /* PieChart.swift */; };
 		060A9AF323F9EF0B003F1B7F /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AF223F9EF0B003F1B7F /* BarChart.swift */; };
 		060A9AF523F9F139003F1B7F /* FacebookUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9AF423F9F139003F1B7F /* FacebookUser.swift */; };
@@ -42,7 +41,6 @@
 		060A9B1123F9FA4B003F1B7F /* OnboardingConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1023F9FA4B003F1B7F /* OnboardingConfigurationProtocol.swift */; };
 		060A9B1323F9FAC6003F1B7F /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1223F9FAC6003F1B7F /* LandingScreenViewModel.swift */; };
 		060A9B1523F9FDA0003F1B7F /* LineChartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1423F9FDA0003F1B7F /* LineChartAdapter.swift */; };
-		060A9B1723F9FE54003F1B7F /* DateRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1623F9FE54003F1B7F /* DateRangeModel.swift */; };
 		060A9B1923F9FF4A003F1B7F /* FinanceNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1823F9FF4A003F1B7F /* FinanceNewsModel.swift */; };
 		060A9B1B23F9FFFA003F1B7F /* GenericLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1A23F9FFFA003F1B7F /* GenericLocalDataSource.swift */; };
 		060A9B1D23FA007A003F1B7F /* FinanceInstitution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9B1C23FA007A003F1B7F /* FinanceInstitution.swift */; };
@@ -131,6 +129,21 @@
 		060A9BC323FA6692003F1B7F /* CardViewControllerContainerRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BC223FA6692003F1B7F /* CardViewControllerContainerRowAdapter.swift */; };
 		060A9BC523FA6700003F1B7F /* PieChartAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BC423FA6700003F1B7F /* PieChartAdapter.swift */; };
 		060A9BC723FA676C003F1B7F /* ViewControllerContainerRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BC623FA676C003F1B7F /* ViewControllerContainerRowAdapter.swift */; };
+		060A9BCA23FA6857003F1B7F /* DateRangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BC923FA6857003F1B7F /* DateRangeModel.swift */; };
+		060A9BCC23FA696D003F1B7F /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BCB23FA696D003F1B7F /* GenericCollectionViewController.swift */; };
+		060A9BCE23FA6A11003F1B7F /* KeyboardKeyRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BCD23FA6A11003F1B7F /* KeyboardKeyRowAdapter.swift */; };
+		060A9BD023FA6A95003F1B7F /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BCF23FA6A95003F1B7F /* KeyboardViewController.swift */; };
+		060A9BD223FA6B33003F1B7F /* MenuItemCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD123FA6B33003F1B7F /* MenuItemCollectionViewCellProtocol.swift */; };
+		060A9BD423FA6C32003F1B7F /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD323FA6C32003F1B7F /* MenuCollectionViewController.swift */; };
+		060A9BD623FA6D4C003F1B7F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD523FA6D4C003F1B7F /* LineChart.swift */; };
+		060A9BD823FA6DAB003F1B7F /* FirebaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD723FA6DAA003F1B7F /* FirebaseProfileManager.swift */; };
+		060A9BDA23FA6E44003F1B7F /* SocialMediaSharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */; };
+		060A9BDC23FA6E99003F1B7F /* GenericFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */; };
+		060A9BDE23FA6F17003F1B7F /* RoundImageRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDD23FA6F17003F1B7F /* RoundImageRowAdapter.swift */; };
+		060A9BE023FA6F4A003F1B7F /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDF23FA6F4A003F1B7F /* ContactsTableViewCell.swift */; };
+		060A9BE223FA6FBF003F1B7F /* FirebaseSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE123FA6FBF003F1B7F /* FirebaseSearchDataSource.swift */; };
+		060A9BE423FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */; };
+		060A9BE623FA7025003F1B7F /* FirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */; };
 		066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */; };
 		066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */; };
 		066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250123F9C88700F4F88A /* CardHeaderModel.swift */; };
@@ -191,15 +204,11 @@
 		1797EBC022C7EB0F00E27A8F /* ATCProfileButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E91222C7EB0E00E27A8F /* ATCProfileButtonCollectionViewCell.xib */; };
 		1797EBC722C7EB0F00E27A8F /* ATCProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E91C22C7EB0E00E27A8F /* ATCProfileViewController.swift */; };
 		1797EBC922C7EB0F00E27A8F /* ATCKeyboardKeyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E91F22C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.swift */; };
-		1797EBCA22C7EB0F00E27A8F /* ATCKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92022C7EB0E00E27A8F /* ATCKeyboardViewController.swift */; };
 		1797EBCB22C7EB0F00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E92122C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib */; };
-		1797EBCC22C7EB0F00E27A8F /* ATCKeyboardKeyRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E92222C7EB0E00E27A8F /* ATCKeyboardKeyRowAdapter.swift */; };
 		1797EBD822C7EB0F00E27A8F /* ATCText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93422C7EB0E00E27A8F /* ATCText.swift */; };
 		1797EBDB22C7EB0F00E27A8F /* ATCImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93722C7EB0E00E27A8F /* ATCImage.swift */; };
 		1797EBE122C7EB0F00E27A8F /* ATCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E93D22C7EB0E00E27A8F /* ATCUser.swift */; };
-		1797EC2722C7EB0F00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99222C7EB0E00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift */; };
 		1797EC2922C7EB0F00E27A8F /* ATCMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E99422C7EB0E00E27A8F /* ATCMenuTableViewController.xib */; };
-		1797EC2A22C7EB0F00E27A8F /* ATCMenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99522C7EB0E00E27A8F /* ATCMenuCollectionViewController.swift */; };
 		1797EC2B22C7EB0F00E27A8F /* ATCMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99622C7EB0E00E27A8F /* ATCMenuTableViewController.swift */; };
 		1797EC2C22C7EB0F00E27A8F /* ATCMenuHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E99722C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.xib */; };
 		1797EC2D22C7EB0F00E27A8F /* ATCMenuHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99822C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.swift */; };
@@ -207,15 +216,12 @@
 		1797EC3022C7EB0F00E27A8F /* ATCWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99C22C7EB0E00E27A8F /* ATCWalkthroughViewController.swift */; };
 		1797EC3122C7EB0F00E27A8F /* ATCClassicWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E99D22C7EB0E00E27A8F /* ATCClassicWalkthroughViewController.xib */; };
 		1797EC3222C7EB0F00E27A8F /* ATCClassicWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99E22C7EB0E00E27A8F /* ATCClassicWalkthroughViewController.swift */; };
-		1797EC3322C7EB0F00E27A8F /* ATCGenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E99F22C7EB0E00E27A8F /* ATCGenericCollectionViewController.swift */; };
 		1797EC3522C7EB0F00E27A8F /* ATCProfileBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E9A322C7EB0E00E27A8F /* ATCProfileBasicViewController.swift */; };
 		1797EC3622C7EB0F00E27A8F /* ATCProfileBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E9A422C7EB0E00E27A8F /* ATCProfileBasicViewController.xib */; };
 		1797EC3822C7EB0F00E27A8F /* ATCCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E9A722C7EB0E00E27A8F /* ATCCollectionViewFlowLayout.swift */; };
 		1797EC3B22C7EB0F00E27A8F /* ATCContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E9AA22C7EB0E00E27A8F /* ATCContactUsViewController.swift */; };
-		1797EC3F22C7EB0F00E27A8F /* ATCFirebaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E9AF22C7EB0E00E27A8F /* ATCFirebaseProfileManager.swift */; };
 		1797ECC622C7EB0F00E27A8F /* ATCImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA5E22C7EB0E00E27A8F /* ATCImageCollectionViewCell.swift */; };
 		1797ECC722C7EB0F00E27A8F /* ATCStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA5F22C7EB0E00E27A8F /* ATCStoryCollectionViewCell.swift */; };
-		1797ECC822C7EB0F00E27A8F /* ATCRoundImageRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA6022C7EB0E00E27A8F /* ATCRoundImageRowAdapter.swift */; };
 		1797ECC922C7EB0F00E27A8F /* ATCGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA6122C7EB0E00E27A8F /* ATCGridCollectionViewCell.swift */; };
 		1797ECCA22C7EB0F00E27A8F /* ATCViewControllerContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA6222C7EB0E00E27A8F /* ATCViewControllerContainerCollectionViewCell.xib */; };
 		1797ECCB22C7EB0F00E27A8F /* ATCImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA6322C7EB0E00E27A8F /* ATCImageCollectionViewCell.xib */; };
@@ -238,7 +244,6 @@
 		1797ECDE22C7EB1000E27A8F /* ATCCircledIconMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA7822C7EB0E00E27A8F /* ATCCircledIconMenuCollectionViewCell.swift */; };
 		1797ECDF22C7EB1000E27A8F /* ATCSearchBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA7A22C7EB0E00E27A8F /* ATCSearchBarCollectionViewCell.swift */; };
 		1797ECE022C7EB1000E27A8F /* ATCSearchBarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA7B22C7EB0E00E27A8F /* ATCSearchBarCollectionViewCell.xib */; };
-		1797ECE222C7EB1000E27A8F /* ATCContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA7E22C7EB0E00E27A8F /* ATCContactsTableViewCell.swift */; };
 		1797ECE522C7EB1000E27A8F /* ATCCardViewControllerContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA8122C7EB0E00E27A8F /* ATCCardViewControllerContainerCollectionViewCell.swift */; };
 		1797ECE622C7EB1000E27A8F /* ATCNotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EA8222C7EB0E00E27A8F /* ATCNotificationCollectionViewCell.xib */; };
 		1797ECE722C7EB1000E27A8F /* ATCDateRangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EA8322C7EB0E00E27A8F /* ATCDateRangeCollectionViewCell.swift */; };
@@ -312,11 +317,6 @@
 		1797ED3222C7EB1000E27A8F /* FallingSkyBlkObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAD522C7EB0F00E27A8F /* FallingSkyBlkObl.otf */; };
 		1797ED3322C7EB1000E27A8F /* FallingSkyExtOuObl.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAD622C7EB0F00E27A8F /* FallingSkyExtOuObl.otf */; };
 		1797ED3922C7EB1000E27A8F /* ATCPersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */; };
-		1797ED4222C7EB1000E27A8F /* ATCFirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAE922C7EB0F00E27A8F /* ATCFirebaseFirestoreDataSource.swift */; };
-		1797ED4322C7EB1000E27A8F /* ATCFirebaseSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEA22C7EB0F00E27A8F /* ATCFirebaseSearchDataSource.swift */; };
-		1797ED4422C7EB1000E27A8F /* ATCFirebaseFirestoreWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEB22C7EB0F00E27A8F /* ATCFirebaseFirestoreWriter.swift */; };
-		1797ED4722C7EB1000E27A8F /* ATCSocialMediaSharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */; };
-		1797ED4822C7EB1000E27A8F /* ATCGenericFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */; };
 		1797ED4922C7EB1000E27A8F /* ATCDiskPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */; };
 		1797ED4A22C7EB1000E27A8F /* ATCClassicSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797EAF322C7EB0F00E27A8F /* ATCClassicSignUpViewController.xib */; };
 		1797ED4B22C7EB1000E27A8F /* ATCClassicSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797EAF422C7EB0F00E27A8F /* ATCClassicSignUpViewController.swift */; };
@@ -405,7 +405,6 @@
 		060A9AE223F9E219003F1B7F /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		060A9AEA23F9ED91003F1B7F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		060A9AEC23F9EE36003F1B7F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		060A9AEE23F9EE8C003F1B7F /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		060A9AF023F9EECD003F1B7F /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		060A9AF223F9EF0B003F1B7F /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		060A9AF423F9F139003F1B7F /* FacebookUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookUser.swift; sourceTree = "<group>"; };
@@ -425,7 +424,6 @@
 		060A9B1023F9FA4B003F1B7F /* OnboardingConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConfigurationProtocol.swift; sourceTree = "<group>"; };
 		060A9B1223F9FAC6003F1B7F /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
 		060A9B1423F9FDA0003F1B7F /* LineChartAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartAdapter.swift; sourceTree = "<group>"; };
-		060A9B1623F9FE54003F1B7F /* DateRangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeModel.swift; sourceTree = "<group>"; };
 		060A9B1823F9FF4A003F1B7F /* FinanceNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceNewsModel.swift; sourceTree = "<group>"; };
 		060A9B1A23F9FFFA003F1B7F /* GenericLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLocalDataSource.swift; sourceTree = "<group>"; };
 		060A9B1C23FA007A003F1B7F /* FinanceInstitution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceInstitution.swift; sourceTree = "<group>"; };
@@ -514,6 +512,21 @@
 		060A9BC223FA6692003F1B7F /* CardViewControllerContainerRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerContainerRowAdapter.swift; sourceTree = "<group>"; };
 		060A9BC423FA6700003F1B7F /* PieChartAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartAdapter.swift; sourceTree = "<group>"; };
 		060A9BC623FA676C003F1B7F /* ViewControllerContainerRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContainerRowAdapter.swift; sourceTree = "<group>"; };
+		060A9BC923FA6857003F1B7F /* DateRangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeModel.swift; sourceTree = "<group>"; };
+		060A9BCB23FA696D003F1B7F /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
+		060A9BCD23FA6A11003F1B7F /* KeyboardKeyRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardKeyRowAdapter.swift; sourceTree = "<group>"; };
+		060A9BCF23FA6A95003F1B7F /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		060A9BD123FA6B33003F1B7F /* MenuItemCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
+		060A9BD323FA6C32003F1B7F /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
+		060A9BD523FA6D4C003F1B7F /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		060A9BD723FA6DAA003F1B7F /* FirebaseProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProfileManager.swift; sourceTree = "<group>"; };
+		060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSharingManager.swift; sourceTree = "<group>"; };
+		060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFirebaseDataSource.swift; sourceTree = "<group>"; };
+		060A9BDD23FA6F17003F1B7F /* RoundImageRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageRowAdapter.swift; sourceTree = "<group>"; };
+		060A9BDF23FA6F4A003F1B7F /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		060A9BE123FA6FBF003F1B7F /* FirebaseSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSearchDataSource.swift; sourceTree = "<group>"; };
+		060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreWriter.swift; sourceTree = "<group>"; };
+		060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
 		066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBitTextField.swift; sourceTree = "<group>"; };
 		066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterModel.swift; sourceTree = "<group>"; };
 		066A250123F9C88700F4F88A /* CardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderModel.swift; sourceTree = "<group>"; };
@@ -576,15 +589,11 @@
 		1797E91222C7EB0E00E27A8F /* ATCProfileButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCProfileButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797E91C22C7EB0E00E27A8F /* ATCProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCProfileViewController.swift; sourceTree = "<group>"; };
 		1797E91F22C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCKeyboardKeyCollectionViewCell.swift; sourceTree = "<group>"; };
-		1797E92022C7EB0E00E27A8F /* ATCKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCKeyboardViewController.swift; sourceTree = "<group>"; };
 		1797E92122C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCKeyboardKeyCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797E92222C7EB0E00E27A8F /* ATCKeyboardKeyRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCKeyboardKeyRowAdapter.swift; sourceTree = "<group>"; };
 		1797E93422C7EB0E00E27A8F /* ATCText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCText.swift; sourceTree = "<group>"; };
 		1797E93722C7EB0E00E27A8F /* ATCImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCImage.swift; sourceTree = "<group>"; };
 		1797E93D22C7EB0E00E27A8F /* ATCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCUser.swift; sourceTree = "<group>"; };
-		1797E99222C7EB0E00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuItemCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
 		1797E99422C7EB0E00E27A8F /* ATCMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCMenuTableViewController.xib; sourceTree = "<group>"; };
-		1797E99522C7EB0E00E27A8F /* ATCMenuCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuCollectionViewController.swift; sourceTree = "<group>"; };
 		1797E99622C7EB0E00E27A8F /* ATCMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuTableViewController.swift; sourceTree = "<group>"; };
 		1797E99722C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCMenuHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		1797E99822C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
@@ -592,15 +601,12 @@
 		1797E99C22C7EB0E00E27A8F /* ATCWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughViewController.swift; sourceTree = "<group>"; };
 		1797E99D22C7EB0E00E27A8F /* ATCClassicWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicWalkthroughViewController.xib; sourceTree = "<group>"; };
 		1797E99E22C7EB0E00E27A8F /* ATCClassicWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicWalkthroughViewController.swift; sourceTree = "<group>"; };
-		1797E99F22C7EB0E00E27A8F /* ATCGenericCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericCollectionViewController.swift; sourceTree = "<group>"; };
 		1797E9A322C7EB0E00E27A8F /* ATCProfileBasicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCProfileBasicViewController.swift; sourceTree = "<group>"; };
 		1797E9A422C7EB0E00E27A8F /* ATCProfileBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCProfileBasicViewController.xib; sourceTree = "<group>"; };
 		1797E9A722C7EB0E00E27A8F /* ATCCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1797E9AA22C7EB0E00E27A8F /* ATCContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCContactUsViewController.swift; sourceTree = "<group>"; };
-		1797E9AF22C7EB0E00E27A8F /* ATCFirebaseProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseProfileManager.swift; sourceTree = "<group>"; };
 		1797EA5E22C7EB0E00E27A8F /* ATCImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA5F22C7EB0E00E27A8F /* ATCStoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCStoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		1797EA6022C7EB0E00E27A8F /* ATCRoundImageRowAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCRoundImageRowAdapter.swift; sourceTree = "<group>"; };
 		1797EA6122C7EB0E00E27A8F /* ATCGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA6222C7EB0E00E27A8F /* ATCViewControllerContainerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCViewControllerContainerCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797EA6322C7EB0E00E27A8F /* ATCImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -623,7 +629,6 @@
 		1797EA7822C7EB0E00E27A8F /* ATCCircledIconMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCircledIconMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA7A22C7EB0E00E27A8F /* ATCSearchBarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSearchBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA7B22C7EB0E00E27A8F /* ATCSearchBarCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCSearchBarCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797EA7E22C7EB0E00E27A8F /* ATCContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCContactsTableViewCell.swift; sourceTree = "<group>"; };
 		1797EA8122C7EB0E00E27A8F /* ATCCardViewControllerContainerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCCardViewControllerContainerCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797EA8222C7EB0E00E27A8F /* ATCNotificationCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCNotificationCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797EA8322C7EB0E00E27A8F /* ATCDateRangeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDateRangeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -697,11 +702,6 @@
 		1797EAD522C7EB0F00E27A8F /* FallingSkyBlkObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FallingSkyBlkObl.otf; sourceTree = "<group>"; };
 		1797EAD622C7EB0F00E27A8F /* FallingSkyExtOuObl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FallingSkyExtOuObl.otf; sourceTree = "<group>"; };
 		1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCPersistentStore.swift; sourceTree = "<group>"; };
-		1797EAE922C7EB0F00E27A8F /* ATCFirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
-		1797EAEA22C7EB0F00E27A8F /* ATCFirebaseSearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseSearchDataSource.swift; sourceTree = "<group>"; };
-		1797EAEB22C7EB0F00E27A8F /* ATCFirebaseFirestoreWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCFirebaseFirestoreWriter.swift; sourceTree = "<group>"; };
-		1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCSocialMediaSharingManager.swift; sourceTree = "<group>"; };
-		1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCGenericFirebaseDataSource.swift; sourceTree = "<group>"; };
 		1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCDiskPersistenceStore.swift; sourceTree = "<group>"; };
 		1797EAF322C7EB0F00E27A8F /* ATCClassicSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicSignUpViewController.xib; sourceTree = "<group>"; };
 		1797EAF422C7EB0F00E27A8F /* ATCClassicSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicSignUpViewController.swift; sourceTree = "<group>"; };
@@ -983,22 +983,22 @@
 			children = (
 				1797E97822C7EB0E00E27A8F /* Adapters */,
 				1797E9F222C7EB0E00E27A8F /* API */,
-				17FE614F2367BDE800CBE046 /* Cupertino */,
-				1797EDA122C7ECE900E27A8F /* Location */,
-				1797EDB222C7F37A00E27A8F /* UserManagement */,
-				1797E87022C7EB0E00E27A8F /* Settings */,
 				1797E8EA22C7EB0E00E27A8F /* Config */,
-				1797E8EB22C7EB0E00E27A8F /* UIKit */,
-				1797E92622C7EB0E00E27A8F /* Networking */,
-				1797E92822C7EB0E00E27A8F /* Resources */,
-				1797E92922C7EB0E00E27A8F /* Models */,
-				1797E93E22C7EB0E00E27A8F /* UIExtensions */,
-				1797E98B22C7EB0E00E27A8F /* ViewControllers */,
-				1797E9AE22C7EB0E00E27A8F /* Profile */,
+				17FE614F2367BDE800CBE046 /* Cupertino */,
 				1797E9F522C7EB0E00E27A8F /* Finance */,
+				1797EADB22C7EB0F00E27A8F /* Helpers */,
+				1797EDA122C7ECE900E27A8F /* Location */,
+				1797E92922C7EB0E00E27A8F /* Models */,
+				1797E92622C7EB0E00E27A8F /* Networking */,
+				1797E9AE22C7EB0E00E27A8F /* Profile */,
+				1797E92822C7EB0E00E27A8F /* Resources */,
+				1797E87022C7EB0E00E27A8F /* Settings */,
+				1797E93E22C7EB0E00E27A8F /* UIExtensions */,
+				1797E8EB22C7EB0E00E27A8F /* UIKit */,
+				1797EDB222C7F37A00E27A8F /* UserManagement */,
+				1797E98B22C7EB0E00E27A8F /* ViewControllers */,
 				1797EA5B22C7EB0E00E27A8F /* Views */,
 				1797EA9522C7EB0E00E27A8F /* Assets */,
-				1797EADB22C7EB0F00E27A8F /* Helpers */,
 				1797EB0322C7EB0F00E27A8F /* ThirdParty */,
 				1797EB4422C7EB0F00E27A8F /* PushNotifications */,
 			);
@@ -1204,10 +1204,10 @@
 			isa = PBXGroup;
 			children = (
 				1797E91F22C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.swift */,
-				1797E92022C7EB0E00E27A8F /* ATCKeyboardViewController.swift */,
 				1797E92122C7EB0E00E27A8F /* ATCKeyboardKeyCollectionViewCell.xib */,
-				1797E92222C7EB0E00E27A8F /* ATCKeyboardKeyRowAdapter.swift */,
 				060A9B9A23FA5DA5003F1B7F /* KeyboardKey.swift */,
+				060A9BCD23FA6A11003F1B7F /* KeyboardKeyRowAdapter.swift */,
+				060A9BCF23FA6A95003F1B7F /* KeyboardViewController.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -1235,7 +1235,7 @@
 				1797E93422C7EB0E00E27A8F /* ATCText.swift */,
 				1797E93722C7EB0E00E27A8F /* ATCImage.swift */,
 				1797E93D22C7EB0E00E27A8F /* ATCUser.swift */,
-				060A9B1623F9FE54003F1B7F /* DateRangeModel.swift */,
+				060A9BC923FA6857003F1B7F /* DateRangeModel.swift */,
 				060A9B5C23FA1A67003F1B7F /* Divider.swift */,
 				060A9B3623FA081D003F1B7F /* FacebookPost.swift */,
 				060A9AF423F9F139003F1B7F /* FacebookUser.swift */,
@@ -1260,7 +1260,7 @@
 			isa = PBXGroup;
 			children = (
 				060A9AF223F9EF0B003F1B7F /* BarChart.swift */,
-				060A9AEE23F9EE8C003F1B7F /* LineChart.swift */,
+				060A9BD523FA6D4C003F1B7F /* LineChart.swift */,
 				060A9AF023F9EECD003F1B7F /* PieChart.swift */,
 			);
 			path = Charts;
@@ -1310,10 +1310,10 @@
 			children = (
 				1797E98F22C7EB0E00E27A8F /* Navigation */,
 				1797E99A22C7EB0E00E27A8F /* Walkthrough */,
-				1797E99F22C7EB0E00E27A8F /* ATCGenericCollectionViewController.swift */,
 				1797E9A022C7EB0E00E27A8F /* Profile */,
 				1797E9A522C7EB0E00E27A8F /* Layouts */,
 				1797E9AA22C7EB0E00E27A8F /* ATCContactUsViewController.swift */,
+				060A9BCB23FA696D003F1B7F /* GenericCollectionViewController.swift */,
 				060A9B9423FA5C2C003F1B7F /* GenericSearchViewController.swift */,
 				060A9B0823F9F812003F1B7F /* RemoteHostContextProvider.swift */,
 				060A9ADC23F9D483003F1B7F /* UIViewController+Additions.swift */,
@@ -1326,14 +1326,14 @@
 		1797E98F22C7EB0E00E27A8F /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				1797E99222C7EB0E00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift */,
 				1797E99422C7EB0E00E27A8F /* ATCMenuTableViewController.xib */,
-				1797E99522C7EB0E00E27A8F /* ATCMenuCollectionViewController.swift */,
 				1797E99622C7EB0E00E27A8F /* ATCMenuTableViewController.swift */,
 				1797E99722C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.xib */,
 				1797E99822C7EB0E00E27A8F /* ATCMenuHeaderTableViewCell.swift */,
 				060A9B5823FA191A003F1B7F /* DrawerController.swift */,
 				060A9B8E23FA58D3003F1B7F /* HostViewController.swift */,
+				060A9BD323FA6C32003F1B7F /* MenuCollectionViewController.swift */,
+				060A9BD123FA6B33003F1B7F /* MenuItemCollectionViewCellProtocol.swift */,
 				060A9B9023FA594A003F1B7F /* MenuItemRowAdapter.swift */,
 				060A9AEC23F9EE36003F1B7F /* NavigationController.swift */,
 			);
@@ -1381,7 +1381,7 @@
 		1797E9AE22C7EB0E00E27A8F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				1797E9AF22C7EB0E00E27A8F /* ATCFirebaseProfileManager.swift */,
+				060A9BD723FA6DAA003F1B7F /* FirebaseProfileManager.swift */,
 				060A9B4023FA0AAA003F1B7F /* ProfileManager.swift */,
 			);
 			path = Profile;
@@ -1436,7 +1436,6 @@
 				1797ED9C22C7EB6C00E27A8F /* Charts */,
 				1797EA5E22C7EB0E00E27A8F /* ATCImageCollectionViewCell.swift */,
 				1797EA5F22C7EB0E00E27A8F /* ATCStoryCollectionViewCell.swift */,
-				1797EA6022C7EB0E00E27A8F /* ATCRoundImageRowAdapter.swift */,
 				1797EA6122C7EB0E00E27A8F /* ATCGridCollectionViewCell.swift */,
 				1797EA6222C7EB0E00E27A8F /* ATCViewControllerContainerCollectionViewCell.xib */,
 				1797EA6322C7EB0E00E27A8F /* ATCImageCollectionViewCell.xib */,
@@ -1468,6 +1467,7 @@
 				1797EA8A22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.swift */,
 				1797EA8B22C7EB0E00E27A8F /* ATCDateRangeCollectionViewCell.xib */,
 				1797EA8C22C7EB0E00E27A8F /* ATCCarouselCollectionViewCell.xib */,
+				060A9BDD23FA6F17003F1B7F /* RoundImageRowAdapter.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1495,7 +1495,7 @@
 		1797EA7C22C7EB0E00E27A8F /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				1797EA7E22C7EB0E00E27A8F /* ATCContactsTableViewCell.swift */,
+				060A9BDF23FA6F4A003F1B7F /* ContactsTableViewCell.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -1622,14 +1622,14 @@
 			children = (
 				1797EADF22C7EB0F00E27A8F /* ATCPersistentStore.swift */,
 				1797EAE622C7EB0F00E27A8F /* Firebase */,
-				1797EAEE22C7EB0F00E27A8F /* ATCSocialMediaSharingManager.swift */,
-				1797EAEF22C7EB0F00E27A8F /* ATCGenericFirebaseDataSource.swift */,
 				1797EAF022C7EB0F00E27A8F /* ATCDiskPersistenceStore.swift */,
 				1797EAF122C7EB0F00E27A8F /* Onboarding */,
 				060A9BBA23FA645C003F1B7F /* FirebaseLoginManager.swift */,
+				060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */,
 				060A9B1A23F9FFFA003F1B7F /* GenericLocalDataSource.swift */,
 				060A9B4C23FA14BD003F1B7F /* GenericLocalHeteroDataSource.swift */,
 				060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */,
+				060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */,
 				060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */,
 				066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */,
 				060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */,
@@ -1641,9 +1641,9 @@
 		1797EAE622C7EB0F00E27A8F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				1797EAE922C7EB0F00E27A8F /* ATCFirebaseFirestoreDataSource.swift */,
-				1797EAEA22C7EB0F00E27A8F /* ATCFirebaseSearchDataSource.swift */,
-				1797EAEB22C7EB0F00E27A8F /* ATCFirebaseFirestoreWriter.swift */,
+				060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */,
+				060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */,
+				060A9BE123FA6FBF003F1B7F /* FirebaseSearchDataSource.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -2123,10 +2123,8 @@
 				060A9BB123FA621E003F1B7F /* FinanceDataSourceProvider.swift in Sources */,
 				1797EBBB22C7EB0F00E27A8F /* ATCDatedLineChartViewController.swift in Sources */,
 				1797ECD222C7EB1000E27A8F /* ATCSquareStoryCollectionViewCell.swift in Sources */,
-				1797EC3F22C7EB0F00E27A8F /* ATCFirebaseProfileManager.swift in Sources */,
 				1797ED7922C7EB1000E27A8F /* ConstraintMaker.swift in Sources */,
 				1797ED3922C7EB1000E27A8F /* ATCPersistentStore.swift in Sources */,
-				1797EC2722C7EB0F00E27A8F /* ATCMenuItemCollectionViewCellProtocol.swift in Sources */,
 				060A9AE323F9E219003F1B7F /* WatchListViewController.swift in Sources */,
 				1797ECCD22C7EB1000E27A8F /* ATCDividerCollectionViewCell.swift in Sources */,
 				060A9B0F23F9F978003F1B7F /* ExpenseCategory.swift in Sources */,
@@ -2137,7 +2135,6 @@
 				066A251023F9CD5E00F4F88A /* UITextField.swift in Sources */,
 				1797ECE722C7EB1000E27A8F /* ATCDateRangeCollectionViewCell.swift in Sources */,
 				1797ECD122C7EB1000E27A8F /* ATCPieChartCollectionViewCell.swift in Sources */,
-				060A9AEF23F9EE8C003F1B7F /* LineChart.swift in Sources */,
 				060A9BA123FA5EF5003F1B7F /* FinanceAssetRowAdapter.swift in Sources */,
 				060A9AF923F9F233003F1B7F /* ProfileItem.swift in Sources */,
 				060A9AF123F9EECD003F1B7F /* PieChart.swift in Sources */,
@@ -2147,6 +2144,7 @@
 				1797ECDB22C7EB1000E27A8F /* MenuItemCollectionViewCell.swift in Sources */,
 				060A9ACB23F9D196003F1B7F /* GenericUIConfiguration.swift in Sources */,
 				060A9BAD23FA6101003F1B7F /* MultiRowPageCarouselRowAdapter.swift in Sources */,
+				060A9BD623FA6D4C003F1B7F /* LineChart.swift in Sources */,
 				1797ED7F22C7EB1000E27A8F /* Debugging.swift in Sources */,
 				1797ED7322C7EB1000E27A8F /* ConstraintLayoutGuide.swift in Sources */,
 				060A9B3323FA06F6003F1B7F /* ImageRowAdapter.swift in Sources */,
@@ -2160,6 +2158,7 @@
 				060A9B0D23F9F906003F1B7F /* FinanceAssetStats.swift in Sources */,
 				1797ED4E22C7EB1000E27A8F /* ATCClassicLoginScreenViewController.swift in Sources */,
 				060A9B4723FA126B003F1B7F /* SearchBarAdapter.swift in Sources */,
+				060A9BE223FA6FBF003F1B7F /* FirebaseSearchDataSource.swift in Sources */,
 				1797ED6922C7EB1000E27A8F /* ConstraintPriorityTarget.swift in Sources */,
 				060A9AD123F9D2CA003F1B7F /* BadgedCountLabel.swift in Sources */,
 				17FE614E2367BB4000CBE046 /* SwitchCell.swift in Sources */,
@@ -2167,6 +2166,7 @@
 				1797ED8022C7EB1000E27A8F /* ConstraintRelatableTarget.swift in Sources */,
 				1797EBDB22C7EB0F00E27A8F /* ATCImage.swift in Sources */,
 				060A9BB923FA634D003F1B7F /* PortfolioPieChartRow.swift in Sources */,
+				060A9BDC23FA6E99003F1B7F /* GenericFirebaseDataSource.swift in Sources */,
 				060A9B5D23FA1A67003F1B7F /* Divider.swift in Sources */,
 				17FE614A2367BB4000CBE046 /* Deprecated.swift in Sources */,
 				060A9B5B23FA19E4003F1B7F /* APIManager.swift in Sources */,
@@ -2179,8 +2179,6 @@
 				1797E85322C7E80C00E27A8F /* TransactionCollectionViewCell.swift in Sources */,
 				1797EC3B22C7EB0F00E27A8F /* ATCContactUsViewController.swift in Sources */,
 				1797EBC722C7EB0F00E27A8F /* ATCProfileViewController.swift in Sources */,
-				1797EBCA22C7EB0F00E27A8F /* ATCKeyboardViewController.swift in Sources */,
-				1797EBCC22C7EB0F00E27A8F /* ATCKeyboardKeyRowAdapter.swift in Sources */,
 				1797EC2D22C7EB0F00E27A8F /* ATCMenuHeaderTableViewCell.swift in Sources */,
 				060A9B4F23FA155E003F1B7F /* SignUpScreenManager.swift in Sources */,
 				17FE61462367BB4000CBE046 /* NavigationRow.swift in Sources */,
@@ -2195,8 +2193,8 @@
 				060A9B6923FA29DC003F1B7F /* TextRowAdapter.swift in Sources */,
 				1797ED6822C7EB1000E27A8F /* ConstraintViewDSL.swift in Sources */,
 				060A9BB723FA6302003F1B7F /* FinanceStaticDataProvider.swift in Sources */,
-				1797ED4222C7EB1000E27A8F /* ATCFirebaseFirestoreDataSource.swift in Sources */,
 				1797ED8422C7EB1000E27A8F /* ConstraintMakerRelatable.swift in Sources */,
+				060A9BD423FA6C32003F1B7F /* MenuCollectionViewController.swift in Sources */,
 				060A9AED23F9EE36003F1B7F /* NavigationController.swift in Sources */,
 				066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */,
 				066A251823F9CF4100F4F88A /* UIButton.swift in Sources */,
@@ -2215,20 +2213,21 @@
 				17FE61412367BB4000CBE046 /* RowStyle.swift in Sources */,
 				060A9B9123FA594A003F1B7F /* MenuItemRowAdapter.swift in Sources */,
 				060A9B1B23F9FFFA003F1B7F /* GenericLocalDataSource.swift in Sources */,
-				1797ED4822C7EB1000E27A8F /* ATCGenericFirebaseDataSource.swift in Sources */,
 				060A9BC323FA6692003F1B7F /* CardViewControllerContainerRowAdapter.swift in Sources */,
 				060A9B4923FA130C003F1B7F /* RoundImageButton.swift in Sources */,
 				060A9BAF23FA6191003F1B7F /* FinanceOnboardingConfiguration.swift in Sources */,
 				060A9B0723F9F7B5003F1B7F /* ProfileScreenProtocol.swift in Sources */,
 				060A9BA723FA5FE1003F1B7F /* FinanceAssetPositionRowAdapter.swift in Sources */,
 				060A9B7123FA3064003F1B7F /* TopLinedPageCarouselRowAdapter.swift in Sources */,
+				060A9BD023FA6A95003F1B7F /* KeyboardViewController.swift in Sources */,
 				1797ED8122C7EB1000E27A8F /* LayoutConstraint.swift in Sources */,
-				060A9B1723F9FE54003F1B7F /* DateRangeModel.swift in Sources */,
+				060A9BCC23FA696D003F1B7F /* GenericCollectionViewController.swift in Sources */,
 				17FE61472367BB4000CBE046 /* Subtitle.swift in Sources */,
 				1797ED6022C7EB1000E27A8F /* CalendarDateRangePickerCell.swift in Sources */,
 				1797E7E322C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.swift in Sources */,
 				17FE61432367BB4000CBE046 /* OptionRow.swift in Sources */,
 				060A9BC723FA676C003F1B7F /* ViewControllerContainerRowAdapter.swift in Sources */,
+				060A9BCA23FA6857003F1B7F /* DateRangeModel.swift in Sources */,
 				060A9B4D23FA14BD003F1B7F /* GenericLocalHeteroDataSource.swift in Sources */,
 				1797ED6122C7EB1000E27A8F /* CalendarDateRangePickerHeaderView.swift in Sources */,
 				060A9B0123F9F587003F1B7F /* TransactionsRowAdapter.swift in Sources */,
@@ -2248,27 +2247,29 @@
 				060A9B5523FA17D6003F1B7F /* OnboardingCoordinator.swift in Sources */,
 				060A9B5323FA16EE003F1B7F /* LoginScreenManager.swift in Sources */,
 				1797ED6422C7EB1000E27A8F /* LayoutConstraintItem.swift in Sources */,
+				060A9BDE23FA6F17003F1B7F /* RoundImageRowAdapter.swift in Sources */,
 				1797ED4B22C7EB1000E27A8F /* ATCClassicSignUpViewController.swift in Sources */,
 				060A9B8723FA5663003F1B7F /* NewsPreviewStoriesViewController.swift in Sources */,
 				1797E84022C7E80C00E27A8F /* FinanceAssetStatsCollectionViewCell.swift in Sources */,
-				1797ECC822C7EB0F00E27A8F /* ATCRoundImageRowAdapter.swift in Sources */,
 				060A9B0323F9F62D003F1B7F /* CardHeaderRowAdapter.swift in Sources */,
-				1797ED4722C7EB1000E27A8F /* ATCSocialMediaSharingManager.swift in Sources */,
 				1797ED6722C7EB1000E27A8F /* ConstraintAttributes.swift in Sources */,
 				060A9B6B23FA2B86003F1B7F /* FacebookAPIManager.swift in Sources */,
 				1797E7EC22C7E7ED00E27A8F /* FinanceAssetCollectionViewCell.swift in Sources */,
 				060A9B1523F9FDA0003F1B7F /* LineChartAdapter.swift in Sources */,
+				060A9BD823FA6DAB003F1B7F /* FirebaseProfileManager.swift in Sources */,
 				060A9B1123F9FA4B003F1B7F /* OnboardingConfigurationProtocol.swift in Sources */,
 				1797ED7522C7EB1000E27A8F /* Typealiases.swift in Sources */,
+				060A9BD223FA6B33003F1B7F /* MenuItemCollectionViewCellProtocol.swift in Sources */,
+				060A9BE623FA7025003F1B7F /* FirebaseFirestoreDataSource.swift in Sources */,
 				1797EC2B22C7EB0F00E27A8F /* ATCMenuTableViewController.swift in Sources */,
 				060A9B4523FA1199003F1B7F /* LandingScreenManager.swift in Sources */,
 				1797EBB322C7EB0F00E27A8F /* InstaTopLinedPageCarouselCollectionViewCell.swift in Sources */,
 				060A9B5723FA1864003F1B7F /* OnboardingServerConfigurationProtocol.swift in Sources */,
+				060A9BCE23FA6A11003F1B7F /* KeyboardKeyRowAdapter.swift in Sources */,
 				1797ED6522C7EB1000E27A8F /* ConstraintDescription.swift in Sources */,
 				1797EBBD22C7EB0F00E27A8F /* ATCProfileItemCollectionViewCell.swift in Sources */,
 				1797ECDA22C7EB1000E27A8F /* ATCViewControllerContainerCollectionViewCell.swift in Sources */,
 				1797ECD522C7EB1000E27A8F /* ATCRoundImageCollectionViewCell.swift in Sources */,
-				1797ED4422C7EB1000E27A8F /* ATCFirebaseFirestoreWriter.swift in Sources */,
 				060A9B0B23F9F8A1003F1B7F /* FinanceAssetPosition.swift in Sources */,
 				060A9BBD23FA64F9003F1B7F /* MultiRowPageCarouselViewModel.swift in Sources */,
 				060A9ADB23F9D42E003F1B7F /* WordPressPost.swift in Sources */,
@@ -2287,6 +2288,7 @@
 				060A9B7723FA5346003F1B7F /* FinanceNotificationsViewController.swift in Sources */,
 				060A9B4123FA0AAA003F1B7F /* ProfileManager.swift in Sources */,
 				060A9B8B23FA571F003F1B7F /* AssetDetailsViewController.swift in Sources */,
+				060A9BE023FA6F4A003F1B7F /* ContactsTableViewCell.swift in Sources */,
 				1797ED7822C7EB1000E27A8F /* ConstraintMakerEditable.swift in Sources */,
 				1797EC3822C7EB0F00E27A8F /* ATCCollectionViewFlowLayout.swift in Sources */,
 				1797ED7222C7EB1000E27A8F /* ConstraintView.swift in Sources */,
@@ -2309,8 +2311,6 @@
 				060A9BAB23FA608F003F1B7F /* AddBankAccountButtonRowAdapter.swift in Sources */,
 				066A250423F9C8AC00F4F88A /* AddBankAccountModel.swift in Sources */,
 				1797ED7E22C7EB1000E27A8F /* Constraint.swift in Sources */,
-				1797EC3322C7EB0F00E27A8F /* ATCGenericCollectionViewController.swift in Sources */,
-				1797EC2A22C7EB0F00E27A8F /* ATCMenuCollectionViewController.swift in Sources */,
 				060A9B6723FA239A003F1B7F /* FinanceNewsRowAdapter.swift in Sources */,
 				1797E84222C7E80C00E27A8F /* AssetTradingCollectionViewCell.swift in Sources */,
 				060A9B1323F9FAC6003F1B7F /* LandingScreenViewModel.swift in Sources */,
@@ -2329,6 +2329,7 @@
 				060A9B5123FA1634003F1B7F /* LandingScreenProtocol.swift in Sources */,
 				060A9AD923F9D3E0003F1B7F /* DismissButton.swift in Sources */,
 				060A9AF523F9F139003F1B7F /* FacebookUser.swift in Sources */,
+				060A9BDA23FA6E44003F1B7F /* SocialMediaSharingManager.swift in Sources */,
 				1797EBBF22C7EB0F00E27A8F /* ATCProfileButtonCollectionViewCell.swift in Sources */,
 				1797EBB922C7EB0F00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift in Sources */,
 				1797ED4D22C7EB1000E27A8F /* ATCClassicLandingScreenViewController.swift in Sources */,
@@ -2360,7 +2361,6 @@
 				060A9B9923FA5D11003F1B7F /* ViewControllerContainerViewModel.swift in Sources */,
 				1797ED6222C7EB1000E27A8F /* CalendarDateRangePickerViewController.swift in Sources */,
 				060A9ADD23F9D483003F1B7F /* UIViewController+Additions.swift in Sources */,
-				1797ED4322C7EB1000E27A8F /* ATCFirebaseSearchDataSource.swift in Sources */,
 				1797ECD622C7EB1000E27A8F /* ATCLineChartCollectionViewCell.swift in Sources */,
 				1797ED9F22C7EB6C00E27A8F /* ATCBarChartCollectionViewCell.swift in Sources */,
 				1797E83E22C7E80C00E27A8F /* FinanceAssetPositionCollectionViewCell.swift in Sources */,
@@ -2375,11 +2375,11 @@
 				1797ED7C22C7EB1000E27A8F /* ConstraintView+Extensions.swift in Sources */,
 				17FE614B2367BB4000CBE046 /* Section.swift in Sources */,
 				060A9AF323F9EF0B003F1B7F /* BarChart.swift in Sources */,
+				060A9BE423FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift in Sources */,
 				17FE61482367BB4000CBE046 /* Icon.swift in Sources */,
 				1797ED8322C7EB1000E27A8F /* ConstraintLayoutSupportDSL.swift in Sources */,
 				066A250C23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift in Sources */,
 				060A9AD323F9D2F9003F1B7F /* BadgedButton.swift in Sources */,
-				1797ECE222C7EB1000E27A8F /* ATCContactsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

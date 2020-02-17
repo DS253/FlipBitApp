@@ -1,9 +1,9 @@
 //
-//  ATCMenuCollectionViewController.swift
-//  ShoppingApp
+//  MenuCollectionViewController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/19/18.
-//  Copyright © 2018 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ public struct MenuUIConfiguration {
     var backgroundColor: UIColor = UIColor.white.darkModed
 }
 
-public struct ATCMenuConfiguration {
+public struct MenuConfiguration {
     let user: ATCUser?
     let cellClass: UICollectionViewCell.Type?
     let headerHeight: CGFloat
@@ -35,9 +35,9 @@ class MenuCollectionViewController: GenericCollectionViewController {
 
     let cellClass: UICollectionViewCell.Type?
     let headerHeight: CGFloat
-    let menuConfiguration: ATCMenuConfiguration
+    let menuConfiguration: MenuConfiguration
 
-    init(menuConfiguration: ATCMenuConfiguration, collectionVCConfiguration: GenericCollectionViewControllerConfiguration) {
+    init(menuConfiguration: MenuConfiguration, collectionVCConfiguration: GenericCollectionViewControllerConfiguration) {
         self.user = menuConfiguration.user
         self.cellClass = menuConfiguration.cellClass
         self.headerHeight = menuConfiguration.headerHeight
@@ -85,3 +85,4 @@ extension MenuCollectionViewController {
         return (self.parent as? DrawerController)
     }
 }
+

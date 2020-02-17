@@ -13,12 +13,12 @@ class ViewControllerFactory {
     static func storiesViewController(dataSource: GenericCollectionViewControllerDataSource,
                                       uiConfig: UIGenericConfigurationProtocol,
                                       minimumInteritemSpacing: CGFloat = 0,
-                                      selectionBlock: CollectionViewSelectionBlock?) -> ATCGenericCollectionViewController {
+                                      selectionBlock: CollectionViewSelectionBlock?) -> GenericCollectionViewController {
         let layout = ATCCollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = minimumInteritemSpacing
         layout.minimumLineSpacing = minimumInteritemSpacing
-        let configuration = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let configuration = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                             pullToRefreshTintColor: uiConfig.mainThemeBackgroundColor,
                                                                             collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                             collectionViewLayout: layout,
@@ -29,7 +29,7 @@ class ViewControllerFactory {
                                                                             scrollEnabled: true,
                                                                             uiConfig: uiConfig,
                                                                             emptyViewModel: nil)
-        let vc = ATCGenericCollectionViewController(configuration: configuration, selectionBlock: selectionBlock)
+        let vc = GenericCollectionViewController(configuration: configuration, selectionBlock: selectionBlock)
         // vc.genericDataSource = ATCGenericLocalDataSource<ATCStoryViewModel>(items: stories)
         vc.genericDataSource = dataSource
         

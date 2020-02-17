@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import Photos
 
-class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImageTapCollectionViewDelegate {
+class ATCProfileViewController: GenericCollectionViewController, ProfileImageTapCollectionViewDelegate {
     let db = Firestore.firestore()
     var profileImageUpdater: ProfileUpdaterProtocol? = nil
     
@@ -25,7 +25,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
     init(items: [GenericBaseModel],
          uiConfig: UIGenericConfigurationProtocol,
          selectionBlock: CollectionViewSelectionBlock? = nil) {
-        let profileVCConfig = ATCGenericCollectionViewControllerConfiguration(
+        let profileVCConfig = GenericCollectionViewControllerConfiguration(
             pullToRefreshEnabled: false,
             pullToRefreshTintColor: uiConfig.mainThemeBackgroundColor,
             collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
@@ -46,7 +46,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
                                             textColor: uiConfig.mainTextColor,
                                             alignment: .center),
                  for: "ATCText")
-        let roundImageAdapter = ATCRoundImageRowAdapter()
+        let roundImageAdapter = RoundImageRowAdapter()
         roundImageAdapter.delegate = self
         self.use(adapter: roundImageAdapter, for: "ATCImage")
         self.use(adapter: DividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 10), for: "Divider")

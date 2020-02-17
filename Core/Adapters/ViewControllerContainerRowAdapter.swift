@@ -24,12 +24,12 @@ class ViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
         var height: CGFloat
         if let cellHeight = viewModel.cellHeight {
             height = cellHeight
-        } else if let collectionVC = viewModel.viewController as? ATCGenericCollectionViewController,
+        } else if let collectionVC = viewModel.viewController as? GenericCollectionViewController,
             let dataSource = collectionVC.genericDataSource,
             let subcellHeight = viewModel.subcellHeight {
             height = CGFloat(dataSource.numberOfObjects()) * subcellHeight
         } else {
-            if let collectionVC = viewModel.viewController as? ATCGenericCollectionViewController, let flow = collectionVC.collectionViewLayout as? UICollectionViewFlowLayout {
+            if let collectionVC = viewModel.viewController as? GenericCollectionViewController, let flow = collectionVC.collectionViewLayout as? UICollectionViewFlowLayout {
                 let size = flow.collectionViewContentSize
                 height = size.height
             } else {

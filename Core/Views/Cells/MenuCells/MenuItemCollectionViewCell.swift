@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuItemCollectionViewCell: UICollectionViewCell, ATCMenuItemCollectionViewCellProtocol {
+class MenuItemCollectionViewCell: UICollectionViewCell, MenuItemCollectionViewCellProtocol {
 
     @IBOutlet var menuImageView: UIImageView!
     @IBOutlet var menuLabel: UILabel!

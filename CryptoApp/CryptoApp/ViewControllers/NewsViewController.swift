@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsViewController: ATCGenericCollectionViewController {
+class NewsViewController: GenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
     
@@ -17,7 +17,7 @@ class NewsViewController: ATCGenericCollectionViewController {
         self.dsProvider = dsProvider
         
         let layout = ATCCollectionViewFlowLayout()
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: layout,

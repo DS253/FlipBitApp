@@ -25,7 +25,7 @@ class AssetTradingViewController: UIViewController {
     @IBOutlet var tradeButton: UIButton!
 
     let asset: FinanceAsset
-    let keyboardViewController: ATCKeyboardViewController
+    let keyboardViewController: KeyboardViewController
     let uiConfig: UIGenericConfigurationProtocol
 
     init(asset: FinanceAsset,
@@ -34,7 +34,7 @@ class AssetTradingViewController: UIViewController {
          uiConfig: UIGenericConfigurationProtocol) {
         self.asset = asset
         self.uiConfig = uiConfig
-        keyboardViewController = ATCKeyboardViewController(keys: keys,
+        keyboardViewController = KeyboardViewController(keys: keys,
                                                            uiConfig: uiConfig)
         super.init(nibName: "AssetTradingViewController", bundle: nil)
         keyboardViewController.delegate = self
@@ -122,8 +122,8 @@ class AssetTradingViewController: UIViewController {
     }
 }
 
-extension AssetTradingViewController: ATCKeyboardViewControllerDelegate {
-    func keyboardViewController(_ vc: ATCKeyboardViewController, didTap key: KeyboardKey) {
+extension AssetTradingViewController: KeyboardViewControllerDelegate {
+    func keyboardViewController(_ vc: KeyboardViewController, didTap key: KeyboardKey) {
         if key.value == backArrowUnicode {
             numberTextField.text = String(numberTextField.text?.dropLast() ?? "")
         } else {

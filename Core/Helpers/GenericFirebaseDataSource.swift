@@ -1,36 +1,36 @@
 //
-//  ATCGenericFirebaseDataSource.swift
-//  ShoppingApp
+//  GenericFirebaseDataSource.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 10/15/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FirebaseDatabase
 
 let kItemsPerPage: UInt = 10
 
-class ATCGenericFirebaseDataSource<T: GenericBaseModel & GenericFirebaseParsable>: GenericCollectionViewControllerDataSource {
+class GenericFirebaseDataSource<T: GenericBaseModel & GenericFirebaseParsable>: GenericCollectionViewControllerDataSource {
     weak var delegate: GenericCollectionViewControllerDataSourceDelegate?
-
+    
     private let dbRef = Database.database().reference()
     private var store: [T] = [T]()
     private var lastFetchedObjectKey: Any?
     private var didFinishLoadingBottom = false
     private let dbChild: DatabaseReference
-
+    
     init(tableName: String) {
         dbChild = dbRef.child(tableName)
     }
-
+    
     func object(at index: Int) -> GenericBaseModel? {
         return store[index]
     }
-
+    
     func numberOfObjects() -> Int {
         return store.count
     }
-
+    
     func loadFirst() {
         dbChild
             .queryOrderedByKey()
@@ -44,7 +44,7 @@ class ATCGenericFirebaseDataSource<T: GenericBaseModel & GenericFirebaseParsable
                 self.delegate?.genericCollectionViewControllerDataSource(self, didLoadFirst: results)
             })
     }
-
+    
     func loadBottom() {
         if didFinishLoadingBottom {
             return
@@ -64,11 +64,11 @@ class ATCGenericFirebaseDataSource<T: GenericBaseModel & GenericFirebaseParsable
                 self.delegate?.genericCollectionViewControllerDataSource(self, didLoadBottom: results)
         }
     }
-
+    
     func loadTop() {
-
+        
     }
-
+    
     private func parseResults(snapshot: DataSnapshot) -> [T] {
         var res = [T]()
         guard let children = snapshot.children.allObjects as? [DataSnapshot] else {

@@ -1,21 +1,21 @@
 //
-//  ATCFirebaseFirestoreWriter.swift
-//  RestaurantApp
+//  FirebaseFirestoreWriter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 11/13/18.
-//  Copyright © 2018 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 import FirebaseFirestore
 
-class ATCFirebaseFirestoreWriter {
+class FirebaseFirestoreWriter {
     let tableName: String
-
+    
     init(tableName: String) {
         self.tableName = tableName
     }
-
+    
     func save(_ representation: [String: Any], completion: @escaping () -> Void) {
         var dictionary = representation
         let newDocRef = Firestore.firestore().collection(self.tableName).document()

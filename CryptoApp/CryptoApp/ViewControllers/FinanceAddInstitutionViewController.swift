@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceAddInstitutionViewController: ATCGenericCollectionViewController {
+class FinanceAddInstitutionViewController: GenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     
@@ -17,7 +17,7 @@ class FinanceAddInstitutionViewController: ATCGenericCollectionViewController {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
         let layout = LiquidCollectionViewLayout(cellPadding: 10)
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: layout,

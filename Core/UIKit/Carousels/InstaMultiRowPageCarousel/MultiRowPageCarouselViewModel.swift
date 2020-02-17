@@ -13,10 +13,10 @@ class MultiRowPageCarouselViewModel: GenericBaseModel {
     
     let cellHeight: CGFloat
     let title: String
-    var viewController: ATCGenericCollectionViewController
+    var viewController: GenericCollectionViewController
     weak var parentViewController: UIViewController?
     
-    init(title: String, viewController: ATCGenericCollectionViewController, cellHeight: CGFloat) {
+    init(title: String, viewController: GenericCollectionViewController, cellHeight: CGFloat) {
         self.cellHeight = cellHeight
         self.title = title
         self.viewController = viewController

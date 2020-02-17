@@ -9,7 +9,7 @@
 import Charts
 import UIKit
 
-class AssetDetailsViewController: ATCGenericCollectionViewController {
+class AssetDetailsViewController: GenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let asset: FinanceAsset
@@ -26,7 +26,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         self.user = user
         self.watchlistButton = UIButton()
         let layout = LiquidCollectionViewLayout(cellPadding: 0)
-        let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let homeConfig = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
                                                                          collectionViewLayout: layout,

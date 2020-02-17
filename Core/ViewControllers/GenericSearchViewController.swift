@@ -35,7 +35,7 @@ class GenericSearchViewController<T: GenericBaseModel>: UIViewController, UISear
     
     let searchController: UISearchController
     let configuration: GenericSearchViewControllerConfiguration
-    let searchResultsController: ATCGenericCollectionViewController
+    let searchResultsController: GenericCollectionViewController
     let localDataSource: GenericLocalDataSource<T>
     var cancelBlock: GenericSearchViewControllerCancelBlock?
     
@@ -46,7 +46,7 @@ class GenericSearchViewController<T: GenericBaseModel>: UIViewController, UISear
     }
     
     init(configuration: GenericSearchViewControllerConfiguration) {
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: configuration.uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewBackgroundColor: configuration.uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: LiquidCollectionViewLayout(cellPadding: configuration.cellPadding),
@@ -58,7 +58,7 @@ class GenericSearchViewController<T: GenericBaseModel>: UIViewController, UISear
                                                                      uiConfig: configuration.uiConfig,
                                                                      emptyViewModel: nil)
         localDataSource = GenericLocalDataSource<T>(items: [])
-        searchResultsController = ATCGenericCollectionViewController(configuration: config)
+        searchResultsController = GenericCollectionViewController(configuration: config)
         searchResultsController.genericDataSource = localDataSource
         
         searchController = UISearchController(searchResultsController: searchResultsController)

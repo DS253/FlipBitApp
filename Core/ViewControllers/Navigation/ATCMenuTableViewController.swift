@@ -19,7 +19,7 @@
 //    let cellClass: ATCMenuTableViewCellConfigurable.Type
 //    let headerHeight: CGFloat
 //
-//    init(configuration: ATCMenuConfiguration, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//    init(configuration: MenuConfiguration, nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 //        self.items = configuration.items
 //        self.user = configuration.user
 //        self.cellClass = configuration.cellClass

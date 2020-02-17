@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionsViewController: ATCGenericCollectionViewController {
+class TransactionsViewController: GenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     
@@ -20,7 +20,7 @@ class TransactionsViewController: ATCGenericCollectionViewController {
         self.dsProvider = dsProvider
         
         let layout = ATCCollectionViewFlowLayout()
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: layout,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CryptoViewController: ATCGenericCollectionViewController {
+class CryptoViewController: GenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     
@@ -20,7 +20,7 @@ class CryptoViewController: ATCGenericCollectionViewController {
         let layout = ATCCollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let config = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
                                                                      collectionViewLayout: layout,

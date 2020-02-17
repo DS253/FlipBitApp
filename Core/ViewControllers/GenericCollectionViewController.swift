@@ -1,9 +1,9 @@
 //
-//  ATCGenericCollectionViewController.swift
-//  ShoppingApp
+//  GenericCollectionViewController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 10/15/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -32,10 +32,10 @@ protocol GenericCollectionViewScrollDelegate: class {
 
 protocol GenericCollectionViewControllerDataSource: class {
     var delegate: GenericCollectionViewControllerDataSourceDelegate? {get set}
-
+    
     func object(at index: Int) -> GenericBaseModel?
     func numberOfObjects() -> Int
-
+    
     func loadFirst()
     func loadBottom()
     func loadTop()
@@ -49,17 +49,17 @@ protocol GenericCollectionRowAdapter: class {
 
 class AdapterStore {
     fileprivate var store = [String: GenericCollectionRowAdapter]()
-
+    
     func add(adapter: GenericCollectionRowAdapter, for classString: String) {
         store[classString] = adapter
     }
-
+    
     func adapter(for classString: String) -> GenericCollectionRowAdapter? {
         return store[classString]
     }
 }
 
-struct ATCGenericCollectionViewControllerConfiguration {
+struct GenericCollectionViewControllerConfiguration {
     let pullToRefreshEnabled: Bool
     let pullToRefreshTintColor: UIColor
     let collectionViewBackgroundColor: UIColor
@@ -81,25 +81,25 @@ typealias CollectionViewSelectionBlock = (UINavigationController?, GenericBaseMo
  * - persisiting data on disk
  * - manages pagination
  */
-class ATCGenericCollectionViewController: UICollectionViewController, GenericCollectionViewControllerDataSourceDelegate {
+class GenericCollectionViewController: UICollectionViewController, GenericCollectionViewControllerDataSourceDelegate {
     var genericDataSource: GenericCollectionViewControllerDataSource? {
         didSet {
             genericDataSource?.delegate = self
         }
     }
-
+    
     weak var scrollDelegate: GenericCollectionViewScrollDelegate?
-
+    
     fileprivate var adapterStore = AdapterStore()
-    let configuration: ATCGenericCollectionViewControllerConfiguration
-
+    let configuration: GenericCollectionViewControllerConfiguration
+    
     fileprivate lazy var refreshControl = UIRefreshControl()
     fileprivate lazy var activityIndicator = UIActivityIndicatorView(style: .medium)
     fileprivate lazy var emptyView: UIHostingController<CPKEmptyView>? = nil
-
+    
     var selectionBlock: CollectionViewSelectionBlock?
-
-    init(configuration: ATCGenericCollectionViewControllerConfiguration, selectionBlock: CollectionViewSelectionBlock? = nil) {
+    
+    init(configuration: GenericCollectionViewControllerConfiguration, selectionBlock: CollectionViewSelectionBlock? = nil) {
         self.configuration = configuration
         self.selectionBlock = selectionBlock
         let layout = configuration.collectionViewLayout
@@ -107,17 +107,17 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
         layout.delegate = self
         self.use(adapter: CarouselAdapter(uiConfig: configuration.uiConfig), for: "ATCCarouselViewModel")
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let collectionView = collectionView else {
             fatalError()
         }
-
+        
         collectionView.backgroundColor = configuration.collectionViewBackgroundColor
         collectionView.isPagingEnabled = configuration.collectionPagingEnabled
         collectionView.isScrollEnabled = configuration.scrollEnabled
@@ -136,43 +136,43 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
         activityIndicator.startAnimating()
         genericDataSource?.loadFirst()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if (configuration.hidesNavigationBar) {
             self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if (configuration.hidesNavigationBar) {
             self.navigationController?.setNavigationBarHidden(false, animated: false)
         }
     }
-
+    
     func use(adapter: GenericCollectionRowAdapter, for classString: String) {
         adapterStore.add(adapter: adapter, for: classString)
     }
-
+    
     func registerReuseIdentifiers() {
-        adapterStore.store.forEach { (key, adapter) in  
+        adapterStore.store.forEach { (key, adapter) in
             collectionView?.register(UINib(nibName: String(describing: adapter.cellClass()), bundle: nil), forCellWithReuseIdentifier: key)
         }
         if let headerNib = configuration.headerNibName {
             collectionView?.register(UINib(nibName: headerNib, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerNib)
         }
     }
-
+    
     func handleEmptyViewCallToAction() {
         // To be overriden by subclasses
     }
-
+    
     // MARK: - ATCGenericCollectionViewControllerDataSourceDelegate
     func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel]) {
         self.reloadCollectionView()
     }
-
+    
     func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel]) {
         let offset = dataSource.numberOfObjects() - objects.count
         self.collectionView?.performBatchUpdates({
@@ -181,14 +181,14 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
         }, completion: nil)
         self.updateAfterLoad()
     }
-
+    
     func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel]) {
         if (configuration.pullToRefreshEnabled) {
             refreshControl.endRefreshing()
         }
         self.reloadCollectionView()
     }
-
+    
     private func reloadCollectionView() {
         assert(Thread.isMainThread)
         if let liquidLayout = self.collectionView?.collectionViewLayout as? LiquidCollectionViewLayout {
@@ -196,12 +196,12 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
         }
         self.collectionView?.collectionViewLayout.invalidateLayout()
         self.collectionView?.reloadData()
-        if let parent = self.parent as? ATCGenericCollectionViewController {
+        if let parent = self.parent as? GenericCollectionViewController {
             parent.reloadCollectionView()
         }
         self.updateAfterLoad()
     }
-
+    
     private func updateAfterLoad() {
         activityIndicator.stopAnimating()
         guard let emptyViewModel = configuration.emptyViewModel else { return }
@@ -220,16 +220,16 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
             emptyView?.removeFromParent()
         }
     }
-
+    
     // MARK: - Private
-
+    
     private func size(collectionView: UICollectionView, indexPath: IndexPath) -> CGSize {
         if let adapter = self.adapter(at: indexPath), let object = genericDataSource?.object(at: indexPath.row) {
             return adapter.size(containerBounds: collectionView.bounds, object: object)
         }
         return .zero
     }
-
+    
     private func adapter(at indexPath: IndexPath) -> GenericCollectionRowAdapter? {
         if let object = genericDataSource?.object(at: indexPath.row) {
             let stringClass = String(describing: type(of: object))
@@ -239,13 +239,13 @@ class ATCGenericCollectionViewController: UICollectionViewController, GenericCol
         }
         return nil
     }
-
+    
     @objc func didPullToRefresh() {
         genericDataSource?.loadTop()
     }
 }
 
-extension ATCGenericCollectionViewController {
+extension GenericCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let object = genericDataSource?.object(at: indexPath.row) {
@@ -258,7 +258,7 @@ extension ATCGenericCollectionViewController {
         }
         return collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let selectionBlock = selectionBlock,
             let object = genericDataSource?.object(at: indexPath.row) {
@@ -272,21 +272,21 @@ extension ATCGenericCollectionViewController {
             selectionBlock(navController, object, indexPath)
         }
     }
-
+    
     override open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     override open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return genericDataSource?.numberOfObjects() ?? 0
     }
-
+    
     override open func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row + 1 >= (genericDataSource?.numberOfObjects() ?? 0) {
             genericDataSource?.loadBottom()
         }
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if (kind == UICollectionView.elementKindSectionHeader) {
             let id = configuration.headerNibName ?? "header"
@@ -306,7 +306,7 @@ extension ATCGenericCollectionViewController {
     }
 }
 
-extension ATCGenericCollectionViewController {
+extension GenericCollectionViewController {
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         let w = scrollView.bounds.size.width
@@ -317,27 +317,27 @@ extension ATCGenericCollectionViewController {
     }
 }
 
-extension ATCGenericCollectionViewController: LiquidLayoutDelegate {
+extension GenericCollectionViewController: LiquidLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForCellAtIndexPath indexPath: IndexPath, width: CGFloat) -> CGFloat {
         return self.size(collectionView: collectionView, indexPath: indexPath).height
     }
-
+    
     func collectionViewCellWidth(collectionView: UICollectionView) -> CGFloat {
         return self.size(collectionView: collectionView, indexPath: IndexPath(row: 0, section: 0)).width
     }
 }
 
-extension ATCGenericCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension GenericCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return self.size(collectionView: collectionView, indexPath: indexPath)
     }
 }
 
-extension ATCGenericCollectionViewController: CPKEmptyViewHandler {
+extension GenericCollectionViewController: CPKEmptyViewHandler {
     func didTapActionButton() {
         handleEmptyViewCallToAction()
     }

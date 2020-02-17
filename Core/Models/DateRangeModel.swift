@@ -1,9 +1,9 @@
 //
-//  ATCDateRangeModel.swift
-//  DashboardApp
+//  DateRangeModel.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 7/28/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -18,21 +18,21 @@ struct DateRange {
 class DateRangeModel: GenericBaseModel {
     var title: String
     var currentDateRange: DateRange
-
+    
     required init(jsonDict: [String: Any]) {
         title = ""
         currentDateRange = ranges[1]
     }
-
+    
     var description: String {
         return title
     }
-
+    
     init(title: String, dateRangeText: String) {
         self.title = title
         currentDateRange = ranges[1]
     }
-
+    
     var timePeriodText: String {
         if currentDateRange.isCustomRange {
             let format = "MMM dd"
@@ -42,11 +42,11 @@ class DateRangeModel: GenericBaseModel {
         }
         return currentDateRange.title
     }
-
+    
     var titleText: String {
         return title
     }
-
+    
     var ranges: [DateRange] = [
         DateRange(title: "Custom Range", startDate: Date(), endDate: Date(), isCustomRange: true),
         DateRange(title: "Today", startDate: Date(), endDate: Date(), isCustomRange: false),

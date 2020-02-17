@@ -56,7 +56,7 @@ public final class NavigationItem: GenericBaseModel {
 }
 
 public struct HostConfiguration {
-    let menuConfiguration: ATCMenuConfiguration
+    let menuConfiguration: MenuConfiguration
     let style: NavigationStyle
     let topNavigationRightViews: [UIView]?
     let titleView: UIView?
@@ -93,7 +93,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
     
     var tabController: UITabBarController?
     var navigationRootController: NavigationController?
-    var menuViewController: ATCMenuCollectionViewController?
+    var menuViewController: MenuCollectionViewController?
     var drawerController: DrawerController?
     var onboardingCoordinator: OnboardingCoordinatorProtocol?
     var walkthroughVC: ATCWalkthroughViewController?
@@ -325,7 +325,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
                                                             titleView: configuration.titleView,
                                                             topNavigationLeftImage: configuration.topNavigationLeftImage,
                                                             topNavigationTintColor: configuration.topNavigationTintColor)
-            let collectionVCConfiguration = ATCGenericCollectionViewControllerConfiguration(
+            let collectionVCConfiguration = GenericCollectionViewControllerConfiguration(
                 pullToRefreshEnabled: false,
                 pullToRefreshTintColor: configuration.uiConfig.mainThemeBackgroundColor,
                 collectionViewBackgroundColor: configuration.uiConfig.mainTextColor,
@@ -339,7 +339,7 @@ public class HostViewController: UIViewController, OnboardingCoordinatorDelegate
                 emptyViewModel: nil
             )
             let menuConfiguration = configuration.menuConfiguration
-            menuViewController = ATCMenuCollectionViewController(menuConfiguration: menuConfiguration, collectionVCConfiguration: collectionVCConfiguration)
+            menuViewController = MenuCollectionViewController(menuConfiguration: menuConfiguration, collectionVCConfiguration: collectionVCConfiguration)
             menuViewController?.genericDataSource = GenericLocalDataSource<NavigationItem>(items: menuConfiguration.items)
             drawerController = DrawerController(rootViewController: navigationRootController!, menuController: menuViewController!)
             navigationRootController?.drawerDelegate = drawerController

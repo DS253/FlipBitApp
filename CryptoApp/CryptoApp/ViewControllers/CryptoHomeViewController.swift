@@ -9,7 +9,7 @@
 import Charts
 import UIKit
 
-class CryptoHomeViewController: ATCGenericCollectionViewController {
+class CryptoHomeViewController: GenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let allCryptosDataSource: GenericCollectionViewControllerDataSource
@@ -20,7 +20,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         self.dsProvider = dsProvider
         self.allCryptosDataSource = dsProvider.allCryptosListDataSource
         let layout = LiquidCollectionViewLayout(cellPadding: 0)
-        let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
+        let homeConfig = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
                                                                          collectionViewLayout: layout,

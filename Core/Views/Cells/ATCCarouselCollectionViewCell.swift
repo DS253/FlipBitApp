@@ -13,7 +13,7 @@ class ATCGridViewModel: ATCCarouselViewModel {
     let callToActionBlock: (() -> Void)?
 
     init(title: String?,
-         viewController: ATCGenericCollectionViewController,
+         viewController: GenericCollectionViewController,
          cellHeight: CGFloat,
          pageControlEnabled: Bool = false,
          callToAction: String? = nil,
@@ -38,12 +38,12 @@ class ATCCarouselViewModel: GenericBaseModel {
     let cellHeight: CGFloat
     let title: String?
     let pageControlEnabled: Bool
-    var viewController: ATCGenericCollectionViewController
+    var viewController: GenericCollectionViewController
     let config: ATCCarouselViewModelConfiguration?
     weak var parentViewController: UIViewController?
 
     init(title: String?,
-         viewController: ATCGenericCollectionViewController,
+         viewController: GenericCollectionViewController,
          config: ATCCarouselViewModelConfiguration? = nil,
          cellHeight: CGFloat,
          pageControlEnabled: Bool = false) {

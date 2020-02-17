@@ -28,7 +28,7 @@ class TextRowAdapter: GenericCollectionRowAdapter {
     }
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ATCTextProtocol, let cell = cell as? ATCTextCollectionViewCell else { return }
+        guard let viewModel = object as? TextProtocol, let cell = cell as? ATCTextCollectionViewCell else { return }
         cell.label.font = font
         cell.label.textColor = textColor
         cell.label.text = viewModel.text
@@ -55,7 +55,7 @@ class TextRowAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCTextProtocol else { return .zero }
+        guard let viewModel = object as? TextProtocol else { return .zero }
         let width = containerBounds.width
         if let staticHeight = staticHeight {
             return CGSize(width: width, height: staticHeight)

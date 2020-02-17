@@ -10,11 +10,11 @@ import UIKit
 
 class DrawerController: UIViewController, NavigationControllerDelegate {
     var rootViewController: NavigationController
-    var menuController: ATCMenuCollectionViewController
+    var menuController: MenuCollectionViewController
     var isMenuExpanded: Bool = false
     let overlayView = UIView()
     
-    init(rootViewController: NavigationController, menuController: ATCMenuCollectionViewController) {
+    init(rootViewController: NavigationController, menuController: MenuCollectionViewController) {
         self.rootViewController = rootViewController
         self.menuController = menuController
         super.init(nibName: nil, bundle: nil)

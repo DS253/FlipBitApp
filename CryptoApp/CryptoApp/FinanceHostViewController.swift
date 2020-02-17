@@ -75,11 +75,11 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
                            image: uiConfig.profileImage,
                            type: .viewController)
         ]
-        let menuConfiguration = ATCMenuConfiguration(user: nil,
+        let menuConfiguration = MenuConfiguration(user: nil,
                                                      cellClass: ATCCircledIconMenuCollectionViewCell.self,
                                                      headerHeight: 0,
                                                      items: menuItems,
-                                                     uiConfig: ATCMenuUIConfiguration(itemFont: uiConfig.regularMediumFont,
+                                                     uiConfig: MenuUIConfiguration(itemFont: uiConfig.regularMediumFont,
                                                                                       tintColor: uiConfig.mainTextColor,
                                                                                       itemHeight: 45.0,
                                                                                       backgroundColor: uiConfig.mainThemeBackgroundColor))

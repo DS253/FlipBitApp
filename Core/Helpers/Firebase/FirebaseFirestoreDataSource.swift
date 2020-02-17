@@ -1,22 +1,22 @@
 //
-//  ATCFirebaseFirestoreDataSource.swift
-//  ListingApp
+//  FirebaseFirestoreDataSource.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 10/1/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: GenericCollectionViewControllerDataSource {
+class FirebaseFirestoreDataSource<T: GenericBaseModel>: GenericCollectionViewControllerDataSource {
     var delegate: GenericCollectionViewControllerDataSourceDelegate?
     var items: [T] = []
     let tableName: String
     let conditions: [String: Any]
     let limit: Int?
     let additionalFilterBlock: (([T]) -> [T])?
-
+    
     init(tableName: String,
          conditions: [String: Any] = [:],
          limit: Int? = nil,
@@ -26,25 +26,25 @@ class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: GenericCollectionView
         self.conditions = conditions
         self.limit = limit
     }
-
+    
     func object(at index: Int) -> GenericBaseModel? {
         if index < items.count {
             return items[index]
         }
         return nil
     }
-
+    
     func numberOfObjects() -> Int {
         return items.count
     }
-
+    
     func loadFirst() {
         var ref: Query = Firestore.firestore().collection(tableName)
         conditions.forEach { (arg0) in
             let (key, value) = arg0
             ref = ref.whereField(key, isEqualTo: value)
         }
-
+        
         ref.getDocuments {[weak self] (querySnapshot, error) in
             guard let `self` = self else { return }
             if error != nil {
@@ -70,8 +70,8 @@ class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: GenericCollectionView
             self.delegate?.genericCollectionViewControllerDataSource(self, didLoadFirst: items)
         }
     }
-
-    func loadBottom() {}
-
-    func loadTop() {}
+    
+    func loadBottom() { }
+    
+    func loadTop() { }
 }
