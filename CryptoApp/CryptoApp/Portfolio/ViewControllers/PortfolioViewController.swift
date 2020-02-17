@@ -1,9 +1,9 @@
 //
 //  PortfolioViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 class PortfolioViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
-
+    
     init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
@@ -29,33 +29,33 @@ class PortfolioViewController: ATCGenericCollectionViewController {
                                                                          uiConfig: uiConfig,
                                                                          emptyViewModel: nil)
         super.init(configuration: homeConfig)
-
+        
         // Configuring the Chart
         let chartViewModel = FinanceStaticDataProvider.porfolioChart
-
+        
         // Configuring the Crypto Card
         let cryptosVC = CryptoPreviewViewController(dsProvider: dsProvider, uiConfig: uiConfig)
         let cryptosVCModel = ATCViewControllerContainerViewModel(viewController: cryptosVC,
                                                                  subcellHeight: 75)
         cryptosVCModel.parentViewController = self
-
+        
         // Configuring the News Card
         let newsVC = NewsPreviewStoriesViewController(dsProvider: dsProvider, uiConfig: uiConfig)
         let newsVCModel = ATCViewControllerContainerViewModel(viewController: newsVC,
                                                               subcellHeight: 100)
         newsVCModel.parentViewController = self
-
-        self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [chartViewModel,
-                                                                         cryptosVCModel,
-                                                                         newsVCModel
-                                                                         ])
+        
+        self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
+                                                                      cryptosVCModel,
+                                                                      newsVCModel
+        ])
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
         self.use(adapter: PortfolioPieChartRowAdapter(uiConfig: uiConfig), for: "PieChart")
-        //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "ATCDivider")
-
+        //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "Divider")
+        
         self.title = "Portfolio"
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

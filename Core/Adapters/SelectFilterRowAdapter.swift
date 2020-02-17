@@ -1,20 +1,20 @@
 //
-//  ATCSelectFilterRowAdapter.swift
-//  ListingApp
+//  SelectFilterRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/16/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCSelectFilterRowAdapter: GenericCollectionRowAdapter {
+class SelectFilterRowAdapter: GenericCollectionRowAdapter {
     let titleFont: UIFont?
     let optionFont: UIFont?
     let titleColor: UIColor
     let bgColor: UIColor
     var height: CGFloat
-
+    
     init(titleFont: UIFont? = nil,
          titleColor: UIColor = UIColor(hexString: "#454545"),
          bgColor: UIColor,
@@ -26,7 +26,7 @@ class ATCSelectFilterRowAdapter: GenericCollectionRowAdapter {
         self.height = height
         self.titleColor = titleColor
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let filter = object as? SelectFilter, let cell = cell as? ATCSelectFilterCollectionViewCell {
             cell.filterNameLabel.text = filter.title
@@ -46,11 +46,11 @@ class ATCSelectFilterRowAdapter: GenericCollectionRowAdapter {
             cell.layoutIfNeeded()
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCSelectFilterCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         return CGSize(width: containerBounds.width, height: height)
     }

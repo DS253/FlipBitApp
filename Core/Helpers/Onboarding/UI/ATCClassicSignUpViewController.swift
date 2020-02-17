@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ATCClassicSignUpViewController: UIViewController, ATCSignUpScreenProtocol {
+class ATCClassicSignUpViewController: UIViewController, SignUpScreenProtocol {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var containerView: UIView!
     @IBOutlet var backButton: UIButton!
@@ -20,7 +20,7 @@ class ATCClassicSignUpViewController: UIViewController, ATCSignUpScreenProtocol 
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var textView: UITextView!
 
-    weak var delegate: ATCSignUpScreenDelegate?
+    weak var delegate: SignUpScreenDelegate?
 
     let uiConfig: OnboardingConfigurationProtocol
 

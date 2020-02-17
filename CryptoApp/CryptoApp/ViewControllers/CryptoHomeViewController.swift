@@ -61,7 +61,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         let watchlistModel = CardFooterModel(title: "View Your Watchlist")
         
         // Setting up the datasource
-        self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [chartViewModel,
+        self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
                                                                          cryptoListModel,
                                                                          watchlistModel])
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")

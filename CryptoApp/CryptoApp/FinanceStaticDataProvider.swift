@@ -13,12 +13,12 @@ var backArrowUnicode = "\u{2190}"
 
 class FinanceStaticDataProvider: NSObject {
     static let walkthroughs = [
-        ATCWalkthroughModel(title: "Instacoin", subtitle: "Trade & monitor all cryptocurrencies.", icon: "finance-app-icon-1"),
-        ATCWalkthroughModel(title: "Crypto Trading", subtitle: "Buy and sell cryptocurrencies.", icon: "money-bag-empty-icon"),
-        ATCWalkthroughModel(title: "Crypto Portfolio", subtitle: "Track your crypto investments across all asset categories.", icon: "expenses-pie-icon"),
-        ATCWalkthroughModel(title: "Market News", subtitle: "Stay on top of the crypto market by reading cryptocurrency news.", icon: "news-icon"),
-        ATCWalkthroughModel(title: "Accounts", subtitle: "Link all of accounts to manage them in a single app.", icon: "accounts-list-icon"),
-        ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications and updates on crypto movements.", icon: "bell-icon"),
+        WalkthroughModel(title: "Instacoin", subtitle: "Trade & monitor all cryptocurrencies.", icon: "finance-app-icon-1"),
+        WalkthroughModel(title: "Crypto Trading", subtitle: "Buy and sell cryptocurrencies.", icon: "money-bag-empty-icon"),
+        WalkthroughModel(title: "Crypto Portfolio", subtitle: "Track your crypto investments across all asset categories.", icon: "expenses-pie-icon"),
+        WalkthroughModel(title: "Market News", subtitle: "Stay on top of the crypto market by reading cryptocurrency news.", icon: "news-icon"),
+        WalkthroughModel(title: "Accounts", subtitle: "Link all of accounts to manage them in a single app.", icon: "accounts-list-icon"),
+        WalkthroughModel(title: "Get Notified", subtitle: "Receive notifications and updates on crypto movements.", icon: "bell-icon"),
         ]
 
     static let notifications: [NotificationModel] = [

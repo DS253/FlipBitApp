@@ -1,9 +1,10 @@
 //
-//  ATCFacebookAPIManager.swift
-//  AppTemplatesCore
+//  FacebookAPIManager.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
+//
 
 import FBSDKCoreKit
 import FBSDKLoginKit
@@ -11,59 +12,59 @@ import FBSDKLoginKit
 let kGraphPathMe = "me"
 let kGraphPathMePageLikes = "me/likes"
 
-class ATCFacebookAPIManager {
-
+class FacebookAPIManager {
+    
     let accessToken: AccessToken
-    let networkingManager = ATCNetworkingManager()
-
+    let networkingManager = NetworkingManager()
+    
     init(accessToken: AccessToken) {
         self.accessToken = accessToken
     }
-
+    
     func requestFacebookUser(completion: @escaping (_ facebookUser: FacebookUser?) -> Void) {
         let graphRequest = GraphRequest(graphPath: kGraphPathMe, parameters: ["fields":"id,email,last_name,first_name,picture"], tokenString: accessToken.tokenString, version: nil, httpMethod: .get)
-
+        
         graphRequest.start { (connection, result, error) in
-//            switch result {
-//            case .success(let graphResponse):
-//                if let dictionary = graphResponse.dictionaryValue {
-//                    completion(FacebookUser(jsonDict: dictionary))
-//                }
-//                break
-//            default:
-//                print("Facebook request user error")
-//            }
+            //            switch result {
+            //            case .success(let graphResponse):
+            //                if let dictionary = graphResponse.dictionaryValue {
+            //                    completion(FacebookUser(jsonDict: dictionary))
+            //                }
+            //                break
+            //            default:
+            //                print("Facebook request user error")
+            //            }
         }
     }
-
+    
     func requestFacebookUserPageLikes() {
         let graphRequest = GraphRequest(graphPath: kGraphPathMePageLikes, parameters: [:], tokenString: accessToken.tokenString, version: nil, httpMethod: .get)
         graphRequest.start { (connection, result, error) in
             print (result ?? "")
         }
     }
-
-    func requestWallPosts(completion: @escaping (_ posts: [ATCFacebookPost]) -> Void) {
+    
+    func requestWallPosts(completion: @escaping (_ posts: [FacebookPost]) -> Void) {
         let graphRequest = GraphRequest(graphPath: "me/posts", parameters: ["fields":"link,created_time,description,picture,name","limit":"500"], tokenString: accessToken.tokenString, version: nil, httpMethod: .get)
-
+        
         graphRequest.start { (connection, result, error) in
-//            switch result {
-//            case .success(let graphResponse):
-//                if let dictionary = graphResponse.dictionaryValue {
-//                    self.processWallPostResponse(dictionary: dictionary, posts: [], completion: completion)
-//                    return
-//                }
-//            default: break
-//            }
+            //            switch result {
+            //            case .success(let graphResponse):
+            //                if let dictionary = graphResponse.dictionaryValue {
+            //                    self.processWallPostResponse(dictionary: dictionary, posts: [], completion: completion)
+            //                    return
+            //                }
+            //            default: break
+            //            }
             completion([])
         }
     }
-
-    private func processWallPostResponse(dictionary: [String: Any?], posts: [ATCFacebookPost], completion: @escaping (_ posts: [ATCFacebookPost]) -> Void) {
-        var newPosts = [ATCFacebookPost]()
+    
+    private func processWallPostResponse(dictionary: [String: Any?], posts: [FacebookPost], completion: @escaping (_ posts: [FacebookPost]) -> Void) {
+        var newPosts = [FacebookPost]()
         if let array = dictionary["data"] as? [[String: String]] {
             for dict in array {
-                newPosts.append(ATCFacebookPost(jsonDict: dict))
+                newPosts.append(FacebookPost(jsonDict: dict))
             }
         }
         guard let paging = dictionary["paging"] as? [String: String], let next = paging["next"] as String?, next.count > 0 else {

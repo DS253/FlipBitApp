@@ -102,11 +102,11 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
             items = items + news
             items.append(CardFooterModel(title: "View all stories"))
 
-            self.genericDataSource = ATCGenericLocalHeteroDataSource(items: items)
+            self.genericDataSource = GenericLocalHeteroDataSource(items: items)
 
             self.genericDataSource?.loadFirst()
         }
-        //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "ATCDivider")
+        //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "Divider")
     }
     
     fileprivate func lineChartData(chart: LineChart, config: LineChartConfiguration) -> LineChartData {

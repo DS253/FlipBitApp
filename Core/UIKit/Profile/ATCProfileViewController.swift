@@ -42,14 +42,14 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
         self.uiConfig = uiConfig
         super.init(configuration: profileVCConfig, selectionBlock: selectionBlock)
         self.use(adapter: ProfileItemRowAdapter(uiConfig: uiConfig), for: "ProfileItem")
-        self.use(adapter: ATCTextRowAdapter(font: uiConfig.boldFont(size: 18),
+        self.use(adapter: TextRowAdapter(font: uiConfig.boldFont(size: 18),
                                             textColor: uiConfig.mainTextColor,
                                             alignment: .center),
                  for: "ATCText")
         let roundImageAdapter = ATCRoundImageRowAdapter()
         roundImageAdapter.delegate = self
         self.use(adapter: roundImageAdapter, for: "ATCImage")
-        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 10), for: "ATCDivider")
+        self.use(adapter: DividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 10), for: "Divider")
         self.use(adapter: ProfileButtonItemRowAdapter(uiConfig: uiConfig), for: "ProfileButtonItem")
         self.use(adapter: InstaMultiRowPageCarouselRowAdapter(uiConfig: uiConfig), for: "InstaMultiRowPageCarouselViewModel")
         self.update()
@@ -65,7 +65,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
         allItems.append(ProfileButtonItem(title: "Logout",
                                              color: nil,
                                              textColor: uiConfig.mainTextColor))
-        self.genericDataSource = ATCGenericLocalHeteroDataSource(items: allItems)
+        self.genericDataSource = GenericLocalHeteroDataSource(items: allItems)
         self.genericDataSource?.loadFirst()
     }
     

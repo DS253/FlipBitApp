@@ -32,7 +32,7 @@ class FinanceAddInstitutionViewController: ATCGenericCollectionViewController {
 
         self.genericDataSource = dsProvider.institutionsDataSource
         self.use(adapter: FinanceInstitutionRowAdapter(uiConfig: uiConfig), for: "FinanceInstitution")
-//        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 12)), for: "ATCDivider")
+//        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 12)), for: "Divider")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }

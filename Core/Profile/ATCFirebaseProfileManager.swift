@@ -9,11 +9,11 @@
 import UIKit
 import FirebaseFirestore
 
-class ATCFirebaseProfileManager : ATCProfileManager {
+class ATCFirebaseProfileManager : ProfileManager {
     let db = Firestore.firestore()
     var usersListener: ListenerRegistration? = nil
 
-    var delegate: ATCProfileManagerDelegate?
+    var delegate: ProfileManagerDelegate?
     
     func fetchProfile(for user: ATCUser) {
         //...

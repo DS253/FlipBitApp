@@ -36,7 +36,7 @@ class WatchlistViewController: ATCGenericCollectionViewController {
         if let assets = store.retrieve() as? [FinanceAsset] {
             self.genericDataSource = GenericLocalDataSource(items: assets)
         } else {
-            self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [])
+            self.genericDataSource = GenericLocalHeteroDataSource(items: [])
         }
         
         self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")

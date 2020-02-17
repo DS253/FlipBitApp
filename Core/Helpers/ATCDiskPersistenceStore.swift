@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ATCPersistable: class {
+protocol Persistable: class {
     var diffIdentifier: String {get}
 }
 
@@ -23,22 +23,22 @@ class ATCDiskPersistenceStore {
         UserDefaults.standard.set(res, forKey: key)
     }
 
-    func append(object: ATCPersistable) {
-        var arrayToWrite: [ATCPersistable] = [object]
+    func append(object: Persistable) {
+        var arrayToWrite: [Persistable] = [object]
         if let existingData = retrieve() {
             arrayToWrite = existingData + [object]
         }
         write(object: arrayToWrite)
     }
 
-    func retrieve() -> [ATCPersistable]? {
+    func retrieve() -> [Persistable]? {
         if let data = UserDefaults.standard.value(forKey: key) as? Data, let unarchivedData = NSKeyedUnarchiver.unarchiveObject(with: data) {
-            return unarchivedData as? [ATCPersistable]
+            return unarchivedData as? [Persistable]
         }
         return nil
     }
 
-    func remove(object: ATCPersistable) {
+    func remove(object: Persistable) {
         if var array = retrieve() {
             var index: NSInteger = -1
             for (idx, obj) in array.enumerated() {
@@ -53,7 +53,7 @@ class ATCDiskPersistenceStore {
         }
     }
 
-    func contains(object: ATCPersistable) -> Bool {
+    func contains(object: Persistable) -> Bool {
         if let array = retrieve() {
             for (_, obj) in array.enumerated() {
                 if obj.diffIdentifier == object.diffIdentifier {

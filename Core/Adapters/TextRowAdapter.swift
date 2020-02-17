@@ -1,14 +1,14 @@
 //
-//  ATCTextRowAdapter.swift
-//  ListingApp
+//  TextRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/10/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCTextRowAdapter: GenericCollectionRowAdapter {
+class TextRowAdapter: GenericCollectionRowAdapter {
     var font: UIFont
     var textColor: UIColor
     var staticHeight: CGFloat?
@@ -38,7 +38,7 @@ class ATCTextRowAdapter: GenericCollectionRowAdapter {
             cell.backgroundColor = bgColor
         }
         cell.label.setNeedsLayout()
-
+        
         if let accessoryText = viewModel.accessoryText {
             cell.accessoryLabel.text = accessoryText
             cell.accessoryLabel.font = font.withSize(14.0)
@@ -49,7 +49,7 @@ class ATCTextRowAdapter: GenericCollectionRowAdapter {
         }
         cell.setNeedsLayout()
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCTextCollectionViewCell.self
     }

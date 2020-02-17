@@ -1,55 +1,55 @@
 //
-//  ATCOnboardingCoordinator.swift
-//  DashboardApp
+//  OnboardingCoordinator.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/8/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-protocol ATCOnboardingCoordinatorDelegate: class {
-    func coordinatorDidCompleteOnboarding(_ coordinator: ATCOnboardingCoordinatorProtocol, user: ATCUser?)
-    func coordinatorDidResyncCredentials(_ coordinator: ATCOnboardingCoordinatorProtocol, user: ATCUser?)
+protocol OnboardingCoordinatorDelegate: class {
+    func coordinatorDidCompleteOnboarding(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?)
+    func coordinatorDidResyncCredentials(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?)
 }
 
-protocol ATCOnboardingCoordinatorProtocol: ATCLandingScreenManagerDelegate {
+protocol OnboardingCoordinatorProtocol: LandingScreenManagerDelegate {
     func viewController() -> UIViewController
-    var delegate: ATCOnboardingCoordinatorDelegate? {get set}
+    var delegate: OnboardingCoordinatorDelegate? { get set }
     func resyncPersistentCredentials(user: ATCUser) -> Void
 }
 
-class ATCClassicOnboardingCoordinator: ATCOnboardingCoordinatorProtocol, ATCLoginScreenManagerDelegate, ATCSignUpScreenManagerDelegate {
-    weak var delegate: ATCOnboardingCoordinatorDelegate?
+class OnboardingCoordinator: OnboardingCoordinatorProtocol, LoginScreenManagerDelegate, SignUpScreenManagerDelegate {
+    weak var delegate: OnboardingCoordinatorDelegate?
 
-    let landingManager: ATCLandingScreenManager
+    let landingManager: LandingScreenManager
     let landingScreen: ATCClassicLandingScreenViewController
 
-    let loginManager: ATCLoginScreenManager
+    let loginManager: LoginScreenManager
     let loginScreen: ATCClassicLoginScreenViewController
 
-    let signUpManager: ATCSignUpScreenManager
+    let signUpManager: SignUpScreenManager
     let signUpScreen: ATCClassicSignUpViewController
 
     let navigationController: UINavigationController
 
-    let serverConfig: ATCOnboardingServerConfigurationProtocol
+    let serverConfig: OnboardingServerConfigurationProtocol
     let firebaseLoginManager: ATCFirebaseLoginManager?
 
     init(landingViewModel: LandingScreenViewModel,
          loginViewModel: LoginScreenViewModel,
          signUpViewModel: SignUpScreenViewModel,
          uiConfig: OnboardingConfigurationProtocol,
-         serverConfig: ATCOnboardingServerConfigurationProtocol,
+         serverConfig: OnboardingServerConfigurationProtocol,
          userManager: SocialUserManagerProtocol?) {
         self.serverConfig = serverConfig
         self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? ATCFirebaseLoginManager() : nil
         self.landingScreen = ATCClassicLandingScreenViewController(uiConfig: uiConfig)
-        self.landingManager = ATCLandingScreenManager(landingScreen: self.landingScreen, viewModel: landingViewModel, uiConfig: uiConfig)
+        self.landingManager = LandingScreenManager(landingScreen: self.landingScreen, viewModel: landingViewModel, uiConfig: uiConfig)
         self.landingScreen.delegate = landingManager
 
         self.loginScreen = ATCClassicLoginScreenViewController(uiConfig: uiConfig)
-        self.loginManager = ATCLoginScreenManager(loginScreen: self.loginScreen,
+        self.loginManager = LoginScreenManager(loginScreen: self.loginScreen,
                                                   viewModel: loginViewModel,
                                                   uiConfig: uiConfig,
                                                   serverConfig: serverConfig,
@@ -57,7 +57,7 @@ class ATCClassicOnboardingCoordinator: ATCOnboardingCoordinatorProtocol, ATCLogi
         self.loginScreen.delegate = loginManager
 
         self.signUpScreen = ATCClassicSignUpViewController(uiConfig: uiConfig)
-        self.signUpManager = ATCSignUpScreenManager(signUpScreen: self.signUpScreen, viewModel: signUpViewModel, uiConfig: uiConfig, serverConfig: serverConfig)
+        self.signUpManager = SignUpScreenManager(signUpScreen: self.signUpScreen, viewModel: signUpViewModel, uiConfig: uiConfig, serverConfig: serverConfig)
         self.signUpScreen.delegate = signUpManager
 
         self.navigationController = UINavigationController(rootViewController: landingScreen)
@@ -82,19 +82,20 @@ class ATCClassicOnboardingCoordinator: ATCOnboardingCoordinatorProtocol, ATCLogi
         }
     }
 
-    func landingScreenManagerDidTapLogIn(manager: ATCLandingScreenManager) {
+    func landingScreenManagerDidTapLogIn(manager: LandingScreenManager) {
         self.navigationController.pushViewController(self.loginScreen, animated: true)
     }
 
-    func landingScreenManagerDidTapSignUp(manager: ATCLandingScreenManager) {
+    func landingScreenManagerDidTapSignUp(manager: LandingScreenManager) {
         self.navigationController.pushViewController(self.signUpScreen, animated: true)
     }
 
-    func loginManagerDidCompleteLogin(_ loginManager: ATCLoginScreenManager, user: ATCUser?) {
+    func loginManagerDidCompleteLogin(_ loginManager: LoginScreenManager, user: ATCUser?) {
         self.delegate?.coordinatorDidCompleteOnboarding(self, user: user)
     }
 
-    func signUpManagerDidCompleteSignUp(_ signUpManager: ATCSignUpScreenManager, user: ATCUser?) {
+    func signUpManagerDidCompleteSignUp(_ signUpManager: SignUpScreenManager, user: ATCUser?) {
         self.delegate?.coordinatorDidCompleteOnboarding(self, user: user)
     }
 }
+

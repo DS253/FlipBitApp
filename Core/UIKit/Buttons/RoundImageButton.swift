@@ -1,26 +1,26 @@
 //
-//  InstaRoundImageButton.swift
-//  DatingApp
+//  RoundImageButton.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 1/23/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class InstaRoundImageButton: UIButton {
-
-    class func newButton() -> InstaRoundImageButton {
-        let button = InstaRoundImageButton.init(type: .system)
+class RoundImageButton: UIButton {
+    
+    class func newButton() -> RoundImageButton {
+        let button = RoundImageButton.init(type: .system)
         button.configInit()
         return button
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.bounds.width / 2.0
     }
-
+    
     func configure(image: UIImage = UIImage.localImage("share-icon", template: true),
                    tintColor: UIColor = .blue,
                    bgColor: UIColor = .white) {
@@ -31,10 +31,10 @@ class InstaRoundImageButton: UIButton {
         self.setNeedsLayout()
         self.layoutIfNeeded()
     }
-
+    
     fileprivate func configInit() {
         self.backgroundColor = .white
-
+        
         layer.masksToBounds = false
         layer.shadowColor = UIColor(hexString: "#bbbbbb").cgColor
         layer.shadowOpacity = 0.2

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ATCClassicLandingScreenViewController: UIViewController, ATCLandingScreenProtocol {
+class ATCClassicLandingScreenViewController: UIViewController, LandingScreenProtocol {
     @IBOutlet var logoImageView: UIImageView!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
 
-    weak var delegate: ATCLandingScreenDelegate?
+    weak var delegate: LandingScreenDelegate?
 
     let uiConfig: OnboardingConfigurationProtocol
 

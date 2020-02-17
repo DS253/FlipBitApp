@@ -1,18 +1,18 @@
 //
-//  ATCDividerRowAdapter.swift
-//  RestaurantApp
+//  DividerRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 5/19/18.
-//  Copyright © 2018 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCDividerRowAdapter: GenericCollectionRowAdapter {
+class DividerRowAdapter: GenericCollectionRowAdapter {
     let titleFont: UIFont
     let minHeight: CGFloat
     let titleColor: UIColor
-
+    
     init(titleFont: UIFont,
          minHeight: CGFloat = 70,
          titleColor: UIColor = .black) {
@@ -20,9 +20,9 @@ class ATCDividerRowAdapter: GenericCollectionRowAdapter {
         self.minHeight = minHeight
         self.titleColor = titleColor
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let divider = object as? ATCDivider, let cell = cell as? ATCDividerCollectionViewCell {
+        if let divider = object as? Divider, let cell = cell as? ATCDividerCollectionViewCell {
             cell.dividerLabel.text = divider.title
             cell.dividerLabel.font = titleFont
             cell.dividerLabel.textColor = titleColor
@@ -30,13 +30,13 @@ class ATCDividerRowAdapter: GenericCollectionRowAdapter {
             cell.backgroundColor = .clear
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCDividerCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCDivider else { return .zero }
+        guard let viewModel = object as? Divider else { return .zero }
         let width = containerBounds.width
         var height = minHeight
         if let text = viewModel.title {

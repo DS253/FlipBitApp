@@ -81,7 +81,7 @@ extension ATCMenuCollectionViewController {
 }
 
 extension ATCMenuCollectionViewController {
-    fileprivate func drawerController() -> ATCDrawerController? {
-        return (self.parent as? ATCDrawerController)
+    fileprivate func drawerController() -> DrawerController? {
+        return (self.parent as? DrawerController)
     }
 }

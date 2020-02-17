@@ -72,7 +72,7 @@ public protocol ATCHostViewControllerDelegate: class {
     func hostViewController(_ hostViewController: ATCHostViewController, didSync user: ATCUser)
 }
 
-public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDelegate, ATCWalkthroughViewControllerDelegate {
+public class ATCHostViewController: UIViewController, OnboardingCoordinatorDelegate, ATCWalkthroughViewControllerDelegate {
     var user: ATCUser? {
         didSet {
             menuViewController?.user = user
@@ -93,20 +93,20 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
     var tabController: UITabBarController?
     var navigationRootController: NavigationController?
     var menuViewController: ATCMenuCollectionViewController?
-    var drawerController: ATCDrawerController?
-    var onboardingCoordinator: ATCOnboardingCoordinatorProtocol?
+    var drawerController: DrawerController?
+    var onboardingCoordinator: OnboardingCoordinatorProtocol?
     var walkthroughVC: ATCWalkthroughViewController?
     var profilePresenter: ProfileScreenPresenterProtocol?
     var pushNotificationsEnabled: Bool
     var locationUpdatesEnabled: Bool
-    var pushManager: ATCPushNotificationManager?
+    var pushManager: PushNotificationManager?
     var locationManager: LocationManager?
     var profileUpdater: ProfileUpdaterProtocol?
 
     weak var delegate: ATCHostViewControllerDelegate?
 
     init(configuration: ATCHostConfiguration,
-         onboardingCoordinator: ATCOnboardingCoordinatorProtocol?,
+         onboardingCoordinator: OnboardingCoordinatorProtocol?,
          walkthroughVC: ATCWalkthroughViewController?,
          profilePresenter: ProfileScreenPresenterProtocol? = nil,
          profileUpdater: ProfileUpdaterProtocol? = nil) {
@@ -252,7 +252,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
                 self.addChildViewControllerWithView(childVC)
             }, completion: {(finished) in
                 if let user = self.user {
-                    self.pushManager = ATCPushNotificationManager(user: user)
+                    self.pushManager = PushNotificationManager(user: user)
                     self.pushManager?.registerForPushNotifications()
                 }
             })
@@ -340,7 +340,7 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
             let menuConfiguration = configuration.menuConfiguration
             menuViewController = ATCMenuCollectionViewController(menuConfiguration: menuConfiguration, collectionVCConfiguration: collectionVCConfiguration)
             menuViewController?.genericDataSource = GenericLocalDataSource<ATCNavigationItem>(items: menuConfiguration.items)
-            drawerController = ATCDrawerController(rootViewController: navigationRootController!, menuController: menuViewController!)
+            drawerController = DrawerController(rootViewController: navigationRootController!, menuController: menuViewController!)
             navigationRootController?.drawerDelegate = drawerController
             if let drawerController = drawerController {
                 self.addChild(drawerController)
@@ -350,11 +350,11 @@ public class ATCHostViewController: UIViewController, ATCOnboardingCoordinatorDe
         }
     }
 
-    func coordinatorDidCompleteOnboarding(_ coordinator: ATCOnboardingCoordinatorProtocol, user: ATCUser?) {
+    func coordinatorDidCompleteOnboarding(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?) {
         self.didFetchUser(user)
     }
 
-    func coordinatorDidResyncCredentials(_ coordinator: ATCOnboardingCoordinatorProtocol, user: ATCUser?) {
+    func coordinatorDidResyncCredentials(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?) {
         self.didFetchUser(user)
     }
 

@@ -11,7 +11,7 @@ import UIKit
 class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
 
     let uiConfig: FinanceUIConfiguration
-    let serverConfig: ATCOnboardingServerConfigurationProtocol
+    let serverConfig: OnboardingServerConfigurationProtocol
 
     let homeVC: CryptoHomeViewController
     let portfolioVC: PortfolioViewController
@@ -22,7 +22,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
     let dsProvider: FinanceDataSourceProviderProtocol
 
     init(uiConfig: FinanceUIConfiguration,
-         serverConfig: ATCOnboardingServerConfigurationProtocol,
+         serverConfig: OnboardingServerConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.serverConfig = serverConfig
@@ -111,7 +111,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
         return uiConfig.statusBarStyle
     }
 
-    fileprivate func onboardingCoordinator(uiConfig: FinanceUIConfiguration, serverConfig: ATCOnboardingServerConfigurationProtocol) -> ATCOnboardingCoordinatorProtocol {
+    fileprivate func onboardingCoordinator(uiConfig: FinanceUIConfiguration, serverConfig: OnboardingServerConfigurationProtocol) -> OnboardingCoordinatorProtocol {
         let landingViewModel = LandingScreenViewModel(imageIcon: "finance-app-icon-1",
                                                          title: "Welcome to Instacoin",
                                                          subtitle: "Exchange, trade and monitor cryptocurrencies.",
@@ -131,7 +131,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
                                                        title: "Create new account",
                                                        signUpString: "Sign Up")
         let userManager: SocialUserManagerProtocol? = serverConfig.isFirebaseAuthEnabled ? ATCSocialFirebaseUserManager() : nil
-        return ATCClassicOnboardingCoordinator(landingViewModel: landingViewModel,
+        return OnboardingCoordinator(landingViewModel: landingViewModel,
                                                loginViewModel: loginViewModel,
                                                signUpViewModel: signUpViewModel,
                                                uiConfig: FinanceOnboardingConfiguration(config: uiConfig),
@@ -163,7 +163,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
                                                     let accountSettingsVC = FinanceAccountDetailsViewController(user: user, updater: self.dsProvider.profileUpdater)
                                                     self.profileVC?.navigationController?.pushViewController(accountSettingsVC, animated: true)
                                                 } else {
-                                                    let contactVC = ATCFinanceContactUsViewController()
+                                                    let contactVC = FinanceContactUsViewController()
                                                     nav?.pushViewController(contactVC, animated: true)
                                                 }
                                             }

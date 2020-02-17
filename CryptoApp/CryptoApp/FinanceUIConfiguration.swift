@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceUIConfiguration: UIGenericConfigurationProtocol, ATCOnboardingServerConfigurationProtocol {
+class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerConfigurationProtocol {
     let mainThemeBackgroundColor: UIColor = UIColor.modedColor(light: "#ffffff", dark: "#121212")
     let mainThemeForegroundColor: UIColor = UIColor(hexString: "#2851e6")
     let mainTextColor: UIColor = UIColor(hexString: "#070f12")

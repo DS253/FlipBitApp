@@ -1,9 +1,9 @@
 //
-//  ATCLoginScreenManager.swift
-//  DashboardApp
+//  LoginScreenManager.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/8/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FBSDKCoreKit
@@ -11,29 +11,29 @@ import FBSDKLoginKit
 import FirebaseAuth
 import UIKit
 
-protocol ATCLoginScreenManagerDelegate: class {
-    func loginManagerDidCompleteLogin(_ loginManager: ATCLoginScreenManager, user: ATCUser?)
+protocol LoginScreenManagerDelegate: class {
+    func loginManagerDidCompleteLogin(_ loginManager: LoginScreenManager, user: ATCUser?)
 }
 
-class ATCLoginScreenManager: ATCLoginScreenDelegate {
-    let loginScreen: ATCLoginScreenProtocol
+class LoginScreenManager: LoginScreenDelegate {
+    let loginScreen: LoginScreenProtocol
     let viewModel: LoginScreenViewModel
     let uiConfig: OnboardingConfigurationProtocol
-    let serverConfig: ATCOnboardingServerConfigurationProtocol
+    let serverConfig: OnboardingServerConfigurationProtocol
     let userManager: SocialUserManagerProtocol?
     let loginManager: ATCFirebaseLoginManager
-
-    weak var delegate: ATCLoginScreenManagerDelegate?
-
+    
+    weak var delegate: LoginScreenManagerDelegate?
+    
     private let readPermissions: [String] = ["public_profile",
                                              "email",
                                              "user_friends",
                                              "user_posts"]
-
-    init(loginScreen: ATCLoginScreenProtocol,
+    
+    init(loginScreen: LoginScreenProtocol,
          viewModel: LoginScreenViewModel,
          uiConfig: OnboardingConfigurationProtocol,
-         serverConfig: ATCOnboardingServerConfigurationProtocol,
+         serverConfig: OnboardingServerConfigurationProtocol,
          userManager: SocialUserManagerProtocol?) {
         self.loginScreen = loginScreen
         self.viewModel = viewModel
@@ -42,14 +42,14 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
         self.userManager = userManager
         self.loginManager = ATCFirebaseLoginManager()
     }
-
-    func loginScreenDidLoadView(_ loginScreen: ATCLoginScreenProtocol) {
+    
+    func loginScreenDidLoadView(_ loginScreen: LoginScreenProtocol) {
         if let titleLabel = loginScreen.titleLabel {
             titleLabel.font = uiConfig.titleFont
             titleLabel.text = viewModel.title
             titleLabel.textColor = uiConfig.titleColor
         }
-
+        
         if let cpField = loginScreen.contactPointTextField {
             cpField.configure(color: uiConfig.textFieldColor,
                               font: uiConfig.textFieldFont,
@@ -61,7 +61,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
             cpField.textContentType = .emailAddress
             cpField.clipsToBounds = true
         }
-
+        
         if let passwordField = loginScreen.passwordTextField {
             passwordField.configure(color: uiConfig.textFieldColor,
                                     font: uiConfig.textFieldFont,
@@ -74,13 +74,13 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
             passwordField.textContentType = .emailAddress
             passwordField.clipsToBounds = true
         }
-
+        
         if let separatorLabel = loginScreen.separatorLabel {
             separatorLabel.font = uiConfig.separatorFont
             separatorLabel.textColor = uiConfig.separatorColor
             separatorLabel.text = viewModel.separatorString
         }
-
+        
         if let loginButton = loginScreen.loginButton {
             loginButton.setTitle(viewModel.loginString, for: .normal)
             loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
@@ -89,7 +89,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
                                   cornerRadius: 8,
                                   backgroundColor: uiConfig.loginButtonBackgroundColor)
         }
-
+        
         if let facebookButton = loginScreen.facebookButton {
             facebookButton.setTitle(viewModel.facebookString, for: .normal)
             facebookButton.addTarget(self, action: #selector(didTapFacebookButton), for: .touchUpInside)
@@ -99,8 +99,8 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
                                      backgroundColor: UIColor(hexString: "#334D92"))
         }
     }
-
-    func loginScreen(_ loginScreen: ATCLoginScreenProtocol,
+    
+    func loginScreen(_ loginScreen: LoginScreenProtocol,
                      didFetchAppleUserWith firstName: String?,
                      lastName: String?,
                      email: String?,
@@ -117,7 +117,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
                            email: email)
         self.delegate?.loginManagerDidCompleteLogin(self, user: user)
     }
-
+    
     @objc func didTapLoginButton() {
         if serverConfig.isFirebaseAuthEnabled {
             if let email = loginScreen.contactPointTextField.text,
@@ -148,7 +148,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
         }
         self.delegate?.loginManagerDidCompleteLogin(self, user: nil)
     }
-
+    
     @objc func didTapFacebookButton() {
         if let loginScreen = loginScreen as? UIViewController {
             let loginManager = LoginManager()
@@ -159,7 +159,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
             }
         }
     }
-
+    
     private func didLoginWithFacebook() {
         //  Successful log in with Facebook
         if let accessToken = AccessToken.current {
@@ -178,7 +178,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
                     }
                 }
             } else {
-                let facebookAPIManager = ATCFacebookAPIManager(accessToken: accessToken)
+                let facebookAPIManager = FacebookAPIManager(accessToken: accessToken)
                 let hud = CPKProgressHUD.progressHUD(style: .loading(text: "Loading"))
                 hud.show(in: loginScreen.view)
                 facebookAPIManager.requestFacebookUser(completion: {[weak self] (facebookUser) in
@@ -199,7 +199,7 @@ class ATCLoginScreenManager: ATCLoginScreenDelegate {
         }
         self.showLoginError()
     }
-
+    
     fileprivate func showLoginError() {
         let alert = UIAlertController(title: "The login credentials are invalid. Please try again", message: "", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

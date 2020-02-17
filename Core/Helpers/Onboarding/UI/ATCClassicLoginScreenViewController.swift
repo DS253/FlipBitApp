@@ -9,7 +9,7 @@
 import AuthenticationServices
 import UIKit
 
-class ATCClassicLoginScreenViewController: UIViewController, ATCLoginScreenProtocol {
+class ATCClassicLoginScreenViewController: UIViewController, LoginScreenProtocol {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var passwordTextField: FlipBitTextField!
@@ -20,7 +20,7 @@ class ATCClassicLoginScreenViewController: UIViewController, ATCLoginScreenProto
     @IBOutlet var backButton: UIButton!
     @IBOutlet weak var appleSignInStackView: UIStackView!
 
-    weak var delegate: ATCLoginScreenDelegate?
+    weak var delegate: LoginScreenDelegate?
     let uiConfig: OnboardingConfigurationProtocol
 
     init(uiConfig: OnboardingConfigurationProtocol) {

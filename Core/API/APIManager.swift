@@ -1,15 +1,15 @@
 //
-//  ATCAPIManager.swift
-//  AppTemplatesCore
+//  APIManager.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
-public class ATCAPIManager {
-
-    fileprivate let networkingManager = ATCNetworkingManager()
-
+public class APIManager {
+    
+    fileprivate let networkingManager = NetworkingManager()
+    
     func retrieveObjectFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ object: T?, _ status: NetworkResponseStatus) -> Void) {
         networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: NetworkResponseStatus) in
             if let jsonDict = jsonData as? [String: Any] {
@@ -19,7 +19,7 @@ public class ATCAPIManager {
             }
         }
     }
-
+    
     func retrieveListFromJSON<T: GenericJSONParsable>(urlPath: String, parameters: [String : String]?, completion: @escaping (_ objects: [T]?, _ status: NetworkResponseStatus) -> Void) {
         networkingManager.getJSONResponse(path: urlPath, parameters: parameters) { (jsonData: Any?, status: NetworkResponseStatus) in
             if let jsonArray = jsonData as? [[String: Any]] {

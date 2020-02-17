@@ -52,14 +52,14 @@ class FinanceDataSourceProvider: FinanceDataSourceProviderProtocol {
     }
 
     var cryptoHomeDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             [CardHeaderModel(title: "Cryptocurrencies")] +
                 FinanceStaticDataProvider.cryptos +
                 [CardFooterModel(title: "View all cryptocurrencies")]
         )    }
 
     var newsHomeDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             [CardHeaderModel(title: "Top Crypto News")] +
                 FinanceStaticDataProvider.news +
                 [CardFooterModel(title: "View more news")]
@@ -67,32 +67,32 @@ class FinanceDataSourceProvider: FinanceDataSourceProviderProtocol {
     }
 
     var portfolioCashDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             [CardHeaderModel(title: "Cash")] +
                 FinanceStaticDataProvider.portfolioCashAccounts
         )
     }
 
     var bankAccountsDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             FinanceStaticDataProvider.bankAccounts + [AddBankAccountModel()]
         )
     }
 
     var allCryptosListDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             FinanceStaticDataProvider.cryptos
         )
     }
 
     var allNewsDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items:
+        return GenericLocalHeteroDataSource(items:
             FinanceStaticDataProvider.news
         )
     }
 
     func notificationsDataSource() -> ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items: FinanceStaticDataProvider.notifications)
+        return GenericLocalHeteroDataSource(items: FinanceStaticDataProvider.notifications)
     }
 
     var profileUpdater: ProfileUpdaterProtocol {
@@ -104,7 +104,7 @@ class FinanceDataSourceProvider: FinanceDataSourceProviderProtocol {
     }
 
     var institutionsDataSource: ATCGenericCollectionViewControllerDataSource {
-        return ATCGenericLocalHeteroDataSource(items: FinanceStaticDataProvider.institutions)
+        return GenericLocalHeteroDataSource(items: FinanceStaticDataProvider.institutions)
     }
 
     var tradingNumericKeys: [ATCKeyboardKey] {

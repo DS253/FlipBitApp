@@ -63,7 +63,7 @@ class BankAccountViewController: ATCGenericCollectionViewController {
                                                                         subcellHeight: 70)
         transactionsListModel.parentViewController = self
 
-        self.genericDataSource = ATCGenericLocalHeteroDataSource(items: [chartViewModel,
+        self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
                                                                          transactionsListModel])
         self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
         self.title = financeAccount.institution + ": " + financeAccount.title

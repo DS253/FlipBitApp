@@ -1,31 +1,31 @@
 //
-//  InstaLinePageControl.swift
-//  DatingApp
+//  LinePageControl.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 1/26/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class InstaLinePageControl: UIControl {
+class LinePageControl: UIControl {
     var numberOfPages: Int = 0 {
         didSet {
             update()
         }
     }
-
+    
     var selectedPage: Int = 0 {
         didSet {
             update()
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         update()
     }
-
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         if numberOfPages == 0 {
@@ -40,7 +40,7 @@ class InstaLinePageControl: UIControl {
             currentX += subviewWidth + spacing
         }
     }
-
+    
     fileprivate func update() {
         self.backgroundColor = .clear
         self.subviews.forEach({$0.removeFromSuperview()})

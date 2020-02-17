@@ -1,19 +1,19 @@
 //
-//  ATCImageRowAdapter.swift
-//  ListingApp
+//  ImageRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 6/10/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-protocol ATCImageRowAdapterDelegate: class {
-    func imageRowAdapter(_ adapter: ATCImageRowAdapter, didLoad image: UIImage)
+protocol ImageRowAdapterDelegate: class {
+    func imageRowAdapter(_ adapter: ImageRowAdapter, didLoad image: UIImage)
 }
 
-class ATCImageRowAdapter: GenericCollectionRowAdapter {
-
+class ImageRowAdapter: GenericCollectionRowAdapter {
+    
     let cellHeight: CGFloat?
     let cellWidth: CGFloat?
     let contentMode: UIView.ContentMode
@@ -21,9 +21,9 @@ class ATCImageRowAdapter: GenericCollectionRowAdapter {
     let size: ((CGRect) -> CGSize)?
     let tintColor: UIColor?
     let bgColor: UIColor?
-
-    weak var delegate: ATCImageRowAdapterDelegate?
-
+    
+    weak var delegate: ImageRowAdapterDelegate?
+    
     init(cellHeight: CGFloat? = nil,
          cellWidth: CGFloat? = nil,
          contentMode: UIView.ContentMode = .scaleAspectFill,
@@ -39,13 +39,13 @@ class ATCImageRowAdapter: GenericCollectionRowAdapter {
         self.tintColor = tintColor
         self.bgColor = bgColor
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         guard let viewModel = object as? ATCImage, let cell = cell as? ATCImageCollectionViewCell else { return }
         cell.atcImageView.contentMode = contentMode
         cell.atcImageView.clipsToBounds = true
         cell.clipsToBounds = true
-
+        
         if let url = viewModel.urlString {
             cell.atcImageView.kf.setImage(with: URL(string: url),
                                           placeholder: nil,
@@ -57,7 +57,7 @@ class ATCImageRowAdapter: GenericCollectionRowAdapter {
                                                 self.delegate?.imageRowAdapter(self, didLoad: value.image)
                                             case .failure( _): break
                                             }
-
+                                            
             }
         } else {
             cell.atcImageView.image = viewModel.localImage
@@ -71,11 +71,11 @@ class ATCImageRowAdapter: GenericCollectionRowAdapter {
             cell.atcImageView.backgroundColor = bgColor
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCImageCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard let _ = object as? ATCImage else { return .zero }
         if let size = size {
