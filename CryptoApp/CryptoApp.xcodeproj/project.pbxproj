@@ -145,6 +145,7 @@
 		060A9BE423FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */; };
 		060A9BE623FA7025003F1B7F /* FirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */; };
 		060A9BE823FA7219003F1B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE723FA7219003F1B7F /* AppDelegate.swift */; };
+		060A9BEA23FA72CA003F1B7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE923FA72CA003F1B7F /* SettingsViewController.swift */; };
 		066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */; };
 		066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */; };
 		066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250123F9C88700F4F88A /* CardHeaderModel.swift */; };
@@ -178,7 +179,6 @@
 		1797E7F222C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7DC22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift */; };
 		1797E7F322C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7DD22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib */; };
 		1797E7F422C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7DE22C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib */; };
-		1797E83C22C7E80C00E27A8F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7F922C7E80B00E27A8F /* SettingsViewController.swift */; };
 		1797E83D22C7E80C00E27A8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7FA22C7E80B00E27A8F /* GoogleService-Info.plist */; };
 		1797E83E22C7E80C00E27A8F /* FinanceAssetPositionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E7FD22C7E80B00E27A8F /* FinanceAssetPositionCollectionViewCell.swift */; };
 		1797E83F22C7E80C00E27A8F /* FinanceAssetStatsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7FE22C7E80B00E27A8F /* FinanceAssetStatsCollectionViewCell.xib */; };
@@ -528,6 +528,7 @@
 		060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreWriter.swift; sourceTree = "<group>"; };
 		060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
 		060A9BE723FA7219003F1B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		060A9BE923FA72CA003F1B7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBitTextField.swift; sourceTree = "<group>"; };
 		066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterModel.swift; sourceTree = "<group>"; };
 		066A250123F9C88700F4F88A /* CardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderModel.swift; sourceTree = "<group>"; };
@@ -563,7 +564,6 @@
 		1797E7DC22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797E7DD22C7E7ED00E27A8F /* CardHeaderCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardHeaderCollectionViewCell.xib; sourceTree = "<group>"; };
 		1797E7DE22C7E7ED00E27A8F /* FinanceAccountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceAccountCollectionViewCell.xib; sourceTree = "<group>"; };
-		1797E7F922C7E80B00E27A8F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1797E7FA22C7E80B00E27A8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1797E7FD22C7E80B00E27A8F /* FinanceAssetPositionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceAssetPositionCollectionViewCell.swift; sourceTree = "<group>"; };
 		1797E7FE22C7E80B00E27A8F /* FinanceAssetStatsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinanceAssetStatsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -828,7 +828,6 @@
 				1797E7FA22C7E80B00E27A8F /* GoogleService-Info.plist */,
 				1797E83522C7E80C00E27A8F /* Models */,
 				1797E82F22C7E80C00E27A8F /* Portfolio */,
-				1797E7F922C7E80B00E27A8F /* SettingsViewController.swift */,
 				1797E81222C7E80B00E27A8F /* Trading */,
 				1797E81522C7E80B00E27A8F /* Transactions */,
 				1797E81C22C7E80C00E27A8F /* ViewControllers */,
@@ -934,10 +933,11 @@
 				066A250723F9CB8400F4F88A /* CryptoPreviewViewController.swift */,
 				060A9B7E23FA553F003F1B7F /* CryptoViewController.swift */,
 				060A9B8223FA55DC003F1B7F /* FinanceAccountDetailsViewController.swift */,
-				060A9B8623FA5663003F1B7F /* NewsPreviewStoriesViewController.swift */,
-				060A9B8423FA5630003F1B7F /* NewsViewController.swift */,
 				060A9B8823FA56A0003F1B7F /* FinanceAddInstitutionViewController.swift */,
 				060A9B7623FA5346003F1B7F /* FinanceNotificationsViewController.swift */,
+				060A9B8623FA5663003F1B7F /* NewsPreviewStoriesViewController.swift */,
+				060A9B8423FA5630003F1B7F /* NewsViewController.swift */,
+				060A9BE923FA72CA003F1B7F /* SettingsViewController.swift */,
 				060A9AE223F9E219003F1B7F /* WatchListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -2170,7 +2170,6 @@
 				060A9B5D23FA1A67003F1B7F /* Divider.swift in Sources */,
 				17FE614A2367BB4000CBE046 /* Deprecated.swift in Sources */,
 				060A9B5B23FA19E4003F1B7F /* APIManager.swift in Sources */,
-				1797E83C22C7E80C00E27A8F /* SettingsViewController.swift in Sources */,
 				060A9B2923FA0387003F1B7F /* ProfileButtonItemRowAdapter.swift in Sources */,
 				060A9B0923F9F812003F1B7F /* RemoteHostContextProvider.swift in Sources */,
 				060A9B3B23FA0902003F1B7F /* StoryAdapter.swift in Sources */,
@@ -2208,6 +2207,7 @@
 				060A9AF723F9F1E2003F1B7F /* ProfileButtonItem.swift in Sources */,
 				060A9AFD23F9F3C5003F1B7F /* CarouselFlowLayout.swift in Sources */,
 				060A9B7B23FA542F003F1B7F /* BankAccountViewController.swift in Sources */,
+				060A9BEA23FA72CA003F1B7F /* SettingsViewController.swift in Sources */,
 				1797ED7B22C7EB1000E27A8F /* ConstraintLayoutGuideDSL.swift in Sources */,
 				1797ED6A22C7EB1000E27A8F /* ConstraintInsets.swift in Sources */,
 				17FE61412367BB4000CBE046 /* RowStyle.swift in Sources */,

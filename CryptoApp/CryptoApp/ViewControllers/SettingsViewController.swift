@@ -1,9 +1,9 @@
 //
 //  SettingsViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/10/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Eureka
@@ -11,21 +11,21 @@ import UIKit
 
 class SettingsViewController: FormViewController {
     var user: ATCUser
-
+    
     init(user: ATCUser) {
         self.user = user
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapDone))
         self.title = "Settings"
-
+        
         form +++ Eureka.Section("General Settings")
             <<< Eureka.SwitchRow() { row in
                 row.title = "Allow Push Notifications"
@@ -87,10 +87,10 @@ class SettingsViewController: FormViewController {
                 row.tag = "newscryptos"
         }
     }
-
+    
     @objc private func didTapDone() {
     }
-
+    
     @objc private func didTapCancel() {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }

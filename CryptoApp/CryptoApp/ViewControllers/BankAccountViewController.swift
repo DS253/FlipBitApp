@@ -23,16 +23,16 @@ class BankAccountViewController: GenericCollectionViewController {
         self.financeAccount = financeAccount
         let layout = LiquidCollectionViewLayout(cellPadding: 0)
         let homeConfig = GenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
-                                                                         pullToRefreshTintColor: .white,
-                                                                         collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
-                                                                         collectionViewLayout: layout,
-                                                                         collectionPagingEnabled: false,
-                                                                         hideScrollIndicators: true,
-                                                                         hidesNavigationBar: false,
-                                                                         headerNibName: nil,
-                                                                         scrollEnabled: true,
-                                                                         uiConfig: uiConfig,
-                                                                         emptyViewModel: nil)
+                                                                      pullToRefreshTintColor: .white,
+                                                                      collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
+                                                                      collectionViewLayout: layout,
+                                                                      collectionPagingEnabled: false,
+                                                                      hideScrollIndicators: true,
+                                                                      hidesNavigationBar: false,
+                                                                      headerNibName: nil,
+                                                                      scrollEnabled: true,
+                                                                      uiConfig: uiConfig,
+                                                                      emptyViewModel: nil)
         super.init(configuration: homeConfig)
         
         // Configuring the Stock Chart
@@ -50,8 +50,8 @@ class BankAccountViewController: GenericCollectionViewController {
         lineChartViewController.delegate = self
         
         let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController,
-                                                                 cellHeight: 300,
-                                                                 subcellHeight: nil)
+                                                              cellHeight: 300,
+                                                              subcellHeight: nil)
         chartViewModel.parentViewController = self
         
         // Configuring stock list
@@ -60,7 +60,7 @@ class BankAccountViewController: GenericCollectionViewController {
                                                         scrollingEnabled: false,
                                                         uiConfig: uiConfig)
         let transactionsListModel = ViewControllerContainerViewModel(viewController: transactionsVC,
-                                                                        subcellHeight: 70)
+                                                                     subcellHeight: 70)
         transactionsListModel.parentViewController = self
         
         self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
