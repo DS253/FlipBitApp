@@ -168,6 +168,8 @@
 		06E91ECF23FB39590050DC7E /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ECD23FB39590050DC7E /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06E91ED323FB4BD20050DC7E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ED223FB4BD10050DC7E /* Alamofire.framework */; };
 		06E91ED423FB4BD20050DC7E /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ED223FB4BD10050DC7E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06E91ED623FB57F30050DC7E /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ED523FB57F30050DC7E /* Kingfisher.framework */; };
+		06E91ED723FB57F30050DC7E /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ED523FB57F30050DC7E /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1797E65F22C7E65300E27A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797E65E22C7E65300E27A8F /* Assets.xcassets */; };
 		1797E66222C7E65300E27A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */; };
 		1797E7E022C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7CA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib */; };
@@ -400,6 +402,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				06E91ECF23FB39590050DC7E /* Eureka.framework in Embed Frameworks */,
+				06E91ED723FB57F30050DC7E /* Kingfisher.framework in Embed Frameworks */,
 				06E91ED423FB4BD20050DC7E /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -567,6 +570,7 @@
 		06E91ECB23FB2D120050DC7E /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		06E91ECD23FB39590050DC7E /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		06E91ED223FB4BD10050DC7E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		06E91ED523FB57F30050DC7E /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		1797E65422C7E65100E27A8F /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797E65E22C7E65300E27A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1797E66122C7E65300E27A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -804,6 +808,7 @@
 				CAAEF8B0BF7412A63FB7817C /* Pods_CryptoApp.framework in Frameworks */,
 				06E91ED323FB4BD20050DC7E /* Alamofire.framework in Frameworks */,
 				06E91ECE23FB39590050DC7E /* Eureka.framework in Frameworks */,
+				06E91ED623FB57F30050DC7E /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +818,7 @@
 		092FDDC2A408B92656CCA82F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06E91ED523FB57F30050DC7E /* Kingfisher.framework */,
 				06E91ED223FB4BD10050DC7E /* Alamofire.framework */,
 				06E91ECD23FB39590050DC7E /* Eureka.framework */,
 				52DB1E3CFA02DD654C37D52C /* Pods_CryptoApp.framework */,
@@ -2103,12 +2109,14 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;

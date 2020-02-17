@@ -1,2 +1,3 @@
 github "Alamofire/Alamofire"
+github "onevcat/Kingfisher" ~> 5.0
 github "xmartlabs/Eureka" ~> 5.2
