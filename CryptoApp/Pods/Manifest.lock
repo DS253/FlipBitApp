@@ -8,9 +8,6 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
-  - Charts (3.4.0):
-    - Charts/Core (= 3.4.0)
-  - Charts/Core (3.4.0)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
   - FacebookLogin (0.9.0):
@@ -175,7 +172,6 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework (~> 2.1.0)
-  - Charts (~> 3.4.0)
   - FacebookCore (~> 0.9.0)
   - FacebookLogin (~> 0.9.0)
   - FacebookShare (~> 0.9.0)
@@ -190,7 +186,6 @@ SPEC REPOS:
   trunk:
     - BoringSSL-GRPC
     - ChameleonFramework
-    - Charts
     - FacebookCore
     - FacebookLogin
     - FacebookShare
@@ -224,7 +219,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
@@ -255,6 +249,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: 73bf9a162e78ad0e85a1bb75fe64a14d21198687
+PODFILE CHECKSUM: 3242c09c16895b3967b8dad8107c048ab2745b95
 
 COCOAPODS: 1.8.4
