@@ -36,9 +36,9 @@ class FinanceContactUsViewController: QuickTableViewController {
         // ...
     }
     
-    private func didToggleSelection() -> (Row) -> Void {
-        return { [weak self] row in
-            // ...
-        }
-    }
+//    private func didToggleSelection() -> (Row) -> Void {
+//        return { [weak self] row in
+//            // ...
+//        }
+//    }
 }

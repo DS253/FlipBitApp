@@ -36,7 +36,7 @@ class FinanceAddInstitutionViewController: GenericCollectionViewController {
         
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let institution = object as? FinanceInstitution {
+            if object is FinanceInstitution {
                 // code to handle linking a new institution institution
                 // we are just dismissing the screen for now
                 strongSelf.didTapDone()

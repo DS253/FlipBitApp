@@ -137,7 +137,6 @@
 		060A9BD423FA6C32003F1B7F /* MenuCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD323FA6C32003F1B7F /* MenuCollectionViewController.swift */; };
 		060A9BD623FA6D4C003F1B7F /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD523FA6D4C003F1B7F /* LineChart.swift */; };
 		060A9BD823FA6DAB003F1B7F /* FirebaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD723FA6DAA003F1B7F /* FirebaseProfileManager.swift */; };
-		060A9BDA23FA6E44003F1B7F /* SocialMediaSharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */; };
 		060A9BDC23FA6E99003F1B7F /* GenericFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */; };
 		060A9BDE23FA6F17003F1B7F /* RoundImageRowAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDD23FA6F17003F1B7F /* RoundImageRowAdapter.swift */; };
 		060A9BE023FA6F4A003F1B7F /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BDF23FA6F4A003F1B7F /* ContactsTableViewCell.swift */; };
@@ -520,7 +519,6 @@
 		060A9BD323FA6C32003F1B7F /* MenuCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewController.swift; sourceTree = "<group>"; };
 		060A9BD523FA6D4C003F1B7F /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		060A9BD723FA6DAA003F1B7F /* FirebaseProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseProfileManager.swift; sourceTree = "<group>"; };
-		060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSharingManager.swift; sourceTree = "<group>"; };
 		060A9BDB23FA6E99003F1B7F /* GenericFirebaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericFirebaseDataSource.swift; sourceTree = "<group>"; };
 		060A9BDD23FA6F17003F1B7F /* RoundImageRowAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageRowAdapter.swift; sourceTree = "<group>"; };
 		060A9BDF23FA6F4A003F1B7F /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
@@ -1629,7 +1627,6 @@
 				060A9B4C23FA14BD003F1B7F /* GenericLocalHeteroDataSource.swift */,
 				060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */,
 				06E91ECB23FB2D120050DC7E /* PersistentStore.swift */,
-				060A9BD923FA6E44003F1B7F /* SocialMediaSharingManager.swift */,
 				060A9ADE23F9D4AD003F1B7F /* TimeFormatHelper.swift */,
 				066A250B23F9CCA900F4F88A /* UIGenericConfigurationProtocol.swift */,
 				060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */,
@@ -2329,7 +2326,6 @@
 				060A9B5123FA1634003F1B7F /* LandingScreenProtocol.swift in Sources */,
 				060A9AD923F9D3E0003F1B7F /* DismissButton.swift in Sources */,
 				060A9AF523F9F139003F1B7F /* FacebookUser.swift in Sources */,
-				060A9BDA23FA6E44003F1B7F /* SocialMediaSharingManager.swift in Sources */,
 				1797EBBF22C7EB0F00E27A8F /* ATCProfileButtonCollectionViewCell.swift in Sources */,
 				1797EBB922C7EB0F00E27A8F /* ATCDatedChartDateRangeCollectionViewCell.swift in Sources */,
 				1797ED4D22C7EB1000E27A8F /* ATCClassicLandingScreenViewController.swift in Sources */,
