@@ -13,7 +13,7 @@ class ATCCircledIconMenuCollectionViewCell: UICollectionViewCell, ATCMenuItemCol
     @IBOutlet var menuLabel: UILabel!
     @IBOutlet var imageContainerView: UIView!
     
-    func configure(item: ATCNavigationItem) {
+    func configure(item: NavigationItem) {
         menuImageView.image = item.image
         menuLabel.text = item.title
 

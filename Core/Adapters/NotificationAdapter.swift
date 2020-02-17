@@ -47,7 +47,7 @@ class NotificationAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? NotificationModel else { return .zero }
+        guard object is NotificationModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 100)
     }
 }

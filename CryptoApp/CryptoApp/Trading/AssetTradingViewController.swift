@@ -30,7 +30,7 @@ class AssetTradingViewController: UIViewController {
 
     init(asset: FinanceAsset,
          title: String,
-         keys: [ATCKeyboardKey],
+         keys: [KeyboardKey],
          uiConfig: UIGenericConfigurationProtocol) {
         self.asset = asset
         self.uiConfig = uiConfig
@@ -123,7 +123,7 @@ class AssetTradingViewController: UIViewController {
 }
 
 extension AssetTradingViewController: ATCKeyboardViewControllerDelegate {
-    func keyboardViewController(_ vc: ATCKeyboardViewController, didTap key: ATCKeyboardKey) {
+    func keyboardViewController(_ vc: ATCKeyboardViewController, didTap key: KeyboardKey) {
         if key.value == backArrowUnicode {
             numberTextField.text = String(numberTextField.text?.dropLast() ?? "")
         } else {

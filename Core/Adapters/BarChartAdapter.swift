@@ -58,7 +58,7 @@ class BarChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
             let dataSets = chart.groups.enumerated().map { (index, group) -> BarChartDataSet in
                 let numbers = group.numbers
                 var entries: [BarChartDataEntry] = []
-                for (index, label) in chart.labels.enumerated() {
+                for (index, _) in chart.labels.enumerated() {
                     entries.append(BarChartDataEntry(x: Double(index), y: numbers[index]))
                 }
                 let ds = BarChartDataSet(entries: entries, label: group.name)

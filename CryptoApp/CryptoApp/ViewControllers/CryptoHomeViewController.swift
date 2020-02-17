@@ -12,14 +12,14 @@ import UIKit
 class CryptoHomeViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
-    let allCryptosDataSource: ATCGenericCollectionViewControllerDataSource
+    let allCryptosDataSource: GenericCollectionViewControllerDataSource
     
     init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
         self.allCryptosDataSource = dsProvider.allCryptosListDataSource
-        let layout = ATCLiquidCollectionViewLayout(cellPadding: 0)
+        let layout = LiquidCollectionViewLayout(cellPadding: 0)
         let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
@@ -47,14 +47,14 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
                                                                       uiConfig: uiConfig)
         lineChartViewController.delegate = self
         
-        let chartViewModel = ATCViewControllerContainerViewModel(viewController: lineChartViewController,
+        let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController,
                                                                  cellHeight: 300,
                                                                  subcellHeight: nil)
         chartViewModel.parentViewController = self
         
         // Configuring crypto list
         let cryptoListVC = CryptoViewController(uiConfig: uiConfig, dsProvider: dsProvider, dataSource: allCryptosDataSource)
-        let cryptoListModel = ATCViewControllerContainerViewModel(viewController: cryptoListVC,
+        let cryptoListModel = ViewControllerContainerViewModel(viewController: cryptoListVC,
                                                                   subcellHeight: 80)
         cryptoListModel.parentViewController = self
         // Watchlist button
@@ -64,7 +64,7 @@ class CryptoHomeViewController: ATCGenericCollectionViewController {
         self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
                                                                          cryptoListModel,
                                                                          watchlistModel])
-        self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
+        self.use(adapter: CardViewControllerContainerRowAdapter(), for: "ViewControllerContainerViewModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
         
         self.title = "Instacoin"

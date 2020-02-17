@@ -10,10 +10,10 @@ import UIKit
 
 class ViewControllerFactory {
     
-    static func storiesViewController(dataSource: ATCGenericCollectionViewControllerDataSource,
+    static func storiesViewController(dataSource: GenericCollectionViewControllerDataSource,
                                       uiConfig: UIGenericConfigurationProtocol,
                                       minimumInteritemSpacing: CGFloat = 0,
-                                      selectionBlock: ATCollectionViewSelectionBlock?) -> ATCGenericCollectionViewController {
+                                      selectionBlock: CollectionViewSelectionBlock?) -> ATCGenericCollectionViewController {
         let layout = ATCCollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = minimumInteritemSpacing

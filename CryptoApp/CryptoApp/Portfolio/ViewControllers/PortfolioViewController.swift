@@ -16,7 +16,7 @@ class PortfolioViewController: ATCGenericCollectionViewController {
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
-        let layout = ATCLiquidCollectionViewLayout(cellPadding: 10)
+        let layout = LiquidCollectionViewLayout(cellPadding: 10)
         let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
@@ -35,13 +35,13 @@ class PortfolioViewController: ATCGenericCollectionViewController {
         
         // Configuring the Crypto Card
         let cryptosVC = CryptoPreviewViewController(dsProvider: dsProvider, uiConfig: uiConfig)
-        let cryptosVCModel = ATCViewControllerContainerViewModel(viewController: cryptosVC,
+        let cryptosVCModel = ViewControllerContainerViewModel(viewController: cryptosVC,
                                                                  subcellHeight: 75)
         cryptosVCModel.parentViewController = self
         
         // Configuring the News Card
         let newsVC = NewsPreviewStoriesViewController(dsProvider: dsProvider, uiConfig: uiConfig)
-        let newsVCModel = ATCViewControllerContainerViewModel(viewController: newsVC,
+        let newsVCModel = ViewControllerContainerViewModel(viewController: newsVC,
                                                               subcellHeight: 100)
         newsVCModel.parentViewController = self
         
@@ -49,7 +49,7 @@ class PortfolioViewController: ATCGenericCollectionViewController {
                                                                       cryptosVCModel,
                                                                       newsVCModel
         ])
-        self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
+        self.use(adapter: CardViewControllerContainerRowAdapter(), for: "ViewControllerContainerViewModel")
         self.use(adapter: PortfolioPieChartRowAdapter(uiConfig: uiConfig), for: "PieChart")
         //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "Divider")
         

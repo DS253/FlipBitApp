@@ -1,9 +1,9 @@
 //
 //  AssetDetailsViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/23/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Charts
@@ -25,7 +25,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         self.asset = asset
         self.user = user
         self.watchlistButton = UIButton()
-        let layout = ATCLiquidCollectionViewLayout(cellPadding: 0)
+        let layout = LiquidCollectionViewLayout(cellPadding: 0)
         let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
@@ -38,7 +38,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
                                                                          uiConfig: uiConfig,
                                                                          emptyViewModel: nil)
         super.init(configuration: homeConfig)
-        self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
+        self.use(adapter: CardViewControllerContainerRowAdapter(), for: "ViewControllerContainerViewModel")
         self.use(adapter: CardHeaderRowAdapter(uiConfig: uiConfig), for: "CardHeaderModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
         self.use(adapter: FinanceAssetPositionRowAdapter(uiConfig: uiConfig), for: "FinanceAssetPosition")
@@ -47,7 +47,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         tradingAdapter.delegate = self
         self.use(adapter: tradingAdapter, for: "FinanceTradingModel")
         self.use(adapter: FinanceAssetStatsRowAdapter(uiConfig: uiConfig), for: "FinanceAssetStats")
-
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if let news = object as? FinanceNewsModel {
@@ -57,20 +57,20 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
                 }
             }
         }
-
+        
         self.title = asset.title
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configureWatchlistButton()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: watchlistButton)
-
+        
         dsProvider.fetchAssetDetails(for: user, asset: asset) { [weak self] (position, stats, news) in
             guard let `self` = self else { return }
             // Configuring the Chart
@@ -81,17 +81,17 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
                 ATCChartDate(title: "3M", startDate: Date().threeMonthsAgo),
                 ATCChartDate(title: "1Y", startDate: Date().oneYearAgo),
                 ATCChartDate(title: "All", startDate: Date().infiniteAgo)
-                ])
-
+            ])
+            
             let lineChartViewController = ATCDatedLineChartViewController(dateList: dateList,
                                                                           uiConfig: uiConfig)
             lineChartViewController.delegate = self
-
-            let chartViewModel = ATCViewControllerContainerViewModel(viewController: lineChartViewController,
+            
+            let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController,
                                                                      cellHeight: 300,
                                                                      subcellHeight: nil)
             chartViewModel.parentViewController = self
-
+            
             var items: [GenericBaseModel] = [chartViewModel]
             if let position = position {
                 items.append(position)
@@ -101,9 +101,9 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
             items.append(CardHeaderModel(title: "Recent News"))
             items = items + news
             items.append(CardFooterModel(title: "View all stories"))
-
+            
             self.genericDataSource = GenericLocalHeteroDataSource(items: items)
-
+            
             self.genericDataSource?.loadFirst()
         }
         //        self.use(adapter: ATCDividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 30), for: "Divider")
@@ -132,7 +132,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         data.addDataSet(line1)
         return data
     }
-
+    
     fileprivate func configureWatchlistButton() {
         let store = ATCDiskPersistenceStore(key: "asset_watchlist")
         let iconString = store.contains(object: asset) ? "add-filled-icon" : "add-empty-icon"
@@ -143,7 +143,7 @@ class AssetDetailsViewController: ATCGenericCollectionViewController {
         })
         watchlistButton.addTarget(self, action: #selector(didTapWatchlistButton), for: .touchUpInside)
     }
-
+    
     @objc fileprivate func didTapWatchlistButton() {
         let store = ATCDiskPersistenceStore(key: "asset_watchlist")
         if store.contains(object: asset) {

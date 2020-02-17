@@ -13,7 +13,7 @@ class MenuItemCollectionViewCell: UICollectionViewCell, ATCMenuItemCollectionVie
     @IBOutlet var menuImageView: UIImageView!
     @IBOutlet var menuLabel: UILabel!
 
-    func configure(item: ATCNavigationItem) {
+    func configure(item: NavigationItem) {
         menuImageView.image = item.image
         menuLabel.text = item.title
     }

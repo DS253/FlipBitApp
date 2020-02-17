@@ -11,7 +11,7 @@ import UIKit
 class ATCCardViewControllerContainerCollectionViewCell: UICollectionViewCell {
     @IBOutlet var containerView: UIView!
 
-    func configure(viewModel: ATCViewControllerContainerViewModel) {
+    func configure(viewModel: ViewControllerContainerViewModel) {
         containerView.dropShadow()
         containerView.layer.cornerRadius = 15
         containerView.clipsToBounds = true

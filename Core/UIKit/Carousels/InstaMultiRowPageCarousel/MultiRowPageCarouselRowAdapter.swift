@@ -1,27 +1,27 @@
 //
-//  InstaMultiRowPageCarouselRowAdapter.swift
-//  DatingApp
+//  MultiRowPageCarouselRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 1/26/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class InstaMultiRowPageCarouselRowAdapter: GenericCollectionRowAdapter {
+class MultiRowPageCarouselRowAdapter: GenericCollectionRowAdapter {
     let uiConfig: UIGenericConfigurationProtocol
-
+    
     init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? InstaMultiRowPageCarouselViewModel, let cell = cell as? InstaMultiRowPageCarouselCollectionViewCell else { return }
+        guard let viewModel = object as? MultiRowPageCarouselViewModel, let cell = cell as? InstaMultiRowPageCarouselCollectionViewCell else { return }
         cell.carouselContainerView.setNeedsLayout()
         cell.carouselContainerView.layoutIfNeeded()
-
+        
         let viewController = viewModel.viewController
-
+        
         if let dS = viewController.genericDataSource {
             let cnt = (dS.numberOfObjects() / 6) + (dS.numberOfObjects() % 6 > 0 ? 1 : 0)
             if (cnt > 1) {
@@ -35,7 +35,7 @@ class InstaMultiRowPageCarouselRowAdapter: GenericCollectionRowAdapter {
             cell.pageControl.currentPageIndicatorTintColor = uiConfig.mainThemeForegroundColor
         }
         viewController.scrollDelegate = cell
-
+        
         viewController.view.frame = cell.carouselContainerView.bounds
         cell.carouselContainerView.addSubview(viewController.view)
         cell.setNeedsLayout()
@@ -47,13 +47,13 @@ class InstaMultiRowPageCarouselRowAdapter: GenericCollectionRowAdapter {
         cell.containerView.backgroundColor = .clear
         cell.backgroundColor = .clear
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return InstaMultiRowPageCarouselCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? InstaMultiRowPageCarouselViewModel else { return .zero }
+        guard let viewModel = object as? MultiRowPageCarouselViewModel else { return .zero }
         return CGSize(width: containerBounds.width, height: viewModel.cellHeight)
     }
 }

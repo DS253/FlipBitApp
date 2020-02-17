@@ -12,7 +12,7 @@ class TransactionsViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     
-    init(transactionDataSource: ATCGenericCollectionViewControllerDataSource,
+    init(transactionDataSource: GenericCollectionViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider,
          scrollingEnabled: Bool,
          uiConfig: UIGenericConfigurationProtocol) {

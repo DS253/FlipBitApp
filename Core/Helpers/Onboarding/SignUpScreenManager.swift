@@ -18,7 +18,7 @@ class SignUpScreenManager: SignUpScreenDelegate {
     let viewModel: SignUpScreenViewModel
     let uiConfig: OnboardingConfigurationProtocol
     let serverConfig: OnboardingServerConfigurationProtocol
-    let firebaseLoginManager: ATCFirebaseLoginManager?
+    let firebaseLoginManager: FirebaseLoginManager?
     
     weak var delegate: SignUpScreenManagerDelegate?
     
@@ -30,7 +30,7 @@ class SignUpScreenManager: SignUpScreenDelegate {
         self.viewModel = viewModel
         self.uiConfig = uiConfig
         self.serverConfig = serverConfig
-        self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? ATCFirebaseLoginManager() : nil
+        self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? FirebaseLoginManager() : nil
     }
     
     func signUpScreenDidLoadView(_ signUpScreen: SignUpScreenProtocol) {

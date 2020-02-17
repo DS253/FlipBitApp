@@ -9,10 +9,10 @@
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseSearchDataSource<T: ATCGenericSearchable & GenericBaseModel>: ATCGenericSearchViewControllerDataSource {
+class ATCFirebaseSearchDataSource<T: GenericSearchable & GenericBaseModel>: GenericSearchViewControllerDataSource {
 
     var viewer: ATCUser?
-    weak var delegate: ATCGenericSearchViewControllerDataSourceDelegate?
+    weak var delegate: GenericSearchViewControllerDataSourceDelegate?
     let tableName: String
     let limit: Int?
     init(tableName: String, limit: Int? = nil) {
@@ -42,7 +42,7 @@ class ATCFirebaseSearchDataSource<T: ATCGenericSearchable & GenericBaseModel>: A
             if text != nil {
                 //items = items.filter({$0.matches(keyword: text)})
             }
-            self.delegate?.dataSource(self as! ATCGenericSearchViewControllerDataSource, didFetchResults: items)
+            self.delegate?.dataSource(self as! GenericSearchViewControllerDataSource, didFetchResults: items)
         }
     }
     

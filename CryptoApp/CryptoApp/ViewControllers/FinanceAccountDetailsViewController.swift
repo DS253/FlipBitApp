@@ -1,9 +1,9 @@
 //
-//  FinanceProfileViewController.swift
-//  FinanceApp
+//  FinanceAccountDetailsViewController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/24/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Eureka
@@ -12,18 +12,18 @@ import UIKit
 class FinanceAccountDetailsViewController: FormViewController {
     var user: ATCUser
     var updater: ProfileUpdaterProtocol
-
+    
     init(user: ATCUser,
          updater: ProfileUpdaterProtocol) {
         self.user = user
         self.updater = updater
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapDone))
@@ -54,8 +54,8 @@ class FinanceAccountDetailsViewController: FormViewController {
                 $0.title = "Gender"
                 $0.selectorTitle = "Choose your gender"
                 $0.options = ["Not selected", "Female", "Male"]
-                    $0.value = ""
-                    $0.tag = "gender"
+                $0.value = ""
+                $0.tag = "gender"
             }
             +++ Eureka.Section("Private Details")
             <<< Eureka.TextRow(){ row in
@@ -65,13 +65,13 @@ class FinanceAccountDetailsViewController: FormViewController {
                 row.tag = "email"
         }
     }
-
+    
     @objc private func didTapDone() {
         var lastName = ""
         var firstName = ""
         var email = ""
         var username = ""
-
+        
         if let row = form.rowBy(tag: "lastname") as? TextRow {
             lastName = row.value ?? ""
         }
@@ -84,9 +84,9 @@ class FinanceAccountDetailsViewController: FormViewController {
         if let row = form.rowBy(tag: "username") as? TextRow {
             username = row.value ?? ""
         }
-//        if let row = form.rowBy(tag: "gender") as? ActionSheetRow<String> {
-//            gender = row.value ?? ""
-//        }
+        //        if let row = form.rowBy(tag: "gender") as? ActionSheetRow<String> {
+        //            gender = row.value ?? ""
+        //        }
         if  email == "" || firstName == "" {
             let alertVC = UIAlertController(title: "Please complete your profile",
                                             message: "Fill out all the blank fields",

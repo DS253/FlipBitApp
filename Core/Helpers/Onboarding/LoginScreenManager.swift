@@ -21,7 +21,7 @@ class LoginScreenManager: LoginScreenDelegate {
     let uiConfig: OnboardingConfigurationProtocol
     let serverConfig: OnboardingServerConfigurationProtocol
     let userManager: SocialUserManagerProtocol?
-    let loginManager: ATCFirebaseLoginManager
+    let loginManager: FirebaseLoginManager
     
     weak var delegate: LoginScreenManagerDelegate?
     
@@ -40,7 +40,7 @@ class LoginScreenManager: LoginScreenDelegate {
         self.uiConfig = uiConfig
         self.serverConfig = serverConfig
         self.userManager = userManager
-        self.loginManager = ATCFirebaseLoginManager()
+        self.loginManager = FirebaseLoginManager()
     }
     
     func loginScreenDidLoadView(_ loginScreen: LoginScreenProtocol) {
@@ -167,7 +167,7 @@ class LoginScreenManager: LoginScreenDelegate {
             if serverConfig.isFirebaseAuthEnabled {
                 let hud = CPKProgressHUD.progressHUD(style: .loading(text: "Loading"))
                 hud.show(in: loginScreen.view)
-                ATCFirebaseLoginManager.login(credential: FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)) {[weak self] (atcUser) in
+                FirebaseLoginManager.login(credential: FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)) {[weak self] (atcUser) in
                     hud.dismiss()
                     if let user = atcUser, let strongSelf = self {
                         strongSelf.loginManager.saveUserToServerIfNeeded(user: user, appIdentifier: strongSelf.serverConfig.appIdentifier)

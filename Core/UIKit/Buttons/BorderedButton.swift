@@ -1,14 +1,14 @@
 //
-//  InstaTextButton.swift
-//  DatingApp
+//  BorderedButton.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class InstaBorderedButton: UIButton {
+class BorderedButton: UIButton {
     func configure(tintColor: UIColor = .blue,
                    font: UIFont,
                    bgColor: UIColor = .white,

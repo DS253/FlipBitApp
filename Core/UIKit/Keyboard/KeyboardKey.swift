@@ -1,26 +1,26 @@
 //
-//  ATCKeyboardKey.swift
-//  FinanceApp
+//  KeyboardKey.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/27/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCKeyboardKey: GenericBaseModel {
+class KeyboardKey: GenericBaseModel {
     var value: String
     var displayValue: String
-
+    
     required init(jsonDict: [String: Any]) {
         fatalError()
     }
-
+    
     init(value: String, displayValue: String) {
         self.value = value
         self.displayValue = displayValue
     }
-
+    
     var description: String {
         return displayValue
     }

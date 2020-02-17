@@ -1,9 +1,9 @@
 //
 //  FinanceNotificationsViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/24/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -11,12 +11,12 @@ import UIKit
 class FinanceNotificationsViewController: ATCGenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
-
+    
     init(dsProvider: FinanceDataSourceProvider, uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
-
-        let layout = ATCLiquidCollectionViewLayout()
+        
+        let layout = LiquidCollectionViewLayout()
         let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
@@ -30,8 +30,8 @@ class FinanceNotificationsViewController: ATCGenericCollectionViewController {
                                                                      emptyViewModel: nil)
         super.init(configuration: config)
         self.genericDataSource = dsProvider.notificationsDataSource()
-        self.use(adapter: FinanceNotificationRowAdapter(uiConfig: uiConfig), for: "Notification")
-
+        self.use(adapter: FinanceNotificationRowAdapter(uiConfig: uiConfig), for: "NotificationModel")
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard self != nil else { return }
             if object is NotificationModel {
@@ -39,9 +39,8 @@ class FinanceNotificationsViewController: ATCGenericCollectionViewController {
         }
         self.title = "Notifications"
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

@@ -1,9 +1,9 @@
 //
 //  AddBankAccountButtonRowAdapter.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/25/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -15,11 +15,11 @@ protocol AddBankAccountButtonRowAdapterDelegate: class {
 class AddBankAccountButtonRowAdapter: GenericCollectionRowAdapter {
     var uiConfig: UIGenericConfigurationProtocol
     weak var delegate: AddBankAccountButtonRowAdapterDelegate?
-
+    
     init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let _ = object as? AddBankAccountModel, let cell = cell as? AddBankAccountCollectionViewCell {
             cell.button.setTitle("Link Another Institution", for: .normal)
@@ -34,16 +34,16 @@ class AddBankAccountButtonRowAdapter: GenericCollectionRowAdapter {
             cell.containerView.backgroundColor = .clear
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return AddBankAccountCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         guard object is AddBankAccountModel else { return .zero }
         return CGSize(width: containerBounds.width, height: 80)
     }
-
+    
     @objc private func didTapButton() {
         self.delegate?.rowAdapterDidTapButton(self)
     }

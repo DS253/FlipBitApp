@@ -11,7 +11,7 @@ import UIKit
 class TopLinedPageCarouselRowAdapter: GenericCollectionRowAdapter {
     
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? InstaLinedPageCarouselViewModel, let cell = cell as? InstaTopLinedPageCarouselCollectionViewCell else { return }
+        guard let viewModel = object as? LinedPageCarouselViewModel, let cell = cell as? InstaTopLinedPageCarouselCollectionViewCell else { return }
         cell.carouselContainerView.setNeedsLayout()
         cell.carouselContainerView.layoutIfNeeded()
         
@@ -33,7 +33,7 @@ class TopLinedPageCarouselRowAdapter: GenericCollectionRowAdapter {
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? InstaLinedPageCarouselViewModel else { return .zero }
+        guard let viewModel = object as? LinedPageCarouselViewModel else { return .zero }
         return CGSize(width: containerBounds.width, height: viewModel.cellHeight)
     }
 }

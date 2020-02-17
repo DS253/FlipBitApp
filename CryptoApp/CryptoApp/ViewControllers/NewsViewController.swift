@@ -1,9 +1,9 @@
 //
 //  NewsViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -11,11 +11,11 @@ import UIKit
 class NewsViewController: ATCGenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     var dsProvider: FinanceDataSourceProvider
-
+    
     init(dsProvider: FinanceDataSourceProvider, uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
-
+        
         let layout = ATCCollectionViewFlowLayout()
         let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: true,
                                                                      pullToRefreshTintColor: .white,
@@ -31,7 +31,7 @@ class NewsViewController: ATCGenericCollectionViewController {
         super.init(configuration: config)
         self.genericDataSource = dsProvider.allNewsDataSource
         self.use(adapter: FinanceNewsRowAdapter(uiConfig: uiConfig), for: "FinanceNewsModel")
-
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if let news = object as? FinanceNewsModel {
@@ -43,9 +43,8 @@ class NewsViewController: ATCGenericCollectionViewController {
         }
         self.title = "Crypto News"
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

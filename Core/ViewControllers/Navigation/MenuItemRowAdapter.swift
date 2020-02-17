@@ -1,25 +1,25 @@
 //
-//  ATCMenuItemRowAdapter.swift
-//  ShoppingApp
+//  MenuItemRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/19/18.
-//  Copyright © 2018 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCMenuItemRowAdapter: GenericCollectionRowAdapter {
-
+class MenuItemRowAdapter: GenericCollectionRowAdapter {
+    
     let cellClassType: UICollectionViewCell.Type
     let uiConfig: ATCMenuUIConfiguration
-
+    
     init(cellClassType: UICollectionViewCell.Type, uiConfig: ATCMenuUIConfiguration) {
         self.cellClassType = cellClassType
         self.uiConfig = uiConfig
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let item = object as? ATCNavigationItem, let cell = cell as? ATCMenuItemCollectionViewCellProtocol else {
+        guard let item = object as? NavigationItem, let cell = cell as? ATCMenuItemCollectionViewCellProtocol else {
             fatalError()
         }
         cell.configure(item: item)
@@ -27,11 +27,11 @@ class ATCMenuItemRowAdapter: GenericCollectionRowAdapter {
         cell.menuLabel.textColor = uiConfig.tintColor
         cell.menuImageView.tintColor = uiConfig.tintColor
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return cellClassType
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
         return CGSize(width: containerBounds.width, height: uiConfig.itemHeight)
     }

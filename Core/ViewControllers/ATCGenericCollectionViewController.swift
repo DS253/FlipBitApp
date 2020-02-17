@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-protocol ATCGenericFirebaseParsable {
+protocol GenericFirebaseParsable {
     init(key: String, jsonDict: [String: Any])
 }
 
@@ -20,18 +20,18 @@ protocol GenericJSONParsable {
 protocol GenericBaseModel: GenericJSONParsable, CustomStringConvertible {
 }
 
-protocol ATCGenericCollectionViewControllerDataSourceDelegate: class {
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel])
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel])
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel])
+protocol GenericCollectionViewControllerDataSourceDelegate: class {
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel])
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel])
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel])
 }
 
-protocol ATCGenericCollectionViewScrollDelegate: class {
+protocol GenericCollectionViewScrollDelegate: class {
     func genericScrollView(_ scrollView: UIScrollView, didScrollToPage page: Int)
 }
 
-protocol ATCGenericCollectionViewControllerDataSource: class {
-    var delegate: ATCGenericCollectionViewControllerDataSourceDelegate? {get set}
+protocol GenericCollectionViewControllerDataSource: class {
+    var delegate: GenericCollectionViewControllerDataSourceDelegate? {get set}
 
     func object(at index: Int) -> GenericBaseModel?
     func numberOfObjects() -> Int
@@ -47,7 +47,7 @@ protocol GenericCollectionRowAdapter: class {
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize
 }
 
-class ATCAdapterStore {
+class AdapterStore {
     fileprivate var store = [String: GenericCollectionRowAdapter]()
 
     func add(adapter: GenericCollectionRowAdapter, for classString: String) {
@@ -73,7 +73,7 @@ struct ATCGenericCollectionViewControllerConfiguration {
     let emptyViewModel: CPKEmptyViewModel?
 }
 
-typealias ATCollectionViewSelectionBlock = (UINavigationController?, GenericBaseModel, IndexPath) -> Void
+typealias CollectionViewSelectionBlock = (UINavigationController?, GenericBaseModel, IndexPath) -> Void
 
 /* A generic view controller, that encapsulates:
  * - fetching data from a data store (over the network, firebase, local cache, etc)
@@ -81,31 +81,31 @@ typealias ATCollectionViewSelectionBlock = (UINavigationController?, GenericBase
  * - persisiting data on disk
  * - manages pagination
  */
-class ATCGenericCollectionViewController: UICollectionViewController, ATCGenericCollectionViewControllerDataSourceDelegate {
-    var genericDataSource: ATCGenericCollectionViewControllerDataSource? {
+class ATCGenericCollectionViewController: UICollectionViewController, GenericCollectionViewControllerDataSourceDelegate {
+    var genericDataSource: GenericCollectionViewControllerDataSource? {
         didSet {
             genericDataSource?.delegate = self
         }
     }
 
-    weak var scrollDelegate: ATCGenericCollectionViewScrollDelegate?
+    weak var scrollDelegate: GenericCollectionViewScrollDelegate?
 
-    fileprivate var adapterStore = ATCAdapterStore()
+    fileprivate var adapterStore = AdapterStore()
     let configuration: ATCGenericCollectionViewControllerConfiguration
 
     fileprivate lazy var refreshControl = UIRefreshControl()
     fileprivate lazy var activityIndicator = UIActivityIndicatorView(style: .medium)
     fileprivate lazy var emptyView: UIHostingController<CPKEmptyView>? = nil
 
-    var selectionBlock: ATCollectionViewSelectionBlock?
+    var selectionBlock: CollectionViewSelectionBlock?
 
-    init(configuration: ATCGenericCollectionViewControllerConfiguration, selectionBlock: ATCollectionViewSelectionBlock? = nil) {
+    init(configuration: ATCGenericCollectionViewControllerConfiguration, selectionBlock: CollectionViewSelectionBlock? = nil) {
         self.configuration = configuration
         self.selectionBlock = selectionBlock
         let layout = configuration.collectionViewLayout
         super.init(collectionViewLayout: layout)
         layout.delegate = self
-        self.use(adapter: ATCCarouselAdapter(uiConfig: configuration.uiConfig), for: "ATCCarouselViewModel")
+        self.use(adapter: CarouselAdapter(uiConfig: configuration.uiConfig), for: "ATCCarouselViewModel")
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -169,11 +169,11 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
     }
 
     // MARK: - ATCGenericCollectionViewControllerDataSourceDelegate
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadFirst objects: [GenericBaseModel]) {
         self.reloadCollectionView()
     }
 
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadBottom objects: [GenericBaseModel]) {
         let offset = dataSource.numberOfObjects() - objects.count
         self.collectionView?.performBatchUpdates({
             let indexPaths = (0 ..< objects.count).map({ IndexPath(row: offset + $0, section: 0)})
@@ -182,7 +182,7 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
         self.updateAfterLoad()
     }
 
-    func genericCollectionViewControllerDataSource(_ dataSource: ATCGenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel]) {
+    func genericCollectionViewControllerDataSource(_ dataSource: GenericCollectionViewControllerDataSource, didLoadTop objects: [GenericBaseModel]) {
         if (configuration.pullToRefreshEnabled) {
             refreshControl.endRefreshing()
         }
@@ -191,7 +191,7 @@ class ATCGenericCollectionViewController: UICollectionViewController, ATCGeneric
 
     private func reloadCollectionView() {
         assert(Thread.isMainThread)
-        if let liquidLayout = self.collectionView?.collectionViewLayout as? ATCLiquidCollectionViewLayout {
+        if let liquidLayout = self.collectionView?.collectionViewLayout as? LiquidCollectionViewLayout {
             liquidLayout.invalidateCache()
         }
         self.collectionView?.collectionViewLayout.invalidateLayout()
@@ -317,7 +317,7 @@ extension ATCGenericCollectionViewController {
     }
 }
 
-extension ATCGenericCollectionViewController: ATCLiquidLayoutDelegate {
+extension ATCGenericCollectionViewController: LiquidLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForCellAtIndexPath indexPath: IndexPath, width: CGFloat) -> CGFloat {
         return self.size(collectionView: collectionView, indexPath: indexPath).height
     }

@@ -9,8 +9,8 @@
 import FirebaseFirestore
 import UIKit
 
-class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
-    var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
+class ATCFirebaseFirestoreDataSource<T: GenericBaseModel>: GenericCollectionViewControllerDataSource {
+    var delegate: GenericCollectionViewControllerDataSourceDelegate?
     var items: [T] = []
     let tableName: String
     let conditions: [String: Any]

@@ -6,8 +6,8 @@
 //  Copyright © 2020 Instamobile. All rights reserved.
 //
 
-class GenericLocalDataSource<T: GenericBaseModel>: ATCGenericCollectionViewControllerDataSource {
-    weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
+class GenericLocalDataSource<T: GenericBaseModel>: GenericCollectionViewControllerDataSource {
+    weak var delegate: GenericCollectionViewControllerDataSourceDelegate?
     
     var items: [T]
     

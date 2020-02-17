@@ -34,7 +34,7 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol, LoginScreenManagerDe
     let navigationController: UINavigationController
 
     let serverConfig: OnboardingServerConfigurationProtocol
-    let firebaseLoginManager: ATCFirebaseLoginManager?
+    let firebaseLoginManager: FirebaseLoginManager?
 
     init(landingViewModel: LandingScreenViewModel,
          loginViewModel: LoginScreenViewModel,
@@ -43,7 +43,7 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol, LoginScreenManagerDe
          serverConfig: OnboardingServerConfigurationProtocol,
          userManager: SocialUserManagerProtocol?) {
         self.serverConfig = serverConfig
-        self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? ATCFirebaseLoginManager() : nil
+        self.firebaseLoginManager = serverConfig.isFirebaseAuthEnabled ? FirebaseLoginManager() : nil
         self.landingScreen = ATCClassicLandingScreenViewController(uiConfig: uiConfig)
         self.landingManager = LandingScreenManager(landingScreen: self.landingScreen, viewModel: landingViewModel, uiConfig: uiConfig)
         self.landingScreen.delegate = landingManager
@@ -98,4 +98,3 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol, LoginScreenManagerDe
         self.delegate?.coordinatorDidCompleteOnboarding(self, user: user)
     }
 }
-

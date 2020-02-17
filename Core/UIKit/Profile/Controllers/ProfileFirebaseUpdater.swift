@@ -1,25 +1,25 @@
 //
-//  ATCProfileFirebaseUpdated.swift
-//  DatingApp
+//  ProfileFirebaseUpdater.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/2/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FirebaseFirestore
 import FirebaseStorage
 import UIKit
 
-class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
+class ProfileFirebaseUpdater: ProfileUpdaterProtocol {
     var updateInProgress: Bool = false
-
+    
     var usersTable: String
     init(usersTable: String) {
         self.usersTable = usersTable
     }
-
+    
     func removePhoto(url: String, user: ATCUser, completion: @escaping () -> Void) {
-
+        
         guard let uid = user.uid else { return }
         if let photos = user.photos {
             let remainingPhotos = photos.filter({$0 != url})
@@ -33,7 +33,7 @@ class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
                 })
         }
     }
-
+    
     func uploadPhoto(image: UIImage, user: ATCUser, isProfilePhoto: Bool, completion: @escaping () -> Void) {
         self.uploadImage(image, completion: {[weak self] (url) in
             guard let `self` = self, let url = url?.absoluteString, let uid = user.uid else { return }
@@ -57,7 +57,7 @@ class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
                 })
         })
     }
-
+    
     func update(user: ATCUser, email: String, firstName: String, lastName: String, username: String, completion: @escaping (_ success: Bool) -> Void) {
         guard let uid = user.uid else { return }
         let usersRef = Firestore.firestore().collection(usersTable).document(uid)
@@ -76,7 +76,7 @@ class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
             completion(error == nil)
         }
     }
-
+    
     func updateLocation(for user: ATCUser, to location: Location, completion: @escaping (_ success: Bool) -> Void) {
         if updateInProgress {
             return
@@ -92,18 +92,18 @@ class ATCProfileFirebaseUpdater: ProfileUpdaterProtocol {
             completion(error == nil)
         }
     }
-
+    
     private func uploadImage(_ image: UIImage, completion: @escaping (URL?) -> Void) {
         let storage = Storage.storage().reference()
-
+        
         guard let scaledImage = image.scaledToSafeUploadSize, let data = scaledImage.jpegData(compressionQuality: 0.4) else {
             completion(nil)
             return
         }
-
+        
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
-
+        
         let imageName = [UUID().uuidString, String(Date().timeIntervalSince1970)].joined()
         let ref = storage.child(usersTable).child(imageName)
         ref.putData(data, metadata: metadata) { meta, error in

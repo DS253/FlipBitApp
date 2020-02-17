@@ -9,6 +9,6 @@
 import UIKit
 
 class ATCProfileButtonCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var button: InstaBorderedButton!
+    @IBOutlet var button: BorderedButton!
     @IBOutlet var containerView: UIView!
 }

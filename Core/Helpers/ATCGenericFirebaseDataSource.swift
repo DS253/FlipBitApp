@@ -10,8 +10,8 @@ import FirebaseDatabase
 
 let kItemsPerPage: UInt = 10
 
-class ATCGenericFirebaseDataSource<T: GenericBaseModel & ATCGenericFirebaseParsable>: ATCGenericCollectionViewControllerDataSource {
-    weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
+class ATCGenericFirebaseDataSource<T: GenericBaseModel & GenericFirebaseParsable>: GenericCollectionViewControllerDataSource {
+    weak var delegate: GenericCollectionViewControllerDataSourceDelegate?
 
     private let dbRef = Database.database().reference()
     private var store: [T] = [T]()

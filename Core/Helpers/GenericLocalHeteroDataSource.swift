@@ -8,8 +8,8 @@
 
 import UIKit
 
-class GenericLocalHeteroDataSource: ATCGenericCollectionViewControllerDataSource {
-    weak var delegate: ATCGenericCollectionViewControllerDataSourceDelegate?
+class GenericLocalHeteroDataSource: GenericCollectionViewControllerDataSource {
+    weak var delegate: GenericCollectionViewControllerDataSourceDelegate?
     
     let items: [GenericBaseModel]
     

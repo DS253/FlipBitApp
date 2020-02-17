@@ -1,9 +1,9 @@
 //
 //  CryptoViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/20/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -11,10 +11,10 @@ import UIKit
 class CryptoViewController: ATCGenericCollectionViewController {
     var uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
-
+    
     init(uiConfig: UIGenericConfigurationProtocol,
          dsProvider: FinanceDataSourceProvider,
-         dataSource: ATCGenericCollectionViewControllerDataSource) {
+         dataSource: GenericCollectionViewControllerDataSource) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
         let layout = ATCCollectionViewFlowLayout()
@@ -34,7 +34,7 @@ class CryptoViewController: ATCGenericCollectionViewController {
         super.init(configuration: config)
         self.genericDataSource = dataSource
         self.use(adapter: FinanceAssetRowAdapter(uiConfig: uiConfig), for: "FinanceAsset")
-
+        
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
             if let stock = object as? FinanceAsset {
@@ -46,7 +46,7 @@ class CryptoViewController: ATCGenericCollectionViewController {
             }
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

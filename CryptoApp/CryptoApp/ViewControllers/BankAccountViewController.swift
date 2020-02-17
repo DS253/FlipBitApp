@@ -1,9 +1,9 @@
 //
 //  BankAccountViewController.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/25/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import Charts
@@ -13,15 +13,15 @@ class BankAccountViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let financeAccount: FinanceAccount
-
+    
     init(uiConfig: UIGenericConfigurationProtocol,
          financeAccount: FinanceAccount,
-         transactionDataSource: ATCGenericCollectionViewControllerDataSource,
+         transactionDataSource: GenericCollectionViewControllerDataSource,
          dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
         self.financeAccount = financeAccount
-        let layout = ATCLiquidCollectionViewLayout(cellPadding: 0)
+        let layout = LiquidCollectionViewLayout(cellPadding: 0)
         let homeConfig = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                          pullToRefreshTintColor: .white,
                                                                          collectionViewBackgroundColor: UIColor(hexString: "#f4f6f9"),
@@ -34,7 +34,7 @@ class BankAccountViewController: ATCGenericCollectionViewController {
                                                                          uiConfig: uiConfig,
                                                                          emptyViewModel: nil)
         super.init(configuration: homeConfig)
-
+        
         // Configuring the Stock Chart
         let dateList: ATCDateList = ATCDateList(dates: [
             ATCChartDate(title: "1D", startDate: Date().yesterday),
@@ -43,41 +43,41 @@ class BankAccountViewController: ATCGenericCollectionViewController {
             ATCChartDate(title: "3M", startDate: Date().threeMonthsAgo),
             ATCChartDate(title: "1Y", startDate: Date().oneYearAgo),
             ATCChartDate(title: "All", startDate: Date().infiniteAgo)
-            ])
-
+        ])
+        
         let lineChartViewController = ATCDatedLineChartViewController(dateList: dateList,
                                                                       uiConfig: uiConfig)
         lineChartViewController.delegate = self
-
-        let chartViewModel = ATCViewControllerContainerViewModel(viewController: lineChartViewController,
+        
+        let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController,
                                                                  cellHeight: 300,
                                                                  subcellHeight: nil)
         chartViewModel.parentViewController = self
-
+        
         // Configuring stock list
         let transactionsVC = TransactionsViewController(transactionDataSource: transactionDataSource,
                                                         dsProvider: dsProvider,
                                                         scrollingEnabled: false,
                                                         uiConfig: uiConfig)
-        let transactionsListModel = ATCViewControllerContainerViewModel(viewController: transactionsVC,
+        let transactionsListModel = ViewControllerContainerViewModel(viewController: transactionsVC,
                                                                         subcellHeight: 70)
         transactionsListModel.parentViewController = self
-
+        
         self.genericDataSource = GenericLocalHeteroDataSource(items: [chartViewModel,
-                                                                         transactionsListModel])
-        self.use(adapter: ATCCardViewControllerContainerRowAdapter(), for: "ATCViewControllerContainerViewModel")
+                                                                      transactionsListModel])
+        self.use(adapter: CardViewControllerContainerRowAdapter(), for: "ViewControllerContainerViewModel")
         self.title = financeAccount.institution + ": " + financeAccount.title
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
     }
-
+    
     fileprivate func lineChartData(chart: LineChart, config: LineChartConfiguration) -> LineChartData {
         var lineChartEntry = [ChartDataEntry]()
         for (index, number) in chart.numbers.enumerated() {
@@ -95,7 +95,7 @@ class BankAccountViewController: ATCGenericCollectionViewController {
         let colors: CFArray = [config.gradientStartColor.cgColor, config.gradientEndColor.cgColor] as CFArray
         let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors, locations: [1.0, 0.0])
         let fill = Fill(linearGradient: gradient!, angle: 90.0)
-
+        
         line1.fill = fill
         let data = LineChartData()
         data.addDataSet(line1)
@@ -115,7 +115,7 @@ extension BankAccountViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.data = self.lineChartData(chart: lineChart, config: config)
                 chartView.backgroundColor = config.backgroundColor
                 chartView.chartDescription?.enabled = true
-
+                
                 chartView.pinchZoomEnabled = false
                 chartView.dragEnabled = false
                 chartView.setScaleEnabled(false)
@@ -128,7 +128,7 @@ extension BankAccountViewController: ATCDatedLineChartViewControllerDelegate {
                 chartView.rightAxis.valueFormatter = AbbreviatedAxisValueFormatter()
                 chartView.rightAxis.labelTextColor = config.leftAxisColor
                 chartView.leftAxis.enabled = false
-
+                
                 titleLabel.text = FinanceStaticDataProvider.currencyString + String(Int(lineChart.numbers.last ?? 0.0))
                 titleLabel.font = uiConfig.regularFont(size: 30)
                 titleLabel.textColor = uiConfig.mainTextColor

@@ -1,9 +1,9 @@
 //
-//  ATCPieChartAdapter.swift
-//  DashboardApp
+//  PieChartAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 8/1/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import ChameleonFramework
@@ -20,27 +20,27 @@ class MyFormatter: IValueFormatter {
     }
 }
 
-class ATCPieChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
-
+class PieChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
+    
     let uiConfig: UIGenericConfigurationProtocol
-
+    
     init(uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
     }
-
+    
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
         if let pieChart = object as? PieChart,
             let cell = cell as? ATCPieChartCollectionViewCell,
             let chartView = cell.pieChartView {
-
+            
             let dataSet = PieChartDataSet(entries: pieChart.entries, label: pieChart.name)
             let data = PieChartData(dataSet: dataSet)
             chartView.data = data
-
+            
             let color = uiConfig.mainThemeForegroundColor
             dataSet.colors = NSArray(ofColorsWith: ColorScheme.analogous, with: color, flatScheme: false) as! [NSUIColor]
             dataSet.valueFormatter = MyFormatter(format: pieChart.format)
-
+            
             chartView.backgroundColor = uiConfig.mainThemeBackgroundColor
             chartView.drawHoleEnabled = false
             chartView.legend.textColor = uiConfig.mainTextColor
@@ -48,29 +48,29 @@ class ATCPieChartAdapter: GenericCollectionRowAdapter, ChartViewDelegate {
             chartView.legend.font = uiConfig.regularMediumFont
             chartView.legend.textColor = uiConfig.mainThemeForegroundColor
             chartView.legend.enabled = false
-
+            
             chartView.chartDescription?.font = uiConfig.regularLargeFont
             chartView.chartDescription?.text = pieChart.descriptionText
-//            chartView.chartDescription?.xOffset = chartView.frame.width
-//            chartView.chartDescription?.yOffset = chartView.frame.height * (2/3)
+            //            chartView.chartDescription?.xOffset = chartView.frame.width
+            //            chartView.chartDescription?.yOffset = chartView.frame.height * (2/3)
             chartView.chartDescription?.textAlign = NSTextAlignment.right
             chartView.chartDescription?.textColor = uiConfig.mainThemeForegroundColor
-//            chartView.chartDescription?.text = ""
+            //            chartView.chartDescription?.text = ""
             chartView.setExtraOffsets(left: -10, top: -10, right: -10, bottom: -15)
             chartView.notifyDataSetChanged()
             cell.setNeedsLayout()
         }
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCPieChartCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let pieChart = object as? PieChart else { return .zero }
+        guard object is PieChart else { return .zero }
         return CGSize(width: containerBounds.width / 2, height: 180)
     }
-
+    
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         print("Asda")
     }

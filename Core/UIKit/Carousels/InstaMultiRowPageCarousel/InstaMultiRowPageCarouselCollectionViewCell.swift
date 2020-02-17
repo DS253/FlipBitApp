@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstaMultiRowPageCarouselCollectionViewCell: UICollectionViewCell, ATCGenericCollectionViewScrollDelegate {
+class InstaMultiRowPageCarouselCollectionViewCell: UICollectionViewCell, GenericCollectionViewScrollDelegate {
     @IBOutlet var containerView: UIView!
     @IBOutlet var carouselTitleLabel: UILabel!
     @IBOutlet var pageControl: UIPageControl!

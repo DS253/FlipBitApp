@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ATCMenuCollectionViewCellConfigurable {
-    func configure(item: ATCNavigationItem);
+    func configure(item: NavigationItem);
 }
 
 public struct ATCMenuUIConfiguration {
@@ -23,7 +23,7 @@ public struct ATCMenuConfiguration {
     let user: ATCUser?
     let cellClass: UICollectionViewCell.Type?
     let headerHeight: CGFloat
-    let items: [ATCNavigationItem]
+    let items: [NavigationItem]
     let uiConfig: ATCMenuUIConfiguration
 }
 
@@ -45,7 +45,7 @@ class ATCMenuCollectionViewController: ATCGenericCollectionViewController {
 
         super.init(configuration: collectionVCConfiguration)
         if let cellClass = cellClass {
-            self.use(adapter: ATCMenuItemRowAdapter(cellClassType: cellClass, uiConfig: menuConfiguration.uiConfig), for: "ATCNavigationItem")
+            self.use(adapter: MenuItemRowAdapter(cellClassType: cellClass, uiConfig: menuConfiguration.uiConfig), for: "NavigationItem")
         }
     }
 
@@ -68,7 +68,7 @@ class ATCMenuCollectionViewController: ATCGenericCollectionViewController {
 
 extension ATCMenuCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let menuItem = self.genericDataSource?.object(at: indexPath.row) as? ATCNavigationItem else {
+        guard let menuItem = self.genericDataSource?.object(at: indexPath.row) as? NavigationItem else {
             return
         }
         if menuItem.type == .logout {

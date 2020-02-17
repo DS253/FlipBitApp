@@ -9,21 +9,21 @@
 import UIKit
 
 protocol ATCKeyboardViewControllerDelegate: class {
-    func keyboardViewController(_ vc: ATCKeyboardViewController, didTap key: ATCKeyboardKey)
+    func keyboardViewController(_ vc: ATCKeyboardViewController, didTap key: KeyboardKey)
 }
 
 class ATCKeyboardViewController: ATCGenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
-    let keys: [ATCKeyboardKey]
+    let keys: [KeyboardKey]
 
     weak var delegate: ATCKeyboardViewControllerDelegate?
     
-    init(keys: [ATCKeyboardKey],
+    init(keys: [KeyboardKey],
          uiConfig: UIGenericConfigurationProtocol) {
         self.uiConfig = uiConfig
         self.keys = keys
 
-        let layout = ATCLiquidCollectionViewLayout()
+        let layout = LiquidCollectionViewLayout()
         let config = ATCGenericCollectionViewControllerConfiguration(pullToRefreshEnabled: false,
                                                                      pullToRefreshTintColor: .white,
                                                                      collectionViewBackgroundColor: uiConfig.mainThemeBackgroundColor,
@@ -38,11 +38,11 @@ class ATCKeyboardViewController: ATCGenericCollectionViewController {
         super.init(configuration: config)
 
         self.genericDataSource = GenericLocalDataSource(items: keys)
-        self.use(adapter: ATCKeyboardKeyRowAdapter(uiConfig: uiConfig), for: "ATCKeyboardKey")
+        self.use(adapter: ATCKeyboardKeyRowAdapter(uiConfig: uiConfig), for: "KeyboardKey")
 
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
-            if let key = object as? ATCKeyboardKey {
+            if let key = object as? KeyboardKey {
                 strongSelf.delegate?.keyboardViewController(strongSelf, didTap: key)
             }
         }

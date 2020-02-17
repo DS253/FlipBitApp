@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstaTopLinedPageCarouselCollectionViewCell: UICollectionViewCell, ATCGenericCollectionViewScrollDelegate {
+class InstaTopLinedPageCarouselCollectionViewCell: UICollectionViewCell, GenericCollectionViewScrollDelegate {
     @IBOutlet var containerView: UIView!
     @IBOutlet var carouselContainerView: UIView!
     @IBOutlet var linePageControl: LinePageControl!

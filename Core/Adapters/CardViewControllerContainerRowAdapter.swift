@@ -1,25 +1,25 @@
 //
-//  ATCCardViewControllerContainerRowAdapter.swift
-//  FinanceApp
+//  CardViewControllerContainerRowAdapter.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/16/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
 
-class ATCCardViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
+class CardViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ATCViewControllerContainerViewModel, let cell = cell as? ATCCardViewControllerContainerCollectionViewCell else { return }
+        guard let viewModel = object as? ViewControllerContainerViewModel, let cell = cell as? ATCCardViewControllerContainerCollectionViewCell else { return }
         cell.configure(viewModel: viewModel)
     }
-
+    
     func cellClass() -> UICollectionViewCell.Type {
         return ATCCardViewControllerContainerCollectionViewCell.self
     }
-
+    
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard let viewModel = object as? ATCViewControllerContainerViewModel else { return .zero }
+        guard let viewModel = object as? ViewControllerContainerViewModel else { return .zero }
         var height: CGFloat
         if let cellHeight = viewModel.cellHeight {
             height = cellHeight

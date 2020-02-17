@@ -1,39 +1,40 @@
 //
-//  ATCNavigationViewController.swift
-//  AppTemplatesFoundation
+//  HostViewController.swift
+//  CryptoApp
 //
-//  Created by Florian Marcu on 2/8/17.
-//  Copyright © 2017 iOS App Templates. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
+
 import LocalAuthentication
 import UIKit
 
 let kLogoutNotificationName = NSNotification.Name(rawValue: "kLogoutNotificationName")
 
-public enum ATCNavigationStyle {
+public enum NavigationStyle {
     case tabBar
     case sideBar
 }
 
-public enum ATCNavigationMenuItemType {
+public enum NavigationMenuItemType {
     case viewController
     case logout
 }
 
-public final class ATCNavigationItem: GenericBaseModel {
+public final class NavigationItem: GenericBaseModel {
     let viewController: UIViewController
     let title: String?
     let image: UIImage?
     let selectedImage: UIImage?
-    let type: ATCNavigationMenuItemType
-    let leftTopViews: [UIView]? 
+    let type: NavigationMenuItemType
+    let leftTopViews: [UIView]?
     let rightTopViews: [UIView]?
-
+    
     init(title: String?,
          viewController: UIViewController,
          image: UIImage?,
          selectedImage: UIImage? = nil,
-         type: ATCNavigationMenuItemType,
+         type: NavigationMenuItemType,
          leftTopViews: [UIView]? = nil,
          rightTopViews: [UIView]? = nil) {
         self.title = title
@@ -44,19 +45,19 @@ public final class ATCNavigationItem: GenericBaseModel {
         self.leftTopViews = leftTopViews
         self.rightTopViews = rightTopViews
     }
-
+    
     convenience init(jsonDict: [String: Any]) {
         self.init(title: "", viewController: UIViewController(), image: nil, type: .viewController)
     }
-
+    
     public var description: String {
         return title ?? "no description"
     }
 }
 
-public struct ATCHostConfiguration {
+public struct HostConfiguration {
     let menuConfiguration: ATCMenuConfiguration
-    let style: ATCNavigationStyle
+    let style: NavigationStyle
     let topNavigationRightViews: [UIView]?
     let titleView: UIView?
     let topNavigationLeftImage: UIImage?
@@ -67,12 +68,12 @@ public struct ATCHostConfiguration {
     let locationUpdatesEnabled: Bool
 }
 
-public protocol ATCHostViewControllerDelegate: class {
-    func hostViewController(_ hostViewController: ATCHostViewController, didLogin user: ATCUser)
-    func hostViewController(_ hostViewController: ATCHostViewController, didSync user: ATCUser)
+public protocol HostViewControllerDelegate: class {
+    func hostViewController(_ hostViewController: HostViewController, didLogin user: ATCUser)
+    func hostViewController(_ hostViewController: HostViewController, didSync user: ATCUser)
 }
 
-public class ATCHostViewController: UIViewController, OnboardingCoordinatorDelegate, ATCWalkthroughViewControllerDelegate {
+public class HostViewController: UIViewController, OnboardingCoordinatorDelegate, ATCWalkthroughViewControllerDelegate {
     var user: ATCUser? {
         didSet {
             menuViewController?.user = user
@@ -80,16 +81,16 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             self.updateNavigationProfilePhotoIfNeeded()
         }
     }
-
-    var items: [ATCNavigationItem] {
+    
+    var items: [NavigationItem] {
         didSet {
             menuViewController?.genericDataSource = GenericLocalDataSource(items: items)
             menuViewController?.collectionView?.reloadData()
         }
     }
-    let style: ATCNavigationStyle
+    let style: NavigationStyle
     let statusBarStyle: UIStatusBarStyle
-
+    
     var tabController: UITabBarController?
     var navigationRootController: NavigationController?
     var menuViewController: ATCMenuCollectionViewController?
@@ -102,10 +103,10 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
     var pushManager: PushNotificationManager?
     var locationManager: LocationManager?
     var profileUpdater: ProfileUpdaterProtocol?
-
-    weak var delegate: ATCHostViewControllerDelegate?
-
-    init(configuration: ATCHostConfiguration,
+    
+    weak var delegate: HostViewControllerDelegate?
+    
+    init(configuration: HostConfiguration,
          onboardingCoordinator: OnboardingCoordinatorProtocol?,
          walkthroughVC: ATCWalkthroughViewController?,
          profilePresenter: ProfileScreenPresenterProtocol? = nil,
@@ -121,31 +122,31 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
         self.profilePresenter = profilePresenter
         self.pushNotificationsEnabled = configuration.pushNotificationsEnabled
         self.locationUpdatesEnabled = configuration.locationUpdatesEnabled
-
+        
         super.init(nibName: nil, bundle: nil)
         configureChildrenViewControllers(configuration: configuration)
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override public var preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle
     }
-
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(didRequestLogout), name: kLogoutNotificationName, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didUpdateProfileInfo),name: kATCLoggedInUserDataDidChangeNotification, object: nil)
-
+        
         let store = ATCPersistentStore()
         var userStatus: Bool = false
         let faceIDKey = "face_id_enabled"
         
         if let loggedInUser = store.userIfLoggedInUser() {
             let result = UserDefaults.standard.value(forKey: "\(loggedInUser.uid!)")
-          
+            
             if let finalResult = result as? [String : Bool] {
                 userStatus = finalResult[faceIDKey] ?? false
             }
@@ -158,7 +159,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             }
             return
         }
-    
+        
         if let walkthroughVC = walkthroughVC, !store.isWalkthroughCompleted() {
             walkthroughVC.delegate = self
             self.addChildViewControllerWithView(walkthroughVC)
@@ -169,18 +170,18 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             presentLoggedInViewControllers()
         }
     }
-
+    
     static func darkModeEnabled() -> Bool {
         return {
             if #available(iOS 13.0, *) {
                 let color = UIColor { (traitCollection: UITraitCollection) -> UIColor in
                     switch traitCollection.userInterfaceStyle {
-                        case
-                        .unspecified,
-                        .light: return .white
-                        case .dark: return .black
-                        @unknown default:
-                            return .white
+                    case
+                    .unspecified,
+                    .light: return .white
+                    case .dark: return .black
+                    @unknown default:
+                        return .white
                     }
                 }
                 return color.toHexString() == "#000000"
@@ -196,7 +197,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             let reason = "Identify Yourself"
-
+            
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [unowned self] (success, error) in
                 DispatchQueue.main.async {
                     if success {
@@ -216,7 +217,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             print("No Biometric Auth support")
         }
     }
-
+    
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if let walkthroughVC = walkthroughVC {
@@ -225,7 +226,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             walkthroughVC.view.layoutIfNeeded()
         }
     }
-
+    
     @objc fileprivate func didRequestLogout() {
         let store = ATCPersistentStore()
         store.logout()
@@ -233,16 +234,16 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             let childVC: UIViewController = (style == .tabBar) ? tabController! : drawerController!
             childVC.removeFromParent()
             childVC.view.removeFromSuperview()
-
+            
             onboardingCoordinator.delegate = self
             self.addChildViewControllerWithView(onboardingCoordinator.viewController())
         }
     }
-
+    
     @objc fileprivate func didUpdateProfileInfo() {
         self.updateNavigationProfilePhotoIfNeeded()
     }
-
+    
     fileprivate func presentLoggedInViewControllers() {
         self.onboardingCoordinator?.viewController().removeFromParent()
         self.onboardingCoordinator?.viewController().view.removeFromSuperview()
@@ -258,7 +259,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             })
         }
     }
-
+    
     fileprivate func updateNavigationProfilePhotoIfNeeded() {
         if (self.style == .tabBar && profilePresenter != nil) {
             if let firstNavigationVC = self.tabController?.children.first as? NavigationController {
@@ -268,7 +269,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
                     maker.width.equalTo(30)
                 }
                 uiControl.addTarget(self, action: #selector(didTapProfilePhotoControl), for: .touchUpInside)
-
+                
                 let imageView = UIImageView(image: nil)
                 imageView.clipsToBounds = true
                 imageView.layer.cornerRadius = 30.0/2.0
@@ -290,20 +291,20 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             }
         }
     }
-
+    
     @objc fileprivate func didTapProfilePhotoControl() {
         if let profilePresenter = profilePresenter, let user = user {
             profilePresenter.presentProfileScreen(viewController: self, user: user)
         }
     }
-
-    fileprivate func configureChildrenViewControllers(configuration: ATCHostConfiguration) {
+    
+    fileprivate func configureChildrenViewControllers(configuration: HostConfiguration) {
         if (style == .tabBar) {
             let navigationControllers = items.filter{$0.type == .viewController}.map {
                 NavigationController(rootViewController: $0.viewController,
-                                        topNavigationLeftViews: $0.leftTopViews,
-                                        topNavigationRightViews: (($0.rightTopViews == nil) ? configuration.topNavigationRightViews : $0.rightTopViews),
-                                        topNavigationLeftImage: nil)
+                                     topNavigationLeftViews: $0.leftTopViews,
+                                     topNavigationRightViews: (($0.rightTopViews == nil) ? configuration.topNavigationRightViews : $0.rightTopViews),
+                                     topNavigationLeftImage: nil)
             }
             tabController = UITabBarController()
             tabController?.setViewControllers(navigationControllers, animated: true)
@@ -320,15 +321,15 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
         } else {
             guard let firstVC = items.first?.viewController else { return }
             navigationRootController = NavigationController(rootViewController: firstVC,
-                                                               topNavigationRightViews: configuration.topNavigationRightViews,
-                                                               titleView: configuration.titleView,
-                                                               topNavigationLeftImage: configuration.topNavigationLeftImage,
-                                                               topNavigationTintColor: configuration.topNavigationTintColor)
+                                                            topNavigationRightViews: configuration.topNavigationRightViews,
+                                                            titleView: configuration.titleView,
+                                                            topNavigationLeftImage: configuration.topNavigationLeftImage,
+                                                            topNavigationTintColor: configuration.topNavigationTintColor)
             let collectionVCConfiguration = ATCGenericCollectionViewControllerConfiguration(
                 pullToRefreshEnabled: false,
                 pullToRefreshTintColor: configuration.uiConfig.mainThemeBackgroundColor,
                 collectionViewBackgroundColor: configuration.uiConfig.mainTextColor,
-                collectionViewLayout: ATCLiquidCollectionViewLayout(),
+                collectionViewLayout: LiquidCollectionViewLayout(),
                 collectionPagingEnabled: false,
                 hideScrollIndicators: false,
                 hidesNavigationBar: false,
@@ -339,7 +340,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             )
             let menuConfiguration = configuration.menuConfiguration
             menuViewController = ATCMenuCollectionViewController(menuConfiguration: menuConfiguration, collectionVCConfiguration: collectionVCConfiguration)
-            menuViewController?.genericDataSource = GenericLocalDataSource<ATCNavigationItem>(items: menuConfiguration.items)
+            menuViewController?.genericDataSource = GenericLocalDataSource<NavigationItem>(items: menuConfiguration.items)
             drawerController = DrawerController(rootViewController: navigationRootController!, menuController: menuViewController!)
             navigationRootController?.drawerDelegate = drawerController
             if let drawerController = drawerController {
@@ -349,19 +350,19 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             }
         }
     }
-
+    
     func coordinatorDidCompleteOnboarding(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?) {
         self.didFetchUser(user)
     }
-
+    
     func coordinatorDidResyncCredentials(_ coordinator: OnboardingCoordinatorProtocol, user: ATCUser?) {
         self.didFetchUser(user)
     }
-
+    
     func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController) {
         let store = ATCPersistentStore()
         store.markWalkthroughCompleted()
-
+        
         if let onboardingCoordinator = self.onboardingCoordinator {
             onboardingCoordinator.delegate = self
             UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
@@ -372,7 +373,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
             self.presentLoggedInViewControllers()
         }
     }
-
+    
     fileprivate func didFetchUser(_ user: ATCUser?) {
         self.user = user
         presentLoggedInViewControllers()
@@ -389,7 +390,7 @@ public class ATCHostViewController: UIViewController, OnboardingCoordinatorDeleg
     }
 }
 
-extension ATCHostViewController: LocationManagerDelegate {
+extension HostViewController: LocationManagerDelegate {
     func locationManager(_ locationManager: LocationManager, didReceive location: Location) {
         if !locationUpdatesEnabled {
             return

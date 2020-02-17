@@ -24,7 +24,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
 
     init(items: [GenericBaseModel],
          uiConfig: UIGenericConfigurationProtocol,
-         selectionBlock: ATCollectionViewSelectionBlock? = nil) {
+         selectionBlock: CollectionViewSelectionBlock? = nil) {
         let profileVCConfig = ATCGenericCollectionViewControllerConfiguration(
             pullToRefreshEnabled: false,
             pullToRefreshTintColor: uiConfig.mainThemeBackgroundColor,
@@ -51,7 +51,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
         self.use(adapter: roundImageAdapter, for: "ATCImage")
         self.use(adapter: DividerRowAdapter(titleFont: uiConfig.regularFont(size: 16), minHeight: 10), for: "Divider")
         self.use(adapter: ProfileButtonItemRowAdapter(uiConfig: uiConfig), for: "ProfileButtonItem")
-        self.use(adapter: InstaMultiRowPageCarouselRowAdapter(uiConfig: uiConfig), for: "InstaMultiRowPageCarouselViewModel")
+        self.use(adapter: MultiRowPageCarouselRowAdapter(uiConfig: uiConfig), for: "MultiRowPageCarouselViewModel")
         self.update()
     }
     
@@ -160,7 +160,7 @@ class ATCProfileViewController: ATCGenericCollectionViewController, ProfileImage
 
     func updateProfileImage(image: UIImage) {
         guard let user = user else { return }
-        profileImageUpdater = ATCProfileFirebaseUpdater(usersTable: "users")
+        profileImageUpdater = ProfileFirebaseUpdater(usersTable: "users")
         guard let imageupdater = profileImageUpdater else { return }
         let hud = CPKProgressHUD.progressHUD(style: .loading(text: "Uploading"))
         hud.show(in: view)

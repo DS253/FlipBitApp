@@ -1,15 +1,15 @@
 //
-//  ATCSocialFirebaseUserManager.swift
+//  SocialFirebaseUserManager.swift
 //  CryptoApp
 //
-//  Created by Florian Marcu on 6/29/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import FirebaseFirestore
 import UIKit
 
-class ATCSocialFirebaseUserManager: SocialUserManagerProtocol {
+class SocialFirebaseUserManager: SocialUserManagerProtocol {
     func fetchUser(userID: String, completion: @escaping (_ user: ATCUser?) -> Void) {
         let usersRef = Firestore.firestore().collection("users").whereField("userID", isEqualTo: userID)
         usersRef.getDocuments { (querySnapshot, error) in

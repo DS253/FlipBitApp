@@ -62,7 +62,7 @@ class ATCClassicLoginScreenViewController: UIViewController, LoginScreenProtocol
 
     private func setupProviderLoginView() {
         if #available(iOS 13.0, *) {
-            let style: ASAuthorizationAppleIDButton.Style = (ATCHostViewController.darkModeEnabled() ? .white : .black)
+            let style: ASAuthorizationAppleIDButton.Style = (HostViewController.darkModeEnabled() ? .white : .black)
             let authorizationButton = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn,
                                                                    authorizationButtonStyle: style)
             authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)

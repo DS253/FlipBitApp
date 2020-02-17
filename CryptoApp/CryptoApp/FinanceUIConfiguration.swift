@@ -1,9 +1,9 @@
 //
 //  FinanceUIConfiguration.swift
-//  FinanceApp
+//  CryptoApp
 //
-//  Created by Florian Marcu on 3/10/19.
-//  Copyright © 2019 Instamobile. All rights reserved.
+//  Created by Daniel Stewart on 2/16/20.
+//  Copyright © 2020 Instamobile. All rights reserved.
 //
 
 import UIKit
@@ -15,11 +15,11 @@ class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerCo
     let mainSubtextColor: UIColor = UIColor(hexString: "#768695")
     let statusBarStyle: UIStatusBarStyle = .lightContent
     let hairlineColor: UIColor = UIColor(hexString: "#d6d6d6", alpha: 0.4)
-
+    
     let colorGray0: UIColor = UIColor.darkModeColor(hexString: "#000000")
     let colorGray3: UIColor = UIColor.darkModeColor(hexString: "#333333")
     let colorGray9: UIColor = UIColor.darkModeColor(hexString: "#f4f4f4")
-
+    
     let regularSmallFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 12)!
     let regularMediumFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)!
     let regularLargeFont = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)!
@@ -28,9 +28,9 @@ class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerCo
     let boldSmallFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 12)!
     let boldSuperSmallFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 10)!
     let boldSuperLargeFont = UIFont(name: "AppleSDGothicNeo-Bold", size: 28)!
-
+    
     let italicMediumFont = UIFont(name: "TrebuchetMS-Italic", size: 14)!
-
+    
     let homeImage = UIImage.localImage("home-icon", template: true)
     let expensesImage = UIImage.localImage("expenses-pie-icon", template: true)
     let accountsImage = UIImage.localImage("accounts-list-icon", template: true)
@@ -39,15 +39,15 @@ class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerCo
     let profileImage = UIImage.localImage("profile-male-icon", template: true)
     let newsImage = UIImage.localImage("news-icon", template: true)
     let settingsImage = UIImage.localImage("settings-menu-item", template: true)
-
+    
     func regularFont(size: CGFloat) -> UIFont {
         return UIFont(name: "AppleSDGothicNeo-Regular", size: size)!
     }
-
+    
     func boldFont(size: CGFloat) -> UIFont {
         return UIFont(name: "AppleSDGothicNeo-Bold", size: size)!
     }
-
+    
     func configureUI() {
         UITabBar.appearance().barTintColor = self.mainThemeBackgroundColor
         UITabBar.appearance().tintColor = self.mainThemeForegroundColor
@@ -58,10 +58,10 @@ class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerCo
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor : self.mainThemeForegroundColor,
                                                           .font: self.boldSuperSmallFont],
                                                          for: .selected)
-
+        
         UITabBar.appearance().backgroundImage = UIImage.colorForNavBar(self.mainThemeBackgroundColor)
         UITabBar.appearance().shadowImage = UIImage.colorForNavBar(self.hairlineColor)
-
+        
         UINavigationBar.appearance().barTintColor = self.mainThemeForegroundColor
         UINavigationBar.appearance().tintColor = self.mainThemeBackgroundColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: self.mainThemeBackgroundColor]
@@ -73,11 +73,11 @@ class FinanceUIConfiguration: UIGenericConfigurationProtocol, OnboardingServerCo
         //            UITabBar.appearance().unselectedItemTintColor = ATCUIConfiguration.shared.mainThemeColor
         //        }
     }
-
+    
     var isFirebaseAuthEnabled: Bool {
         return true
     }
-
+    
     var appIdentifier: String {
         return "Finance - iOSAppTemplates"
     }

@@ -59,7 +59,7 @@ class ATCCarouselViewModel: GenericBaseModel {
     }
 }
 
-class ATCCarouselCollectionViewCell: UICollectionViewCell, ATCGenericCollectionViewScrollDelegate {
+class ATCCarouselCollectionViewCell: UICollectionViewCell, GenericCollectionViewScrollDelegate {
     @IBOutlet var carouselTitleLabel: UILabel!
     @IBOutlet var carouselContainerView: UIView!
     @IBOutlet var pageControl: UIPageControl!

@@ -15,7 +15,7 @@ class ATCKeyboardKeyRowAdapter: GenericCollectionRowAdapter {
     }
 
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        if let key = object as? ATCKeyboardKey, let cell = cell as? ATCKeyboardKeyCollectionViewCell {
+        if let key = object as? KeyboardKey, let cell = cell as? ATCKeyboardKeyCollectionViewCell {
             cell.keyLabel.text = key.displayValue
             cell.keyLabel.textColor = uiConfig.mainTextColor
             cell.keyLabel.font = uiConfig.boldFont(size: 24)
@@ -30,7 +30,7 @@ class ATCKeyboardKeyRowAdapter: GenericCollectionRowAdapter {
     }
 
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {
-        guard object is ATCKeyboardKey else { return .zero }
+        guard object is KeyboardKey else { return .zero }
         return CGSize(width: containerBounds.width / 3, height: 70)
     }
 }

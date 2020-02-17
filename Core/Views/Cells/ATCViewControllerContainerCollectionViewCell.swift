@@ -12,7 +12,7 @@ class ATCViewControllerContainerCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var containerView: UIView!
 
-    func configure(viewModel: ATCViewControllerContainerViewModel) {
+    func configure(viewModel: ViewControllerContainerViewModel) {
         containerView.setNeedsLayout()
         containerView.layoutIfNeeded()
 
