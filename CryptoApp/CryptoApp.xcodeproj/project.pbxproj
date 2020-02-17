@@ -144,6 +144,7 @@
 		060A9BE223FA6FBF003F1B7F /* FirebaseSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE123FA6FBF003F1B7F /* FirebaseSearchDataSource.swift */; };
 		060A9BE423FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */; };
 		060A9BE623FA7025003F1B7F /* FirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */; };
+		060A9BE823FA7219003F1B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE723FA7219003F1B7F /* AppDelegate.swift */; };
 		066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */; };
 		066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */; };
 		066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250123F9C88700F4F88A /* CardHeaderModel.swift */; };
@@ -161,7 +162,6 @@
 		066A251A23F9CF6300F4F88A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251923F9CF6300F4F88A /* UIImage.swift */; };
 		066A251C23F9CF9D00F4F88A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251B23F9CF9D00F4F88A /* String.swift */; };
 		066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251D23F9CFBC00F4F88A /* UIColor.swift */; };
-		1797E65822C7E65100E27A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797E65722C7E65100E27A8F /* AppDelegate.swift */; };
 		1797E65F22C7E65300E27A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797E65E22C7E65300E27A8F /* Assets.xcassets */; };
 		1797E66222C7E65300E27A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */; };
 		1797E7E022C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7CA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib */; };
@@ -527,6 +527,7 @@
 		060A9BE123FA6FBF003F1B7F /* FirebaseSearchDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSearchDataSource.swift; sourceTree = "<group>"; };
 		060A9BE323FA6FF5003F1B7F /* FirebaseFirestoreWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreWriter.swift; sourceTree = "<group>"; };
 		060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
+		060A9BE723FA7219003F1B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBitTextField.swift; sourceTree = "<group>"; };
 		066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterModel.swift; sourceTree = "<group>"; };
 		066A250123F9C88700F4F88A /* CardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderModel.swift; sourceTree = "<group>"; };
@@ -545,7 +546,6 @@
 		066A251B23F9CF9D00F4F88A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		066A251D23F9CFBC00F4F88A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		1797E65422C7E65100E27A8F /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1797E65722C7E65100E27A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1797E65E22C7E65300E27A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1797E66122C7E65300E27A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1797E66322C7E65300E27A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -833,7 +833,7 @@
 				1797E81522C7E80B00E27A8F /* Transactions */,
 				1797E81C22C7E80C00E27A8F /* ViewControllers */,
 				1797E7C922C7E7ED00E27A8F /* UI */,
-				1797E65722C7E65100E27A8F /* AppDelegate.swift */,
+				060A9BE723FA7219003F1B7F /* AppDelegate.swift */,
 				1797E65E22C7E65300E27A8F /* Assets.xcassets */,
 				1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */,
 				1797E66322C7E65300E27A8F /* Info.plist */,
@@ -2234,6 +2234,7 @@
 				060A9B9723FA5C94003F1B7F /* GridViewRowAdapter.swift in Sources */,
 				060A9B8123FA558C003F1B7F /* BankAccountsViewController.swift in Sources */,
 				1797E7E922C7E7ED00E27A8F /* FinanceInstitutionCollectionViewCell.swift in Sources */,
+				060A9BE823FA7219003F1B7F /* AppDelegate.swift in Sources */,
 				060A9B9F23FA5E76003F1B7F /* LinedPageCarouselViewModel.swift in Sources */,
 				060A9B9B23FA5DA5003F1B7F /* KeyboardKey.swift in Sources */,
 				060A9B8323FA55DC003F1B7F /* FinanceAccountDetailsViewController.swift in Sources */,
@@ -2349,7 +2350,6 @@
 				060A9ADF23F9D4AD003F1B7F /* TimeFormatHelper.swift in Sources */,
 				1797ECDF22C7EB1000E27A8F /* ATCSearchBarCollectionViewCell.swift in Sources */,
 				1797ECE522C7EB1000E27A8F /* ATCCardViewControllerContainerCollectionViewCell.swift in Sources */,
-				1797E65822C7E65100E27A8F /* AppDelegate.swift in Sources */,
 				17FE613F2367BB4000CBE046 /* Reusable.swift in Sources */,
 				060A9BBF23FA656C003F1B7F /* BorderedButton.swift in Sources */,
 				060A9B6D23FA2D28003F1B7F /* SquareStoryRowAdapter.swift in Sources */,
