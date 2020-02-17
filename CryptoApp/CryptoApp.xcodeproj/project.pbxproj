@@ -164,6 +164,8 @@
 		066A251E23F9CFBC00F4F88A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A251D23F9CFBC00F4F88A /* UIColor.swift */; };
 		06E91ECA23FB2CD40050DC7E /* DiskPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E91EC923FB2CD40050DC7E /* DiskPersistenceStore.swift */; };
 		06E91ECC23FB2D120050DC7E /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E91ECB23FB2D120050DC7E /* PersistentStore.swift */; };
+		06E91ECE23FB39590050DC7E /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ECD23FB39590050DC7E /* Eureka.framework */; };
+		06E91ECF23FB39590050DC7E /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06E91ECD23FB39590050DC7E /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1797E65F22C7E65300E27A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797E65E22C7E65300E27A8F /* Assets.xcassets */; };
 		1797E66222C7E65300E27A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1797E66022C7E65300E27A8F /* LaunchScreen.storyboard */; };
 		1797E7E022C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1797E7CA22C7E7ED00E27A8F /* CardFooterCollectionViewCell.xib */; };
@@ -388,6 +390,20 @@
 		CAAEF8B0BF7412A63FB7817C /* Pods_CryptoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DB1E3CFA02DD654C37D52C /* Pods_CryptoApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		06E91ED023FB39590050DC7E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06E91ECF23FB39590050DC7E /* Eureka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		060A9ACA23F9D196003F1B7F /* GenericUIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericUIConfiguration.swift; sourceTree = "<group>"; };
 		060A9ACC23F9D224003F1B7F /* UIImage+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
@@ -546,6 +562,7 @@
 		066A251D23F9CFBC00F4F88A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		06E91EC923FB2CD40050DC7E /* DiskPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskPersistenceStore.swift; sourceTree = "<group>"; };
 		06E91ECB23FB2D120050DC7E /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
+		06E91ECD23FB39590050DC7E /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		1797E65422C7E65100E27A8F /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797E65E22C7E65300E27A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1797E66122C7E65300E27A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -781,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAEF8B0BF7412A63FB7817C /* Pods_CryptoApp.framework in Frameworks */,
+				06E91ECE23FB39590050DC7E /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,6 +808,7 @@
 		092FDDC2A408B92656CCA82F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06E91ECD23FB39590050DC7E /* Eureka.framework */,
 				52DB1E3CFA02DD654C37D52C /* Pods_CryptoApp.framework */,
 			);
 			name = Frameworks;
@@ -1902,6 +1921,8 @@
 				1797E65122C7E65100E27A8F /* Frameworks */,
 				1797E65222C7E65100E27A8F /* Resources */,
 				2D962D2AF14A9846908F26C2 /* [CP] Embed Pods Frameworks */,
+				06E91ED023FB39590050DC7E /* Embed Frameworks */,
+				06E91ED123FB396C0050DC7E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2066,6 +2087,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06E91ED123FB396C0050DC7E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		2AD2DA062734B8CB18C5ADBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2516,6 +2556,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQDKUJH9S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2535,6 +2579,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JQDKUJH9S8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CryptoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

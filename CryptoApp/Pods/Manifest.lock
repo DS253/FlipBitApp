@@ -12,7 +12,6 @@ PODS:
   - Charts (3.4.0):
     - Charts/Core (= 3.4.0)
   - Charts/Core (3.4.0)
-  - Eureka (5.1.0)
   - FacebookCore (0.9.0):
     - FBSDKCoreKit (~> 5.0)
   - FacebookLogin (0.9.0):
@@ -182,7 +181,6 @@ DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - ChameleonFramework (~> 2.1.0)
   - Charts (~> 3.4.0)
-  - Eureka (~> 5.1.0)
   - FacebookCore (~> 0.9.0)
   - FacebookLogin (~> 0.9.0)
   - FacebookShare (~> 0.9.0)
@@ -200,7 +198,6 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - ChameleonFramework
     - Charts
-    - Eureka
     - FacebookCore
     - FacebookLogin
     - FacebookShare
@@ -237,7 +234,6 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
-  Eureka: 18a5076dcf0c41f9cd9748aa1c42f4d11434bdae
   FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
   FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
   FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
@@ -269,6 +265,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: 9032b4f8a934d7022edbd3417c5d0dbd194c3203
+PODFILE CHECKSUM: 3509bbef9d0b35e98b96bec119c82e70fcd9d7d8
 
 COCOAPODS: 1.8.4
