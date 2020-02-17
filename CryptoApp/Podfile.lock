@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (4.9.1)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -178,7 +177,6 @@ PODS:
   - Protobuf (3.11.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.9.1)
   - ChameleonFramework (~> 2.1.0)
   - Charts (~> 3.4.0)
   - FacebookCore (~> 0.9.0)
@@ -194,7 +192,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - BoringSSL-GRPC
     - ChameleonFramework
     - Charts
@@ -230,7 +227,6 @@ SPEC REPOS:
     - Protobuf
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
@@ -265,6 +261,6 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: 3509bbef9d0b35e98b96bec119c82e70fcd9d7d8
+PODFILE CHECKSUM: acdacd603b877f5b71bdda6e71d0d6a51f135f48
 
 COCOAPODS: 1.8.4

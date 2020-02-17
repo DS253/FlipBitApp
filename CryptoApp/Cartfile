@@ -1,1 +1,2 @@
+github "Alamofire/Alamofire"
 github "xmartlabs/Eureka" ~> 5.2

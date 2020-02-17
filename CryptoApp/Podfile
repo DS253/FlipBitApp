@@ -17,7 +17,6 @@ target 'CryptoApp' do
   pod 'Firebase/Firestore', '~> 6.11.0'
   pod 'Firebase/Messaging', '~> 6.11.0'
 
-  pod 'Alamofire', '~> 4.9.1'
   pod 'Kingfisher', '~> 5.9.0'
 
   pod 'Charts', '~> 3.4.0'
