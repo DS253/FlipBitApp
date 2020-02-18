@@ -67,7 +67,7 @@ class CryptoHomeViewController: GenericCollectionViewController {
         self.use(adapter: CardViewControllerContainerRowAdapter(), for: "ViewControllerContainerViewModel")
         self.use(adapter: CardFooterRowAdapter(uiConfig: uiConfig), for: "CardFooterModel")
         
-        self.title = "Instacoin"
+        self.title = "FlipBit"
         
         self.selectionBlock = {[weak self] (navController, object, indexPath) in
             guard let strongSelf = self else { return }
