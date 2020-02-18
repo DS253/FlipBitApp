@@ -1,0 +1,386 @@
+BCSymbolMap Version: 2.0
++[FBSDKHashtag hashtagWithString:]
+-[FBSDKHashtag description]
+-[FBSDKHashtag isValid]
+-[FBSDKHashtag hash]
+-[FBSDKHashtag isEqual:]
+-[FBSDKHashtag isEqualToHashtag:]
++[FBSDKHashtag supportsSecureCoding]
+-[FBSDKHashtag initWithCoder:]
+-[FBSDKHashtag encodeWithCoder:]
+-[FBSDKHashtag copyWithZone:]
+-[FBSDKHashtag stringRepresentation]
+-[FBSDKHashtag setStringRepresentation:]
+-[FBSDKHashtag .cxx_destruct]
+___HashtagRegularExpression_block_invoke
+_OBJC_IVAR_$_FBSDKHashtag._stringRepresentation
+l_OBJC_PROTOCOL_$_NSCopying
+l_OBJC_LABEL_PROTOCOL_$_NSCopying
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_FBSDKCopying
+l_OBJC_LABEL_PROTOCOL_$_FBSDKCopying
+l_OBJC_PROTOCOL_$_NSCoding
+l_OBJC_LABEL_PROTOCOL_$_NSCoding
+l_OBJC_PROTOCOL_$_NSSecureCoding
+l_OBJC_LABEL_PROTOCOL_$_NSSecureCoding
+_HashtagRegularExpression.hashtagRegularExpression
+_HashtagRegularExpression.onceToken
+___block_descriptor_tmp
+___block_literal_global
+Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKHashtag.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit
+__HashtagRegularExpression_block_invoke
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKHashtag.h
+HashtagRegularExpression
+/Applications/Xcode-10.1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/usr/include/dispatch/once.h
+NSMakeRange
+/Applications/Xcode-10.1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+-[FBSDKShareLinkContent init]
+-[FBSDKShareLinkContent setPeopleIDs:]
+-[FBSDKShareLinkContent addParameters:bridgeOptions:]
+-[FBSDKShareLinkContent validateWithOptions:error:]
+-[FBSDKShareLinkContent hash]
+-[FBSDKShareLinkContent isEqual:]
+-[FBSDKShareLinkContent isEqualToShareLinkContent:]
++[FBSDKShareLinkContent supportsSecureCoding]
+-[FBSDKShareLinkContent initWithCoder:]
+-[FBSDKShareLinkContent encodeWithCoder:]
+-[FBSDKShareLinkContent copyWithZone:]
+-[FBSDKShareLinkContent contentURL]
+-[FBSDKShareLinkContent setContentURL:]
+-[FBSDKShareLinkContent hashtag]
+-[FBSDKShareLinkContent setHashtag:]
+-[FBSDKShareLinkContent peopleIDs]
+-[FBSDKShareLinkContent placeID]
+-[FBSDKShareLinkContent setPlaceID:]
+-[FBSDKShareLinkContent ref]
+-[FBSDKShareLinkContent setRef:]
+-[FBSDKShareLinkContent pageID]
+-[FBSDKShareLinkContent setPageID:]
+-[FBSDKShareLinkContent quote]
+-[FBSDKShareLinkContent setQuote:]
+-[FBSDKShareLinkContent shareUUID]
+-[FBSDKShareLinkContent .cxx_destruct]
+_OBJC_IVAR_$_FBSDKShareLinkContent._shareUUID
+_OBJC_IVAR_$_FBSDKShareLinkContent._peopleIDs
+_OBJC_IVAR_$_FBSDKShareLinkContent._contentURL
+_OBJC_IVAR_$_FBSDKShareLinkContent._quote
+_OBJC_IVAR_$_FBSDKShareLinkContent._hashtag
+_OBJC_IVAR_$_FBSDKShareLinkContent._placeID
+_OBJC_IVAR_$_FBSDKShareLinkContent._ref
+_OBJC_IVAR_$_FBSDKShareLinkContent._pageID
+l_OBJC_PROTOCOL_$_FBSDKSharingValidation
+l_OBJC_LABEL_PROTOCOL_$_FBSDKSharingValidation
+l_OBJC_PROTOCOL_$_FBSDKSharingContent
+l_OBJC_LABEL_PROTOCOL_$_FBSDKSharingContent
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareLinkContent.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKSharingContent.h
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareLinkContent.h
+-[FBSDKDeviceShareViewController initWithShareContent:]
+-[FBSDKDeviceShareViewController loadView]
+-[FBSDKDeviceShareViewController viewDidDisappear:]
+-[FBSDKDeviceShareViewController viewDidLoad]
+-[FBSDKDeviceShareViewController viewDidAppear:]
+___48-[FBSDKDeviceShareViewController viewDidAppear:]_block_invoke
+___48-[FBSDKDeviceShareViewController viewDidAppear:]_block_invoke_2
+___copy_helper_block_
+___destroy_helper_block_
+___copy_helper_block_.65
+___destroy_helper_block_.66
+-[FBSDKDeviceShareViewController _dismissWithError:]
+___52-[FBSDKDeviceShareViewController _dismissWithError:]_block_invoke
+___copy_helper_block_.71
+___destroy_helper_block_.72
+-[FBSDKDeviceShareViewController _graphRequestParametersForContent:error:]
+-[FBSDKDeviceShareViewController delegate]
+-[FBSDKDeviceShareViewController setDelegate:]
+-[FBSDKDeviceShareViewController shareContent]
+-[FBSDKDeviceShareViewController .cxx_destruct]
+_OBJC_IVAR_$_FBSDKDeviceShareViewController._shareContent
+___block_descriptor_tmp.68
+___block_descriptor_tmp.73
+_OBJC_IVAR_$_FBSDKDeviceShareViewController._delegate
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKDeviceShareViewController.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKDeviceShareViewController.h
+__destroy_helper_block_
+__copy_helper_block_
+__52-[FBSDKDeviceShareViewController _dismissWithError:]_block_invoke
+__48-[FBSDKDeviceShareViewController viewDidAppear:]_block_invoke_2
+__48-[FBSDKDeviceShareViewController viewDidAppear:]_block_invoke
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareConstants.m
+-[FBSDKSharePhotoContent init]
+-[FBSDKSharePhotoContent setPeopleIDs:]
+-[FBSDKSharePhotoContent setPhotos:]
+-[FBSDKSharePhotoContent addParameters:bridgeOptions:]
+___54-[FBSDKSharePhotoContent addParameters:bridgeOptions:]_block_invoke
+-[FBSDKSharePhotoContent validateWithOptions:error:]
+-[FBSDKSharePhotoContent hash]
+-[FBSDKSharePhotoContent isEqual:]
+-[FBSDKSharePhotoContent isEqualToSharePhotoContent:]
++[FBSDKSharePhotoContent supportsSecureCoding]
+-[FBSDKSharePhotoContent initWithCoder:]
+-[FBSDKSharePhotoContent encodeWithCoder:]
+-[FBSDKSharePhotoContent copyWithZone:]
+-[FBSDKSharePhotoContent contentURL]
+-[FBSDKSharePhotoContent setContentURL:]
+-[FBSDKSharePhotoContent hashtag]
+-[FBSDKSharePhotoContent setHashtag:]
+-[FBSDKSharePhotoContent peopleIDs]
+-[FBSDKSharePhotoContent placeID]
+-[FBSDKSharePhotoContent setPlaceID:]
+-[FBSDKSharePhotoContent ref]
+-[FBSDKSharePhotoContent setRef:]
+-[FBSDKSharePhotoContent pageID]
+-[FBSDKSharePhotoContent setPageID:]
+-[FBSDKSharePhotoContent shareUUID]
+-[FBSDKSharePhotoContent photos]
+-[FBSDKSharePhotoContent .cxx_destruct]
+_OBJC_IVAR_$_FBSDKSharePhotoContent._shareUUID
+_OBJC_IVAR_$_FBSDKSharePhotoContent._peopleIDs
+_OBJC_IVAR_$_FBSDKSharePhotoContent._photos
+_OBJC_IVAR_$_FBSDKSharePhotoContent._contentURL
+_OBJC_IVAR_$_FBSDKSharePhotoContent._hashtag
+_OBJC_IVAR_$_FBSDKSharePhotoContent._placeID
+_OBJC_IVAR_$_FBSDKSharePhotoContent._ref
+_OBJC_IVAR_$_FBSDKSharePhotoContent._pageID
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKSharePhotoContent.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKSharePhotoContent.h
+__54-[FBSDKSharePhotoContent addParameters:bridgeOptions:]_block_invoke
+-[FBSDKVideoUploader initWithVideoName:videoSize:parameters:delegate:]
+-[FBSDKVideoUploader start]
+-[FBSDKVideoUploader _postStartRequest]
+___39-[FBSDKVideoUploader _postStartRequest]_block_invoke
+-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]
+___64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke
+___64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke_2
+___64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke_3
+___copy_helper_block_.86
+___destroy_helper_block_.87
+___copy_helper_block_.89
+___destroy_helper_block_.90
+___copy_helper_block_.93
+___destroy_helper_block_.94
+-[FBSDKVideoUploader _postFinishRequest]
+___40-[FBSDKVideoUploader _postFinishRequest]_block_invoke
+___copy_helper_block_.115
+___destroy_helper_block_.116
+-[FBSDKVideoUploader _extractOffsetsFromResultDictionary:]
+-[FBSDKVideoUploader numberFormatter]
+-[FBSDKVideoUploader _graphPathWithSuffix:]
+-[FBSDKVideoUploader video]
+-[FBSDKVideoUploader parameters]
+-[FBSDKVideoUploader setParameters:]
+-[FBSDKVideoUploader graphNode]
+-[FBSDKVideoUploader setGraphNode:]
+-[FBSDKVideoUploader delegate]
+-[FBSDKVideoUploader setDelegate:]
+-[FBSDKVideoUploader .cxx_destruct]
+_OBJC_IVAR_$_FBSDKVideoUploader._parameters
+_OBJC_IVAR_$_FBSDKVideoUploader._delegate
+_OBJC_IVAR_$_FBSDKVideoUploader._graphNode
+_OBJC_IVAR_$_FBSDKVideoUploader._videoName
+_OBJC_IVAR_$_FBSDKVideoUploader._videoSize
+_OBJC_IVAR_$_FBSDKVideoUploader._graphPath
+_OBJC_IVAR_$_FBSDKVideoUploader._uploadSessionID
+_OBJC_IVAR_$_FBSDKVideoUploader._videoID
+___block_descriptor_tmp.88
+___block_descriptor_tmp.92
+___block_descriptor_tmp.95
+___block_descriptor_tmp.117
+_OBJC_IVAR_$_FBSDKVideoUploader._numberFormatter
+_OBJC_IVAR_$_FBSDKVideoUploader._video
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/Internal/FBSDKVideoUploader.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/Internal/FBSDKVideoUploader.h
+__40-[FBSDKVideoUploader _postFinishRequest]_block_invoke
+__64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke_3
+__64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke_2
+__64-[FBSDKVideoUploader _startTransferRequestWithOffsetDictionary:]_block_invoke
+__39-[FBSDKVideoUploader _postStartRequest]_block_invoke
++[FBSDKShareVideo videoWithData:]
++[FBSDKShareVideo videoWithData:previewPhoto:]
++[FBSDKShareVideo videoWithVideoAsset:]
++[FBSDKShareVideo videoWithVideoAsset:previewPhoto:]
++[FBSDKShareVideo videoWithVideoURL:]
++[FBSDKShareVideo videoWithVideoURL:previewPhoto:]
+-[FBSDKShareVideo setData:]
+-[FBSDKShareVideo setVideoAsset:]
+-[FBSDKShareVideo setVideoURL:]
+-[FBSDKShareVideo hash]
+-[FBSDKShareVideo isEqual:]
+-[FBSDKShareVideo isEqualToShareVideo:]
+-[FBSDKShareVideo _validateData:withOptions:error:]
+-[FBSDKShareVideo _validateVideoAsset:withOptions:error:]
+-[FBSDKShareVideo _validateVideoURL:withOptions:error:]
+-[FBSDKShareVideo validateWithOptions:error:]
++[FBSDKShareVideo supportsSecureCoding]
+-[FBSDKShareVideo initWithCoder:]
+-[FBSDKShareVideo encodeWithCoder:]
+-[FBSDKShareVideo copyWithZone:]
+-[FBSDKShareVideo data]
+-[FBSDKShareVideo videoAsset]
+-[FBSDKShareVideo videoURL]
+-[FBSDKShareVideo previewPhoto]
+-[FBSDKShareVideo setPreviewPhoto:]
+-[FBSDKShareVideo .cxx_destruct]
+-[PHAsset(FBSDKShareVideo) videoURL]
+___Block_byref_object_copy_
+___Block_byref_object_dispose_
+___36-[PHAsset(FBSDKShareVideo) videoURL]_block_invoke
+_OBJC_IVAR_$_FBSDKShareVideo._data
+_OBJC_IVAR_$_FBSDKShareVideo._videoAsset
+_OBJC_IVAR_$_FBSDKShareVideo._videoURL
+_OBJC_IVAR_$_FBSDKShareVideo._previewPhoto
+l_OBJC_PROTOCOL_$_FBSDKShareMedia
+l_OBJC_LABEL_PROTOCOL_$_FBSDKShareMedia
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareVideo.m
+__36-[PHAsset(FBSDKShareVideo) videoURL]_block_invoke
+__Block_byref_object_dispose_
+__Block_byref_object_copy_
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareVideo.h
+-[FBSDKDeviceShareButton configureButton]
+-[FBSDKDeviceShareButton setShareContent:]
+-[FBSDKDeviceShareButton _buttonPressed:]
+-[FBSDKDeviceShareButton shareContent]
+-[FBSDKDeviceShareButton .cxx_destruct]
+_OBJC_IVAR_$_FBSDKDeviceShareButton._shareContent
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKDeviceShareButton.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKDeviceShareButton.h
+-[FBSDKShareVideoContent init]
+-[FBSDKShareVideoContent setPeopleIDs:]
+-[FBSDKShareVideoContent addParameters:bridgeOptions:]
+-[FBSDKShareVideoContent validateWithOptions:error:]
+-[FBSDKShareVideoContent hash]
+-[FBSDKShareVideoContent isEqual:]
+-[FBSDKShareVideoContent isEqualToShareVideoContent:]
++[FBSDKShareVideoContent supportsSecureCoding]
+-[FBSDKShareVideoContent initWithCoder:]
+-[FBSDKShareVideoContent encodeWithCoder:]
+-[FBSDKShareVideoContent copyWithZone:]
+-[FBSDKShareVideoContent contentURL]
+-[FBSDKShareVideoContent setContentURL:]
+-[FBSDKShareVideoContent hashtag]
+-[FBSDKShareVideoContent setHashtag:]
+-[FBSDKShareVideoContent peopleIDs]
+-[FBSDKShareVideoContent placeID]
+-[FBSDKShareVideoContent setPlaceID:]
+-[FBSDKShareVideoContent ref]
+-[FBSDKShareVideoContent setRef:]
+-[FBSDKShareVideoContent pageID]
+-[FBSDKShareVideoContent setPageID:]
+-[FBSDKShareVideoContent shareUUID]
+-[FBSDKShareVideoContent video]
+-[FBSDKShareVideoContent setVideo:]
+-[FBSDKShareVideoContent .cxx_destruct]
+_OBJC_IVAR_$_FBSDKShareVideoContent._shareUUID
+_OBJC_IVAR_$_FBSDKShareVideoContent._peopleIDs
+_OBJC_IVAR_$_FBSDKShareVideoContent._video
+_OBJC_IVAR_$_FBSDKShareVideoContent._contentURL
+_OBJC_IVAR_$_FBSDKShareVideoContent._hashtag
+_OBJC_IVAR_$_FBSDKShareVideoContent._placeID
+_OBJC_IVAR_$_FBSDKShareVideoContent._ref
+_OBJC_IVAR_$_FBSDKShareVideoContent._pageID
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareVideoContent.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareVideoContent.h
+-[FBSDKShareMediaContent init]
+-[FBSDKShareMediaContent setPeopleIDs:]
+-[FBSDKShareMediaContent setMedia:]
+-[FBSDKShareMediaContent addParameters:bridgeOptions:]
+-[FBSDKShareMediaContent validateWithOptions:error:]
+-[FBSDKShareMediaContent hash]
+-[FBSDKShareMediaContent isEqual:]
+-[FBSDKShareMediaContent isEqualToShareMediaContent:]
++[FBSDKShareMediaContent supportsSecureCoding]
+-[FBSDKShareMediaContent initWithCoder:]
+-[FBSDKShareMediaContent encodeWithCoder:]
+-[FBSDKShareMediaContent copyWithZone:]
+-[FBSDKShareMediaContent contentURL]
+-[FBSDKShareMediaContent setContentURL:]
+-[FBSDKShareMediaContent hashtag]
+-[FBSDKShareMediaContent setHashtag:]
+-[FBSDKShareMediaContent peopleIDs]
+-[FBSDKShareMediaContent placeID]
+-[FBSDKShareMediaContent setPlaceID:]
+-[FBSDKShareMediaContent ref]
+-[FBSDKShareMediaContent setRef:]
+-[FBSDKShareMediaContent pageID]
+-[FBSDKShareMediaContent setPageID:]
+-[FBSDKShareMediaContent shareUUID]
+-[FBSDKShareMediaContent media]
+-[FBSDKShareMediaContent .cxx_destruct]
+_OBJC_IVAR_$_FBSDKShareMediaContent._shareUUID
+_OBJC_IVAR_$_FBSDKShareMediaContent._peopleIDs
+_OBJC_IVAR_$_FBSDKShareMediaContent._media
+_OBJC_IVAR_$_FBSDKShareMediaContent._contentURL
+_OBJC_IVAR_$_FBSDKShareMediaContent._hashtag
+_OBJC_IVAR_$_FBSDKShareMediaContent._placeID
+_OBJC_IVAR_$_FBSDKShareMediaContent._ref
+_OBJC_IVAR_$_FBSDKShareMediaContent._pageID
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareMediaContent.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKShareMediaContent.h
++[FBSDKSharePhoto photoWithImage:userGenerated:]
++[FBSDKSharePhoto photoWithImageURL:userGenerated:]
++[FBSDKSharePhoto photoWithPhotoAsset:userGenerated:]
+-[FBSDKSharePhoto setImage:]
+-[FBSDKSharePhoto setImageURL:]
+-[FBSDKSharePhoto setPhotoAsset:]
+-[FBSDKSharePhoto hash]
+-[FBSDKSharePhoto isEqual:]
+-[FBSDKSharePhoto isEqualToSharePhoto:]
+-[FBSDKSharePhoto validateWithOptions:error:]
++[FBSDKSharePhoto supportsSecureCoding]
+-[FBSDKSharePhoto initWithCoder:]
+-[FBSDKSharePhoto encodeWithCoder:]
+-[FBSDKSharePhoto copyWithZone:]
+-[FBSDKSharePhoto image]
+-[FBSDKSharePhoto imageURL]
+-[FBSDKSharePhoto photoAsset]
+-[FBSDKSharePhoto isUserGenerated]
+-[FBSDKSharePhoto setUserGenerated:]
+-[FBSDKSharePhoto caption]
+-[FBSDKSharePhoto setCaption:]
+-[FBSDKSharePhoto .cxx_destruct]
+_OBJC_IVAR_$_FBSDKSharePhoto._image
+_OBJC_IVAR_$_FBSDKSharePhoto._imageURL
+_OBJC_IVAR_$_FBSDKSharePhoto._photoAsset
+_OBJC_IVAR_$_FBSDKSharePhoto._caption
+_OBJC_IVAR_$_FBSDKSharePhoto._userGenerated
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKSharePhoto.m
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/FBSDKSharePhoto.h
++[FBSDKShareUtility assertCollection:ofClassStrings:name:]
++[FBSDKShareUtility assertCollection:ofClass:name:]
++[FBSDKShareUtility buildWebShareContent:methodName:parameters:error:]
++[FBSDKShareUtility buildWebShareTags:]
++[FBSDKShareUtility buildAsyncWebPhotoContent:completionHandler:]
+___65+[FBSDKShareUtility buildAsyncWebPhotoContent:completionHandler:]_block_invoke
++[FBSDKShareUtility feedShareDictionaryForContent:]
++[FBSDKShareUtility hashtagStringFromHashtag:]
++[FBSDKShareUtility imageWithCircleColor:canvasSize:circleSize:]
++[FBSDKShareUtility parametersForShareContent:bridgeOptions:shouldFailOnDataError:]
++[FBSDKShareUtility testShareContent:containsMedia:containsPhotos:containsVideos:]
++[FBSDKShareUtility validateAssetLibraryURLsWithShareMediaContent:name:error:]
++[FBSDKShareUtility validateShareContent:bridgeOptions:error:]
++[FBSDKShareUtility shareMediaContentContainsPhotosAndVideos:]
++[FBSDKShareUtility _convertObject:]
++[FBSDKShareUtility convertPhoto:]
++[FBSDKShareUtility _stageImagesForPhotoContent:withCompletionHandler:]
+___71+[FBSDKShareUtility _stageImagesForPhotoContent:withCompletionHandler:]_block_invoke
+___copy_helper_block_.186
+___destroy_helper_block_.187
+___71+[FBSDKShareUtility _stageImagesForPhotoContent:withCompletionHandler:]_block_invoke.192
+___copy_helper_block_.193
+___destroy_helper_block_.194
++[FBSDKShareUtility _testObject:containsMedia:containsPhotos:containsVideos:]
++[FBSDKShareUtility validateArray:minCount:maxCount:name:error:]
++[FBSDKShareUtility _validateFileURL:name:error:]
++[FBSDKShareUtility validateNetworkURL:name:error:]
++[FBSDKShareUtility validateRequiredValue:name:error:]
++[FBSDKShareUtility validateArgumentWithName:value:isIn:error:]
++[FBSDKShareUtility _validateAssetLibraryVideoURL:name:error:]
+___block_descriptor_tmp.189
+___block_descriptor_tmp.196
+/Users/travis/build/facebook/facebook-ios-sdk/FBSDKShareKit/FBSDKShareKit/Internal/FBSDKShareUtility.m
+__71+[FBSDKShareUtility _stageImagesForPhotoContent:withCompletionHandler:]_block_invoke.192
+__71+[FBSDKShareUtility _stageImagesForPhotoContent:withCompletionHandler:]_block_invoke
+__65+[FBSDKShareUtility buildAsyncWebPhotoContent:completionHandler:]_block_invoke

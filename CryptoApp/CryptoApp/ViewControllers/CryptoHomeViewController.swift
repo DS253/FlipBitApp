@@ -14,8 +14,7 @@ class CryptoHomeViewController: GenericCollectionViewController {
     let dsProvider: FinanceDataSourceProvider
     let allCryptosDataSource: GenericCollectionViewControllerDataSource
     
-    init(uiConfig: UIGenericConfigurationProtocol,
-         dsProvider: FinanceDataSourceProvider) {
+    init(uiConfig: UIGenericConfigurationProtocol, dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.dsProvider = dsProvider
         self.allCryptosDataSource = dsProvider.allCryptosListDataSource

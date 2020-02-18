@@ -145,6 +145,12 @@
 		060A9BE623FA7025003F1B7F /* FirebaseFirestoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */; };
 		060A9BE823FA7219003F1B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE723FA7219003F1B7F /* AppDelegate.swift */; };
 		060A9BEA23FA72CA003F1B7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060A9BE923FA72CA003F1B7F /* SettingsViewController.swift */; };
+		064E779623FBA42500352E3C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779523FBA42400352E3C /* FBSDKCoreKit.framework */; };
+		064E779723FBA42500352E3C /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779523FBA42400352E3C /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		064E779923FBA42C00352E3C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779823FBA42C00352E3C /* FBSDKLoginKit.framework */; };
+		064E779A23FBA42C00352E3C /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779823FBA42C00352E3C /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		064E779C23FBA43600352E3C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779B23FBA43600352E3C /* FBSDKShareKit.framework */; };
+		064E779D23FBA43600352E3C /* FBSDKShareKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 064E779B23FBA43600352E3C /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		066A24FE23F9C63C00F4F88A /* FlipBitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */; };
 		066A250023F9C84A00F4F88A /* CardFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */; };
 		066A250223F9C88700F4F88A /* CardHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066A250123F9C88700F4F88A /* CardHeaderModel.swift */; };
@@ -403,7 +409,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				064E779723FBA42500352E3C /* FBSDKCoreKit.framework in Embed Frameworks */,
 				06E91ECF23FB39590050DC7E /* Eureka.framework in Embed Frameworks */,
+				064E779A23FBA42C00352E3C /* FBSDKLoginKit.framework in Embed Frameworks */,
+				064E779D23FBA43600352E3C /* FBSDKShareKit.framework in Embed Frameworks */,
 				06E91EDA23FB5F8A0050DC7E /* Charts.framework in Embed Frameworks */,
 				06E91ED723FB57F30050DC7E /* Kingfisher.framework in Embed Frameworks */,
 				06E91ED423FB4BD20050DC7E /* Alamofire.framework in Embed Frameworks */,
@@ -552,6 +561,9 @@
 		060A9BE523FA7025003F1B7F /* FirebaseFirestoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFirestoreDataSource.swift; sourceTree = "<group>"; };
 		060A9BE723FA7219003F1B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		060A9BE923FA72CA003F1B7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		064E779523FBA42400352E3C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		064E779823FBA42C00352E3C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		064E779B23FBA43600352E3C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Carthage/Build/iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		066A24FD23F9C63C00F4F88A /* FlipBitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipBitTextField.swift; sourceTree = "<group>"; };
 		066A24FF23F9C84A00F4F88A /* CardFooterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFooterModel.swift; sourceTree = "<group>"; };
 		066A250123F9C88700F4F88A /* CardHeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeaderModel.swift; sourceTree = "<group>"; };
@@ -809,9 +821,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064E779C23FBA43600352E3C /* FBSDKShareKit.framework in Frameworks */,
 				CAAEF8B0BF7412A63FB7817C /* Pods_CryptoApp.framework in Frameworks */,
+				064E779623FBA42500352E3C /* FBSDKCoreKit.framework in Frameworks */,
 				06E91ED323FB4BD20050DC7E /* Alamofire.framework in Frameworks */,
 				06E91ED923FB5F8A0050DC7E /* Charts.framework in Frameworks */,
+				064E779923FBA42C00352E3C /* FBSDKLoginKit.framework in Frameworks */,
 				06E91ECE23FB39590050DC7E /* Eureka.framework in Frameworks */,
 				06E91ED623FB57F30050DC7E /* Kingfisher.framework in Frameworks */,
 			);
@@ -823,6 +838,9 @@
 		092FDDC2A408B92656CCA82F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				064E779B23FBA43600352E3C /* FBSDKShareKit.framework */,
+				064E779823FBA42C00352E3C /* FBSDKLoginKit.framework */,
+				064E779523FBA42400352E3C /* FBSDKCoreKit.framework */,
 				06E91ED823FB5F890050DC7E /* Charts.framework */,
 				06E91ED523FB57F30050DC7E /* Kingfisher.framework */,
 				06E91ED223FB4BD10050DC7E /* Alamofire.framework */,
@@ -2114,9 +2132,12 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Charts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKShareKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -2124,6 +2145,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Charts.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKCoreKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKLoginKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKShareKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 1;

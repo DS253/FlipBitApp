@@ -21,9 +21,7 @@ class FinanceHostViewController: UIViewController, UITabBarControllerDelegate {
     var profileVC: ATCProfileViewController?
     let dsProvider: FinanceDataSourceProviderProtocol
     
-    init(uiConfig: FinanceUIConfiguration,
-         serverConfig: OnboardingServerConfigurationProtocol,
-         dsProvider: FinanceDataSourceProvider) {
+    init(uiConfig: FinanceUIConfiguration, serverConfig: OnboardingServerConfigurationProtocol, dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
         self.serverConfig = serverConfig
         self.dsProvider = dsProvider

@@ -2,3 +2,4 @@ github "Alamofire/Alamofire"
 github "danielgindi/Charts" ~> 3.4.0
 github "onevcat/Kingfisher" ~> 5.0
 github "xmartlabs/Eureka" ~> 5.2
+github "facebook/facebook-ios-sdk"
