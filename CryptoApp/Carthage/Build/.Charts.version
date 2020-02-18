@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Charts",
-      "hash" : "beb96eda986079e06a840b701d2e9f453275eb55fee9d6c6e1dd4edf5edca6d7",
+      "hash" : "59af6a8c93ad914e89e8123d3b89d196da1ce15be448192cac8554db6e6d03db",
       "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
   ]

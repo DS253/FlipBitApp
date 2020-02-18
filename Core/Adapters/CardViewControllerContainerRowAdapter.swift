@@ -10,12 +10,12 @@ import UIKit
 
 class CardViewControllerContainerRowAdapter: GenericCollectionRowAdapter {
     func configure(cell: UICollectionViewCell, with object: GenericBaseModel) {
-        guard let viewModel = object as? ViewControllerContainerViewModel, let cell = cell as? ATCCardViewControllerContainerCollectionViewCell else { return }
+        guard let viewModel = object as? ViewControllerContainerViewModel, let cell = cell as? CardViewControllerContainerCollectionViewCell else { return }
         cell.configure(viewModel: viewModel)
     }
     
     func cellClass() -> UICollectionViewCell.Type {
-        return ATCCardViewControllerContainerCollectionViewCell.self
+        return CardViewControllerContainerCollectionViewCell.self
     }
     
     func size(containerBounds: CGRect, object: GenericBaseModel) -> CGSize {

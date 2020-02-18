@@ -11,12 +11,12 @@
       "hash" : "9b2239e6f62b09017024ce57125966fded0a8b04c069addd2e49d8074a44672e"
     },
     {
-      "name" : "FBSDKShareKit",
-      "hash" : "27aae4ed3d7d9277bd64a51f478fe8d68fa0ebe3cfc0f89cb033823205c784f7"
-    },
-    {
       "name" : "FBSDKTVOSKit",
       "hash" : "37383e82e10948b45ee09b0c8c05c241780a8942a321dc77aede1da70be13e83"
+    },
+    {
+      "name" : "FBSDKShareKit",
+      "hash" : "27aae4ed3d7d9277bd64a51f478fe8d68fa0ebe3cfc0f89cb033823205c784f7"
     },
     {
       "name" : "FBSDKCoreKit",

@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Eureka",
-      "hash" : "8711abe580d4b65eaff848919796f1d0f4327291575ad7bbf20277a699854bb4",
+      "hash" : "f058766e4a2bfd3cc4cb6e739091286a7aaecd02d4f06c54c205ddf467506fc9",
       "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
     }
   ]
