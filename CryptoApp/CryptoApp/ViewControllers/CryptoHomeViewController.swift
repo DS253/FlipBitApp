@@ -13,6 +13,18 @@ class CryptoHomeViewController: GenericCollectionViewController {
     let uiConfig: UIGenericConfigurationProtocol
     let dsProvider: FinanceDataSourceProvider
     let allCryptosDataSource: GenericCollectionViewControllerDataSource
+  
+    private lazy var searchButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage.localImage("search-icon", template: true), for: .normal)
+        button.snp.makeConstraints { (maker) in
+            maker.width.equalTo(25)
+            maker.height.equalTo(25)
+        }
+        button.tintColor = uiConfig.mainThemeBackgroundColor
+        button.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
+        return button
+    }()
     
     init(uiConfig: UIGenericConfigurationProtocol, dsProvider: FinanceDataSourceProvider) {
         self.uiConfig = uiConfig
@@ -42,13 +54,10 @@ class CryptoHomeViewController: GenericCollectionViewController {
             ATCChartDate(title: "All", startDate: Date().infiniteAgo)
         ])
         
-        let lineChartViewController = ATCDatedLineChartViewController(dateList: dateList,
-                                                                      uiConfig: uiConfig)
+        let lineChartViewController = ATCDatedLineChartViewController(dateList: dateList, uiConfig: uiConfig)
         lineChartViewController.delegate = self
         
-        let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController,
-                                                                 cellHeight: 300,
-                                                                 subcellHeight: nil)
+        let chartViewModel = ViewControllerContainerViewModel(viewController: lineChartViewController, cellHeight: 300, subcellHeight: nil)
         chartViewModel.parentViewController = self
         
         // Configuring crypto list
@@ -83,23 +92,12 @@ class CryptoHomeViewController: GenericCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let searchBtn = UIButton(type: .system)
-        searchBtn.setImage(UIImage.localImage("search-icon", template: true), for: .normal)
-        searchBtn.snp.makeConstraints { (maker) in
-            maker.width.equalTo(25)
-            maker.height.equalTo(25)
-        }
-        searchBtn.tintColor = uiConfig.mainThemeBackgroundColor
-        searchBtn.addTarget(self, action: #selector(didTapSearch), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBtn)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchButton)
     }
     
     
     @objc fileprivate func didTapSearch() {
-        let searchVC = AssetSearchViewController(uiConfig: uiConfig,
-                                                 searchDataSource: dsProvider.cryptoSearchDataSource,
-                                                 dsProvider: dsProvider,
-                                                 title: "Search Crypto...")
+        let searchVC = AssetSearchViewController(uiConfig: uiConfig, searchDataSource: dsProvider.cryptoSearchDataSource, dsProvider: dsProvider, title: "Search Crypto...")
         self.navigationController?.pushViewController(searchVC, animated: true)
     }
     
